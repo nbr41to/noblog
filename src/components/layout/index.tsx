@@ -20,7 +20,7 @@ export const Layout: VFC<LayoutProps> = ({ children }) => {
 const StyledLayout = styled.div`
   margin: 0 auto;
   min-height: 100vh;
-  background-image: url('./bg_image.png');
+  background-image: url('/bg_image.png');
   background-color: rgba(255, 255, 255, 0.8);
   background-blend-mode: lighten;
   background-size: 1280px;
