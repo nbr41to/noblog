@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^0.2.4",
+    "akar-icons": "^1.8.2",
     "babel-plugin-styled-components": "^1.13.2",
     "next": "11.0.1",
     "react": "17.0.2",

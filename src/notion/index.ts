@@ -10,7 +10,7 @@ const database_id = process.env.NOTION_DATABASE_ID;
 export const getPageList = async (): Promise<any> => {
   const response = await notion.databases.query({
     database_id,
-    page_size: 10,
+    page_size: 20,
     filter: {
       property: 'Published',
       checkbox: {
@@ -40,6 +40,12 @@ export const getPageContent = async (
   });
 
   return { ...page_propeties, ...page_blocks };
+};
+
+/* databaseのpropertiesを取得 */
+export const getDatabaseInfo = async (): Promise<any> => {
+  const response = await notion.databases.retrieve({ database_id });
+  return response.properties;
 };
 
 /* ORIGINAL_BLOCKの内容を取得 */

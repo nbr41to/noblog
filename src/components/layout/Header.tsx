@@ -5,12 +5,14 @@ import { useRouter } from 'next/router';
 
 export const Header: VFC = () => {
   const router = useRouter();
+
   return (
     <StyledHeader>
       <div className="site_logo">
         <div className="site_title" onClick={() => router.push('/')}>
           のぶろぐ。
         </div>
+        <div className="sub_title">〜 のまど先生の生存確認ブログ 〜</div>
       </div>
       <nav aria-labelledby="aria-global-nav">
         <h3 id="aria-global-nav" className="menu_title">
@@ -36,7 +38,7 @@ export const Header: VFC = () => {
 };
 
 const StyledHeader = styled.header`
-  background-color: #f9f9f9;
+  background-color: rgba(250, 250, 250, 0.7);
 
   > .site_logo {
     padding: 8px 12px;

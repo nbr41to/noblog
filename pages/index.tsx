@@ -4,7 +4,6 @@ import Script from 'next/script';
 
 const HomePage: VFC = () => {
   const [trendBlocks, setTrendBlocks] = useState([]);
-  const containerElem = useRef(null);
 
   useEffect(() => {
     fetch('/api/get-blocks')
@@ -14,13 +13,10 @@ const HomePage: VFC = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   if (!process.browser) return;
-  //   const s = document.createElement('script');
-  //   s.setAttribute('src', 'https://platform.twitter.com/widgets.js');
-  //   s.setAttribute('async', 'true');
-  //   document.head.appendChild(s);
-  // }, []);
+  useEffect(() => {
+    if (!process.browser) return;
+    window.twttr?.widgets.load();
+  }, []);
 
   return (
     <div>
@@ -43,12 +39,7 @@ const HomePage: VFC = () => {
       >
         Tweets by Knob_nbr41to
       </a>{' '}
-      <Script
-        src="https://platform.twitter.com/widgets.js"
-        onLoad={() => {
-          (window as any).twttr.widgets.load(containerElem.current);
-        }}
-      />
+      <Script src="https://platform.twitter.com/widgets.js" />
     </div>
   );
 };
