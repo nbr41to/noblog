@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { getDatabaseInfo, getPageList } from '../../src/notion';
 import { useRouter } from 'next/router';
+import { BlogList } from '../../src/components/BlogList';
 
 type BlogPageProps = {
   items: any;
@@ -29,42 +30,22 @@ const BlogsPage: VFC<BlogPageProps> = ({ items, databaseProperties }) => {
   );
   const router = useRouter();
 
+  const selectCategory = (category: string) => {
+    router.push(`/blogs/${category}`);
+  };
+
   return (
     <BlogsPageStyled>
       <h2>Category list</h2>
       <div>
         {categoryList.map((category) => (
-          <div key={category.id}>{category.name}</div>
+          <div key={category.id} onClick={() => selectCategory(category.name)}>
+            {category.name}
+          </div>
         ))}
       </div>
       <h2> All blog list</h2>
-      <div>
-        {items.map((item) => {
-          const { properties } = item;
-          const title = properties.Page.title[0].plain_text;
-          const category = properties.Category.select;
-          const subCategory = properties.SubCategory.multi_select;
-          // const title = properties.Page.title[0].text.content; // 違いがわからん
-
-          return (
-            <div
-              key={item.id}
-              className="box"
-              onClick={() => router.push(`blogs/${category.name}/${item.id}`)}
-            >
-              <h3>{title}</h3>
-              <div>カテゴリ：{category.name}</div>
-              <div>
-                サブカテゴリ：
-                {subCategory.length
-                  ? subCategory.map((i) => <span key={i.id}>{i.name}</span>)
-                  : 'なし'}
-              </div>
-              <div>最終編集日：{item.last_edited_time}</div>
-            </div>
-          );
-        })}
-      </div>
+      <BlogList items={items} />
     </BlogsPageStyled>
   );
 };

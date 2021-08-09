@@ -23,7 +23,21 @@ export const getPageList = async (): Promise<any> => {
 };
 
 /* pageListの続き取得 */
-export const getPageListNext = async (start_cursor: string): Promise<any> => {};
+export const getPageListNext = async (start_cursor: string): Promise<any> => {
+  const response = await notion.databases.query({
+    database_id,
+    start_cursor,
+    page_size: 20,
+    filter: {
+      property: 'Published',
+      checkbox: {
+        equals: true,
+      },
+    },
+  });
+
+  return response;
+};
 
 /* pageの情報を取得 */
 export const getPageContent = async (
@@ -49,7 +63,7 @@ export const getDatabaseInfo = async (): Promise<any> => {
 };
 
 /* ORIGINAL_BLOCKの内容を取得 */
-export const getTrendBlock = async () => {
+export const getTrendBlock = async (): Promise<any> => {
   /* my trend */
   const response = await notion.blocks.children.list({
     block_id: process.env.NOTION_TREND_BLOCK_ID,

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, VFC } from 'react';
+import { useEffect, useState, VFC } from 'react';
 import { CompiledBlock } from '../src/components/CompiledBlock';
 import Script from 'next/script';
 
