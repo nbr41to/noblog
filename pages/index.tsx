@@ -1,6 +1,7 @@
 import { useEffect, useState, VFC } from 'react';
 import { CompiledBlock } from '../src/components/CompiledBlock';
 import Script from 'next/script';
+import Image from 'next/image';
 
 const HomePage: VFC = () => {
   const [trendBlocks, setTrendBlocks] = useState([]);
@@ -13,6 +14,7 @@ const HomePage: VFC = () => {
       });
   }, []);
 
+  document.getElementsByTagName('body')[0].style.color = '#d4faf2';
   useEffect(() => {
     if (!process.browser) return;
     window.twttr?.widgets.load();
@@ -39,6 +41,12 @@ const HomePage: VFC = () => {
       >
         Tweets by Knob_nbr41to
       </a>{' '}
+      <Image
+        src="https://grass-graph.appspot.com/images/nbr41to.png"
+        alt="github contributions"
+        width={500}
+        height={100}
+      />
       <Script src="https://platform.twitter.com/widgets.js" />
     </div>
   );
