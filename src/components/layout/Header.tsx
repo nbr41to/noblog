@@ -12,7 +12,7 @@ export const Header: VFC = () => {
         <div className="site_title" onClick={() => router.push('/')}>
           のぶろぐ。
         </div>
-        <div className="sub_title">〜 のまど先生の生存確認ブログ 〜</div>
+        <div className="sub_title">〜 のまど先生の生存確認日記 〜</div>
       </div>
       <nav aria-labelledby="aria-global-nav">
         <h3 id="aria-global-nav" className="menu_title">
