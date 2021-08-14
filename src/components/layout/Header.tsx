@@ -39,7 +39,7 @@ export const Header: VFC = () => {
 };
 
 const StyledHeader = styled.header`
-  background-color: rgba(250, 250, 250, 0.7);
+  background-color: #fffa;
 
   > .site_logo {
     padding: 8px 12px;

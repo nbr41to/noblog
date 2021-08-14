@@ -29,9 +29,11 @@ const StyledLayout = styled.div`
   > main {
     height: 100%;
     padding: 0 60px 52px;
-    @media (max-width: 600px) {
-      padding: 0 20px 52px;
-    }
+    ${({ theme }) => theme.media.sm`
+      margin-top: 4px;
+      padding: 0 8px 52px;
+      background-color: #fffc;
+    `};
     overflow-y: scroll;
   }
 `;

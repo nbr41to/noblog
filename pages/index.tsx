@@ -23,7 +23,13 @@ const StyledHomePage = styled.div`
   padding: 20px 32px;
   border: 1px solid #444;
   border-radius: 8px;
-
+  ${({ theme }) => theme.media.sm`
+    margin: 4px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 0;
+    background-color: #fff0;
+  `};
   > .content_wrapper {
     display: grid;
     grid-template:
@@ -33,6 +39,17 @@ const StyledHomePage = styled.div`
       ' trend trend trend ..... ttl   ' 800px
       ' ..... ..... ..... ..... ..... ' 20px /
       0 0 1fr 20px 300px;
+    ${({ theme }) => theme.media.sm`
+      grid-template:
+        ' ..... ..... ..... ..... ..... ' 20px
+        ' ghg   ghg   ghg   ghg   ghg   ' auto
+        ' ..... ..... ..... ..... ..... ' 20px
+        ' trend trend trend trend trend ' 600px
+        ' ..... ..... ..... ..... ..... ' 20px
+        ' ttl   ttl   ttl   ttl   ttl   ' 600px
+        ' ..... ..... ..... ..... ..... ' 20px /
+        auto;
+  `};
   }
   .ghg {
     grid-area: ghg;
