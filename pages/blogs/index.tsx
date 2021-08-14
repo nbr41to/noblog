@@ -2,9 +2,9 @@ import { GetStaticProps } from 'next';
 import { VFC } from 'react';
 import styled from 'styled-components';
 
-import { getDatabaseInfo, getPageList } from '../../src/notion';
+import { getDatabaseInfo, getPageList } from '../../src/notion/functions';
 import { useRouter } from 'next/router';
-import { BlogList } from '../../src/components/BlogList';
+import { BlogList } from '../../src/components/Blog/BlogList';
 
 type BlogPageProps = {
   items: any;

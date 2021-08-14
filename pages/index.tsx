@@ -1,5 +1,5 @@
 import { useEffect, useState, VFC } from 'react';
-import { CompiledBlock } from '../src/components/CompiledBlock';
+import { NotionBlock } from '../src/notion/NotionBlock';
 import Script from 'next/script';
 import Image from 'next/image';
 
@@ -14,7 +14,6 @@ const HomePage: VFC = () => {
       });
   }, []);
 
-  document.getElementsByTagName('body')[0].style.color = '#d4faf2';
   useEffect(() => {
     if (!process.browser) return;
     window.twttr?.widgets.load();
@@ -26,7 +25,7 @@ const HomePage: VFC = () => {
       <h2>My Trend</h2>
       <div>
         {trendBlocks.map((block) => (
-          <CompiledBlock key={block.id} block={block} />
+          <NotionBlock key={block.id} block={block} />
         ))}
       </div>
       <hr />

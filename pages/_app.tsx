@@ -1,6 +1,6 @@
 import type { AppProps /*, AppContext */ } from 'next/app';
 import { Layout } from '../src/components/layout';
-// import '../styles/reset.css';
+import '../styles/reset.css';
 import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {

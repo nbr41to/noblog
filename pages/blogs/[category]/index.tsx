@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useState, VFC, useEffect } from 'react';
 import styled from 'styled-components';
-import { getPageList } from '../../../src/notion';
+import { getPageList } from '../../../src/notion/functions';
 import { useRouter } from 'next/router';
-import { getDatabaseInfo } from '../../../src/notion/index';
-import { BlogList } from '../../../src/components/BlogList';
+import { getDatabaseInfo } from '../../../src/notion/functions';
+import { BlogList } from '../../../src/components/Blog/BlogList';
 
 type CategoryPageProps = {
   items: any;
