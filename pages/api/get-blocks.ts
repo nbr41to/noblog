@@ -12,7 +12,7 @@ export default async (
 ): Promise<any> => {
   const response = await notion.blocks.children.list({
     block_id: process.env.NOTION_TREND_BLOCK_ID,
-    page_size: 10,
+    page_size: 100,
   });
 
   res.status(200).json(response.results);
