@@ -88,12 +88,6 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
 };
 
 const BlogDetailPageStyled = styled.div`
-  max-width: 800px;
-  background-color: #fffc;
-  border: 1px solid #444;
-  border-radius: 8px;
-  padding: 24px 32px;
-  margin: 20px auto;
   > h1 {
     text-align: center;
     margin: 4px 0 16px;

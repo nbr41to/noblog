@@ -9,7 +9,17 @@ import {
 export const theme = {
   name: 'Default Theme',
   fonts: {},
-  colors: {},
+  colors: {
+    orange: '#d4680f',
+    yellow: '#daa104',
+    blue: '#0e638e',
+    red: '#db3636',
+    green: '#117061',
+    gray: '#83827f',
+    brown: '#593e33',
+    pink: '#f566f5',
+    purple: '#5e389b',
+  },
   box: {
     outer: css`
       border: 2px solid #999;

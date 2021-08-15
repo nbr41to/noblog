@@ -11,11 +11,14 @@ export const Main: VFC<MainProps> = ({ className, children }) => {
 };
 
 const StyledMain = styled.main`
-  height: 100%;
+  position: relative;
+
   ${({ theme }) => theme.box.outer}
+  padding: 20px 32px;
   ${({ theme }) => theme.media.sp`
-      background-color: #fffc;
-      border: none;
-      border-radius: 0;
+    padding: 12px;
+    background-color: #fffc;
+    border: none;
+    border-radius: 0;
   `};
 `;

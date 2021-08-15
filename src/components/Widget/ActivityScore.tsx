@@ -15,10 +15,11 @@ export const ActivityScore: VFC<ActivityScoreProps> = ({ className }) => {
       .then((json) => setData(json.activity));
   }, []);
 
-  console.log(data);
+  // console.log(data);
   return (
     <StyledActivityScore className={className}>
       <h2>最近の運動履歴</h2>
+      <p>日時 スコア 運動による消費カロリー/総消費カロリー</p>
       <div>
         {data ? (
           data
@@ -36,24 +37,45 @@ export const ActivityScore: VFC<ActivityScoreProps> = ({ className }) => {
                   })}
                 </p>
                 <p>score:{activity.score_training_volume}</p>
-                <p>{activity.cal_total}Kcal</p>
+                <p>
+                  {activity.cal_active}cal/{activity.cal_total}cal(
+                  {((activity.cal_active / activity.cal_total) * 100).toFixed(
+                    1,
+                  )}
+                  %)
+                </p>
               </div>
             ))
         ) : (
           <p>Loading...</p>
         )}
       </div>
+      <a
+        href="https://cloud.ouraring.com/docs/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        by oura ring api
+      </a>
     </StyledActivityScore>
   );
 };
 
 const StyledActivityScore = styled.div`
   ${({ theme }) => theme.box.inner};
-  padding: 8px;
+  padding: 8px 16px;
+  position: relative;
   .active_list {
     display: flex;
     p {
       margin: 4px;
     }
+  }
+  a {
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.pink};
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
   }
 `;

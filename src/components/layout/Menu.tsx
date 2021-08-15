@@ -26,9 +26,6 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
         <Link href="/blogs/">
           <a className={currentPath === 'blogs' ? 'active' : ''}>blogs</a>
         </Link>
-        <Link href="/contact">
-          <a className={currentPath === 'contact' ? 'active' : ''}>contact</a>
-        </Link>
       </div>
     </StyledMenu>
   );

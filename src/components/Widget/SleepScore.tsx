@@ -15,11 +15,12 @@ export const SleepScore: VFC<SleepScoreProps> = ({ className }) => {
       .then((json) => setData(json.sleep));
   }, []);
 
-  console.log(data);
+  // console.log(data);
   return (
     <StyledSleepScore className={className}>
-      <h2>最近の運動履歴</h2>
-      {/* <div>
+      <h2>最近の睡眠履歴</h2>
+      <div>
+        <p>日時 スコア 実際の睡眠時間/ベットで横になっていた時間</p>
         {data ? (
           data
             .sort((a, b) => {
@@ -35,25 +36,51 @@ export const SleepScore: VFC<SleepScoreProps> = ({ className }) => {
                     format: 'YYYY/MM/DD',
                   })}
                 </p>
-                <p>score:{activity.score_training_volume}</p>
-                <p>{activity.cal_total}Kcal</p>
+                <p>score:{activity.score_total}</p>
+                <p>
+                  {(activity.total / 60 / 60).toFixed(1)}h/
+                  {(activity.duration / 60 / 60).toFixed(1)}h
+                </p>
               </div>
             ))
         ) : (
           <p>Loading...</p>
         )}
-      </div> */}
+      </div>
+      <a
+        href="https://cloud.ouraring.com/docs/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        by oura ring api
+      </a>
     </StyledSleepScore>
   );
 };
 
 const StyledSleepScore = styled.div`
   ${({ theme }) => theme.box.inner};
-  padding: 8px;
+  padding: 8px 16px;
   .active_list {
     display: flex;
     p {
       margin: 4px;
     }
+  }
+  ${({ theme }) => theme.box.inner};
+  padding: 8px 16px;
+  position: relative;
+  .active_list {
+    display: flex;
+    p {
+      margin: 4px;
+    }
+  }
+  a {
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.pink};
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
   }
 `;
