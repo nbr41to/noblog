@@ -31,10 +31,9 @@ export const TweetTimeLine: VFC<TweetTimeLineProps> = ({ className }) => {
 };
 
 const StyledTweetTimeLine = styled.div`
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  background-color: #fffc;
+  ${({ theme }) => theme.box.inner};
   padding: 8px;
+  height: 800px;
 
   iframe {
     border-radius: 8px;

@@ -2,6 +2,9 @@ import { ReactNode, VFC } from 'react';
 import styled from 'styled-components';
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { Main } from './Main';
+import { Menu } from './Menu';
+import { Right } from './Right';
 
 type LayoutProps = {
   children: ReactNode;
@@ -10,9 +13,11 @@ type LayoutProps = {
 export const Layout: VFC<LayoutProps> = ({ children }) => {
   return (
     <StyledLayout>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <Header className="headder" />
+      <Menu className="menu" />
+      <Main className="main">{children}</Main>
+      <Right className="right" />
+      <Footer className="footer" />
     </StyledLayout>
   );
 };
@@ -24,16 +29,48 @@ const StyledLayout = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
   background-blend-mode: lighten;
   background-size: 1280px;
+
   position: relative;
 
-  > main {
-    height: 100%;
-    padding: 0 60px 52px;
-    ${({ theme }) => theme.media.sm`
-      margin-top: 4px;
-      padding: 0 8px 52px;
-      background-color: #fffc;
-    `};
-    overflow-y: scroll;
+  display: grid;
+  grid-template:
+    ' ...... ...... ...... ...... ...... ...... ...... ' 0
+    ' header header header header header header header ' 80px
+    ' menu   menu   menu   menu   menu   menu   menu   ' 52px
+    ' ...... ...... ...... ...... ...... ...... ...... ' 12px
+    ' ...... main   main   main   ...... right  ...... ' auto
+    ' ...... ...... ...... ...... ...... ...... ...... ' 20px
+    ' footer footer footer footer footer footer footer ' 60px /
+    40px 0 0 1fr 20px 280px 40px;
+
+  ${({ theme }) => theme.media.sp`
+    grid-template:
+      ' ...... ...... ...... ...... ...... ...... ...... ' 0
+      ' header header header header header header header ' 80px
+      ' menu   menu   menu   menu   menu   menu   menu   ' 52px
+      ' ...... ...... ...... ...... ...... ...... ...... ' 12px
+      ' ...... main   main   main   main   main   ...... ' auto
+      ' ...... ...... ...... ...... ...... ...... ...... ' 20px
+      ' footer footer footer footer footer footer footer ' 60px /
+        0      1fr    1fr    1fr    1fr    1fr    0;
+  `}
+
+  > .headder {
+    grid-area: header;
+  }
+  > .menu {
+    grid-area: menu;
+  }
+  > .main {
+    grid-area: main;
+  }
+  > .right {
+    grid-area: right;
+    ${({ theme }) => theme.media.sp`
+      display: none;
+    `}
+  }
+  > .footer {
+    grid-area: footer;
   }
 `;

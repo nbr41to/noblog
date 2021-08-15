@@ -1,8 +1,9 @@
 import { VFC } from 'react';
-import { TweetTimeLine } from 'src/components/Home/TweetTimeLine';
 import { TrendBoard } from 'src/components/Home/TrendBoard';
 import styled from 'styled-components';
 import { GitHubGrassImage } from 'src/components/Home/GitHubGrassImage';
+import { ActivityScore } from 'src/components/Widget/ActivityScore';
+import { SleepScore } from 'src/components/Widget/SleepScore';
 
 const HomePage: VFC = () => {
   return (
@@ -10,37 +11,31 @@ const HomePage: VFC = () => {
       <h1>my recent</h1>
       <div className="content_wrapper">
         <GitHubGrassImage className="ghg" />
+        <SleepScore className="slp" />
+        <ActivityScore className="act" />
         <TrendBoard className="trend" />
-        <TweetTimeLine className="ttl" />
       </div>
     </StyledHomePage>
   );
 };
 
 const StyledHomePage = styled.div`
-  background-color: #fffc;
-  margin: 20px 0;
   padding: 20px 32px;
-  border: 1px solid #444;
-  border-radius: 8px;
-  ${({ theme }) => theme.media.sm`
-    margin: 4px 0;
+  ${({ theme }) => theme.media.sp`
     padding: 12px;
-    border: none;
-    border-radius: 0;
-    background-color: #fff0;
-  `};
+  `}
+
   > .content_wrapper {
-    display: grid;
-    grid-template:
+    /* display: grid; */
+    /* grid-template:
       ' ..... ..... ..... ..... ..... ' 20px
       ' ghg   ghg   ghg   ghg   ghg   ' auto
       ' ..... ..... ..... ..... ..... ' 20px
       ' trend trend trend ..... ttl   ' 800px
       ' ..... ..... ..... ..... ..... ' 20px /
-      0 0 1fr 20px 300px;
+      0 0 1fr 20px 300px; */
 
-    ${({ theme }) => theme.media.sm`
+    /* ${({ theme }) => theme.media.sp`
       grid-template:
         ' ..... ..... ..... ..... ..... ' 20px
         ' ghg   ghg   ghg   ghg   ghg   ' auto
@@ -50,7 +45,7 @@ const StyledHomePage = styled.div`
         ' ttl   ttl   ttl   ttl   ttl   ' 600px
         ' ..... ..... ..... ..... ..... ' 20px /
         auto;
-  `};
+  `}; */
   }
   .ghg {
     grid-area: ghg;

@@ -3,3 +3,4 @@ export declare global {
     twttr: any;
   }
 }
+declare module '*.svg';

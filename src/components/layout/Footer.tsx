@@ -2,9 +2,13 @@ import { OctocatFill, TwitterFill, YoutubeFill } from 'akar-icons';
 import { VFC } from 'react';
 import styled from 'styled-components';
 
-export const Footer: VFC = () => {
+type FooterProps = {
+  className?: string;
+};
+
+export const Footer: VFC<FooterProps> = ({ className }) => {
   return (
-    <StyledFooter>
+    <StyledFooter className={className}>
       <div className="footer_container">
         <div className="copyright">copyright 2021 by nob</div>
         <OctocatFill size={20} />

@@ -17,6 +17,8 @@ export const TrendBoard: VFC<TrendBoardProps> = ({ className }) => {
       });
   }, []);
 
+  // console.log(trendBlocks);
+
   return (
     <StyledTrendBoard className={className}>
       <h2>My Trend</h2>

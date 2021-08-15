@@ -10,36 +10,25 @@ export const theme = {
   name: 'Default Theme',
   fonts: {},
   colors: {},
-  media: {
-    sm: (
-      first: CSSObject | TemplateStringsArray,
-      ...interpolations: SimpleInterpolation[]
-    ): FlattenSimpleInterpolation => css`
-      @media (max-width: 640px) {
-        ${css(first, ...interpolations)}
-      }
+  box: {
+    outer: css`
+      border: 2px solid #999;
+      border-radius: 8px;
+      background-color: #fffc;
     `,
-    md: (
+    inner: css`
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+    `,
+  },
+
+  media: {
+    sp: (
       first: CSSObject | TemplateStringsArray,
       ...interpolations: SimpleInterpolation[]
     ): FlattenSimpleInterpolation => css`
       @media (max-width: 768px) {
-        ${css(first, ...interpolations)}
-      }
-    `,
-    lg: (
-      first: CSSObject | TemplateStringsArray,
-      ...interpolations: SimpleInterpolation[]
-    ): FlattenSimpleInterpolation => css`
-      @media (max-width: 1024px) {
-        ${css(first, ...interpolations)}
-      }
-    `,
-    xl: (
-      first: CSSObject | TemplateStringsArray,
-      ...interpolations: SimpleInterpolation[]
-    ): FlattenSimpleInterpolation => css`
-      @media (max-width: 1280px) {
         ${css(first, ...interpolations)}
       }
     `,
