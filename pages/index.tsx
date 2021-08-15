@@ -39,6 +39,7 @@ const StyledHomePage = styled.div`
       ' trend trend trend ..... ttl   ' 800px
       ' ..... ..... ..... ..... ..... ' 20px /
       0 0 1fr 20px 300px;
+
     ${({ theme }) => theme.media.sm`
       grid-template:
         ' ..... ..... ..... ..... ..... ' 20px
