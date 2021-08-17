@@ -5,16 +5,22 @@ import '../styles/globals.css';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'styles/theme';
 import usePageView from 'src/hooks/usePageView';
+import Head from 'next/head';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   usePageView();
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <Head>
+        <title>のぶろぐ。</title>
+      </Head>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </>
   );
 };
 

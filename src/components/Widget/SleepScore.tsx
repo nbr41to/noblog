@@ -17,7 +17,7 @@ export const SleepScore: VFC<SleepScoreProps> = ({ className }) => {
 
   // console.log(data);
   return (
-    <StyledSleepScore className={className}>
+    <StyledSleepScore className={`${className}`}>
       <h2>最近の睡眠履歴</h2>
       <div>
         <p>日時 スコア 実際の睡眠時間/ベットで横になっていた時間</p>

@@ -27,7 +27,7 @@ export const getPageListNext = async (start_cursor: string): Promise<any> => {
   const response = await notion.databases.query({
     database_id,
     start_cursor,
-    page_size: 20,
+    page_size: 100,
     filter: {
       property: 'Published',
       checkbox: {

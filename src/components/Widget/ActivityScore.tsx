@@ -17,7 +17,7 @@ export const ActivityScore: VFC<ActivityScoreProps> = ({ className }) => {
 
   // console.log(data);
   return (
-    <StyledActivityScore className={className}>
+    <StyledActivityScore className={`${className}`}>
       <h2>最近の運動履歴</h2>
       <p>日時 スコア 運動による消費カロリー/総消費カロリー</p>
       <div>

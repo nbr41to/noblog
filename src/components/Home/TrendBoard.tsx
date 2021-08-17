@@ -20,7 +20,7 @@ export const TrendBoard: VFC<TrendBoardProps> = ({ className }) => {
   // console.log(trendBlocks);
 
   return (
-    <StyledTrendBoard className={className}>
+    <StyledTrendBoard className={`${className}`}>
       <h2>My Trend</h2>
       <div>
         {trendBlocks.map((block) => (

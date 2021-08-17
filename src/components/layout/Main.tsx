@@ -7,7 +7,7 @@ type MainProps = {
 };
 
 export const Main: VFC<MainProps> = ({ className, children }) => {
-  return <StyledMain className={className}>{children}</StyledMain>;
+  return <StyledMain className={`${className}`}>{children}</StyledMain>;
 };
 
 const StyledMain = styled.main`
