@@ -1,0 +1,41 @@
+import { useEffect, VFC } from 'react';
+import styled from 'styled-components';
+import Script from 'next/script';
+import { useRouter } from 'next/router';
+
+type AdsenseSquareProps = {
+  className?: string;
+};
+
+export const AdsenseSquare: VFC<AdsenseSquareProps> = ({ className }) => {
+  const { asPath } = useRouter();
+
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.log(err);
+    }
+  }, [asPath]);
+  return (
+    <StyledAdsenseSquare key={asPath} className={className}>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6112933602862239"
+        crossOrigin="anonymous"
+      ></Script>
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block', textAlign: 'center' }}
+        data-ad-client="ca-pub-6112933602862239"
+        data-ad-slot="5310701385"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </StyledAdsenseSquare>
+  );
+};
+
+const StyledAdsenseSquare = styled.div`
+  min-width: 1px;
+`;

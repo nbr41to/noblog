@@ -17,3 +17,12 @@
 - [ ] カテゴリーをクリックした回数を集計
 - [ ] toggle をクリックしたときにデータを fetch するようにする
 - [ ] properties のカテゴリーや Tags を選択肢と同じ色を取得して装飾
+
+## Reference
+
+Analytics:
+
+- https://panda-program.com/posts/nextjs-google-analytics
+- https://zenn.dev/okumura_daiki/articles/839685a90c06db
+
+Adsense:

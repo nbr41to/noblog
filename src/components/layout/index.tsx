@@ -50,7 +50,7 @@ const StyledLayout = styled.div`
       ' menu   menu   menu   menu   menu   menu   menu   ' 52px
       ' ...... ...... ...... ...... ...... ...... ...... ' 12px
       ' ...... main   main   main   main   main   ...... ' auto
-      ' ...... ...... ...... ...... ...... ...... ...... ' 20px
+      ' ...... right  right  right  right  right  ...... ' auto
       ' footer footer footer footer footer footer footer ' 60px /
         0      1fr    1fr    1fr    1fr    1fr    0;
   `}
@@ -66,9 +66,6 @@ const StyledLayout = styled.div`
   }
   > .right {
     grid-area: right;
-    ${({ theme }) => theme.media.sp`
-      display: none;
-    `}
   }
   > .footer {
     grid-area: footer;
