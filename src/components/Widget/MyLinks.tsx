@@ -17,21 +17,36 @@ export const MyLinks: VFC<MyLinksProps> = ({ className }) => {
   return (
     <StyledMyLinks className={className}>
       <h3>links</h3>
-      <div className="link_card my-8 p-8 proglab">
+      <a
+        className="link_card my-8 p-8 proglab"
+        href="https://proglab.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="title mb-4">
           <SlackFill />
           <h4 className="ml-4">progLab</h4>
         </div>
         <p>僕が運営しているプログラミング学習をサポートするコミュニティ</p>
-      </div>
-      <div className="link_card my-8 p-8 zenn">
+      </a>
+      <a
+        className="link_card my-8 p-8 zenn"
+        href="https://zenn.dev/nbr41to"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="title mb-4">
           <Book />
           <h4 className="ml-4">Zenn</h4>
         </div>
         <p>プログラミングに関する記事をアウトプットをしています。</p>
-      </div>
-      <div className="link_card my-8 p-8 youtube">
+      </a>
+      <a
+        className="link_card my-8 p-8 youtube"
+        href="https://www.youtube.com/channel/UCPcjWvYIfvqGPP4x30kEkMA"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="title mb-4">
           <YoutubeFill />
           <h4 className="ml-4">YouTube</h4>
@@ -39,29 +54,49 @@ export const MyLinks: VFC<MyLinksProps> = ({ className }) => {
         <p>
           プログラミングの学習内容をわかりやすくしてアウトプットしてるチャンネル
         </p>
-      </div>
-      <div className="link_card my-8 p-8 mysite">
+      </a>
+      <a
+        className="link_card my-8 p-8 mysite"
+        href="https://nbr41.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="title mb-4">
           <Person />
           <h4 className="ml-4">MySite</h4>
         </div>
         <p>自分のメインサイト</p>
-      </div>
-      <div className="link_card my-8 p-8 twitter">
+      </a>
+      <a
+        className="link_card my-8 p-8 twitter"
+        href="https://twitter.com/Knob_nbr41to"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="title mb-4">
           <TwitterFill />
           <h4 className="ml-4">@Knob_nbr41to</h4>
         </div>
         <p>仕事の依頼や、お問い合わせはTwitterのDMにてお願いします。</p>
-      </div>
-      <div className="link_card my-8 p-8 line">
+      </a>
+      <a
+        className="link_card my-8 p-8 line"
+        href="https://lin.ee/iTzRHQR"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="title mb-4">
           <ChatBubble />
           <h4 className="ml-4">公式LINE</h4>
         </div>
         <p>LINEでのお問い合わせはこちら</p>
-      </div>
-      <div className="link_card my-8 p-8 github">
+      </a>
+      <a
+        className="link_card my-8 p-8 github"
+        href="https://github.com/nbr41to"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="title mb-4">
           <GithubFill />
           <h4 className="ml-4">nbr41</h4>
@@ -69,7 +104,7 @@ export const MyLinks: VFC<MyLinksProps> = ({ className }) => {
         <p>
           ソースコード置き場。これまでの努力の積み重ねがここに詰まっています。
         </p>
-      </div>
+      </a>
     </StyledMyLinks>
   );
 };
@@ -81,6 +116,7 @@ const StyledMyLinks = styled.div`
   min-height: 280px;
   overflow-y: scroll;
   .link_card {
+    display: block;
     border-radius: 8px;
     color: white;
     cursor: pointer;

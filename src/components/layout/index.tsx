@@ -34,7 +34,6 @@ const StyledLayout = styled.div`
 
   display: grid;
   grid-template:
-    ' ...... ...... ...... ...... ...... ...... ...... ' 0
     ' header header header header header header header ' 80px
     ' menu   menu   menu   menu   menu   menu   menu   ' 52px
     ' ...... ...... ...... ...... ...... ...... ...... ' 12px
@@ -45,10 +44,9 @@ const StyledLayout = styled.div`
 
   ${({ theme }) => theme.media.sp`
     grid-template:
-      ' ...... ...... ...... ...... ...... ...... ...... ' 0
       ' header header header header header header header ' 80px
       ' menu   menu   menu   menu   menu   menu   menu   ' 52px
-      ' ...... ...... ...... ...... ...... ...... ...... ' 12px
+      ' ...... ...... ...... ...... ...... ...... ...... ' 0
       ' ...... main   main   main   main   main   ...... ' auto
       ' ...... right  right  right  right  right  ...... ' auto
       ' footer footer footer footer footer footer footer ' 60px /
