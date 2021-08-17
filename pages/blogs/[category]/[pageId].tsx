@@ -5,6 +5,7 @@ import { NotionBlock } from 'src/notion/NotionBlock';
 import { getPageContent } from 'src/notion/functions';
 import { getPageList } from 'src/notion/functions';
 import { dateFormated } from 'src/utils/dateFormated';
+import { AdsenseRow } from 'src/components/Adsense/AdsenseRow';
 
 type BlogDetailPageProps = {
   content: any;
@@ -44,7 +45,7 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
   const subCategory = properties.SubCategory.multi_select;
   const tags = properties.Tags.multi_select;
 
-  console.log(content);
+  // console.log(content);
   return (
     <BlogDetailPageStyled>
       <h1>{properties.Page.title[0].plain_text}</h1>
@@ -62,10 +63,11 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
           {dateFormated({ date: properties.Edited.last_edited_time })}
         </p>
       </div>
-      <div>
+      <div className="blog_info_body">
         {blocks.map((block) => (
           <NotionBlock block={block} key={block.id} />
         ))}
+        <AdsenseRow />
       </div>
       <div className="blog_info_footer">
         <div>
@@ -98,6 +100,9 @@ const BlogDetailPageStyled = styled.div`
     flex-direction: column;
     padding-bottom: 8px;
     border-bottom: 2px dotted #444;
+  }
+  > .blog_info_body {
+    padding: 28px 8px;
   }
   > .blog_info_footer {
     margin-top: 80px;

@@ -8,7 +8,7 @@ type FooterProps = {
 
 export const Footer: VFC<FooterProps> = ({ className }) => {
   return (
-    <StyledFooter className={className}>
+    <StyledFooter className={`${className}`}>
       <div className="footer_container">
         <div className="copyright">copyright 2021 by nob</div>
         <OctocatFill size={20} />

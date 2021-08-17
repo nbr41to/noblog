@@ -12,7 +12,7 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
   const currentPath = router.asPath.split('/')[1];
 
   return (
-    <StyledMenu aria-labelledby="aria-global-nav" className={className}>
+    <StyledMenu aria-labelledby="aria-global-nav" className={`${className}`}>
       <h3 id="aria-global-nav" className="menu_title_hidden">
         menu
       </h3>

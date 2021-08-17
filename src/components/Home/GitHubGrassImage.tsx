@@ -8,7 +8,7 @@ type GitHubGrassImageProps = {
 
 export const GitHubGrassImage: VFC<GitHubGrassImageProps> = ({ className }) => {
   return (
-    <StyledGitHubGrassImage className={className}>
+    <StyledGitHubGrassImage className={`${className}`}>
       <h2>GitHubの牧草🐮</h2>
       <div className="image_wrapper">
         <Image

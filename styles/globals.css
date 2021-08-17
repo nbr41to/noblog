@@ -32,7 +32,10 @@ h3 {
   margin: 8px;
   border-radius: 16px;
 }
-
+/* Flexbox */
+.flex {
+  display: flex;
+}
 .toCenter {
   display: flex;
   justify-content: center;
@@ -51,7 +54,9 @@ h3 {
 .column {
   flex-direction: column;
 }
-
+.wrap {
+  flex-wrap: wrap;
+}
 /* 余白 */
 .m-4 {
   margin: 4px;
@@ -64,6 +69,38 @@ h3 {
 }
 .m-32 {
   margin: 32px;
+}
+.mx-4 {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.mx-8 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.mx-16 {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.mx-32 {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.my-4 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.my-8 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.my-16 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.my-32 {
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 .mt-4 {
   margin-top: 4px;
@@ -125,6 +162,38 @@ h3 {
 }
 .p-32 {
   padding: 32px;
+}
+.px-4 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.px-8 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.px-16 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.px-32 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.py-4 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.py-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.py-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.py-32 {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 .pt-4 {
   padding-top: 4px;

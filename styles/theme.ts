@@ -7,7 +7,7 @@ import {
 } from 'styled-components';
 
 export const theme = {
-  name: 'Default Theme',
+  name: 'Base Theme',
   fonts: {},
   colors: {
     orange: '#d4680f',
@@ -21,15 +21,26 @@ export const theme = {
     purple: '#5e389b',
   },
   box: {
-    outer: css`
+    outer: () => css`
       border: 2px solid #999;
       border-radius: 8px;
       background-color: #fffc;
     `,
-    inner: css`
+    inner: () => css`
       border: 2px solid #ccc;
       border-radius: 8px;
       background-color: #fff;
+    `,
+  },
+  mixins: {
+    asideTitle: () => css`
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #444;
+      padding-bottom: 4px;
+      margin: 0 12px;
+      border-bottom: 1px solid #ccc;
     `,
   },
 
@@ -44,3 +55,10 @@ export const theme = {
     `,
   },
 } as const;
+
+type AppTheme = typeof theme;
+
+declare module 'styled-components' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends AppTheme {}
+}

@@ -10,7 +10,7 @@ export const Header: VFC<HeaderProps> = ({ className }) => {
   const router = useRouter();
 
   return (
-    <StyledHeader className={className}>
+    <StyledHeader className={`${className}`}>
       <div className="site_title" onClick={() => router.push('/')}>
         のぶろぐ。
       </div>

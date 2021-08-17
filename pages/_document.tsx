@@ -64,6 +64,24 @@ export default class MyDocument extends Document {
               />
             </>
           )}
+          <meta charSet="utf-8" />
+          <meta
+            content="のまど先生の生存確認ブログ。プログラミングと心理学に関する知見をアウトプット。"
+            name="description"
+          />
+          <meta property="og:title" content="のぶろぐ。" />
+          <meta
+            property="og:description"
+            content="のまど先生の生存確認ブログ。プログラミングと心理学に関する知見をアウトプット。"
+          />
+          <meta property="og:type" content="blog" />
+          <meta property="og:url" content="https://noblog.nbr41.com/" />
+          <meta property="og:image" content="/site_image.png" />
+          <meta property="og:site_name" content="のぶろぐ。" />
+          <meta property="og:locale" content="ja_JP" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@Knob_nbr41to" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
         </Head>
         <body>
           <Main />

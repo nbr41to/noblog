@@ -3,24 +3,22 @@ import styled from 'styled-components';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 
-type AdsenseSquareProps = {
+type AdsenseRowProps = {
   className?: string;
 };
 
-export const AdsenseSquare: VFC<AdsenseSquareProps> = ({ className }) => {
+export const AdsenseRow: VFC<AdsenseRowProps> = ({ className }) => {
   const { asPath } = useRouter();
 
   useEffect(() => {
     try {
-      if (!window.adsbygoogle || !(process.env.NODE_ENV !== 'development'))
-        return;
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error(err);
     }
   }, [asPath]);
   return (
-    <StyledAdsenseSquare key={asPath} className={`${className}`}>
+    <StyledAdsenseRow key={asPath} className={`${className}`}>
       <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6112933602862239"
@@ -30,14 +28,14 @@ export const AdsenseSquare: VFC<AdsenseSquareProps> = ({ className }) => {
         className="adsbygoogle"
         style={{ display: 'block', textAlign: 'center' }}
         data-ad-client="ca-pub-6112933602862239"
-        data-ad-slot="5310701385"
+        data-ad-slot="2397597588"
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>
-    </StyledAdsenseSquare>
+    </StyledAdsenseRow>
   );
 };
 
-const StyledAdsenseSquare = styled.div`
+const StyledAdsenseRow = styled.div`
   min-width: 1px;
 `;
