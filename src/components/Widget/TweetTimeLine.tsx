@@ -34,6 +34,9 @@ const StyledTweetTimeLine = styled.div`
   ${({ theme }) => theme.box.inner};
   padding: 8px;
   height: 800px;
+  ${({ theme }) => theme.media.sp`
+    height: 400px;
+  `};
 
   iframe {
     border-radius: 8px;
