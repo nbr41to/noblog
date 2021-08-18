@@ -72,7 +72,7 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="のぶろぐ。" />
           <meta
             property="og:description"
-            content="のまど先生の生存確認ブログ。プログラミングと心理学に関する知見をアウトプット。"
+            content="のまど先生の生存確認ブログ。Notion API と Next.js で作成された、プログラミングと心理学に関する知見をアウトプットブログ。"
           />
           <meta property="og:type" content="blog" />
           <meta property="og:url" content="https://noblog.nbr41.com/" />
