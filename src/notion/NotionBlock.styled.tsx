@@ -4,7 +4,7 @@ import { colorStyles } from './colorStyles';
 export const StyledNotionBlock = styled.div`
   ${colorStyles}
   /* annotation */
-  p {
+  p, li {
     margin: 12px;
     line-height: 32px;
     > span {
@@ -92,8 +92,8 @@ export const StyledNotionBlock = styled.div`
         margin-right: 4px;
         border: 1px solid;
         border-radius: 4px;
-        border-color: #585753; /* 枠の色変更 お好きな色を */
-        background-color: #ffffffcc; /* 背景の色変更 お好きな色を */
+        border-color: #585753; /* 枠の色変更 */
+        background-color: #ffffffcc; /* 背景の色変更 */
       }
     }
     &.true {
@@ -107,7 +107,7 @@ export const StyledNotionBlock = styled.div`
         transform: rotate(-45deg);
         border-bottom: 3px solid;
         border-left: 3px solid;
-        border-color: #2cfead; /* チェックの色変更 お好きな色を */
+        border-color: #2cfead; /* チェックの色変更 */
       }
     }
   }
