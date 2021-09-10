@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { VFC } from 'react';
+import { VFC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { NotionBlock } from 'src/notion/NotionBlock';
 import { getPageContent } from 'src/notion/functions';
@@ -10,13 +10,14 @@ import Image from 'next/image';
 
 type BlogDetailPageProps = {
   content: any;
+  pageId: string;
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { pageId } = params;
   const content = await getPageContent(pageId);
   return {
-    props: { content },
+    props: { content, pageId },
   };
 };
 
@@ -39,12 +40,37 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   };
 };
 
-const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
+const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content, pageId }) => {
+  const [likes, setLikes] = useState(0);
+  const [loading, setLoading] = useState(false);
   const { results: blocks } = content;
   const { properties } = content;
 
   const subCategory = properties.SubCategory.multi_select;
   const tags = properties.Tags.multi_select;
+
+  useEffect(() => {
+    getLikes();
+  }, []);
+
+  const getLikes = async () => {
+    const res = await fetch('/api/get/likes', {
+      method: 'POST',
+      body: JSON.stringify({ page_id: pageId }),
+    });
+    const data = await res.json();
+    setLikes(data.number || 0);
+  };
+
+  const incrementLikes = async () => {
+    setLoading(true);
+    await fetch('/api/post/increment-likes', {
+      method: 'POST',
+      body: JSON.stringify({ page_id: pageId, current_likes: likes }),
+    });
+    setLikes(likes + 1);
+    setLoading(false);
+  };
 
   // console.log(content);
   return (
@@ -74,6 +100,19 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
           最終編集日：
           {dateFormated({ date: properties.Edited.last_edited_time })}
         </p>
+        <button
+          className="like_button"
+          onClick={incrementLikes}
+          disabled={loading}
+        >
+          {loading
+            ? 'いいね！してます...'
+            : `
+            
+            いいね！
+            ${likes}
+            `}
+        </button>
       </div>
       <div className="blog_info_body">
         {blocks.map((block) => (
@@ -124,6 +163,23 @@ const BlogDetailPageStyled = styled.div`
     flex-direction: column;
     padding-bottom: 8px;
     border-bottom: 2px dotted #444;
+    > .like_button {
+      border: 1px solid #444;
+      border-radius: 8px;
+      background: palegreen;
+      padding: 2px 12px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(0.98);
+      }
+      &:active {
+        transform: scale(0.96);
+        filter: brightness(0.8);
+      }
+      &:disabled {
+        background: #ccc;
+      }
+    }
   }
   > .blog_info_body {
     padding: 28px 8px;
