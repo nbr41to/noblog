@@ -86,7 +86,7 @@ export const compiledBlock = (block: any): JSX.Element => {
         />
       );
     default:
-      console.log(block);
+      // console.log(block);
       return <p>[例外ブロックです: {block.type}]</p>;
   }
 };
