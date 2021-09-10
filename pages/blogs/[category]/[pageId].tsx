@@ -6,6 +6,7 @@ import { getPageContent } from 'src/notion/functions';
 import { getPageList } from 'src/notion/functions';
 import { dateFormated } from 'src/utils/dateFormated';
 import { AdsenseRow } from 'src/components/Adsense/AdsenseRow';
+import Image from 'next/image';
 
 type BlogDetailPageProps = {
   content: any;
@@ -48,7 +49,18 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
   // console.log(content);
   return (
     <BlogDetailPageStyled>
+      {content.icon && <div className="blog_icon">{content.icon.emoji}</div>}
       <h1>{properties.Page.title[0].plain_text}</h1>
+      {content.cover && (
+        <div className="blog_cover">
+          <Image
+            src={content.cover.external.url}
+            layout="fill"
+            objectFit="contain"
+            alt="blog cover"
+          />
+        </div>
+      )}
       <div className="blog_info_header">
         <p>
           カテゴリー：
@@ -90,6 +102,18 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
 };
 
 const BlogDetailPageStyled = styled.div`
+  > .blog_icon {
+    font-size: 100px;
+    text-align: center;
+  }
+  > .blog_cover {
+    height: 280px;
+    margin: 0 auto 16px;
+    position: relative;
+    img {
+      display: block;
+    }
+  }
   > h1 {
     text-align: center;
     margin: 4px 0 16px;

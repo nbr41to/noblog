@@ -2,5 +2,4 @@ node_modules/
 package.json
 .eslintrc.js
 .prettierrc.js
-next.config.js
 .next

@@ -1,4 +1,5 @@
 import { compileText } from './compileText';
+import Image from 'next/image';
 
 /* notion_block_types = [
   'paragraph',
@@ -48,7 +49,44 @@ export const compiledBlock = (block: any): JSX.Element => {
       return (
         <div className={`${type}`}>ページがここにありますが,表示不可です.</div>
       );
+    case 'bookmark':
+      /* TODO）リンク先のOGPは含まれていない... */
+      return (
+        <a className={`${type}`} href={block[type].url}>
+          {block[type].url}
+        </a>
+      );
+    case 'image':
+      return (
+        <div className={`${type}`}>
+          <Image
+            src={block[type].file.url}
+            alt="image in blog"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+      );
+    case 'video':
+      /* YouTubeのEmbed type: "external" */
+      // console.log(block);
+      // console.log(block[type].external.url);
+      /* "https://www.youtube.com/embed/hogehoge"に変換する必要あり */
+      return (
+        // <iframe className={`${type}`} src={block[type].external.url}></iframe>
+        <iframe
+          className={`${type}`}
+          src={'https://www.youtube.com/embed/8Ok-_r4NIJE'}
+          width="560"
+          height="315"
+          title="YouTube video player"
+          frameBorder="1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      );
     default:
-      return <p>[例外ブロックです]</p>;
+      console.log(block);
+      return <p>[例外ブロックです: {block.type}]</p>;
   }
 };
