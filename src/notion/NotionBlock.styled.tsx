@@ -4,7 +4,7 @@ import { colorStyles } from './colorStyles';
 export const StyledNotionBlock = styled.div`
   ${colorStyles}
   /* annotation */
-  p {
+  p, li {
     margin: 12px;
     line-height: 32px;
     > span {
@@ -92,8 +92,8 @@ export const StyledNotionBlock = styled.div`
         margin-right: 4px;
         border: 1px solid;
         border-radius: 4px;
-        border-color: #585753; /* 枠の色変更 お好きな色を */
-        background-color: #ffffffcc; /* 背景の色変更 お好きな色を */
+        border-color: #585753; /* 枠の色変更 */
+        background-color: #ffffffcc; /* 背景の色変更 */
       }
     }
     &.true {
@@ -107,8 +107,37 @@ export const StyledNotionBlock = styled.div`
         transform: rotate(-45deg);
         border-bottom: 3px solid;
         border-left: 3px solid;
-        border-color: #2cfead; /* チェックの色変更 お好きな色を */
+        border-color: #2cfead; /* チェックの色変更 */
       }
     }
+  }
+  .bookmark {
+    color: blue;
+    text-decoration: underline;
+    padding: 4px;
+    cursor: pointer;
+    &:visited {
+      color: purple;
+    }
+    &:hover {
+      color: orange;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+  }
+  .image {
+    width: 100%;
+    max-width: 720px;
+    height: 100%;
+    min-height: 400px;
+    max-height: 720px;
+    margin: 8px auto;
+    position: relative;
+  }
+  .video {
+    width: 100%;
+    max-width: 620px;
+    margin: 8px auto;
+    display: block;
   }
 `;

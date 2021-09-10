@@ -1,6 +1,6 @@
 import { VFC } from 'react';
 import { StyledNotionBlock } from './NotionBlock.styled';
-import { compiledBlock } from './compiledBlocka';
+import { compiledBlock } from './compiledBlock';
 
 type CompiledBlockProps = {
   block: any;

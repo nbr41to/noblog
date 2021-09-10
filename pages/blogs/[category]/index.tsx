@@ -46,7 +46,6 @@ const CategoryPage: VFC<CategoryPageProps> = ({ items }) => {
     const { asPath } = router;
     setCategory(asPath.split('/')[2]);
   }, [router]);
-
   return (
     <CategoryPageStyled>
       <h1>{category} blog list</h1>
