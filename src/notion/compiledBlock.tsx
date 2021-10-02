@@ -1,5 +1,7 @@
 import { compileText } from './compileText';
 import Image from 'next/image';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 /* notion_block_types = [
   'paragraph',
@@ -31,7 +33,7 @@ export const compiledBlock = (block: any): JSX.Element => {
       return <h3 className={`${type}`}>{compileText(text)}</h3>;
     case 'bulleted_list_item':
       return <li className={`${type}`}>{compileText(text)}</li>;
-    case 'numbered_list_item': // 未対応
+    case 'numbered_list_item': // 非対応
       return <li className={`${type}`}>{compileText(text)}</li>;
     case 'to_do':
       return (
@@ -45,7 +47,7 @@ export const compiledBlock = (block: any): JSX.Element => {
       );
     case 'toggle': // childrenを取得ロジックが必要なので未対応
       return <div className={`${type}`}>{compileText(text)}</div>;
-    case 'child_page': // page block 未対応
+    case 'child_page': // page block 非対応
       return (
         <div className={`${type}`}>ページがここにありますが,表示不可です.</div>
       );
@@ -84,6 +86,18 @@ export const compiledBlock = (block: any): JSX.Element => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
+      );
+    case 'code':
+      return (
+        <div className={`${type}`}>
+          <div className="code_block_label">{block[type].language}</div>
+          <SyntaxHighlighter
+            language={block[type].language.toLowerCase()}
+            style={monokai}
+          >
+            {block[type].text.map(({ plain_text }) => plain_text)}
+          </SyntaxHighlighter>
+        </div>
       );
     default:
       // console.log(block);

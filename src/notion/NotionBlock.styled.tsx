@@ -30,6 +30,7 @@ export const StyledNotionBlock = styled.div`
       text-decoration: underline;
       padding: 4px;
       cursor: pointer;
+      word-wrap: break-word;
       &:visited {
         color: purple;
       }
@@ -116,6 +117,7 @@ export const StyledNotionBlock = styled.div`
     text-decoration: underline;
     padding: 4px;
     cursor: pointer;
+    word-wrap: break-word;
     &:visited {
       color: purple;
     }
@@ -139,5 +141,26 @@ export const StyledNotionBlock = styled.div`
     max-width: 620px;
     margin: 8px auto;
     display: block;
+  }
+  /* code block */
+
+  > .code {
+    background-color: #111;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    > .code_block_label {
+      width: min-content;
+      padding: 4px 8px;
+      border: 1px solid #666;
+      border-radius: 4px;
+    }
+    > pre {
+      margin: 8px 0;
+      border-radius: 8px;
+      > code {
+        line-height: 24px;
+      }
+    }
   }
 `;
