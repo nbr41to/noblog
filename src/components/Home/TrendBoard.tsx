@@ -1,5 +1,5 @@
+import { NotionBlock } from '@components/Notion/NotionBlock';
 import { useEffect, useState, VFC } from 'react';
-import { NotionBlock } from 'src/notion/NotionBlock';
 import styled from 'styled-components';
 
 type TrendBoardProps = {

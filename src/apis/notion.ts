@@ -1,4 +1,5 @@
 import { Client } from '@notionhq/client';
+import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 
 const notion = new Client({
   auth: process.env.INTERNAL_INTEGRATION_TOKEN,
@@ -6,19 +7,29 @@ const notion = new Client({
 
 const database_id = process.env.NOTION_DATABASE_ID;
 
-/* 最初のpageListを取得 */
-export const getPageList = async (): Promise<any> => {
+/**
+ *  databaseからpage一覧を取得
+ *  @param {string} next_cursor optional
+ *  @returns Promise<{result: Array<any>, has_more: boolean, next_cursor: string | null }>
+ */
+export const getPageList = async (
+  start_cursor?: string | null,
+): Promise<any> => {
+  if (start_cursor === null) {
+    /* has_moreがnullで返ってくるが, start_cursorはundefinedしか受け付けないので, 変換してる */
+    start_cursor = undefined;
+  }
   const response = await notion.databases.query({
     database_id,
-    page_size: 20,
+    start_cursor,
+    page_size: 10, // 取得数
     filter: {
-      property: 'Published',
+      property: 'Publish',
       checkbox: {
         equals: true,
       },
     },
   });
-
   return response;
 };
 
@@ -27,7 +38,7 @@ export const getPageListNext = async (start_cursor: string): Promise<any> => {
   const response = await notion.databases.query({
     database_id,
     start_cursor,
-    page_size: 100,
+    page_size: 10,
     filter: {
       property: 'Published',
       checkbox: {
@@ -59,6 +70,7 @@ export const getPageContent = async (
 /* databaseのpropertiesを取得 */
 export const getDatabaseInfo = async (): Promise<any> => {
   const response = await notion.databases.retrieve({ database_id });
+  console.log(response);
   return response.properties;
 };
 
@@ -70,3 +82,5 @@ export const getTrendBlock = async (): Promise<any> => {
   });
   return response;
 };
+
+/* Preview用のNotionページを取得 */

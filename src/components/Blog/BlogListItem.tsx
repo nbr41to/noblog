@@ -1,6 +1,7 @@
+import { useRouter } from 'next/router';
 import { VFC } from 'react';
 import styled from 'styled-components';
-import { useRouter } from 'next/router';
+
 import { dateFormated } from '../../utils/dateFormated';
 
 type BlogListItemProps = {
@@ -10,11 +11,12 @@ type BlogListItemProps = {
 
 export const BlogListItem: VFC<BlogListItemProps> = ({ className, item }) => {
   const router = useRouter();
+  // console.log(item);
 
   const { properties } = item;
-  const title = properties.Page.title[0].plain_text;
+  const title = properties.Title.title[0].plain_text;
   const category = properties.Category.select;
-  const subCategory = properties.SubCategory.multi_select;
+  // const subCategory = properties.SubCategory.multi_select;
   const tags = properties.Tags.multi_select;
 
   return (
@@ -28,12 +30,12 @@ export const BlogListItem: VFC<BlogListItemProps> = ({ className, item }) => {
       </div>
       <div className="item_body">
         <div>メインカテゴリ：{category.name}</div>
-        <div>
+        {/* <div>
           サブカテゴリ：
           {subCategory.length
             ? subCategory.map((i) => <span key={i.id}>{i.name}</span>)
             : 'なし'}
-        </div>
+        </div> */}
       </div>
       <div className="item_footer">
         タグ：

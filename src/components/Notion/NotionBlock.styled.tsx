@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { colorStyles } from './colorStyles';
 
 export const StyledNotionBlock = styled.div`

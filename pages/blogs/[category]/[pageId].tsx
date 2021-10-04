@@ -1,12 +1,12 @@
+import { NotionBlock } from '@components/Notion/NotionBlock';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { VFC, useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { NotionBlock } from 'src/notion/NotionBlock';
-import { getPageContent } from 'src/notion/functions';
-import { getPageList } from 'src/notion/functions';
-import { dateFormated } from 'src/utils/dateFormated';
-import { AdsenseRow } from 'src/components/Adsense/AdsenseRow';
 import Image from 'next/image';
+import { useEffect, useState, VFC } from 'react';
+import { getPageContent } from 'src/apis/notion';
+import { getPageList } from 'src/apis/notion';
+import { AdsenseRow } from 'src/components/Adsense/AdsenseRow';
+import { dateFormated } from 'src/utils/dateFormated';
+import styled from 'styled-components';
 
 type BlogDetailPageProps = {
   content: any;
@@ -46,7 +46,7 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content, pageId }) => {
   const { results: blocks } = content;
   const { properties } = content;
 
-  const subCategory = properties.SubCategory.multi_select;
+  // const subCategory = properties.SubCategory.multi_select;
   const tags = properties.Tags.multi_select;
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content, pageId }) => {
   return (
     <BlogDetailPageStyled>
       {content.icon && <div className="blog_icon">{content.icon.emoji}</div>}
-      <h1>{properties.Page.title[0].plain_text}</h1>
+      <h1>{properties.Title.title[0].plain_text}</h1>
       {content.cover && (
         <div className="blog_cover">
           <Image
@@ -118,15 +118,15 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content, pageId }) => {
         {blocks.map((block) => (
           <NotionBlock block={block} key={block.id} />
         ))}
-        <AdsenseRow />
+        {/* <AdsenseRow /> */}
       </div>
       <div className="blog_info_footer">
-        <div>
+        {/* <div>
           サブカテゴリ：
           {subCategory.length
             ? subCategory.map((i) => <span key={i.id}>{i.name}</span>)
             : 'なし'}
-        </div>
+        </div> */}
         <div className="item_footer">
           タグ：
           {tags.length ? (

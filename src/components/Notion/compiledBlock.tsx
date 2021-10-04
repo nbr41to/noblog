@@ -1,7 +1,8 @@
-import { compileText } from './compileText';
 import Image from 'next/image';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+
+import { compileText } from './compileText';
 
 /* notion_block_types = [
   'paragraph',

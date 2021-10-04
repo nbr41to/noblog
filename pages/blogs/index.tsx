@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next';
-import { VFC } from 'react';
+import { useRouter } from 'next/router';
+import { useMemo, VFC } from 'react';
 import styled from 'styled-components';
 
-import { getDatabaseInfo, getPageList } from '../../src/notion/functions';
-import { useRouter } from 'next/router';
+import { getDatabaseInfo, getPageList } from '../../src/apis/notion';
 import { BlogList } from '../../src/components/Blog/BlogList';
 
 type BlogPageProps = {
@@ -12,23 +12,53 @@ type BlogPageProps = {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pageList = await getPageList();
-  const databaseProperties = await getDatabaseInfo();
-  return {
-    props: {
-      items: pageList.results,
-      databaseProperties,
-    },
-  };
+  try {
+    /* データベースに関するpropertiesを取得 */
+    const databaseProperties = await getDatabaseInfo();
+
+    /* データベースからページを取得 */
+    const items = [];
+    const condition = { has_more: true, next_cursor: null };
+    /* n個ずつ取ってくる */
+    while (condition.has_more) {
+      const pageListResponse = await getPageList(condition.next_cursor);
+      condition.has_more = pageListResponse.has_more;
+      condition.next_cursor = pageListResponse.next_cursor;
+      items.push(...pageListResponse.results);
+    }
+
+    return {
+      props: {
+        items,
+        databaseProperties,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const BlogsPage: VFC<BlogPageProps> = ({ items, databaseProperties }) => {
-  // console.log(items, databaseProperties);
-
-  const categoryList = databaseProperties.Category.select.options.map(
-    (category) => category,
-  );
   const router = useRouter();
+  console.log(items, databaseProperties);
+
+  const categoryList = useMemo(
+    () =>
+      databaseProperties.Category.select.options.map((category) => {
+        const { id, color, name } = category;
+        return { id, color, name };
+      }),
+    [],
+  );
+
+  const tagList = useMemo(
+    () =>
+      databaseProperties.Tags.multi_select.options.map((tag) => {
+        const { id, color, name } = tag;
+        return { id, color, name };
+      }),
+    [],
+  );
 
   const selectCategory = (category: string) => {
     router.push(`/blogs/${category}`);
