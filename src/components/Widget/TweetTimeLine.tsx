@@ -1,6 +1,6 @@
+import Script from 'next/script';
 import { useEffect, VFC } from 'react';
 import styled from 'styled-components';
-import Script from 'next/script';
 
 type TweetTimeLineProps = {
   className?: string;

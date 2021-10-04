@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "prepare": "husky install",
+    "dev": "next dev",
     "lint-staged": "lint-staged",
-    "spj": "sort-package-json package.json && prettier \"**/*\" --write --ignore-unknown"
+    "prepare": "husky install",
+    "spj": "sort-package-json package.json && prettier \"**/*\" --write --ignore-unknown",
+    "start": "next start"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn spj",
+      "npx eslint . --fix",
+      "npx prettier --write ."
+    ]
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
@@ -47,12 +54,5 @@
     "lint-staged": "^11.1.2",
     "prettier": "2.4.1",
     "typescript": "^4.4.3"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn spj",
-      "npx eslint . --fix",
-      "npx prettier --write ."
-    ]
   }
 }

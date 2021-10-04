@@ -1,14 +1,14 @@
+import {
+  Book,
+  ChatBubble,
+  GithubFill,
+  Person,
+  SlackFill,
+  TwitterFill,
+  YoutubeFill,
+} from 'akar-icons';
 import { VFC } from 'react';
 import styled from 'styled-components';
-import {
-  YoutubeFill,
-  SlackFill,
-  Person,
-  TwitterFill,
-  GithubFill,
-  ChatBubble,
-  Book,
-} from 'akar-icons';
 type MyLinksProps = {
   className?: string;
 };

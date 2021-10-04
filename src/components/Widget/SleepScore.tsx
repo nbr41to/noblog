@@ -1,4 +1,4 @@
-import { VFC, useEffect, useState } from 'react';
+import { useEffect, useState, VFC } from 'react';
 import { dateFormated } from 'src/utils/dateFormated';
 import styled from 'styled-components';
 

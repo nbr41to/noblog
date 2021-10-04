@@ -1,9 +1,10 @@
 import { VFC } from 'react';
 import styled from 'styled-components';
-import { TweetTimeLine } from '../Widget/TweetTimeLine';
+
 import { AdsenseSquare } from '../Adsense/AdsenseSquare';
 import { Introduction } from '../Widget/Introduction';
 import { MyLinks } from '../Widget/MyLinks';
+import { TweetTimeLine } from '../Widget/TweetTimeLine';
 type RightProps = {
   className?: string;
 };

@@ -1,7 +1,7 @@
-import { VFC } from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { VFC } from 'react';
+import styled from 'styled-components';
 
 type MenuProps = {
   className?: string;

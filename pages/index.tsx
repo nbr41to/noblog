@@ -1,9 +1,9 @@
 import { VFC } from 'react';
-import { TrendBoard } from 'src/components/Home/TrendBoard';
-import styled from 'styled-components';
 import { GitHubGrassImage } from 'src/components/Home/GitHubGrassImage';
+import { TrendBoard } from 'src/components/Home/TrendBoard';
 import { ActivityScore } from 'src/components/Widget/ActivityScore';
 import { SleepScore } from 'src/components/Widget/SleepScore';
+import styled from 'styled-components';
 
 const HomePage: VFC = () => {
   return (
