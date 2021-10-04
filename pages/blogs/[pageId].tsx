@@ -1,12 +1,13 @@
-import { NotionBlock } from '@components/Notion/NotionBlock';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import { useEffect, useState, VFC } from 'react';
 import { getPageContent } from 'src/apis/notion';
 import { getPageList } from 'src/apis/notion';
-import { AdsenseRow } from 'src/components/Adsense/AdsenseRow';
 import { dateFormated } from 'src/utils/dateFormated';
 import styled from 'styled-components';
+
+import { AdsenseRow } from '@/components/Adsense/AdsenseRow';
+import { NotionBlock } from '@/components/Notion/NotionBlock';
 
 type BlogDetailPageProps = {
   content: any;
@@ -22,15 +23,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 type Params = {
-  category: string;
   pageId: string;
 };
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const { results } = await getPageList();
-  const paths = results.map(({ id, properties }) => ({
+  const pageList = await getPageList();
+  const paths = pageList.map(({ id }) => ({
     params: {
-      category: properties.Category.select.name,
       pageId: id.toString(),
     },
   }));

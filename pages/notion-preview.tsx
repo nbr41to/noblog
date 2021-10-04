@@ -1,10 +1,11 @@
-import { NotionBlock } from '@components/Notion/NotionBlock';
 import { GetStaticProps } from 'next';
 import { VFC } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { getPageContent } from 'src/apis/notion';
 import styled from 'styled-components';
+
+import { NotionBlock } from '@/components/Notion/NotionBlock';
 
 export const getStaticProps: GetStaticProps = async () => {
   const blocks = await getPageContent('d362dedb260c4fa7b13257f119ea8d06');
@@ -21,7 +22,7 @@ type NotionPreviewProps = {
 };
 
 const NotionPreview: VFC<NotionPreviewProps> = ({ className, blocks }) => {
-  console.log(blocks);
+  // console.log(blocks);
 
   return (
     <StyledNotionPreview className={`${className}`}>

@@ -1,5 +1,6 @@
 import { Client } from '@notionhq/client';
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+
+import { NotionPageItems, NotionSelectOptions } from '@/type/notion';
 
 const notion = new Client({
   auth: process.env.INTERNAL_INTEGRATION_TOKEN,
@@ -14,40 +15,37 @@ const database_id = process.env.NOTION_DATABASE_ID;
  */
 export const getPageList = async (
   start_cursor?: string | null,
-): Promise<any> => {
+): Promise<NotionPageItems> => {
+  /* has_moreがnullで返ってくるが, start_cursorはundefinedしか受け付けないので, 変換してる */
   if (start_cursor === null) {
-    /* has_moreがnullで返ってくるが, start_cursorはundefinedしか受け付けないので, 変換してる */
     start_cursor = undefined;
   }
-  const response = await notion.databases.query({
-    database_id,
-    start_cursor,
-    page_size: 10, // 取得数
-    filter: {
-      property: 'Publish',
-      checkbox: {
-        equals: true,
-      },
-    },
-  });
-  return response;
-};
+  try {
+    const pageList: NotionPageItems = [];
+    const condition = { has_more: true, next_cursor: null };
+    const page_size = 100; // 個ずつ取得
 
-/* pageListの続き取得 */
-export const getPageListNext = async (start_cursor: string): Promise<any> => {
-  const response = await notion.databases.query({
-    database_id,
-    start_cursor,
-    page_size: 10,
-    filter: {
-      property: 'Published',
-      checkbox: {
-        equals: true,
-      },
-    },
-  });
+    while (condition.has_more) {
+      const response = await notion.databases.query({
+        database_id,
+        start_cursor,
+        page_size,
+        filter: {
+          property: 'Publish',
+          checkbox: {
+            equals: true,
+          },
+        },
+      });
+      condition.has_more = response.has_more;
+      condition.next_cursor = response.next_cursor;
+      pageList.push(...response.results);
+    }
 
-  return response;
+    return pageList;
+  } catch (error) {
+    throw Error(error);
+  }
 };
 
 /* pageの情報を取得 */
@@ -57,21 +55,47 @@ export const getPageContent = async (
   if (Array.isArray(page_id)) {
     page_id = page_id[0];
   }
-  const page_propeties = await notion.pages.retrieve({
+  /* pageのpropertiesの取得 */
+  const page_properties = await notion.pages.retrieve({
     page_id,
   });
+  /* page内blocksの取得 */
   const page_blocks = await notion.blocks.children.list({
     block_id: page_id,
   });
 
-  return { ...page_propeties, ...page_blocks };
+  return { ...page_properties, ...page_blocks };
 };
 
-/* databaseのpropertiesを取得 */
-export const getDatabaseInfo = async (): Promise<any> => {
-  const response = await notion.databases.retrieve({ database_id });
-  console.log(response);
-  return response.properties;
+/* database properties のCategoryとTagsを取得 */
+export const getDatabaseInfo = async (): Promise<{
+  categories: NotionSelectOptions[];
+  tags: NotionSelectOptions[];
+}> => {
+  try {
+    const response = await notion.databases.retrieve({ database_id });
+    /* Categoryを取得 */
+    let categories: NotionSelectOptions[];
+    if (response.properties.Category.type === 'select') {
+      categories = response.properties.Category.select.options.map(
+        (category) => {
+          const { id, color, name } = category;
+          return { id, color, name };
+        },
+      );
+    }
+    /* Tagsを取得 */
+    let tags: NotionSelectOptions[];
+    if (response.properties.Tags.type === 'multi_select') {
+      tags = response.properties.Tags.multi_select.options.map((tag) => {
+        const { id, color, name } = tag;
+        return { id, color, name };
+      });
+    }
+    return { categories, tags };
+  } catch (error) {
+    throw Error(error);
+  }
 };
 
 /* ORIGINAL_BLOCKの内容を取得 */

@@ -30,7 +30,7 @@ module.exports = {
   ],
   rules: {
     quotes: ['error', 'single'],
-    'no-console': 'warn',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },

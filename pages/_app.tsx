@@ -11,6 +11,7 @@ import { Layout } from '../src/components/layout';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   usePageView();
+  // console.log(pageProps);
 
   return (
     <>

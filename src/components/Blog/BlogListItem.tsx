@@ -22,7 +22,7 @@ export const BlogListItem: VFC<BlogListItemProps> = ({ className, item }) => {
   return (
     <StyledBlogListItem
       className={`${className}`}
-      onClick={() => router.push(`blogs/${category.name}/${item.id}`)}
+      onClick={() => router.push(`blogs/${item.id}`)}
     >
       <div className="item_header">
         <h3>{title}</h3>
