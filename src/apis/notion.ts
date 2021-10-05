@@ -5,6 +5,7 @@ import {
 } from '@notionhq/client/build/src/api-endpoints';
 
 import {
+  NotionBlock,
   NotionPageContent,
   NotionPageItem,
   NotionSelectOption,
@@ -71,6 +72,20 @@ export const getPageContent = async (
     });
 
     return { pageInfo, blocks: response.results };
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+/* page内のBlocksだけを取得 */
+export const getBlocksInPage = async (
+  page_id: string,
+): Promise<NotionBlock[]> => {
+  try {
+    const response = await notion.blocks.children.list({
+      block_id: page_id,
+    });
+    return response.results;
   } catch (error) {
     throw Error(error);
   }

@@ -2,40 +2,42 @@ import { GetStaticProps } from 'next';
 import { VFC } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { getPageContent } from 'src/apis/notion';
+import { getBlocksInPage } from 'src/apis/notion';
 import styled from 'styled-components';
 
 import { NotionBlockCompiler } from '@/components/Notion/NotionBlockCompiler';
+import { NotionBlock } from '@/type/notion';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blocks = await getPageContent('d362dedb260c4fa7b13257f119ea8d06');
+  const blocks = await getBlocksInPage(process.env.NOTION_PREVIEW_PAGE_ID);
   return {
     props: {
-      blocks: blocks.results,
+      blocks,
     },
   };
 };
 
 type NotionPreviewProps = {
   className?: string;
-  blocks: any;
+  blocks: NotionBlock[];
 };
 
 const NotionPreview: VFC<NotionPreviewProps> = ({ className, blocks }) => {
-  // console.log(blocks);
-
   return (
     <StyledNotionPreview className={`${className}`}>
       <h1>Notion Preview</h1>
       <div className="previews">
         {blocks?.map((block) => (
           <>
+            {/* プレビュー */}
             <div className="preview">
               <NotionBlockCompiler block={block} />
             </div>
+            {/* JSONで情報を表示 */}
             <SyntaxHighlighter language="json" style={monokai}>
               {JSON.stringify(block, null, 4)}
             </SyntaxHighlighter>
+            {/* MEMO */}
           </>
         ))}
       </div>
