@@ -20,8 +20,8 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
         <Link href="/">
           <a className={!currentPath ? 'active' : ''}>home</a>
         </Link>
-        <Link href="/about">
-          <a className={currentPath === 'about' ? 'active' : ''}>about</a>
+        <Link href="/activities">
+          <a className={currentPath === 'about' ? 'active' : ''}>activities</a>
         </Link>
         <Link href="/blogs/">
           <a className={currentPath === 'blogs' ? 'active' : ''}>blogs</a>

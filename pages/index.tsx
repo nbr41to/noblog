@@ -1,11 +1,27 @@
-import { VFC } from 'react';
+import { GetStaticProps, NextPage } from 'next';
 import { GitHubGrassImage } from 'src/components/Home/GitHubGrassImage';
 import { TrendBoard } from 'src/components/Home/TrendBoard';
 import { ActivityScore } from 'src/components/Widget/ActivityScore';
 import { SleepScore } from 'src/components/Widget/SleepScore';
 import styled from 'styled-components';
 
-const HomePage: VFC = () => {
+import { getDatabaseInfo } from '@/apis/notion';
+
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    /* データベースに関するpropertiesを取得 */
+    const databaseInfo = await getDatabaseInfo();
+    return {
+      props: {
+        databaseInfo, // _app.tsxで使用
+      },
+    };
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const HomePage: NextPage = () => {
   return (
     <StyledHomePage>
       <h1>my recent</h1>

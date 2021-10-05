@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 
-import { NotionPageItems, NotionSelectOptions } from '@/type/notion';
+import { NotionPageItems, NotionSelectOption } from '@/type/notion';
 
 const notion = new Client({
   auth: process.env.INTERNAL_INTEGRATION_TOKEN,
@@ -69,13 +69,13 @@ export const getPageContent = async (
 
 /* database properties のCategoryとTagsを取得 */
 export const getDatabaseInfo = async (): Promise<{
-  categories: NotionSelectOptions[];
-  tags: NotionSelectOptions[];
+  categories: NotionSelectOption[];
+  tags: NotionSelectOption[];
 }> => {
   try {
     const response = await notion.databases.retrieve({ database_id });
     /* Categoryを取得 */
-    let categories: NotionSelectOptions[];
+    let categories: NotionSelectOption[];
     if (response.properties.Category.type === 'select') {
       categories = response.properties.Category.select.options.map(
         (category) => {
@@ -85,7 +85,7 @@ export const getDatabaseInfo = async (): Promise<{
       );
     }
     /* Tagsを取得 */
-    let tags: NotionSelectOptions[];
+    let tags: NotionSelectOption[];
     if (response.properties.Tags.type === 'multi_select') {
       tags = response.properties.Tags.multi_select.options.map((tag) => {
         const { id, color, name } = tag;

@@ -12,10 +12,12 @@ type NotionColor =
   | 'pink'
   | 'red';
 
-type NotionSelectOptions = {
+type NotionSelectOption = {
   id: string;
   name: string;
   color: NotionColor;
 };
+
+type DatabaseProperties = { [property: string]: NotionSelectOption[] };
 
 type NotionPageItems = QueryDatabaseResponse['results'];
