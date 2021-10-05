@@ -43,24 +43,35 @@ const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
     const { properties } = pageInfo;
     const { blocks } = content;
 
-    /* いでよ！型ガードたちよ */
-    if (!pageInfo.icon || pageInfo.icon.type !== 'emoji') return;
-    if (!pageInfo.cover || pageInfo.cover.type !== 'external') return;
-    if (properties.Title.type !== 'title') return;
-    if (properties.Category.type !== 'select') return;
-    if (properties.Tags.type !== 'multi_select') return;
-    /* TODO)Likesの追加 */
-    return {
+    const extractedContent = {
       id: pageInfo.id,
-      title: properties.Title.title[0].plain_text,
+      title: '',
       icon: '👏',
-      cover_url: pageInfo.cover.external.url,
+      cover_url: '',
       created_time: dateFormatted({ date: pageInfo.created_time }),
       last_edited_time: dateFormatted({ date: pageInfo.last_edited_time }),
-      category: properties.Category.select,
-      tags: properties.Tags.multi_select,
+      category: null,
+      tags: [],
       blocks,
     };
+    /* いでよ！型ガードたちよ */
+    if (pageInfo.icon && pageInfo.icon.type === 'emoji') {
+      extractedContent.icon = pageInfo.icon.emoji;
+    }
+    if (pageInfo.cover && pageInfo.cover.type === 'external') {
+      extractedContent.cover_url = pageInfo.cover.external.url;
+    }
+    if (properties.Title.type === 'title') {
+      extractedContent.title = properties.Title.title[0].plain_text;
+    }
+    if (properties.Category.type === 'select') {
+      extractedContent.category = properties.Category.select;
+    }
+    if (properties.Tags.type === 'multi_select') {
+      extractedContent.tags = properties.Tags.multi_select;
+    }
+
+    return extractedContent;
   }, []);
 
   return (

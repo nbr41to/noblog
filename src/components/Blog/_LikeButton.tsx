@@ -23,30 +23,47 @@ export const LikeButton: VFC<LikeButtonProps> = ({ className, id }) => {
   };
 
   return (
-    <StyledLikeButton className={`${className}`} onClick={incrementLikes}>
-      {loading ? 'いいね中...' : `いいね！${likes}`}
+    <StyledLikeButton
+      className={`${className}`}
+      // disabled={true}
+      disabled={loading}
+      onClick={incrementLikes}
+    >
+      {loading ? 'いいね中...' : `いいね！${likes || '0'}`}
     </StyledLikeButton>
   );
 };
 
 const StyledLikeButton = styled.button`
-  width: 140px;
   padding: 8px 16px;
+  width: 140px;
   border: 1px solid #999;
   border-radius: 999px;
-  text-align: center;
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.7);
   background-color: palegreen;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
   cursor: pointer;
 
   &:hover {
     position: relative;
     top: 2px;
-    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.7);
   }
   &:active {
+    position: relative;
     top: 6px;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.7);
     filter: brightness(0.9);
+  }
+  &:disabled {
+    position: relative;
+    top: 6px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.7);
+
+    background-color: tomato;
+    color: #fff;
+    cursor: not-allowed;
   }
 `;

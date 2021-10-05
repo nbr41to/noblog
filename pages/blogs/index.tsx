@@ -42,10 +42,13 @@ export const getStaticProps: GetStaticProps = async () => {
 /* Page Component */
 const BlogsPage: VFC<BlogPageProps> = ({ items }) => {
   const { categories, tags } = databaseProperties as DatabaseProperties;
+  const router = useRouter();
+  const { categoryId, tagId } = router.query;
 
   const [selected, setSelected] = useState({
-    categoryId: '',
-    tagIds: [''],
+    categoryId: typeof categoryId === 'string' ? categoryId : '',
+    tagIds: typeof tagId === 'string' ? [tagId] : [],
+    isEvery: false,
   });
 
   /* itemsにFilterをかけて返す */
@@ -53,11 +56,8 @@ const BlogsPage: VFC<BlogPageProps> = ({ items }) => {
     const { categoryId, tagIds } = selected;
     const filteredItems = items.filter((item) => {
       /* 型ガード */
-      if (
-        item.properties.Category.type !== 'select' ||
-        item.properties.Tags.type !== 'multi_select'
-      )
-        return;
+      if (item.properties.Category.type !== 'select') return;
+      if (item.properties.Tags.type !== 'multi_select') return;
 
       const itemsCategoryId = item.properties.Category.select.id;
 
@@ -67,9 +67,11 @@ const BlogsPage: VFC<BlogPageProps> = ({ items }) => {
 
       const isCategoryMatch =
         categoryId === '' || categoryId === itemsCategoryId;
+      /* every...全て一致, some...いずれかが一致 */
       const isTagMatch =
-        tagIds.length === 1 || // ''が入っているので
-        itemsTagIds.some((tagId) => tagIds.includes(tagId)); // どれか一つでもマッチしたらtrue
+        tagIds.length === 0 || selected.isEvery
+          ? tagIds.every((tagId) => itemsTagIds.includes(tagId))
+          : tagIds.some((tagId) => itemsTagIds.includes(tagId));
 
       return isCategoryMatch && isTagMatch; // c && t , c || t
     });
@@ -94,6 +96,10 @@ const BlogsPage: VFC<BlogPageProps> = ({ items }) => {
     }));
   };
 
+  const handleToggleIsEvery = () => {
+    setSelected({ ...selected, isEvery: !selected.isEvery });
+  };
+
   return (
     <BlogsPageStyled>
       <CategoryList
@@ -104,13 +110,17 @@ const BlogsPage: VFC<BlogPageProps> = ({ items }) => {
       <TagList
         items={tags}
         selectedIds={selected.tagIds}
+        isEvery={selected.isEvery}
         onClick={handleTagClick}
+        onToggle={handleToggleIsEvery}
       />
       <div className="clear_button_wrapper">
         <SelectOptionButton
           name="All clear"
           color="default"
-          onClick={() => setSelected({ categoryId: '', tagIds: [''] })}
+          onClick={() =>
+            setSelected({ ...selected, categoryId: '', tagIds: [] })
+          }
         />
       </div>
       <BlogList items={filteredItems()} />

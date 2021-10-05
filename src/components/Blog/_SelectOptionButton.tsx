@@ -37,6 +37,10 @@ const StyledSelectOptionButton = styled.button<{ selected: boolean }>`
   line-height: 20px;
   white-space: nowrap;
 
+  &:active {
+    filter: brightness(0.6);
+  }
+
   &.orange {
     background-color: #f9e8d8cc;
   }

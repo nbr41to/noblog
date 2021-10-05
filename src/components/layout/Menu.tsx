@@ -9,7 +9,7 @@ type MenuProps = {
 
 export const Menu: VFC<MenuProps> = ({ className }) => {
   const router = useRouter();
-  const currentPath = router.asPath.split('/')[1];
+  const currentPath = router.asPath.split('/')[1].split('?')[0];
 
   return (
     <StyledMenu aria-labelledby="aria-global-nav" className={`${className}`}>
@@ -21,7 +21,9 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
           <a className={!currentPath ? 'active' : ''}>home</a>
         </Link>
         <Link href="/activities">
-          <a className={currentPath === 'about' ? 'active' : ''}>activities</a>
+          <a className={currentPath === 'activities' ? 'active' : ''}>
+            activities
+          </a>
         </Link>
         <Link href="/blogs/">
           <a className={currentPath === 'blogs' ? 'active' : ''}>blogs</a>

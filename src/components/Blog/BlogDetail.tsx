@@ -31,8 +31,6 @@ type BlogDetailProps = {
 };
 
 export const BlogDetail: VFC<BlogDetailProps> = ({ className, detail }) => {
-  // console.log(detail);
-
   const { blocks, ...headerInfo } = detail;
 
   return (
@@ -50,14 +48,7 @@ export const BlogDetail: VFC<BlogDetailProps> = ({ className, detail }) => {
 };
 
 const StyledBlogDetail = styled.div`
-  > .detail_header {
-  }
   > .detail_body {
     padding: 28px 8px;
-  }
-  > .detail_footer {
-    margin-top: 80px;
-    padding-top: 8px;
-    border-top: 2px dotted #444;
   }
 `;

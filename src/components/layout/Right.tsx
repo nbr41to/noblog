@@ -13,8 +13,8 @@ export const Right: VFC<RightProps> = ({ className }) => {
   return (
     <StyledRight className={`${className}`}>
       <Introduction className="mb-16" />
-      <TweetTimeLine className="mb-16" />
       <MyLinks className="mb-16" />
+      <TweetTimeLine className="mb-16" />
       <AdsenseSquare />
     </StyledRight>
   );
