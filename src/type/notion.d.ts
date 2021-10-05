@@ -1,4 +1,8 @@
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import {
+  GetPageResponse,
+  ListBlockChildrenResponse,
+  QueryDatabaseResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 
 type NotionColor =
   | 'default'
@@ -20,4 +24,11 @@ type NotionSelectOption = {
 
 type DatabaseProperties = { [property: string]: NotionSelectOption[] };
 
-type NotionPageItems = QueryDatabaseResponse['results'];
+type NotionPageItem = QueryDatabaseResponse['results'][number];
+
+type NotionBlock = ListBlockChildrenResponse['results'][number];
+
+type NotionPageContent = {
+  pageInfo: GetPageResponse;
+  blocks: NotionBlock[];
+};

@@ -1,6 +1,14 @@
 import { Client } from '@notionhq/client';
+import {
+  GetPageResponse,
+  ListBlockChildrenResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 
-import { NotionPageItems, NotionSelectOption } from '@/type/notion';
+import {
+  NotionPageContent,
+  NotionPageItem,
+  NotionSelectOption,
+} from '@/type/notion';
 
 const notion = new Client({
   auth: process.env.INTERNAL_INTEGRATION_TOKEN,
@@ -15,13 +23,13 @@ const database_id = process.env.NOTION_DATABASE_ID;
  */
 export const getPageList = async (
   start_cursor?: string | null,
-): Promise<NotionPageItems> => {
+): Promise<NotionPageItem[]> => {
   /* has_moreがnullで返ってくるが, start_cursorはundefinedしか受け付けないので, 変換してる */
   if (start_cursor === null) {
     start_cursor = undefined;
   }
   try {
-    const pageList: NotionPageItems = [];
+    const pageList: NotionPageItem[] = [];
     const condition = { has_more: true, next_cursor: null };
     const page_size = 100; // 個ずつ取得
 
@@ -50,21 +58,22 @@ export const getPageList = async (
 
 /* pageの情報を取得 */
 export const getPageContent = async (
-  page_id: string | string[],
-): Promise<any> => {
-  if (Array.isArray(page_id)) {
-    page_id = page_id[0];
-  }
-  /* pageのpropertiesの取得 */
-  const page_properties = await notion.pages.retrieve({
-    page_id,
-  });
-  /* page内blocksの取得 */
-  const page_blocks = await notion.blocks.children.list({
-    block_id: page_id,
-  });
+  page_id: string,
+): Promise<NotionPageContent> => {
+  try {
+    /* pageのpropertiesの取得 */
+    const pageInfo = await notion.pages.retrieve({
+      page_id,
+    });
+    /* page内blocksなどの取得 */
+    const response = await notion.blocks.children.list({
+      block_id: page_id,
+    });
 
-  return { ...page_properties, ...page_blocks };
+    return { pageInfo, blocks: response.results };
+  } catch (error) {
+    throw Error(error);
+  }
 };
 
 /* database properties のCategoryとTagsを取得 */

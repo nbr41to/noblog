@@ -1,5 +1,5 @@
 import { useEffect, useState, VFC } from 'react';
-import { dateFormated } from 'src/utils/dateFormated';
+import { dateFormatted } from 'src/utils/dateFormatted';
 import styled from 'styled-components';
 
 type ActivityScoreProps = {
@@ -31,7 +31,7 @@ export const ActivityScore: VFC<ActivityScoreProps> = ({ className }) => {
             .map((activity: any, index: number) => (
               <div key={index} className="active_list">
                 <p>
-                  {dateFormated({
+                  {dateFormatted({
                     date: activity.summary_date,
                     format: 'YYYY/MM/DD',
                   })}

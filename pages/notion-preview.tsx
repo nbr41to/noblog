@@ -5,7 +5,7 @@ import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { getPageContent } from 'src/apis/notion';
 import styled from 'styled-components';
 
-import { NotionBlock } from '@/components/Notion/NotionBlock';
+import { NotionBlockCompiler } from '@/components/Notion/NotionBlockCompiler';
 
 export const getStaticProps: GetStaticProps = async () => {
   const blocks = await getPageContent('d362dedb260c4fa7b13257f119ea8d06');
@@ -31,7 +31,7 @@ const NotionPreview: VFC<NotionPreviewProps> = ({ className, blocks }) => {
         {blocks?.map((block) => (
           <>
             <div className="preview">
-              <NotionBlock block={block} />
+              <NotionBlockCompiler block={block} />
             </div>
             <SyntaxHighlighter language="json" style={monokai}>
               {JSON.stringify(block, null, 4)}

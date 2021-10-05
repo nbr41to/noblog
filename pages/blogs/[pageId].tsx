@@ -1,24 +1,24 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
-import { useEffect, useState, VFC } from 'react';
+import { useMemo, VFC } from 'react';
 import { getPageContent } from 'src/apis/notion';
 import { getPageList } from 'src/apis/notion';
-import { dateFormated } from 'src/utils/dateFormated';
+import { dateFormatted } from 'src/utils/dateFormatted';
 import styled from 'styled-components';
 
-import { AdsenseRow } from '@/components/Adsense/AdsenseRow';
-import { NotionBlock } from '@/components/Notion/NotionBlock';
+import { BlogDetail } from '@/components/Blog/BlogDetail';
+import { NotionPageContent } from '@/type/notion';
 
 type BlogDetailPageProps = {
-  content: any;
-  pageId: string;
+  content: NotionPageContent;
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { pageId } = params;
-  const content = await getPageContent(pageId);
+  const content = await getPageContent(
+    typeof pageId === 'string' ? pageId : pageId[0],
+  );
   return {
-    props: { content, pageId },
+    props: { content },
   };
 };
 
@@ -28,166 +28,48 @@ type Params = {
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const pageList = await getPageList();
-  const paths = pageList.map(({ id }) => ({
-    params: {
-      pageId: id.toString(),
-    },
-  }));
+  const paths = pageList.map(({ id }) => ({ params: { pageId: id } }));
   return {
     paths,
-    fallback: false,
+    fallback: false, // 事前に予測されたpathでなければ404を返す
+    /* https://maku.blog/p/rdq3ep2/ */
   };
 };
 
-const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content, pageId }) => {
-  const [likes, setLikes] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const { results: blocks } = content;
-  const { properties } = content;
+const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
+  /* contentを抽出してmemo化 */
+  const extractedContent = useMemo(() => {
+    const { pageInfo } = content;
+    const { properties } = pageInfo;
+    const { blocks } = content;
 
-  // const subCategory = properties.SubCategory.multi_select;
-  const tags = properties.Tags.multi_select;
-
-  useEffect(() => {
-    getLikes();
+    /* いでよ！型ガードたちよ */
+    if (!pageInfo.icon || pageInfo.icon.type !== 'emoji') return;
+    if (!pageInfo.cover || pageInfo.cover.type !== 'external') return;
+    if (properties.Title.type !== 'title') return;
+    if (properties.Category.type !== 'select') return;
+    if (properties.Tags.type !== 'multi_select') return;
+    /* TODO)Likesの追加 */
+    return {
+      id: pageInfo.id,
+      title: properties.Title.title[0].plain_text,
+      icon: '👏',
+      cover_url: pageInfo.cover.external.url,
+      created_time: dateFormatted({ date: pageInfo.created_time }),
+      last_edited_time: dateFormatted({ date: pageInfo.last_edited_time }),
+      category: properties.Category.select,
+      tags: properties.Tags.multi_select,
+      blocks,
+    };
   }, []);
 
-  const getLikes = async () => {
-    const res = await fetch('/api/get/likes', {
-      method: 'POST',
-      body: JSON.stringify({ page_id: pageId }),
-    });
-    const data = await res.json();
-    setLikes(data.number || 0);
-  };
-
-  const incrementLikes = async () => {
-    setLoading(true);
-    await fetch('/api/post/increment-likes', {
-      method: 'POST',
-      body: JSON.stringify({ page_id: pageId, current_likes: likes }),
-    });
-    setLikes(likes + 1);
-    setLoading(false);
-  };
-
-  // console.log(content);
   return (
     <BlogDetailPageStyled>
-      {content.icon && <div className="blog_icon">{content.icon.emoji}</div>}
-      <h1>{properties.Title.title[0].plain_text}</h1>
-      {content.cover && (
-        <div className="blog_cover">
-          <Image
-            src={content.cover.external.url}
-            layout="fill"
-            objectFit="contain"
-            alt="blog cover"
-          />
-        </div>
-      )}
-      <div className="blog_info_header">
-        <p>
-          カテゴリー：
-          {properties.Category.select.name}
-        </p>
-        <p>
-          作成日：
-          {dateFormated({ date: properties.Created.created_time })}
-        </p>
-        <p>
-          最終編集日：
-          {dateFormated({ date: properties.Edited.last_edited_time })}
-        </p>
-        <button
-          className="like_button"
-          onClick={incrementLikes}
-          disabled={loading}
-        >
-          {loading
-            ? 'いいね！してます...'
-            : `
-            
-            いいね！
-            ${likes}
-            `}
-        </button>
-      </div>
-      <div className="blog_info_body">
-        {blocks.map((block) => (
-          <NotionBlock block={block} key={block.id} />
-        ))}
-        {/* <AdsenseRow /> */}
-      </div>
-      <div className="blog_info_footer">
-        {/* <div>
-          サブカテゴリ：
-          {subCategory.length
-            ? subCategory.map((i) => <span key={i.id}>{i.name}</span>)
-            : 'なし'}
-        </div> */}
-        <div className="item_footer">
-          タグ：
-          {tags.length ? (
-            tags.map((i) => <span key={i.id}>{i.name}</span>)
-          ) : (
-            <span>なし</span>
-          )}
-        </div>
-      </div>
+      <BlogDetail detail={extractedContent} />
     </BlogDetailPageStyled>
   );
 };
 
-const BlogDetailPageStyled = styled.div`
-  > .blog_icon {
-    font-size: 100px;
-    text-align: center;
-  }
-  > .blog_cover {
-    height: 280px;
-    margin: 0 auto 16px;
-    position: relative;
-    img {
-      display: block;
-    }
-  }
-  > h1 {
-    text-align: center;
-    margin: 4px 0 16px;
-  }
-  > .blog_info_header {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    padding-bottom: 8px;
-    border-bottom: 2px dotted #444;
-    > .like_button {
-      border: 1px solid #444;
-      border-radius: 8px;
-      background: palegreen;
-      padding: 2px 12px;
-      cursor: pointer;
-      &:hover {
-        transform: scale(0.98);
-      }
-      &:active {
-        transform: scale(0.96);
-        filter: brightness(0.8);
-      }
-      &:disabled {
-        background: #ccc;
-      }
-    }
-  }
-  > .blog_info_body {
-    padding: 28px 8px;
-  }
-  > .blog_info_footer {
-    margin-top: 80px;
-    padding-top: 8px;
-    border-top: 2px dotted #444;
-  }
-`;
+const BlogDetailPageStyled = styled.div``;
 
 export default BlogDetailPage;

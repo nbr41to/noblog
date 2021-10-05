@@ -1,38 +1,37 @@
 import { VFC } from 'react';
 import styled from 'styled-components';
 
-type SelectOptionButtonProps = {
+/* NotionのpropertiesのCategoryやTagsを表示するBadge的なもの */
+
+type SelectOptionLabelProps = {
   className?: string;
   name: string;
   color: string;
-  selected?: boolean;
-  onClick: () => void;
+  click?: boolean;
 };
 
-export const SelectOptionButton: VFC<SelectOptionButtonProps> = ({
+export const SelectOptionLabel: VFC<SelectOptionLabelProps> = ({
   className,
   name,
   color,
-  selected = false,
-  onClick,
+  click = false, // TODO)今後押した時にそれに関するページを表示するようにする
 }) => {
   return (
-    <StyledSelectOptionButton
+    <StyledSelectOptionLabel
       className={`${className} ${color}`}
-      selected={selected}
-      onClick={onClick}
+      // onClick={click}
     >
       {name}
-    </StyledSelectOptionButton>
+    </StyledSelectOptionLabel>
   );
 };
 
-const StyledSelectOptionButton = styled.button<{ selected: boolean }>`
-  padding: 8px 16px;
+const StyledSelectOptionLabel = styled.span`
+  font-size: 14px;
+  padding: 6px 12px;
   cursor: pointer;
-  border-radius: 8px;
-  ${({ selected }) => selected && 'filter: brightness(0.6);'}
-  line-height: 20px;
+  border-radius: 4px;
+  line-height: 16px;
   white-space: nowrap;
 
   &.orange {

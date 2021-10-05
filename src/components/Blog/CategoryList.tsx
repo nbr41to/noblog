@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { NotionSelectOption } from '@/type/notion';
 
-import { SelectOptionButton } from './SelectOptionButton';
+import { SelectOptionButton } from './_SelectOptionButton';
 
 type CategoryListProps = {
   className?: string;

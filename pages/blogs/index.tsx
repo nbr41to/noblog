@@ -3,18 +3,18 @@ import { useRouter } from 'next/router';
 import { useState, VFC } from 'react';
 import styled from 'styled-components';
 
+import { SelectOptionButton } from '@/components/Blog/_SelectOptionButton';
 import { BlogList } from '@/components/Blog/BlogList';
 import { CategoryList } from '@/components/Blog/CategoryList';
-import { SelectOptionButton } from '@/components/Blog/SelectOptionButton';
 import { TagList } from '@/components/Blog/TagList';
 import databaseProperties from '@/data/database-properties.json';
-import { DatabaseProperties, NotionPageItems } from '@/type/notion';
+import { DatabaseProperties, NotionPageItem } from '@/type/notion';
 import { generateDatabaseProperties } from '@/utils/generateDatabaseProperties';
 
 import { getDatabaseInfo, getPageList } from '../../src/apis/notion';
 
 type BlogPageProps = {
-  items: NotionPageItems;
+  items: NotionPageItem[];
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -22,6 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
     /* データベースに関するpropertiesを取得 */
     const databaseInfo = await getDatabaseInfo();
 
+    /* databaseInfoをjsonで書き出し */
     generateDatabaseProperties(databaseInfo);
 
     /* データベースからページを取得 */
@@ -40,7 +41,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
 /* Page Component */
 const BlogsPage: VFC<BlogPageProps> = ({ items }) => {
-  const router = useRouter();
   const { categories, tags } = databaseProperties as DatabaseProperties;
 
   const [selected, setSelected] = useState({
