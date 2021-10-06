@@ -1,12 +1,13 @@
 import Script from 'next/script';
-import { useEffect, VFC } from 'react';
+import { memo, useEffect, VFC } from 'react';
 import styled from 'styled-components';
 
 type TweetTimeLineProps = {
   className?: string;
 };
 
-export const TweetTimeLine: VFC<TweetTimeLineProps> = ({ className }) => {
+// eslint-disable-next-line react/display-name
+export const TweetTimeLine: VFC<TweetTimeLineProps> = memo(({ className }) => {
   useEffect(() => {
     if (!process.browser) return;
     window.twttr?.widgets.load();
@@ -31,7 +32,7 @@ export const TweetTimeLine: VFC<TweetTimeLineProps> = ({ className }) => {
       </div>
     </StyledTweetTimeLine>
   );
-};
+});
 
 const StyledTweetTimeLine = styled.div`
   ${({ theme }) => theme.box.inner};

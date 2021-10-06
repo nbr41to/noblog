@@ -1,5 +1,5 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { useMemo, VFC } from 'react';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { useMemo } from 'react';
 import { getPageContent } from 'src/apis/notion';
 import { getPageList } from 'src/apis/notion';
 import { dateFormatted } from 'src/utils/dateFormatted';
@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   };
 };
 
-const BlogDetailPage: VFC<BlogDetailPageProps> = ({ content }) => {
+const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ content }) => {
   /* contentを抽出してmemo化 */
   const extractedContent = useMemo(() => {
     const { pageInfo } = content;

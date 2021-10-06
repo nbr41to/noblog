@@ -1,22 +1,7 @@
-import { GetStaticProps, NextPage } from 'next';
+import { NextPage } from 'next';
 import styled from 'styled-components';
 
-import { getDatabaseInfo } from '@/apis/notion';
 import ActivitiesMdx from '@/markdown/activities.mdx';
-
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    /* データベースに関するpropertiesを取得 */
-    const databaseInfo = await getDatabaseInfo();
-    return {
-      props: {
-        databaseInfo, // _app.tsxで使用
-      },
-    };
-  } catch (error) {
-    console.error(error);
-  }
-};
 
 const ActivitiesPage: NextPage = () => {
   return (

@@ -1,27 +1,8 @@
-import { GetStaticProps, NextPage } from 'next';
-import { ActivityScore } from 'src/components/Widget/ActivityScore';
-import { SleepScore } from 'src/components/Widget/SleepScore';
-import { TrendBoard } from 'src/components/Widget/TrendBoard';
+import { NextPage } from 'next';
 import styled from 'styled-components';
 
-import { getDatabaseInfo } from '@/apis/notion';
 import { Profile } from '@/components/Home/Profile';
 import { Topics } from '@/components/Home/Topics';
-import { GitHubGrassImage } from '@/components/Widget/GitHubGrassImage';
-
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    /* データベースに関するpropertiesを取得 */
-    const databaseInfo = await getDatabaseInfo();
-    return {
-      props: {
-        databaseInfo, // _app.tsxで使用
-      },
-    };
-  } catch (error) {
-    console.error(error);
-  }
-};
 
 const HomePage: NextPage = () => {
   return (

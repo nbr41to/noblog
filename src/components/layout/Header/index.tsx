@@ -11,6 +11,7 @@ type HeaderProps = {
 
 export const Header: VFC<HeaderProps> = ({ className }) => {
   const router = useRouter();
+  const currentPath = router.asPath.split('/')[1].split('?')[0];
 
   return (
     <StyledHeader className={`${className}`}>
@@ -18,7 +19,7 @@ export const Header: VFC<HeaderProps> = ({ className }) => {
         のぶろぐ。
       </div>
       <div className="sub_title">〜 のまど先生の生存確認日記 〜</div>
-      <Hero />
+      {!currentPath && <Hero />}
       <Menu />
     </StyledHeader>
   );

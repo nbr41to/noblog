@@ -1,6 +1,6 @@
-import { GetStaticProps } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, VFC } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import { SelectOptionButton } from '@/components/Blog/_SelectOptionButton';
@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 /* Page Component */
-const BlogsPage: VFC<BlogPageProps> = ({ items }) => {
+const BlogsPage: NextPage<BlogPageProps> = ({ items }) => {
   const { categories, tags } = databaseProperties as DatabaseProperties;
   const router = useRouter();
   const { categoryId, tagId } = router.query;

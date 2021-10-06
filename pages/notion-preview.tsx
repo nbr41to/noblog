@@ -1,5 +1,4 @@
-import { GetStaticProps } from 'next';
-import { VFC } from 'react';
+import { GetStaticProps, NextPage } from 'next';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { getBlocksInPage } from 'src/apis/notion';
@@ -22,7 +21,7 @@ type NotionPreviewProps = {
   blocks: NotionBlock[];
 };
 
-const NotionPreview: VFC<NotionPreviewProps> = ({ className, blocks }) => {
+const NotionPreview: NextPage<NotionPreviewProps> = ({ className, blocks }) => {
   return (
     <StyledNotionPreview className={`${className}`}>
       <h1>Notion Preview</h1>
