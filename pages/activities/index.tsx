@@ -14,6 +14,9 @@ const ActivitiesPage: NextPage = () => {
 
 const StyledActivitiesPage = styled.div`
   padding: 20px;
+  ${({ theme }) => theme.media.sp`
+    padding: 8px;
+  `};
 
   > hr {
     height: 52px;
@@ -30,6 +33,9 @@ const StyledActivitiesPage = styled.div`
   > h3 {
     padding-left: 8px;
     margin: 16px 0;
+    ${({ theme }) => theme.media.sp`
+      text-align: center;
+    `};
     &:before,
     &:after {
       display: inline-block;
@@ -43,7 +49,7 @@ const StyledActivitiesPage = styled.div`
   > h6 {
     /* リンクボタン用 */
     text-align: center;
-    margin: 16px 0;
+    margin: 24px 0;
     > a {
       display: inline-block;
       border: 1px solid #444;

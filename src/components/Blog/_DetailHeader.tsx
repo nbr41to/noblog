@@ -92,6 +92,7 @@ const StyledDetailHeader = styled.div`
     font-size: 100px;
     text-align: center;
   }
+
   > .cover {
     height: 280px;
     margin: 0 auto 16px;
@@ -100,10 +101,12 @@ const StyledDetailHeader = styled.div`
       display: block;
     }
   }
+
   > h1 {
     text-align: center;
     margin: 4px 0 16px;
   }
+
   > .info {
     text-align: right;
     padding-bottom: 16px;

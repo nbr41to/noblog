@@ -12,12 +12,14 @@ type LayoutProps = {
 
 export const Layout: VFC<LayoutProps> = ({ children }) => {
   return (
-    <StyledLayout>
-      <Header className="header" />
-      <Main className="main">{children}</Main>
-      <Right className="right" />
-      <Footer className="footer" />
-    </StyledLayout>
+    <>
+      <StyledLayout>
+        <Header className="header" />
+        <Main className="main">{children}</Main>
+        <Right className="right" />
+        <Footer className="footer" />
+      </StyledLayout>
+    </>
   );
 };
 

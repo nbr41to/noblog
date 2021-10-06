@@ -34,8 +34,6 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
 };
 
 const StyledMenu = styled.nav`
-  background-color: #fffa;
-
   > .menu_title_hidden {
     display: none;
   }

@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
 import { useMemo } from 'react';
 import { getPageContent } from 'src/apis/notion';
 import { getPageList } from 'src/apis/notion';
@@ -75,9 +76,14 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ content }) => {
   }, []);
 
   return (
-    <BlogDetailPageStyled>
-      <BlogDetail detail={extractedContent} />
-    </BlogDetailPageStyled>
+    <>
+      <Head>
+        <title>{`noblog | ${extractedContent.title}`}</title>
+      </Head>
+      <BlogDetailPageStyled>
+        <BlogDetail detail={extractedContent} />
+      </BlogDetailPageStyled>
+    </>
   );
 };
 

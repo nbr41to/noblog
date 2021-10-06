@@ -1,0 +1,3 @@
+# https://nextjs.org/learn/seo/crawling-and-indexing/robots-txt
+User-agent: *
+Allow: /

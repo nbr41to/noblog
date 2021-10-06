@@ -51,36 +51,25 @@ export const StyledNotionBlock = styled.div`
     border-bottom: 2px #666 solid;
     padding: 0 0 4px 8px;
   }
-  > .bulleted_list_item {
+
+  > .bulleted_list_item,
+  .numbered_list_item {
     padding-left: 12px;
-    display: flex;
-    align-items: center;
     padding: 4px 0;
+
     &:before {
-      display: block;
+      display: inline-block;
       content: '';
-      width: 4px;
-      height: 4px;
+      width: 6px;
+      height: 6px;
       background-color: #000;
       border-radius: 50%;
-      margin-right: 8px;
+      position: relative;
+      left: -8px;
+      top: -4px;
     }
   }
-  > .numbered_list_item {
-    padding-left: 12px;
-    display: flex;
-    align-items: center;
-    padding: 4px 0;
-    &:before {
-      display: block;
-      content: '';
-      width: 4px;
-      height: 4px;
-      background-color: #000;
-      border-radius: 50%;
-      margin-right: 8px;
-    }
-  }
+
   .to_do {
     padding: 4px 0;
     display: flex;
@@ -113,20 +102,8 @@ export const StyledNotionBlock = styled.div`
       }
     }
   }
+  /* Componentに切り出した ./Bookmark.tsx */
   .bookmark {
-    color: blue;
-    text-decoration: underline;
-    padding: 4px;
-    cursor: pointer;
-    word-wrap: break-word;
-    &:visited {
-      color: purple;
-    }
-    &:hover {
-      color: orange;
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
   }
   .image {
     width: 100%;
@@ -143,22 +120,25 @@ export const StyledNotionBlock = styled.div`
     margin: 8px auto;
     display: block;
   }
-  /* code block */
 
+  /* code block */
   > .code {
     background-color: #111;
     color: #fff;
     padding: 8px 16px;
     border-radius: 4px;
+
     > .code_block_label {
       width: min-content;
       padding: 4px 8px;
+      margin-top: 4px;
       border: 1px solid #666;
       border-radius: 4px;
     }
+
     > pre {
       margin: 8px 0;
-      border-radius: 8px;
+      border-radius: 4px;
       > code {
         line-height: 24px;
       }
