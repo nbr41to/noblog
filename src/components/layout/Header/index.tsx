@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { VFC } from 'react';
 import styled from 'styled-components';
@@ -12,16 +13,25 @@ type HeaderProps = {
 export const Header: VFC<HeaderProps> = ({ className }) => {
   const router = useRouter();
   const currentPath = router.asPath.split('/')[1].split('?')[0];
+  const subtitles = {
+    blogs: 'Blog',
+    activities: 'Activities',
+  };
 
   return (
-    <StyledHeader className={`${className}`}>
-      <div className="site_title" onClick={() => router.push('/')}>
-        のぶろぐ。
-      </div>
-      <div className="sub_title">〜 のまど先生の生存確認日記 〜</div>
-      {!currentPath && <Hero />}
-      <Menu />
-    </StyledHeader>
+    <>
+      <Head>
+        <title>noblog{currentPath && ` | ${subtitles[currentPath]}`}</title>
+      </Head>
+      <StyledHeader className={`${className}`}>
+        <div className="site_title" onClick={() => router.push('/')}>
+          のぶろぐ。
+        </div>
+        <div className="sub_title">〜 のまど先生の生存確認日記 〜</div>
+        <Hero visibleHero={!currentPath} />
+        <Menu />
+      </StyledHeader>
+    </>
   );
 };
 

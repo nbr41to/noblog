@@ -53,7 +53,7 @@ export const compiledBlock = (block: any): JSX.Element => {
         <div className={`${type}`}>ページがここにありますが,表示不可です.</div>
       );
     case 'bookmark':
-      /* TODO）リンク先のOGPは含まれていない... */
+      /* TODO）リンク先のOGPは含まれていない.SWRで実装予定 */
       return (
         <a className={`${type}`} href={block[type].url}>
           {block[type].url}

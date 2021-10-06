@@ -9,6 +9,7 @@ export const Topics: VFC<TopicsProps> = ({ className }) => {
   return (
     <StyledTopics className={`${className}`}>
       <h2>最新のTopics</h2>
+      <p>なし</p>
     </StyledTopics>
   );
 };

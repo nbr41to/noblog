@@ -43,6 +43,16 @@
       "name": "JavaScript"
     },
     {
+      "id": "ba35a9c1-90c1-4efb-8498-91b7720e1cc2",
+      "color": "green",
+      "name": "TypeScript"
+    },
+    {
+      "id": "0aba24c9-5663-444b-b835-9b3693989f26",
+      "color": "default",
+      "name": "GitHub"
+    },
+    {
       "id": "61318e99-6666-417d-98f2-794add64841c",
       "color": "brown",
       "name": "viewport-extra"
@@ -98,9 +108,24 @@
       "name": "Zenn"
     },
     {
-      "id": "0aba24c9-5663-444b-b835-9b3693989f26",
+      "id": "9c28cc5d-875d-4046-9949-c44627b0bfff",
       "color": "default",
-      "name": "GitHub"
+      "name": "Array"
+    },
+    {
+      "id": "5f2e7a5a-9fad-4dae-83ff-4b79907fa5e4",
+      "color": "blue",
+      "name": "Date"
+    },
+    {
+      "id": "409faf8d-8aa8-4dae-a9dc-6ee61441cdd7",
+      "color": "default",
+      "name": "SSG"
+    },
+    {
+      "id": "f394f7ea-4422-4600-bf10-5ea5134366c7",
+      "color": "blue",
+      "name": "Next.js"
     }
   ]
 }
