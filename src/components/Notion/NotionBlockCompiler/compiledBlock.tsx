@@ -2,6 +2,9 @@ import Image from 'next/image';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
+import { NotionBlock } from '@/type/notion';
+
+import { Bookmark } from './Bookmark';
 import { compileText } from './compileText';
 
 /* notion_block_types = [
@@ -17,7 +20,7 @@ import { compileText } from './compileText';
   'child_page',
 ] as const; */
 
-export const compiledBlock = (block: any): JSX.Element => {
+export const compiledBlock = (block: NotionBlock): JSX.Element => {
   const { type } = block;
   const { text } = block[type];
 
@@ -53,12 +56,7 @@ export const compiledBlock = (block: any): JSX.Element => {
         <div className={`${type}`}>ページがここにありますが,表示不可です.</div>
       );
     case 'bookmark':
-      /* TODO）リンク先のOGPは含まれていない.SWRで実装予定 */
-      return (
-        <a className={`${type}`} href={block[type].url}>
-          {block[type].url}
-        </a>
-      );
+      return <Bookmark className={`${type}`} url={block[type].url} />;
     case 'image':
       return (
         <div className={`${type}`}>

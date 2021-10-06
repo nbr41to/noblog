@@ -102,23 +102,8 @@ export const StyledNotionBlock = styled.div`
       }
     }
   }
+  /* Componentに切り出した ./Bookmark.tsx */
   .bookmark {
-    display: block;
-    color: blue;
-    text-decoration: underline;
-    margin: 8px 0;
-    padding: 4px;
-    cursor: pointer;
-    word-wrap: break-word;
-
-    &:visited {
-      color: purple;
-    }
-    &:hover {
-      color: orange;
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
   }
   .image {
     width: 100%;
