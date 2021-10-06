@@ -15,7 +15,7 @@ export const Right: VFC<RightProps> = ({ className }) => {
       <Introduction className="mb-16" />
       <MyLinks className="mb-16" />
       <TweetTimeLine className="mb-16" />
-      <AdsenseSquare />
+      {/* <AdsenseSquare /> */}
     </StyledRight>
   );
 };

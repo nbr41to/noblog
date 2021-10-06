@@ -7,8 +7,9 @@ const getOgpByUrl = async (
   res: NextApiResponse,
 ): Promise<void> => {
   /* Endpointからpage_idを取得 */
-  const url = req.url.replace('/api/get/ogp/', 'https://');
-  const data = await getOGP(url);
+  const url = req.url.replace('/api/get/ogp/', '');
+  const decoded = decodeURIComponent(url);
+  const data = await getOGP(decoded);
   res.status(200).json(data || {});
 };
 
