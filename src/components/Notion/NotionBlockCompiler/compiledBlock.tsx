@@ -1,7 +1,8 @@
-import { compileText } from './compileText';
 import Image from 'next/image';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+
+import { compileText } from './compileText';
 
 /* notion_block_types = [
   'paragraph',
@@ -68,6 +69,16 @@ export const compiledBlock = (block: any): JSX.Element => {
             objectFit="contain"
           />
         </div>
+        /* TODO)本番で取得できていない */
+        // Cover画像が成功していた↓
+        // <div className="blog_cover">
+        //   <Image
+        //     src={content.cover.external.url}
+        //     layout="fill"
+        //     objectFit="contain"
+        //     alt="blog cover"
+        //   />
+        // </div>
       );
     case 'video':
       /* YouTubeのEmbed type: "external" */

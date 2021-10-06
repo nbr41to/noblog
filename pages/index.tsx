@@ -1,20 +1,33 @@
-import { VFC } from 'react';
-import { TrendBoard } from 'src/components/Home/TrendBoard';
-import styled from 'styled-components';
-import { GitHubGrassImage } from 'src/components/Home/GitHubGrassImage';
+import { GetStaticProps, NextPage } from 'next';
 import { ActivityScore } from 'src/components/Widget/ActivityScore';
 import { SleepScore } from 'src/components/Widget/SleepScore';
+import { TrendBoard } from 'src/components/Widget/TrendBoard';
+import styled from 'styled-components';
 
-const HomePage: VFC = () => {
+import { getDatabaseInfo } from '@/apis/notion';
+import { Profile } from '@/components/Home/Profile';
+import { Topics } from '@/components/Home/Topics';
+import { GitHubGrassImage } from '@/components/Widget/GitHubGrassImage';
+
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    /* データベースに関するpropertiesを取得 */
+    const databaseInfo = await getDatabaseInfo();
+    return {
+      props: {
+        databaseInfo, // _app.tsxで使用
+      },
+    };
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const HomePage: NextPage = () => {
   return (
     <StyledHomePage>
-      <h1>my recent</h1>
-      <div className="content_wrapper">
-        <GitHubGrassImage className="ghg" />
-        <SleepScore className="slp" />
-        <ActivityScore className="act" />
-        <TrendBoard className="trend" />
-      </div>
+      <Topics />
+      <Profile />
     </StyledHomePage>
   );
 };

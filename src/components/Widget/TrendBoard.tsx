@@ -1,6 +1,7 @@
 import { useEffect, useState, VFC } from 'react';
-import { NotionBlock } from 'src/notion/NotionBlock';
 import styled from 'styled-components';
+
+import { NotionBlockCompiler } from '@/components/Notion/NotionBlockCompiler';
 
 type TrendBoardProps = {
   className?: string;
@@ -24,7 +25,7 @@ export const TrendBoard: VFC<TrendBoardProps> = ({ className }) => {
       <h2>My Trend</h2>
       <div>
         {trendBlocks.map((block) => (
-          <NotionBlock key={block.id} block={block} />
+          <NotionBlockCompiler key={block.id} block={block} />
         ))}
       </div>
     </StyledTrendBoard>

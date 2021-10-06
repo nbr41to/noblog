@@ -1,8 +1,8 @@
-import { VFC } from 'react';
-import styled from 'styled-components';
-import Image from 'next/image';
-import my_photo from 'src/assets/images/my_photo1.png';
 import { ArrowDown } from 'akar-icons';
+import Image from 'next/image';
+import { VFC } from 'react';
+import my_photo from 'src/assets/images/my_photo1.png';
+import styled from 'styled-components';
 type IntroductionProps = {
   className?: string;
 };

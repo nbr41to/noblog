@@ -1,7 +1,7 @@
-import { VFC } from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { VFC } from 'react';
+import styled from 'styled-components';
 
 type MenuProps = {
   className?: string;
@@ -9,7 +9,7 @@ type MenuProps = {
 
 export const Menu: VFC<MenuProps> = ({ className }) => {
   const router = useRouter();
-  const currentPath = router.asPath.split('/')[1];
+  const currentPath = router.asPath.split('/')[1].split('?')[0];
 
   return (
     <StyledMenu aria-labelledby="aria-global-nav" className={`${className}`}>
@@ -20,8 +20,10 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
         <Link href="/">
           <a className={!currentPath ? 'active' : ''}>home</a>
         </Link>
-        <Link href="/about">
-          <a className={currentPath === 'about' ? 'active' : ''}>about</a>
+        <Link href="/activities">
+          <a className={currentPath === 'activities' ? 'active' : ''}>
+            activities
+          </a>
         </Link>
         <Link href="/blogs/">
           <a className={currentPath === 'blogs' ? 'active' : ''}>blogs</a>
@@ -33,13 +35,17 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
 
 const StyledMenu = styled.nav`
   background-color: #fffa;
+
   > .menu_title_hidden {
     display: none;
   }
+
   > .menu_item_list {
+    height: 52px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     > a {
       font-size: 20px;
       font-weight: bold;

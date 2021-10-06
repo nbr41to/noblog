@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Document, {
   DocumentContext,
   Head,
@@ -6,8 +5,9 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import * as React from 'react';
 import { existsGaId, GA_ID } from 'src/utils/gtag';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<{
@@ -81,7 +81,7 @@ export default class MyDocument extends Document {
           <meta property="og:locale" content="ja_JP" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@Knob_nbr41to" />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          {/* TODO)各ページにメタタグ入れよう */}
         </Head>
         <body>
           <Main />

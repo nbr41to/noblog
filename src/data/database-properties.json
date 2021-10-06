@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "id": "b78423e9-9bdd-4b2a-a781-a51174123fd4",
+      "color": "purple",
+      "name": "technology"
+    },
+    {
+      "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+      "color": "green",
+      "name": "programming"
+    },
+    {
+      "id": "122b3c88-c8c7-4251-8390-fd2ce812a69e",
+      "color": "yellow",
+      "name": "interested"
+    },
+    {
+      "id": "eef9bf32-8179-4961-9141-aac53eae8b1f",
+      "color": "blue",
+      "name": "psychology"
+    }
+  ],
+  "tags": [
+    {
+      "id": "e25f84c4-46d5-418d-9ab1-8358e6b54a86",
+      "color": "green",
+      "name": "Slack"
+    },
+    {
+      "id": "08d356f6-2544-4d68-b03b-8788874dfd08",
+      "color": "orange",
+      "name": "Firebase"
+    },
+    {
+      "id": "12f5a2df-6725-4ed0-b607-7ceca64547a9",
+      "color": "blue",
+      "name": "Firestore"
+    },
+    {
+      "id": "0ae1fc7b-4c1b-4d09-be4b-335860ed33fa",
+      "color": "yellow",
+      "name": "JavaScript"
+    },
+    {
+      "id": "61318e99-6666-417d-98f2-794add64841c",
+      "color": "brown",
+      "name": "viewport-extra"
+    },
+    {
+      "id": "d7423c45-da1b-4bf4-bf64-e2e5bea0078d",
+      "color": "red",
+      "name": "npm"
+    },
+    {
+      "id": "428f3a02-40bd-4a83-b816-16c9d191b66c",
+      "color": "gray",
+      "name": "MENSA"
+    },
+    {
+      "id": "6a6e0823-3ba3-4f8a-b9ad-113407df345b",
+      "color": "pink",
+      "name": "html2canvas"
+    },
+    {
+      "id": "5e6270c1-6c94-412b-aa52-299c6a64df02",
+      "color": "default",
+      "name": "筋トレ"
+    },
+    {
+      "id": "bf0d9149-b117-4725-918b-318a12444968",
+      "color": "default",
+      "name": "マインドフルネス"
+    },
+    {
+      "id": "01c382a3-d49c-407a-8483-e59dcd9c9a25",
+      "color": "orange",
+      "name": "ACT"
+    },
+    {
+      "id": "cccdd7ab-2445-47c5-b8ee-aeb375899537",
+      "color": "blue",
+      "name": "習慣"
+    },
+    {
+      "id": "4cdad181-5ae3-4b9c-81d7-f7df160d0879",
+      "color": "green",
+      "name": "node.js"
+    },
+    {
+      "id": "944f19a5-9724-401b-b342-31da0604ed2b",
+      "color": "purple",
+      "name": "heroku"
+    },
+    {
+      "id": "dd1b981c-3b23-4bfa-aaff-d50feb143511",
+      "color": "blue",
+      "name": "Zenn"
+    },
+    {
+      "id": "0aba24c9-5663-444b-b835-9b3693989f26",
+      "color": "default",
+      "name": "GitHub"
+    }
+  ]
+}

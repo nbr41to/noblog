@@ -3,7 +3,8 @@ const withMDX = require('@next/mdx')({
 });
 
 module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  env: {},
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   reactStrictMode: true,
   images: {
     domains: [

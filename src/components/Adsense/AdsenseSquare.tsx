@@ -1,7 +1,7 @@
+import { useRouter } from 'next/router';
+import Script from 'next/script';
 import { useEffect, VFC } from 'react';
 import styled from 'styled-components';
-import Script from 'next/script';
-import { useRouter } from 'next/router';
 
 type AdsenseSquareProps = {
   className?: string;

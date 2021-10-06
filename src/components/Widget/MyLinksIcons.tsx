@@ -1,9 +1,10 @@
 import { VFC } from 'react';
 import styled from 'styled-components';
-import TwitterIcon from '../../assets/contact_icon/Twitter_icon.svg';
+
 import GitHubIcon from '../../assets/contact_icon/GitHub_icon.svg';
-import YouTubeIcon from '../../assets/contact_icon/YouTube_icon.svg';
 import LineIcon from '../../assets/contact_icon/LINE_Brand_icon.svg';
+import TwitterIcon from '../../assets/contact_icon/Twitter_icon.svg';
+import YouTubeIcon from '../../assets/contact_icon/YouTube_icon.svg';
 
 type MyLinksIconsProps = {
   className?: string;
