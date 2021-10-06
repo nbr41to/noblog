@@ -35,13 +35,17 @@ export const Menu: VFC<MenuProps> = ({ className }) => {
 
 const StyledMenu = styled.nav`
   background-color: #fffa;
+
   > .menu_title_hidden {
     display: none;
   }
+
   > .menu_item_list {
+    height: 52px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     > a {
       font-size: 20px;
       font-weight: bold;

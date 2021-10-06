@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Main } from './Main';
-import { Menu } from './Menu';
 import { Right } from './Right';
 
 type LayoutProps = {
@@ -14,8 +13,7 @@ type LayoutProps = {
 export const Layout: VFC<LayoutProps> = ({ children }) => {
   return (
     <StyledLayout>
-      <Header className="headder" />
-      <Menu className="menu" />
+      <Header className="header" />
       <Main className="main">{children}</Main>
       <Right className="right" />
       <Footer className="footer" />
@@ -35,8 +33,7 @@ const StyledLayout = styled.div`
 
   display: grid;
   grid-template:
-    ' header header header header header header header ' 80px
-    ' menu   menu   menu   menu   menu   menu   menu   ' 52px
+    ' header header header header header header header ' auto
     ' ...... ...... ...... ...... ...... ...... ...... ' 12px
     ' ...... main   main   main   ...... right  ...... ' auto
     ' ...... ...... ...... ...... ...... ...... ...... ' 20px
@@ -45,8 +42,7 @@ const StyledLayout = styled.div`
 
   ${({ theme }) => theme.media.sp`
     grid-template:
-      ' header header header header header header header ' 80px
-      ' menu   menu   menu   menu   menu   menu   menu   ' 52px
+      ' header header header header header header header ' auto
       ' ...... ...... ...... ...... ...... ...... ...... ' 0
       ' ...... main   main   main   main   main   ...... ' auto
       ' ...... right  right  right  right  right  ...... ' auto
@@ -54,11 +50,8 @@ const StyledLayout = styled.div`
         0      1fr    1fr    1fr    1fr    1fr    0;
   `}
 
-  > .headder {
+  > .header {
     grid-area: header;
-  }
-  > .menu {
-    grid-area: menu;
   }
   > .main {
     grid-area: main;

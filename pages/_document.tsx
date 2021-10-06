@@ -81,7 +81,7 @@ export default class MyDocument extends Document {
           <meta property="og:locale" content="ja_JP" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@Knob_nbr41to" />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          {/* TODO)各ページにメタタグ入れよう */}
         </Head>
         <body>
           <Main />

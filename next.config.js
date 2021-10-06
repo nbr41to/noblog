@@ -3,6 +3,7 @@ const withMDX = require('@next/mdx')({
 });
 
 module.exports = withMDX({
+  env: {},
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   reactStrictMode: true,
   images: {

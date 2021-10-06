@@ -1,11 +1,13 @@
 import { GetStaticProps, NextPage } from 'next';
-import { GitHubGrassImage } from 'src/components/Home/GitHubGrassImage';
-import { TrendBoard } from 'src/components/Home/TrendBoard';
 import { ActivityScore } from 'src/components/Widget/ActivityScore';
 import { SleepScore } from 'src/components/Widget/SleepScore';
+import { TrendBoard } from 'src/components/Widget/TrendBoard';
 import styled from 'styled-components';
 
 import { getDatabaseInfo } from '@/apis/notion';
+import { Profile } from '@/components/Home/Profile';
+import { Topics } from '@/components/Home/Topics';
+import { GitHubGrassImage } from '@/components/Widget/GitHubGrassImage';
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
@@ -24,13 +26,8 @@ export const getStaticProps: GetStaticProps = async () => {
 const HomePage: NextPage = () => {
   return (
     <StyledHomePage>
-      <h1>my recent</h1>
-      <div className="content_wrapper">
-        <GitHubGrassImage className="ghg" />
-        <SleepScore className="slp" />
-        <ActivityScore className="act" />
-        <TrendBoard className="trend" />
-      </div>
+      <Topics />
+      <Profile />
     </StyledHomePage>
   );
 };
