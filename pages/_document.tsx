@@ -67,13 +67,13 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="のまど先生の生存確認ブログ。プログラミングと心理学に関する知見をアウトプット。"
+            content="のまど先生の生存確認ブログ。Notion API と Next.js で作成。主にプログラミングと心理学に関する知見をアウトプットしています。"
             key="desc"
           />
           <meta property="og:title" content="noblog" />
           <meta
             property="og:description"
-            content="のまど先生の生存確認ブログ。Notion API と Next.js で作成された、プログラミングと心理学に関する知見をアウトプットブログ。"
+            content="のまど先生の生存確認ブログ。Notion API と Next.js で作成。主にプログラミングと心理学に関する知見をアウトプットしています。"
           />
           <meta property="og:type" content="blog" />
           <meta property="og:url" content="https://nbr41.com/" />
