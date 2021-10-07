@@ -80,8 +80,10 @@ export default class MyDocument extends Document {
           <meta property="og:image" content="/site_image.png" />
           <meta property="og:site_name" content="noblog" />
           <meta property="og:locale" content="ja_JP" />
+
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@Knob_nbr41to" />
+
           <meta name="robots" content="all" />
           {/* TODO)各ページにメタタグ入れよう */}
         </Head>

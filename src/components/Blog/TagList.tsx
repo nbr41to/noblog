@@ -78,7 +78,8 @@ const StyledTagList = styled.div<{ isEvery: boolean }>`
         width: 52px;
         height: 52px;
         border-radius: 50%;
-        background-color: #3330;
+        background-color: #333;
+        opacity: 0;
 
         position: absolute;
         inset: 0;
@@ -88,8 +89,8 @@ const StyledTagList = styled.div<{ isEvery: boolean }>`
 
       &:active {
         &:before {
-          background-color: #3333;
-          transition: all 0.1s;
+          opacity: 0.3;
+          transition: all 0.4s;
         }
       }
 

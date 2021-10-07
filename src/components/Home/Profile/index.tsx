@@ -8,14 +8,15 @@ export const Profile: React.FC = () => {
     <>
       <h2 id="profile">Profile</h2>
       <StyledProfile>
-        <div className="myphoto">
-          <Image
-            className="myphoto"
-            src="/myphoto.png"
-            alt="myphoto"
-            layout="fill"
-            objectFit="contain"
-          />
+        <div className="myphoto_wrapper">
+          <div className="myphoto">
+            <Image
+              src="/myphoto.png"
+              alt="myphoto"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
         <ProfileMdx />
       </StyledProfile>
@@ -29,13 +30,18 @@ const StyledProfile = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  .myphoto {
+  .myphoto_wrapper {
     width: 260px;
-    height: 260px;
     border: 8px solid #666;
     border-radius: 50%;
-    margin: 38px;
+    margin: 24px auto;
     position: relative;
+    overflow: hidden;
+    .myphoto {
+      /* 縦横比固定 */
+      width: 100%;
+      padding-top: 100%;
+    }
   }
 `;
 const StyledMoreDetails = styled.a`

@@ -14,10 +14,12 @@ export const Layout: VFC<LayoutProps> = ({ children }) => {
   return (
     <>
       <StyledLayout>
-        <Header className="header" />
-        <Main className="main">{children}</Main>
-        <Right className="right" />
-        <Footer className="footer" />
+        <div className="opacity_wrapper">
+          <Header className="header" />
+          <Main className="main">{children}</Main>
+          <Right className="right" />
+          <Footer className="footer" />
+        </div>
       </StyledLayout>
     </>
   );
@@ -26,42 +28,45 @@ export const Layout: VFC<LayoutProps> = ({ children }) => {
 const StyledLayout = styled.div`
   margin: 0 auto;
   min-height: 100vh;
-  background-image: url('/bg_image.png');
-  background-color: rgba(255, 255, 255, 0.8);
-  background-blend-mode: lighten;
   background-size: 1280px;
+  background-image: url('/bg_image.png');
 
-  position: relative;
+  > .opacity_wrapper {
+    background-color: rgba(255, 255, 255, 0.8);
 
-  display: grid;
-  grid-template:
-    ' header header header header header header header ' auto
-    ' ...... ...... ...... ...... ...... ...... ...... ' 12px
-    ' ...... main   main   main   ...... right  ...... ' auto
-    ' ...... ...... ...... ...... ...... ...... ...... ' 20px
-    ' footer footer footer footer footer footer footer ' 60px /
-    40px 0 0 1fr 20px 280px 40px;
+    position: relative;
 
-  ${({ theme }) => theme.media.sp`
+    display: grid;
     grid-template:
       ' header header header header header header header ' auto
-      ' ...... ...... ...... ...... ...... ...... ...... ' 0
-      ' ...... main   main   main   main   main   ...... ' auto
-      ' ...... right  right  right  right  right  ...... ' auto
+      ' ...... ...... ...... ...... ...... ...... ...... ' 12px
+      ' ...... main   main   main   ...... right  ...... ' auto
+      ' ...... ...... ...... ...... ...... ...... ...... ' 20px
       ' footer footer footer footer footer footer footer ' 60px /
-        0      1fr    1fr    1fr    1fr    1fr    0;
+      40px 0 0 1fr 20px 280px 40px;
+
+    ${({ theme }) => theme.media.sp`
+    grid-template:
+    ' header header header header header header header ' auto
+    ' ...... ...... ...... ...... ...... ...... ...... ' 12px
+    ' ...... main   main   main   main   main   ...... ' auto
+    ' ...... right  right  right  right  right  ...... ' auto
+    ' ...... ...... ...... ...... ...... ...... ...... ' 8px
+    ' footer footer footer footer footer footer footer ' 60px /
+      0      1fr    1fr    1fr    1fr    1fr    0;
   `}
 
-  > .header {
-    grid-area: header;
-  }
-  > .main {
-    grid-area: main;
-  }
-  > .right {
-    grid-area: right;
-  }
-  > .footer {
-    grid-area: footer;
+    > .header {
+      grid-area: header;
+    }
+    > .main {
+      grid-area: main;
+    }
+    > .right {
+      grid-area: right;
+    }
+    > .footer {
+      grid-area: footer;
+    }
   }
 `;

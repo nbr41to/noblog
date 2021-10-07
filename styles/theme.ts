@@ -11,6 +11,7 @@ export const theme = {
   name: 'Base Theme',
   fonts: {},
   colors: {
+    mainBg: '#fffa',
     orange: '#d4680f',
     yellow: '#daa104',
     blue: '#0e638e',
