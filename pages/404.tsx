@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Custom404: VFC = () => {
   return (
     <StyledCustom404>
-      <h3>このページは存在しません🥺</h3>
+      <h3>このページはまだないよ🥺</h3>
       <h3>Page Not Found</h3>
     </StyledCustom404>
   );
@@ -19,9 +19,9 @@ const StyledCustom404 = styled.div`
   border: 2px solid #444;
   border-radius: 16px;
 
-  position: absolute;
+  position: relative;
   inset: 0;
-  margin: auto;
+  margin: 24px auto;
 
   display: flex;
   justify-content: center;
