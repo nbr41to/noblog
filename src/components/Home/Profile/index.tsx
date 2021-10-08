@@ -27,9 +27,9 @@ export const Profile: React.FC = () => {
 const StyledProfile = styled.div`
   margin-top: 24px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   .myphoto_wrapper {
     width: 260px;
     border: 8px solid #666;
