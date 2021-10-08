@@ -11,7 +11,7 @@ import databaseProperties from '@/data/database-properties.json';
 import { DatabaseProperties, NotionPageItem } from '@/type/notion';
 import { generateDatabaseProperties } from '@/utils/generateDatabaseProperties';
 
-import { getDatabaseInfo, getPageList } from '../../src/apis/notion';
+import { getDatabaseInfo, getMainBlogList } from '../../src/apis/notion';
 
 type BlogPageProps = {
   items: NotionPageItem[];
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
     generateDatabaseProperties(databaseInfo);
 
     /* データベースからページを取得 */
-    const pageList = await getPageList();
+    const pageList = await getMainBlogList();
 
     return {
       props: {

@@ -1,9 +1,9 @@
 {
   "categories": [
     {
-      "id": "b78423e9-9bdd-4b2a-a781-a51174123fd4",
-      "color": "purple",
-      "name": "technology"
+      "id": "122b3c88-c8c7-4251-8390-fd2ce812a69e",
+      "color": "yellow",
+      "name": "interested"
     },
     {
       "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
@@ -11,9 +11,14 @@
       "name": "programming"
     },
     {
-      "id": "122b3c88-c8c7-4251-8390-fd2ce812a69e",
-      "color": "yellow",
-      "name": "interested"
+      "id": "b78423e9-9bdd-4b2a-a781-a51174123fd4",
+      "color": "purple",
+      "name": "technology"
+    },
+    {
+      "id": "c9324e00-72b3-4a13-8cc5-74cc287c8ebe",
+      "color": "orange",
+      "name": "Awareness"
     },
     {
       "id": "eef9bf32-8179-4961-9141-aac53eae8b1f",
@@ -124,7 +129,7 @@
     },
     {
       "id": "bf0d9149-b117-4725-918b-318a12444968",
-      "color": "default",
+      "color": "green",
       "name": "マインドフルネス"
     },
     {
@@ -136,6 +141,26 @@
       "id": "cccdd7ab-2445-47c5-b8ee-aeb375899537",
       "color": "blue",
       "name": "習慣"
+    },
+    {
+      "id": "806b81e5-a85f-46ae-9602-5d9d351b4953",
+      "color": "default",
+      "name": "Notion"
+    },
+    {
+      "id": "1b3c8222-2beb-4880-a1e1-cadd9329fdc0",
+      "color": "red",
+      "name": "Notion API"
+    },
+    {
+      "id": "36b2c18b-b523-4a00-a6bd-dc0aef75932d",
+      "color": "default",
+      "name": "Blog"
+    },
+    {
+      "id": "d3c18b63-20b4-45b5-a9a0-91ca211519d0",
+      "color": "green",
+      "name": "思考法"
     }
   ]
 }

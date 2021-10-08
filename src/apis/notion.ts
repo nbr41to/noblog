@@ -1,8 +1,4 @@
 import { Client } from '@notionhq/client';
-import {
-  GetPageResponse,
-  ListBlockChildrenResponse,
-} from '@notionhq/client/build/src/api-endpoints';
 
 import {
   NotionBlock,
@@ -18,26 +14,20 @@ const notion = new Client({
 const database_id = process.env.NOTION_DATABASE_ID;
 
 /**
- *  databaseからpage一覧を取得
- *  @param {string} next_cursor optional
+ *  noblogのDATABASEからPAGE一覧を全て取得
  *  @returns Promise<{result: Array<any>, has_more: boolean, next_cursor: string | null }>
  */
-export const getPageList = async (
-  start_cursor?: string | null,
-): Promise<NotionPageItem[]> => {
-  /* has_moreがnullで返ってくるが, start_cursorはundefinedしか受け付けないので, 変換してる */
-  if (start_cursor === null) {
-    start_cursor = undefined;
-  }
-  try {
-    const pageList: NotionPageItem[] = [];
-    const condition = { has_more: true, next_cursor: null };
-    const page_size = 100; // 個ずつ取得
+export const getMainBlogList = async (): Promise<NotionPageItem[]> => {
+  const pageList: NotionPageItem[] = [];
+  const condition = { has_more: true, next_cursor: undefined };
+  const page_size = 100; // 個ずつ取得
 
+  /* next_cursorを使ってBlogの記事を全て取得する */
+  try {
     while (condition.has_more) {
       const response = await notion.databases.query({
         database_id,
-        start_cursor,
+        start_cursor: condition.next_cursor,
         page_size,
         filter: {
           property: 'Publish',
@@ -45,6 +35,12 @@ export const getPageList = async (
             equals: true,
           },
         },
+        sorts: [
+          {
+            property: 'Date',
+            direction: 'descending',
+          },
+        ],
       });
       condition.has_more = response.has_more;
       condition.next_cursor = response.next_cursor;
@@ -57,16 +53,30 @@ export const getPageList = async (
   }
 };
 
-/* pageの情報を取得 */
+/* childrenを取得 */
+export const getChildrenBlocks = async (
+  id: string, // page_id || block_id
+): Promise<NotionBlock[]> => {
+  try {
+    const response = await notion.blocks.children.list({
+      block_id: id,
+    });
+    return response.results;
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+/* PAGE情報を取得 */
 export const getPageContent = async (
   page_id: string,
 ): Promise<NotionPageContent> => {
   try {
-    /* pageのpropertiesの取得 */
+    /* PAGE の properties を 取得 */
     const pageInfo = await notion.pages.retrieve({
       page_id,
     });
-    /* page内blocksなどの取得 */
+    /* PAGEの BLOCKS など を 取得 */
     const response = await notion.blocks.children.list({
       block_id: page_id,
     });
@@ -77,21 +87,7 @@ export const getPageContent = async (
   }
 };
 
-/* page内のBlocksだけを取得 */
-export const getBlocksInPage = async (
-  page_id: string,
-): Promise<NotionBlock[]> => {
-  try {
-    const response = await notion.blocks.children.list({
-      block_id: page_id,
-    });
-    return response.results;
-  } catch (error) {
-    throw Error(error);
-  }
-};
-
-/* database properties のCategoryとTagsを取得 */
+/* DATABASE の properties の Category と Tags を取得 */
 export const getDatabaseInfo = async (): Promise<{
   categories: NotionSelectOption[];
   tags: NotionSelectOption[];
@@ -122,7 +118,9 @@ export const getDatabaseInfo = async (): Promise<{
   }
 };
 
-/* ORIGINAL_BLOCKの内容を取得 */
+/**
+ * 特別なBLOCKやPAGEを取得する場合
+ */
 export const getTrendBlock = async (): Promise<any> => {
   /* my trend */
   const response = await notion.blocks.children.list({
@@ -130,5 +128,3 @@ export const getTrendBlock = async (): Promise<any> => {
   });
   return response;
 };
-
-/* Preview用のNotionページを取得 */
