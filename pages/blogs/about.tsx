@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import styled from 'styled-components';
 
+import { MDXWrapper } from '@/components/MDXWrapper';
 import NotionBlogAbout from '@/markdown/notion-blog-about.mdx';
 
 type AboutProps = {
@@ -10,8 +11,9 @@ type AboutProps = {
 const About: NextPage<AboutProps> = ({ className }) => {
   return (
     <StyledAbout className={`${className}`}>
-      <h2>Notion APIを使ったBlogに関して</h2>
-      <NotionBlogAbout />
+      <MDXWrapper>
+        <NotionBlogAbout />
+      </MDXWrapper>
     </StyledAbout>
   );
 };

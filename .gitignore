@@ -35,4 +35,5 @@ yarn-error.log*
 .vercel
 
 # my data
-database-properties.json
+/src/data/database-properties.json
+src/data/database-properties.json

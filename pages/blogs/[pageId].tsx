@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { useMemo } from 'react';
 import { getPageContent } from 'src/apis/notion';
-import { getPageList } from 'src/apis/notion';
+import { getMainBlogList } from 'src/apis/notion';
 import { dateFormatted } from 'src/utils/dateFormatted';
 import styled from 'styled-components';
 
@@ -28,7 +28,7 @@ type Params = {
 };
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const pageList = await getPageList();
+  const pageList = await getMainBlogList();
   const paths = pageList.map(({ id }) => ({ params: { pageId: id } }));
   return {
     paths,

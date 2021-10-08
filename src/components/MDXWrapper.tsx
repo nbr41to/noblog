@@ -1,20 +1,26 @@
 import { VFC } from 'react';
-import styled from 'styled-components';
-
-import ActivitiesMdx from '@/markdown/activities.mdx';
+import styled, { css } from 'styled-components';
 
 type MDXWrapperProps = {
   className?: string;
+  children: JSX.Element;
 };
 
-export const MDXWrapper: VFC<MDXWrapperProps> = ({ className }) => {
+export const MDXWrapper: VFC<MDXWrapperProps> = ({ className, children }) => {
+  {
+    /* TODO)MDXのaタグをLinkと別タグで開くに分けたい */
+  }
   return (
-    <StyledMDXWrapper className={`${className}`}>
-      {/* TODO)MDXのaタグをLinkと別タグで開くに分けたい */}
-      <ActivitiesMdx />
-    </StyledMDXWrapper>
+    <StyledMDXWrapper className={`${className}`}>{children}</StyledMDXWrapper>
   );
 };
+
+const hoverAnker = css`
+  &:hover {
+    color: orange;
+    transition: color 0.3s;
+  }
+`;
 
 const StyledMDXWrapper = styled.div`
   padding: 20px;
@@ -76,6 +82,26 @@ const StyledMDXWrapper = styled.div`
       padding: 0 2px;
       text-decoration: underline;
       cursor: pointer;
+      ${hoverAnker}
     }
+  }
+  > ul,
+  ol {
+    padding-left: 24px;
+    > li {
+      list-style-type: circle;
+      padding: 4px 0;
+      > a {
+        font-weight: bold;
+        color: #444;
+        padding: 0 2px;
+        text-decoration: underline;
+        cursor: pointer;
+        ${hoverAnker}
+      }
+    }
+  }
+  > ol li {
+    list-style-type: decimal;
   }
 `;
