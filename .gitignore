@@ -36,3 +36,4 @@ yarn-error.log*
 
 # my data
 /src/data/database-properties.json
+src/data/database-properties.json
