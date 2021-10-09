@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "build-storybook": "build-storybook",
     "dev": "next dev",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
     "spj": "sort-package-json package.json && prettier \"**/*\" --write --ignore-unknown",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "start-storybook -p 6006"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -37,6 +39,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-links": "^6.3.10",
+    "@storybook/react": "^6.3.10",
     "@types/babel__core": "^7.1.16",
     "@types/eslint": "^7.28.0",
     "@types/node": "^16.10.2",
