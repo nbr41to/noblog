@@ -1,4 +1,4 @@
-name: deploy website
+name: deploy blog
 on:
   # 一応動確のために手動で GitHub Actions を実行可能にする
   # その際の引数として checkout 時の ref を渡している
@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           npm install
-          npm run build:posts
+          npm run build
       - uses: amondnet/vercel-action@v20
         with:
           # GitHub Actions の Secrets で作成した値を参照する形で
