@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import { NotionPageItem } from '@/type/notion';
 
-import { dateFormatted } from '../../utils/dateFormatted';
-import { SelectOptionLabel } from './_SelectOptionLabel';
+import { dateFormatted } from '../../../utils/dateFormatted';
+import { SelectOptionLabel } from '../_SelectOptionLabel';
 
 type BlogListItemProps = {
   className?: string;
@@ -69,15 +69,23 @@ export const BlogListItem: VFC<BlogListItemProps> = ({ className, item }) => {
 };
 
 const StyledBlogListItem = styled.div`
-  border: 4px solid #4444;
-  border-radius: 12px;
-  padding: 8px 12px;
+  border-radius: 16px;
+  padding: 12px 16px;
   cursor: pointer;
-  background-color: #fffc;
+  background-color: #f5f5f5;
   max-width: 280px;
+  box-shadow: -1.5px -1.5px 2px hsl(0deg 0% 100% / 95%),
+    1px 1px 3px rgb(28 64 128 / 15%);
+  transition: box-shadow 0.4s ease-out;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  &:hover {
+    box-shadow: -2px -2px 2.5px hsl(0deg 0% 100% / 95%),
+      4px 4px 8px rgb(28 64 128 / 15%);
+  }
 
   > .item_header {
     display: flex;
@@ -106,6 +114,7 @@ const StyledBlogListItem = styled.div`
       text-align: center;
       color: #333;
       padding: 12px;
+      margin: 8px 0 12px;
       height: 100%;
       font-weight: bold;
       border-top: 1px solid #2222;

@@ -55,7 +55,12 @@
     {
       "id": "4cdad181-5ae3-4b9c-81d7-f7df160d0879",
       "color": "green",
-      "name": "node.js"
+      "name": "Node.js"
+    },
+    {
+      "id": "dbb69094-65bd-43f7-b949-8e65246a6f14",
+      "color": "orange",
+      "name": "git"
     },
     {
       "id": "0aba24c9-5663-444b-b835-9b3693989f26",
@@ -161,6 +166,21 @@
       "id": "d3c18b63-20b4-45b5-a9a0-91ca211519d0",
       "color": "green",
       "name": "思考法"
+    },
+    {
+      "id": "79579319-8174-4c09-9e29-e63aa359edf0",
+      "color": "default",
+      "name": "Vercel"
+    },
+    {
+      "id": "434760eb-3af7-4c28-b032-2ee8304db7f1",
+      "color": "purple",
+      "name": "Babel"
+    },
+    {
+      "id": "3d4f734f-2e91-4e09-96ad-2ab3892150ad",
+      "color": "purple",
+      "name": "GitHub Actions"
     }
   ]
 }
