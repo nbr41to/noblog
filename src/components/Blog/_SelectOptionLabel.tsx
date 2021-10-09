@@ -31,6 +31,8 @@ const StyledSelectOptionLabel = styled.span`
   padding: 6px 12px;
   cursor: pointer;
   border-radius: 4px;
+  box-shadow: -1px -1px 1.5px hsl(0deg 0% 100% / 95%),
+    1px 1px 1.5px rgb(28 64 128 / 15%);
   line-height: 16px;
   white-space: nowrap;
 

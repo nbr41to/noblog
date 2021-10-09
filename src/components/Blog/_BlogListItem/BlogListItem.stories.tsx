@@ -3,7 +3,7 @@ import React from 'react';
 
 import mock_data from '@/mocks/blog_item.json';
 
-import { BlogListItem } from './new';
+import { BlogListItem } from '.';
 
 export default {
   title: 'BlogListItem',

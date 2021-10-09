@@ -51,6 +51,9 @@ const StyledSelectOptionButton = styled.button<{
 }>`
   background-color: ${({ color }) => colors[color]};
   ${({ selected }) => selected && 'filter: brightness(0.6)'};
+  box-shadow: -1px -1px 1.5px hsl(0deg 0% 100% / 95%),
+    1px 1px 1.5px rgb(28 64 128 / 15%);
+
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 6px;
