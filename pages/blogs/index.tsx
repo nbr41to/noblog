@@ -116,7 +116,7 @@ const BlogsPage: NextPage<BlogPageProps> = ({ items }) => {
       />
       <div className="clear_button_wrapper">
         <SelectOptionButton
-          name="All clear"
+          label="All clear"
           color="default"
           onClick={() =>
             setSelected({ ...selected, categoryId: '', tagIds: [] })
