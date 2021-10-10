@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { SelectOptionButton } from '@/components/Blog/_SelectOptionButton';
 import { NotionSelectOption } from '@/type/notion';
 
-import { LikeButton } from './_LikeButton';
+import { LikeButtonArea } from './_LikeButton';
 
 type DetailHeaderProps = {
   className?: string;
@@ -51,7 +51,7 @@ export const DetailHeader: VFC<DetailHeaderProps> = ({
         <div className="category_tags_buttons">
           <SelectOptionButton
             className="m-4"
-            name={category.name}
+            label={category.name}
             color={category.color}
             onClick={() => {
               router.push({
@@ -65,7 +65,7 @@ export const DetailHeader: VFC<DetailHeaderProps> = ({
               <SelectOptionButton
                 className="m-4"
                 key={tag.id}
-                name={tag.name}
+                label={tag.name}
                 color={tag.color}
                 onClick={() => {
                   router.push({
@@ -76,7 +76,7 @@ export const DetailHeader: VFC<DetailHeaderProps> = ({
               />
             ))}
         </div>
-        <LikeButton className="my-8" id={id} />
+        <LikeButtonArea className="my-8" id={id} />
       </div>
       <p>
         🕒 この記事は<span>{created_time}</span>に作成され、
@@ -108,7 +108,6 @@ const StyledDetailHeader = styled.div`
   }
 
   > .info {
-    text-align: right;
     padding-bottom: 16px;
     border-bottom: 2px dotted #444;
 

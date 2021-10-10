@@ -1,24 +1,12 @@
-import Image from 'next/image';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 import { NotionBlock } from '@/type/notion';
 
-import { Bookmark } from './Bookmark';
+import { Bookmark } from './Blocks/Bookmark';
+import { Image } from './Blocks/Image';
+import { Quote } from './Blocks/Quote';
 import { compileText } from './compileText';
-
-/* notion_block_types = [
-  'paragraph',
-  'unsupported',
-  'heading_1',
-  'heading_2',
-  'heading_3',
-  'bulleted_list_item',
-  'numbered_list_item',
-  'to_do',
-  'toggle',
-  'child_page',
-] as const; */
 
 export const compiledBlock = (block: NotionBlock): JSX.Element => {
   const { type } = block;
@@ -49,6 +37,8 @@ export const compiledBlock = (block: NotionBlock): JSX.Element => {
           {compileText(text)}
         </li>
       );
+    case 'quote':
+      return <Quote block={block} />;
     case 'toggle': // childrenを取得ロジックが必要なので未対応
       return <div className={`${type}`}>{compileText(text)}</div>;
     case 'child_page': // page block 非対応
@@ -59,14 +49,16 @@ export const compiledBlock = (block: NotionBlock): JSX.Element => {
       return <Bookmark className={`${type}`} url={block[type].url} />;
     case 'image':
       return (
-        <div className={`${type}`}>
-          <Image
-            src={block[type].file.url}
-            alt="image in blog"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
+        <Image block={block} />
+        /* TODO)いずれ下に戻したほうが良さそう */
+        // <div className={`${type}`}>
+        //   <Image
+        //     src={block[type].file.url}
+        //     alt="image in blog"
+        //     layout="fill"
+        //     objectFit="contain"
+        //   />
+        // </div>
       );
     case 'video':
       /* YouTubeのEmbed type: "external" */
@@ -101,6 +93,6 @@ export const compiledBlock = (block: NotionBlock): JSX.Element => {
       );
     default:
       // console.log(block);
-      return <p>[例外ブロックです: {block.type}]</p>;
+      return <p>[未対応Block] type: {block.type}</p>;
   }
 };

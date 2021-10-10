@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 /* NotionのpropertiesのCategoryやTags選択するボタン */
 
-const colors = {
+/* TODO）Labelと共通化したい */
+const buttonColors = {
   orange: '#f9e8d8',
   blue: '#d8e8ef',
   red: '#fae0e0',
@@ -16,11 +17,11 @@ const colors = {
   default: '#eeeeee',
 } as const;
 
-type Color = keyof typeof colors;
+type Color = keyof typeof buttonColors;
 
 type SelectOptionButtonProps = {
   className?: string;
-  name: string;
+  label: string;
   color: Color;
   selected?: boolean;
   onClick: () => void;
@@ -28,7 +29,7 @@ type SelectOptionButtonProps = {
 
 export const SelectOptionButton: VFC<SelectOptionButtonProps> = ({
   className,
-  name,
+  label,
   color,
   selected = false,
   onClick,
@@ -40,7 +41,7 @@ export const SelectOptionButton: VFC<SelectOptionButtonProps> = ({
       selected={selected}
       onClick={onClick}
     >
-      {name}
+      {label}
     </StyledSelectOptionButton>
   );
 };
@@ -49,7 +50,7 @@ const StyledSelectOptionButton = styled.button<{
   selected: boolean;
   color: Color;
 }>`
-  background-color: ${({ color }) => colors[color]};
+  background-color: ${({ color }) => buttonColors[color]};
   ${({ selected }) => selected && 'filter: brightness(0.6)'};
   box-shadow: -1px -1px 1.5px hsl(0deg 0% 100% / 95%),
     1px 1px 1.5px rgb(28 64 128 / 15%);

@@ -1,6 +1,7 @@
 import { Client } from '@notionhq/client';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+/* TODO)ここでこれを書かない */
 const notion = new Client({
   auth: process.env.INTERNAL_INTEGRATION_TOKEN,
 });

@@ -29,7 +29,7 @@ export const CategoryList: VFC<CategoryListProps> = ({
               className="m-4"
               key={id}
               color={color}
-              name={name}
+              label={name}
               selected={id === selectedId}
               onClick={() => onClick(id)}
             />

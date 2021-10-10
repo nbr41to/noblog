@@ -38,7 +38,7 @@ export const BlogListItem: VFC<BlogListItemProps> = ({ className, item }) => {
     >
       <div className="item_header">
         <SelectOptionLabel
-          name={pageProperties.category.name}
+          label={pageProperties.category.name}
           color={pageProperties.category.color}
         />
         <div className="date p-4">
@@ -59,7 +59,7 @@ export const BlogListItem: VFC<BlogListItemProps> = ({ className, item }) => {
             <SelectOptionLabel
               className="m-4"
               key={tag.id}
-              name={tag.name}
+              label={tag.name}
               color={tag.color}
             />
           ))}

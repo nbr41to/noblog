@@ -18,4 +18,3 @@ export const Default = Template.bind({});
 Default.args = {
   item: mock_data,
 };
-// export const Contain = Template.bind({});

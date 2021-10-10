@@ -102,9 +102,7 @@ export const StyledNotionBlock = styled.div`
       }
     }
   }
-  /* Componentに切り出した ./Bookmark.tsx */
-  .bookmark {
-  }
+
   .image {
     width: 100%;
     max-width: 720px;
