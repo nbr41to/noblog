@@ -181,6 +181,16 @@
       "id": "3d4f734f-2e91-4e09-96ad-2ab3892150ad",
       "color": "purple",
       "name": "GitHub Actions"
+    },
+    {
+      "id": "3f3dac51-0a5a-4da5-a14c-553059906cdc",
+      "color": "orange",
+      "name": "マシュマロ・テスト"
+    },
+    {
+      "id": "16942bc6-4fc1-407e-be1e-bf2766c9f35d",
+      "color": "red",
+      "name": "行動原理"
     }
   ]
 }
