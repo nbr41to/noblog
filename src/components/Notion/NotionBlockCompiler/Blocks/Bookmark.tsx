@@ -1,4 +1,4 @@
-import { useMemo, VFC } from 'react';
+import { memo, useMemo, VFC } from 'react';
 import styled from 'styled-components';
 
 import { useOgp } from '@/hooks/useOgp';
@@ -10,7 +10,7 @@ type BookmarkProps = {
   url: string;
 };
 
-export const Bookmark: VFC<BookmarkProps> = ({ className, url }) => {
+export const Component: VFC<BookmarkProps> = ({ className, url }) => {
   const { data } = useOgp(url);
 
   const siteInfo = useMemo(() => {
@@ -40,6 +40,7 @@ export const Bookmark: VFC<BookmarkProps> = ({ className, url }) => {
               <img src={siteInfo.imageUrl} alt="site image" />
             </div>
           )}
+          <div className="url_text">{url}</div>
           <div className="label">参考URL</div>
         </div>
       ) : (
@@ -69,14 +70,14 @@ const StyledBookmark = styled.a`
     position: relative;
 
     > .title {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       border-bottom: 1px solid #444;
       padding: 0 4px 4px;
       margin: 8px 0;
     }
     > .description {
-      font-size: 12px;
+      font-size: 14px;
       padding: 0 8px;
       margin: 8px 0;
     }
@@ -86,6 +87,11 @@ const StyledBookmark = styled.a`
       > img {
         height: 100%;
       }
+    }
+    > .url_text {
+      font-size: 14px;
+      padding: 0 8px;
+      margin: 8px 0;
     }
     > .label {
       display: inline-block;
@@ -100,3 +106,5 @@ const StyledBookmark = styled.a`
     }
   }
 `;
+
+export const Bookmark = memo(Component);

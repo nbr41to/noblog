@@ -7,8 +7,6 @@ import { NotionBlock } from '@/type/notion';
 const fetcher = async (url: string): Promise<{ url: string }> => {
   const res = await fetch(url.replace('image/', ''));
   const data = (await res.json()) as Extract<NotionBlock, { type: 'image' }>;
-  // eslint-disable-next-line no-console
-  console.log('swrがfetchしました:', data);
   return {
     url: data.image.type === 'file' ? data.image.file.url : '/',
   };

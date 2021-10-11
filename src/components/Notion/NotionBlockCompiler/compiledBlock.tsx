@@ -1,11 +1,12 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 import { NotionBlock } from '@/type/notion';
 
 import { Bookmark } from './Blocks/Bookmark';
-// import { Image } from './Blocks/Image';
+import { Callout } from './Blocks/Callout';
+import { Image } from './Blocks/Image';
 import { Quote } from './Blocks/Quote';
 import { compileText } from './compileText';
 
@@ -40,6 +41,8 @@ export const compiledBlock = (block: NotionBlock): JSX.Element => {
       );
     case 'quote':
       return <Quote block={block} />;
+    case 'callout':
+      return <Callout block={block} />;
     case 'toggle': // childrenを取得ロジックが必要なので未対応
       return <div className={`${type}`}>{compileText(text)}</div>;
     case 'child_page': // page block 非対応
@@ -50,16 +53,16 @@ export const compiledBlock = (block: NotionBlock): JSX.Element => {
       return <Bookmark className={`${type}`} url={block[type].url} />;
     case 'image':
       return (
-        // <Image block={block} />
+        <Image block={block} />
         /* TODO)いずれ下に戻したほうが良さそう */
-        <div className={`${type}`}>
-          <Image
-            src={block[type].file.url}
-            alt="image in blog"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
+        // <div className={`${type}`}>
+        //   <Image
+        //     src={block[type].file.url}
+        //     alt="image in blog"
+        //     layout="fill"
+        //     objectFit="contain"
+        //   />
+        // </div>
       );
     case 'video':
       /* YouTubeのEmbed type: "external" */
