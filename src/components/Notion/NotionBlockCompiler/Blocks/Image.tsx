@@ -39,10 +39,13 @@ export const Image: VFC<ImageProps> = ({ className, block }) => {
       const data = await fetch(url);
       // eslint-disable-next-line no-console
       console.log('url fetch data: ', data);
-      if (data.status !== 403) return setSrc(url);
+      if (data.status === 200) {
+        setSrc(url);
+        setSuccess(true);
+        return;
+      }
       setSuccess(false);
     })();
-
     setSrc(url);
   }, [block, success]);
 
@@ -53,6 +56,7 @@ export const Image: VFC<ImageProps> = ({ className, block }) => {
       ) : (
         <div>Loading...</div>
       )}
+      {/* 画像を取得するボタン案 */}
     </StyledImage>
   );
 };
