@@ -67,7 +67,7 @@ export const getChildrenBlocks = async (
   }
 };
 
-/* PAGE情報を取得 */
+/* PAGEの情報とpropertiesを取得 */
 export const getPageContent = async (
   page_id: string,
 ): Promise<NotionPageContent> => {
@@ -113,6 +113,19 @@ export const getDatabaseInfo = async (): Promise<{
       });
     }
     return { categories, tags };
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+/* BLOCKの情報を取得 */
+// 現在はimage blockのurlを取得するのに使用
+export const getBlock = async (block_id: string): Promise<NotionBlock> => {
+  try {
+    const response = await notion.blocks.retrieve({
+      block_id,
+    });
+    return response;
   } catch (error) {
     throw Error(error);
   }

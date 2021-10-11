@@ -48,7 +48,7 @@ export const TagList: VFC<TagListProps> = ({
                   className="m-4"
                   key={id}
                   color={color}
-                  name={name}
+                  label={name}
                   selected={selectedIds.includes(id)}
                   onClick={() => onClick(id)}
                 />

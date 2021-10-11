@@ -38,6 +38,7 @@ const StyledTweetTimeLine = styled.div`
   ${({ theme }) => theme.box.inner};
   h3 {
     ${({ theme }) => theme.mixins.asideTitle};
+    margin-bottom: 12px;
   }
   > .tweet {
     height: 800px;

@@ -134,7 +134,9 @@ const StyledMyLinks = styled.div`
       text-align: center;
     }
     &:active {
-      transform: scale(0.96);
+      transform: scale(0.98);
+      filter: brightness(0.9);
+      transition: all 0.2s ease-in-out;
     }
     &.youtube {
       background-color: tomato;

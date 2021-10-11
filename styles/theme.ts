@@ -11,7 +11,7 @@ export const theme = {
   name: 'Base Theme',
   fonts: {},
   colors: {
-    mainBg: '#fffa',
+    main: '#f5f5f5',
     orange: '#d4680f',
     yellow: '#daa104',
     blue: '#0e638e',
@@ -24,14 +24,16 @@ export const theme = {
   },
   box: {
     outer: () => css`
-      border: 2px solid #999;
+      background-color: #f5f5f5cc;
       border-radius: 8px;
-      background-color: #fffc;
+      box-shadow: -1.5px -1.5px 2px hsl(0deg 0% 100% / 95%),
+        1px 1px 3px rgb(28 64 128 / 15%);
     `,
     inner: () => css`
-      border: 2px solid #ccc;
+      background-color: #f5f5f5;
       border-radius: 8px;
-      background-color: #fff;
+      box-shadow: -1.5px -1.5px 2px hsl(0deg 0% 100% / 95%),
+        1px 1px 3px rgb(28 64 128 / 15%);
     `,
   },
   mixins: {

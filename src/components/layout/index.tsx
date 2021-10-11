@@ -32,10 +32,8 @@ const StyledLayout = styled.div`
   background-image: url('/bg_image.png');
 
   > .opacity_wrapper {
-    background-color: rgba(255, 255, 255, 0.8);
-
+    background-color: #eeec;
     position: relative;
-
     display: grid;
     grid-template:
       ' header header header header header header header ' auto
