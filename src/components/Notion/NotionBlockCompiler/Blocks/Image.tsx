@@ -24,6 +24,8 @@ export const Image: VFC<ImageProps> = ({ className, block }) => {
   });
 
   // eslint-disable-next-line no-console
+  console.log('image: ', success);
+  // eslint-disable-next-line no-console
   console.log('image: ', url);
   // eslint-disable-next-line no-console
   console.log('decoded url: ', decodeURIComponent(url));
@@ -35,6 +37,8 @@ export const Image: VFC<ImageProps> = ({ className, block }) => {
   useEffect(() => {
     (async () => {
       const data = await fetch(url);
+      // eslint-disable-next-line no-console
+      console.log('url fetch data: ', data);
       if (data.status !== 403) return setSrc(url);
       setSuccess(false);
     })();
