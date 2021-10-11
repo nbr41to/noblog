@@ -5,6 +5,7 @@ import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { NotionBlock } from '@/type/notion';
 
 import { Bookmark } from './Blocks/Bookmark';
+import { Callout } from './Blocks/Callout';
 import { Image } from './Blocks/Image';
 import { Quote } from './Blocks/Quote';
 import { compileText } from './compileText';
@@ -40,6 +41,8 @@ export const compiledBlock = (block: NotionBlock): JSX.Element => {
       );
     case 'quote':
       return <Quote block={block} />;
+    case 'callout':
+      return <Callout block={block} />;
     case 'toggle': // childrenを取得ロジックが必要なので未対応
       return <div className={`${type}`}>{compileText(text)}</div>;
     case 'child_page': // page block 非対応

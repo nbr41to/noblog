@@ -12,7 +12,7 @@ type ImageProps = {
   block: Extract<NotionBlock, { type: 'image' }>;
 };
 
-export const Image: VFC<ImageProps> = memo(({ className, block }) => {
+export const Component: VFC<ImageProps> = ({ className, block }) => {
   const [success, setSuccess] = useState(true);
 
   const { url } = useImageUrl({
@@ -22,11 +22,6 @@ export const Image: VFC<ImageProps> = memo(({ className, block }) => {
     },
   });
 
-  // eslint-disable-next-line no-console
-  console.log('success: ', success);
-  // eslint-disable-next-line no-console
-  console.log('image: ', url);
-
   const altText = useMemo(() => {
     return block.image.caption[0]?.plain_text || 'image of content';
   }, [block]);
@@ -34,8 +29,6 @@ export const Image: VFC<ImageProps> = memo(({ className, block }) => {
   useEffect(() => {
     (async () => {
       const data = await fetch(url);
-      // eslint-disable-next-line no-console
-      console.log('url fetch data: ', data);
       if (data.status === 200) {
         setSuccess(true);
         return;
@@ -49,11 +42,11 @@ export const Image: VFC<ImageProps> = memo(({ className, block }) => {
       <>
         <NextImage src={url} alt={altText} layout="fill" objectFit="contain" />
         {/* 画像を取得するボタン案 */}
-        {!success && <p>画像が表示されませんか？</p>}
+        {/* {!success && <p>画像が表示されませんか？</p>} */}
       </>
     </StyledImage>
   );
-});
+};
 
 const StyledImage = styled.div`
   width: 100%;
@@ -64,3 +57,5 @@ const StyledImage = styled.div`
   margin: 8px auto;
   position: relative;
 `;
+
+export const Image = memo(Component);
