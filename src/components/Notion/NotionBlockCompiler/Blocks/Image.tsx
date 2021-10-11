@@ -1,5 +1,5 @@
 import NextImage from 'next/image';
-import { useEffect, useMemo, useState, VFC } from 'react';
+import { memo, useEffect, useMemo, useState, VFC } from 'react';
 import styled from 'styled-components';
 
 import { useImageUrl } from '@/hooks/useImageUrl';
@@ -12,9 +12,8 @@ type ImageProps = {
   block: Extract<NotionBlock, { type: 'image' }>;
 };
 
-export const Image: VFC<ImageProps> = ({ className, block }) => {
+export const Component: VFC<ImageProps> = ({ className, block }) => {
   const [success, setSuccess] = useState(true);
-  const [src, setSrc] = useState('/dummy');
 
   const { url } = useImageUrl({
     blockId: success ? null : block.id,
@@ -23,13 +22,6 @@ export const Image: VFC<ImageProps> = ({ className, block }) => {
     },
   });
 
-  // eslint-disable-next-line no-console
-  console.log('image: ', success);
-  // eslint-disable-next-line no-console
-  console.log('image: ', url);
-  // eslint-disable-next-line no-console
-  console.log('decoded url: ', decodeURIComponent(url));
-
   const altText = useMemo(() => {
     return block.image.caption[0]?.plain_text || 'image of content';
   }, [block]);
@@ -37,22 +29,21 @@ export const Image: VFC<ImageProps> = ({ className, block }) => {
   useEffect(() => {
     (async () => {
       const data = await fetch(url);
-      // eslint-disable-next-line no-console
-      console.log('url fetch data: ', data);
-      if (data.status !== 403) return setSrc(url);
+      if (data.status === 200) {
+        setSuccess(true);
+        return;
+      }
       setSuccess(false);
     })();
-
-    setSrc(url);
   }, [block, success]);
 
   return (
     <StyledImage className={`${className}`}>
-      {url ? (
-        <NextImage src={src} alt={altText} layout="fill" objectFit="contain" />
-      ) : (
-        <div>Loading...</div>
-      )}
+      <>
+        <NextImage src={url} alt={altText} layout="fill" objectFit="contain" />
+        {/* 画像を取得するボタン案 */}
+        {/* {!success && <p>画像が表示されませんか？</p>} */}
+      </>
     </StyledImage>
   );
 };
@@ -66,3 +57,5 @@ const StyledImage = styled.div`
   margin: 8px auto;
   position: relative;
 `;
+
+export const Image = memo(Component);
