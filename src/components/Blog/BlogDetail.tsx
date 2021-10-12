@@ -24,7 +24,7 @@ export const BlogDetail: VFC<BlogDetailProps> = ({ className, content }) => {
     const extractedContent = {
       id: pageInfo.id,
       title: '',
-      icon: '👏',
+      icon: '🐮',
       cover_url: '',
       created_time: dateFormatted({ date: pageInfo.created_time }),
       last_edited_time: dateFormatted({ date: pageInfo.last_edited_time }),

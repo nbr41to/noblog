@@ -49,7 +49,7 @@ export const BlogListItem: VFC<BlogListItemProps> = ({ className, item }) => {
         {item.icon && item.icon.type === 'emoji' ? (
           <div className="icon_emoji m-8">{item.icon.emoji}</div>
         ) : (
-          <div className="icon_emoji m-8">📄</div>
+          <div className="icon_emoji m-8">🐮</div>
         )}
         <h3>{pageProperties.title}</h3>
       </div>

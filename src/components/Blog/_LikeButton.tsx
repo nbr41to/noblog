@@ -23,67 +23,63 @@ export const LikeButtonArea: VFC<LikeButtonProps> = ({ className, id }) => {
   };
 
   return (
-    <StyledLikeButton className={`${className}`}>
-      <button disabled={loading} onClick={incrementLikes}>
-        {loading ? 'いいね中...' : `いいね！${likes || '0'}`}
-      </button>
+    <StyledLikeButton
+      className={`${className}`}
+      disabled={loading}
+      onClick={incrementLikes}
+    >
+      {loading ? 'いいね中...' : `いいね！${likes || '0'}`}
     </StyledLikeButton>
   );
 };
 
-const StyledLikeButton = styled.div`
-  width: 100%;
-  padding-bottom: 8px;
+const StyledLikeButton = styled.button`
+  padding: 8px 16px;
+  width: 140px;
+  border: 1px solid #999;
+  border-radius: 999px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.7);
+  background-color: palegreen;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
 
-  > button {
-    padding: 8px 16px;
-    width: 140px;
-    border: 1px solid #999;
-    border-radius: 999px;
-    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.7);
-    background-color: palegreen;
-    text-align: center;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
+  /* animation */
+  animation: bound 2s ease-in-out infinite;
+  @keyframes bound {
+    0% {
+      transform: translateX(0) scale(1);
+    }
+    50% {
+      transform: translateX(-140px) scale(0.9, 1.1);
+    }
+    100% {
+      transform: translateX(0) scale(1);
+    }
+  }
 
-    /* animation */
+  &:hover {
     position: relative;
-    animation: move 4s ease-in-out infinite;
-    @keyframes move {
-      0% {
-        left: 0;
-      }
-      50% {
-        left: calc(100% - 140px);
-      }
-      100% {
-        left: 0;
-      }
-    }
+    top: 2px;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.7);
+    animation-play-state: paused;
+  }
+  &:active {
+    position: relative;
+    top: 6px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.7);
+    filter: brightness(0.9);
+    animation-play-state: paused;
+  }
+  &:disabled {
+    position: relative;
+    top: 6px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.7);
 
-    &:hover {
-      position: relative;
-      top: 2px;
-      box-shadow: 0 6px 0 rgba(0, 0, 0, 0.7);
-      animation-play-state: paused;
-    }
-    &:active {
-      position: relative;
-      top: 6px;
-      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.7);
-      filter: brightness(0.9);
-      animation-play-state: paused;
-    }
-    &:disabled {
-      position: relative;
-      top: 6px;
-      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.7);
-
-      background-color: tomato;
-      color: #fff;
-      cursor: not-allowed;
-      animation-play-state: paused;
-    }
+    background-color: tomato;
+    color: #fff;
+    cursor: not-allowed;
+    animation-play-state: paused;
   }
 `;
