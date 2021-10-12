@@ -22,7 +22,7 @@
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^11.1.2",
-    "@notionhq/client": "^0.4.2",
+    "@notionhq/client": "^0.4.3",
     "akar-icons": "^1.8.11",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-styled-components": "^1.13.2",

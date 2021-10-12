@@ -33,6 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
         items: pageList,
         databaseInfo, // _app.tsxで使用
       },
+      revalidate: 3600, // 60s * 60min
     };
   } catch (error) {
     console.error(error);

@@ -110,29 +110,12 @@ const StyledDetailHeader = styled.div`
   > .info {
     padding-bottom: 16px;
     border-bottom: 2px dotted #444;
+    text-align: right;
 
     > .category_tags_buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-    }
-
-    > .like_button {
-      border: 1px solid #444;
-      border-radius: 8px;
-      background: palegreen;
-      padding: 2px 12px;
-      cursor: pointer;
-      &:hover {
-        transform: scale(0.98);
-      }
-      &:active {
-        transform: scale(0.96);
-        filter: brightness(0.8);
-      }
-      &:disabled {
-        background: #ccc;
-      }
     }
   }
 
