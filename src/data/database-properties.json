@@ -28,6 +28,11 @@
   ],
   "tags": [
     {
+      "id": "b700367e-19d5-4b69-8e39-3749d56339a1",
+      "color": "blue",
+      "name": "CSS"
+    },
+    {
       "id": "0ae1fc7b-4c1b-4d09-be4b-335860ed33fa",
       "color": "yellow",
       "name": "JavaScript"
@@ -196,6 +201,101 @@
       "id": "143d1251-7705-48c2-ade9-ee4809cb70cc",
       "color": "red",
       "name": "JSON"
+    },
+    {
+      "id": "7a2de02d-7f0e-4a6d-be61-a362e46a410e",
+      "color": "brown",
+      "name": "回復浴"
+    },
+    {
+      "id": "65b56c96-726d-4e09-9792-26a55d82001c",
+      "color": "orange",
+      "name": "Google Analytics"
+    },
+    {
+      "id": "04f15639-c934-4a34-89e2-91332a244894",
+      "color": "purple",
+      "name": "shortid"
+    },
+    {
+      "id": "369a9aa8-8adc-4053-b762-9e30c879c757",
+      "color": "purple",
+      "name": "gitkeep"
+    },
+    {
+      "id": "e49e1c0b-8b26-4d39-b627-1fb0339edb85",
+      "color": "brown",
+      "name": "普通"
+    },
+    {
+      "id": "fad8e024-e68b-4cf1-a508-8c8aa4d483a8",
+      "color": "orange",
+      "name": "文化"
+    },
+    {
+      "id": "f2802e12-0da3-4a8a-81d5-d9fa2dd6c279",
+      "color": "yellow",
+      "name": "椅子"
+    },
+    {
+      "id": "047a9daf-5a9f-432e-9ae1-9c93f6ecf147",
+      "color": "red",
+      "name": "横スクロール"
+    },
+    {
+      "id": "e7e83f5d-ec29-4a6a-a33c-3128e003811f",
+      "color": "brown",
+      "name": "型ガード"
+    },
+    {
+      "id": "c88c930c-0032-43e5-abb1-39c9118245c4",
+      "color": "pink",
+      "name": "俯瞰"
+    },
+    {
+      "id": "1f140bb8-5e5a-44bf-8e97-d2007694772c",
+      "color": "red",
+      "name": "Diary"
+    },
+    {
+      "id": "0af83441-7a07-4e2b-9221-d0d021de49d4",
+      "color": "purple",
+      "name": "deploy"
+    },
+    {
+      "id": "81378eab-de17-4d78-9a8f-37189fdb0387",
+      "color": "orange",
+      "name": "React"
+    },
+    {
+      "id": "a24daf11-67ad-492f-8757-db47f8c9957f",
+      "color": "purple",
+      "name": "FC"
+    },
+    {
+      "id": "eafe87f0-5670-4d3f-beec-49cdc2bb24f2",
+      "color": "green",
+      "name": "VFC"
+    },
+    {
+      "id": "3ad4be39-272b-4f8d-8a64-33e93899c870",
+      "color": "red",
+      "name": "children"
+    },
+    {
+      "id": "c8f87ba2-040d-42e2-853d-8a866a7dde59",
+      "color": "green",
+      "name": "感想文"
+    },
+    {
+      "id": "f86f2960-f186-4c4b-873a-598cc5b8c7c9",
+      "color": "purple",
+      "name": "nodemon"
+    },
+    {
+      "id": "5710efc6-6b23-4eda-9aef-6abcac2f163d",
+      "color": "pink",
+      "name": "ES6"
     }
   ]
 }
