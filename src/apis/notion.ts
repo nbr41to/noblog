@@ -30,9 +30,9 @@ export const getMainBlogList = async (): Promise<NotionPageItem[]> => {
         start_cursor: condition.next_cursor,
         page_size,
         filter: {
-          property: 'Publish',
-          checkbox: {
-            equals: true,
+          property: 'Status',
+          select: {
+            equals: 'PUBLISH',
           },
         },
         sorts: [
