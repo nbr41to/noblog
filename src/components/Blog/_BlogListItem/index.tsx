@@ -73,7 +73,7 @@ const StyledBlogListItem = styled.div`
   padding: 12px 16px;
   cursor: pointer;
   background-color: #f5f5f5;
-  max-width: 280px;
+  width: 280px;
   box-shadow: -1.5px -1.5px 2px hsl(0deg 0% 100% / 95%),
     1px 1px 3px rgb(28 64 128 / 15%);
   transition: box-shadow 0.4s ease-out;
