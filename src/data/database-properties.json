@@ -264,7 +264,7 @@
     },
     {
       "id": "81378eab-de17-4d78-9a8f-37189fdb0387",
-      "color": "orange",
+      "color": "blue",
       "name": "React"
     },
     {
@@ -296,6 +296,46 @@
       "id": "5710efc6-6b23-4eda-9aef-6abcac2f163d",
       "color": "pink",
       "name": "ES6"
+    },
+    {
+      "id": "555a3df1-e692-4944-bf85-52df04e63c30",
+      "color": "brown",
+      "name": "CLI"
+    },
+    {
+      "id": "1ff5fb88-bba4-4be2-9fa2-93fdca452c03",
+      "color": "blue",
+      "name": "ターミナル"
+    },
+    {
+      "id": "c6768107-44c7-46e4-be5a-53fc3508565b",
+      "color": "purple",
+      "name": "不安"
+    },
+    {
+      "id": "60c99fad-cb9a-4b1e-a770-94647e6ec19f",
+      "color": "green",
+      "name": "コミュニケーション"
+    },
+    {
+      "id": "38a9c0fd-7784-4761-882d-f65564c89e84",
+      "color": "yellow",
+      "name": "チームマネジメント"
+    },
+    {
+      "id": "bb6ad70a-081b-4cc5-9790-30b1f7962f99",
+      "color": "green",
+      "name": "useEffect"
+    },
+    {
+      "id": "1007b75d-06a2-4184-b564-9518e183ef94",
+      "color": "purple",
+      "name": "useMemo"
+    },
+    {
+      "id": "9252a4ad-9082-49c4-ac9a-6d52b778746a",
+      "color": "orange",
+      "name": "useState"
     }
   ]
 }

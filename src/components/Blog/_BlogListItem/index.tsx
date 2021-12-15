@@ -108,15 +108,15 @@ const StyledBlogListItem = styled.div`
       font-size: 52px;
     }
     > h3 {
+      font-size: 18px;
+      font-weight: bold;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
       color: #333;
       padding: 12px;
       margin: 8px 0 12px;
       height: 100%;
-      font-weight: bold;
       border-top: 1px solid #2222;
       border-bottom: 1px solid #2222;
     }
@@ -124,7 +124,7 @@ const StyledBlogListItem = styled.div`
   > .item_footer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 `;

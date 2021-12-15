@@ -6,7 +6,7 @@ import mock_data from '@/mocks/blog_item.json';
 import { BlogListItem } from '.';
 
 export default {
-  title: 'BlogListItem',
+  title: 'Blog/BlogListItem',
   component: BlogListItem,
 } as ComponentMeta<typeof BlogListItem>;
 

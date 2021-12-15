@@ -2,18 +2,21 @@ import { NextPage } from 'next';
 import styled from 'styled-components';
 
 import { Profile } from '@/components/Home/Profile';
-import { Topics } from '@/components/Home/Topics';
+import { TrendBoard } from '@/components/Widget/TrendBoard';
 
 const HomePage: NextPage = () => {
   return (
     <StyledHomePage>
-      <Topics />
+      <TrendBoard />
       <Profile />
     </StyledHomePage>
   );
 };
 
 const StyledHomePage = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   padding: 20px 32px;
   ${({ theme }) => theme.media.sp`
     padding: 12px;

@@ -106,6 +106,12 @@ const StyledTagList = styled.div<{ isEvery: boolean }>`
       flex-wrap: nowrap;
       align-items: center;
       overflow-x: scroll;
+      /* Scrollbar hidden */
+      -ms-overflow-style: none; // IE and Edge
+      scrollbar-width: none; // Firefox
+      &::-webkit-scrollbar {
+        display: none; // Chrome, Safari, Opera
+      }
     }
   }
 `;

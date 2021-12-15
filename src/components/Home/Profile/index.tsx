@@ -2,25 +2,26 @@ import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
+import { Loader } from '@/components/Loader';
+
 import ProfileMdx from './Profile.mdx';
 export const Profile: React.FC = () => {
   return (
-    <>
+    <StyledProfile>
       <h2 id="profile">Profile</h2>
-      <StyledProfile>
-        <div className="myphoto_wrapper">
-          <div className="myphoto">
-            <Image
-              src="/myphoto.png"
-              alt="myphoto"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
+      <div className="myphoto_wrapper">
+        <div className="myphoto">
+          <Image
+            src="/myphoto.png"
+            alt="myphoto"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
-        <ProfileMdx />
-      </StyledProfile>
-    </>
+        <Loader className="loader" />
+      </div>
+      <ProfileMdx />
+    </StyledProfile>
   );
 };
 
@@ -30,6 +31,10 @@ const StyledProfile = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  > h2 {
+    width: 100%;
+    text-align: left;
+  }
   .myphoto_wrapper {
     width: 260px;
     border: 8px solid #666;
@@ -39,8 +44,15 @@ const StyledProfile = styled.div`
     overflow: hidden;
     .myphoto {
       /* 縦横比固定 */
+      position: relative;
       width: 100%;
       padding-top: 100%;
+      z-index: 1;
+    }
+    .loader {
+      position: absolute;
+      top: 16px;
+      left: 24px;
     }
   }
 `;

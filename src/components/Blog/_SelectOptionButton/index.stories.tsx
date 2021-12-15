@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { SelectOptionButton } from '.';
 
 export default {
-  title: 'SelectOptionButton',
+  title: 'Blog/SelectOptionButton',
   component: SelectOptionButton,
 } as ComponentMeta<typeof SelectOptionButton>;
 
@@ -21,7 +21,8 @@ const Template: ComponentStory<typeof SelectOptionButton> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  name: 'programming',
+  label: 'programming',
   color: 'orange',
+  selected: false,
 };
 // export const Contain = Template.bind({});
