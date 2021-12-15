@@ -43,10 +43,8 @@ const StyledProfile = styled.div`
     position: relative;
     overflow: hidden;
     .myphoto {
-      /* 縦横比固定 */
+      aspect-ratio: 1/1;
       position: relative;
-      width: 100%;
-      padding-top: 100%;
       z-index: 1;
     }
     .loader {
