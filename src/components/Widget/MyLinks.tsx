@@ -56,18 +56,6 @@ export const MyLinks: VFC<MyLinksProps> = ({ className }) => {
         </p>
       </a>
       <a
-        className="link_card my-8 p-8 mysite"
-        href="https://nbr41.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="title mb-4">
-          <Person />
-          <h4 className="ml-4">MySite</h4>
-        </div>
-        <p>自分のメインサイト</p>
-      </a>
-      <a
         className="link_card my-8 p-8 twitter"
         href="https://twitter.com/Knob_nbr41to"
         target="_blank"

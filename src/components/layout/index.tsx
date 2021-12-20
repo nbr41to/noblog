@@ -1,6 +1,7 @@
 import { ReactNode, VFC } from 'react';
 import styled from 'styled-components';
 
+import { IntroduceProgLab } from '../Widget/IntroduceProgLab';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Main } from './Main';
@@ -20,6 +21,7 @@ export const Layout: VFC<LayoutProps> = ({ children }) => {
           <Right className="right" />
           <Footer className="footer" />
         </div>
+        <IntroduceProgLab />
       </StyledLayout>
     </>
   );

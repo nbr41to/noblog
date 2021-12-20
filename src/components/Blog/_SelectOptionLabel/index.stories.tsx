@@ -4,7 +4,7 @@ import React from 'react';
 import { SelectOptionLabel } from '.';
 
 export default {
-  title: 'SelectOptionLabel',
+  title: 'Blog/SelectOptionLabel',
   component: SelectOptionLabel,
 } as ComponentMeta<typeof SelectOptionLabel>;
 
@@ -14,6 +14,6 @@ const Template: ComponentStory<typeof SelectOptionLabel> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  name: 'react',
+  label: 'react',
   color: 'blue',
 };
