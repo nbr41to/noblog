@@ -42,6 +42,7 @@ const StyledProfile = styled.div`
     margin: 24px auto;
     position: relative;
     overflow: hidden;
+    z-index: 1;
     .myphoto {
       aspect-ratio: 1/1;
       position: relative;
@@ -52,23 +53,5 @@ const StyledProfile = styled.div`
       top: 16px;
       left: 24px;
     }
-  }
-`;
-const StyledMoreDetails = styled.a`
-  width: 100%;
-  padding: 16px 0;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #444;
-  background: linear-gradient(to left, #fff, #d6e8ff, #fff);
-  &:hover {
-    cursor: pointer;
-    background: linear-gradient(to left, #fff, peachpuff, #fff);
-    transition: 0.8s;
-  }
-  &:active {
-    background: linear-gradient(to left, #fff, orange, #fff);
-    color: #fff;
   }
 `;
