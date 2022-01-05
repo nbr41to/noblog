@@ -83,6 +83,7 @@ export default class MyDocument extends Document {
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@Knob_nbr41to" />
+          <meta name="twitter:image" content="/site_image.png" />
 
           <meta name="robots" content="all" />
           {/* TODO)各ページにメタタグ入れよう */}
