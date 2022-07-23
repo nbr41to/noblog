@@ -54,7 +54,7 @@
     },
     {
       "id": "f394f7ea-4422-4600-bf10-5ea5134366c7",
-      "color": "blue",
+      "color": "gray",
       "name": "Next.js"
     },
     {
@@ -336,6 +336,121 @@
       "id": "9252a4ad-9082-49c4-ac9a-6d52b778746a",
       "color": "orange",
       "name": "useState"
+    },
+    {
+      "id": "5c0ccf37-f018-4efc-a3ac-0ae79c4dcbcc",
+      "color": "default",
+      "name": "Webサイト"
+    },
+    {
+      "id": "493765a9-b072-49d9-9dd8-00b8292ac50a",
+      "color": "orange",
+      "name": "metaタグ"
+    },
+    {
+      "id": "4293ce36-df80-4b9a-bae8-a3af2dc25f74",
+      "color": "green",
+      "name": "HTML"
+    },
+    {
+      "id": "31a27ed2-c0c9-4e5e-bfa0-e30894aa9542",
+      "color": "blue",
+      "name": "TailWindCSS"
+    },
+    {
+      "id": "926d3851-02a8-4e84-ace0-a2961d5a1833",
+      "color": "pink",
+      "name": "Prettier"
+    },
+    {
+      "id": "8782ded4-0f0a-49b1-86d1-e7a4035152e3",
+      "color": "red",
+      "name": "Twitter"
+    },
+    {
+      "id": "eb35fab1-7aca-451a-b250-549cc4e8a1bb",
+      "color": "purple",
+      "name": "MDX"
+    },
+    {
+      "id": "21a7ff2a-5d45-4357-a4a0-a8f07df21eb3",
+      "color": "default",
+      "name": "undefined"
+    },
+    {
+      "id": "53e0efb2-0741-445d-9f9f-dd2c956a2b99",
+      "color": "brown",
+      "name": "image"
+    },
+    {
+      "id": "45eb372f-680f-4193-a61b-3b4d549b4a9b",
+      "color": "default",
+      "name": "Prisma"
+    },
+    {
+      "id": "02202173-0d09-4ae3-88e0-b923a68fe6ac",
+      "color": "brown",
+      "name": "tsconfig"
+    },
+    {
+      "id": "417f1259-1477-4cc6-8672-8132d084cb75",
+      "color": "yellow",
+      "name": "scroll"
+    },
+    {
+      "id": "1e731601-3304-4802-9d82-432c27e6751c",
+      "color": "gray",
+      "name": "HTMLElement"
+    },
+    {
+      "id": "5a6083d4-f90b-44b6-a92e-aec2bf22dea3",
+      "color": "orange",
+      "name": "IntrinsicElements"
+    },
+    {
+      "id": "cba09295-99aa-458c-b5cf-4d9ca303d9d6",
+      "color": "yellow",
+      "name": "Raycast"
+    },
+    {
+      "id": "7235ad2b-5fd3-432c-924a-8b8f17473177",
+      "color": "purple",
+      "name": "Utility Types"
+    },
+    {
+      "id": "76c5fdbf-aac9-4ea8-a6d4-5117193ddc70",
+      "color": "yellow",
+      "name": "Extract"
+    },
+    {
+      "id": "2b799179-22c8-4f16-a685-a9b87bbc65a1",
+      "color": "yellow",
+      "name": "catch"
+    },
+    {
+      "id": "4e8a6f85-21c8-43a4-a25a-234e1d2b13c3",
+      "color": "gray",
+      "name": "useUnknownInCatchVariables"
+    },
+    {
+      "id": "441679bb-271b-437f-ac61-e0ce5ebaae72",
+      "color": "purple",
+      "name": "PlanetScale"
+    },
+    {
+      "id": "54a0a4e3-d2c4-4b0a-980f-2bfb7e2445eb",
+      "color": "green",
+      "name": "SQL"
+    },
+    {
+      "id": "82192079-2b43-45b9-a07e-57fb1aa654c0",
+      "color": "default",
+      "name": "Flutter"
+    },
+    {
+      "id": "0d97374e-4b97-4f4f-ba4d-20ed42344cd5",
+      "color": "red",
+      "name": "Dart"
     }
   ]
 }
