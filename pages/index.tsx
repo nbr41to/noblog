@@ -1,58 +1,11 @@
-import { NextPage } from 'next';
-import styled from 'styled-components';
-
-import { Profile } from '@/components/Home/Profile';
-import { TrendBoard } from '@/components/Widget/TrendBoard';
-
-const HomePage: NextPage = () => {
+const Home = () => {
   return (
-    <StyledHomePage>
-      <TrendBoard />
-      <Profile />
-    </StyledHomePage>
+    <div>
+      <h1>noblog</h1>
+      <p>わちにんこ</p>
+      <p className='font-firaCode'>code 1234 ABC</p>
+    </div>
   );
 };
 
-const StyledHomePage = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 20px 32px;
-  ${({ theme }) => theme.media.sp`
-    padding: 12px;
-  `}
-
-  > .content_wrapper {
-    /* display: grid; */
-    /* grid-template:
-      ' ..... ..... ..... ..... ..... ' 20px
-      ' ghg   ghg   ghg   ghg   ghg   ' auto
-      ' ..... ..... ..... ..... ..... ' 20px
-      ' trend trend trend ..... ttl   ' 800px
-      ' ..... ..... ..... ..... ..... ' 20px /
-      0 0 1fr 20px 300px; */
-
-    /* ${({ theme }) => theme.media.sp`
-      grid-template:
-        ' ..... ..... ..... ..... ..... ' 20px
-        ' ghg   ghg   ghg   ghg   ghg   ' auto
-        ' ..... ..... ..... ..... ..... ' 20px
-        ' trend trend trend trend trend ' 600px
-        ' ..... ..... ..... ..... ..... ' 20px
-        ' ttl   ttl   ttl   ttl   ttl   ' 600px
-        ' ..... ..... ..... ..... ..... ' 20px /
-        auto;
-  `}; */
-  }
-  .ghg {
-    grid-area: ghg;
-  }
-  .trend {
-    grid-area: trend;
-  }
-  .ttl {
-    grid-area: ttl;
-  }
-`;
-
-export default HomePage;
+export default Home;

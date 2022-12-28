@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* local font */
+@font-face {
+  /* 全体に使用 */
+  font-family: 'Noto Sans JP';
+  font-weight: 400;
+  src: url(./NotoSansJP-Regular.otf);
+  /* https://fonts.google.com/noto/specimen/Noto+Sans+JP */
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-weight: 500;
+  src: url(./NotoSansJP-Medium.otf);
+  /* https://fonts.google.com/noto/specimen/Noto+Sans+JP */
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-weight: 700;
+  src: url(./NotoSansJP-Bold.otf);
+  /* https://fonts.google.com/noto/specimen/Noto+Sans+JP */
+}
+@font-face {
+  /* 英語の見出しなどに使用 */
+  font-family: 'Baloo';
+  font-weight: 400;
+  src: url(./Baloo-Regular.ttf);
+  /* https://fonts.google.com/specimen/Baloo+2 */
+}
+@font-face {
+  /* 等幅 Codeに使用 */
+  font-family: 'FiraCode VariableFont';
+  font-weight: 400;
+  src: url(./FiraCode-VariableFont_wght.ttf);
+  /* https://fonts.google.com/specimen/Fira+Code */
+}
+
+body {
+  @apply bg-orange-100;
+  @apply text-slate-800;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+@layer base {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0;
+  }
+  .text-primary {
+    @apply color: rgb(249 115 22);
+  }
+  .text-secondary {
+    @apply text-slate-800;
+  }
+  .bg-primary {
+    @apply text-orange-100;
+  }
+  .bg-secondary {
+    /* text-orange-50; */
+    background-color: rgb(255 247 237);
+  }
+}
+@layer utilities {
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
