@@ -1,14 +1,14 @@
+import type {
+  NotionBlockObjectResponse,
+  NotionPageObjectResponse,
+} from '@/types/notion';
+import type { GetStaticPaths, InferGetStaticPropsType, NextPage } from 'next';
+
 import { toPostMeta } from '@/client/notion/toPostMeta';
-import { blockToJsx } from '@/components/notion/blockToJsx';
 import { PostDetailTemplate } from '@/components/templates/PostDetailTemplate';
 import { getChildrenInBlock } from '@/server/notion/blocks';
 import { getDatabaseContents } from '@/server/notion/databases';
 import { getPage } from '@/server/notion/pages';
-import {
-  NotionBlockObjectResponse,
-  NotionPageObjectResponse,
-} from '@/types/notion';
-import { GetStaticPaths, InferGetStaticPropsType, NextPage } from 'next';
 
 type Params = {
   page_id: string;
@@ -52,6 +52,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   );
   const posts = response.results as NotionPageObjectResponse[];
   const paths = posts.map(({ id }) => ({ params: { page_id: id } }));
+
   return {
     paths,
     fallback: 'blocking', // HTMLを生成しない

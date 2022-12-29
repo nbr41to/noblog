@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { PostHeader as Component } from './PostHeader';
+
 
 export default {
   component: Component,

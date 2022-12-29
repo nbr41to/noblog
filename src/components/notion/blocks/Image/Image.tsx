@@ -4,6 +4,7 @@ import NextImage from 'next/image';
 
 type Props = {
   block: any;
+  // block: ImageBlockObjectResponse;
 };
 
 export const Image: FC<Props> = ({ block }) => {
@@ -11,9 +12,9 @@ export const Image: FC<Props> = ({ block }) => {
   const caption = block.image?.caption?.plain_text;
 
   return (
-    <div className="relative aspect-square">
+    <div className='relative mx-auto aspect-square max-w-[520px]'>
       <NextImage
-        className="object-contain"
+        className='object-contain'
         src={url}
         alt={caption || ''}
         fill

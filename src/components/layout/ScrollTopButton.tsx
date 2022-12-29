@@ -1,10 +1,12 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+
 import { Affix, Button, Transition } from '@mantine/core';
-import { HiArrowCircleUp } from 'react-icons/hi';
 import { useWindowScroll } from '@mantine/hooks';
+import { HiArrowCircleUp } from 'react-icons/hi';
 
 export const ScrollTopButton: FC = () => {
   const [scroll, scrollTo] = useWindowScroll();
+
   return (
     <Affix position={{ bottom: 20, right: 20 }}>
       <Transition transition='slide-up' mounted={scroll.y > 0}>

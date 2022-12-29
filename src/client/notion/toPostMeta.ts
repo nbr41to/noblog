@@ -1,5 +1,6 @@
-import { NotionPostMeta } from '@/types/notion';
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { NotionPostMeta } from '@/types/notion';
+import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+
 
 /**
  * NotionのPageObjectResponseをPostMetaに変換

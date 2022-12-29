@@ -1,8 +1,11 @@
+
+import type { NotionPageObjectResponse } from '@/types/notion';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PostList as Component } from './PostList';
 import examplePosts from '@/mock/notion_pages.json';
-import { NotionPageObjectResponse } from '@/types/notion';
+
+import { PostList as Component } from './PostList';
+
 
 export default {
   component: Component,

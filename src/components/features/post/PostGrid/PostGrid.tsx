@@ -1,5 +1,7 @@
-import { NotionPageObjectResponse } from '@/types/notion';
-import { FC } from 'react';
+import type { NotionPageObjectResponse } from '@/types/notion';
+import type { FC } from 'react';
+
+
 import { PostGridItem } from '../PostGridItem';
 
 type Props = {

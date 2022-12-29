@@ -1,7 +1,9 @@
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Callout as Component } from './Callout';
 import exampleBlock from './example.json';
+
 
 export default {
   component: Component,

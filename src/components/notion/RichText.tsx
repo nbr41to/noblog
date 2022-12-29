@@ -1,7 +1,10 @@
+
+import type { NotionRichTextItemResponse } from '@/types/notion';
 import type { FC } from 'react';
 
 import clsx from 'clsx';
-import { NotionRichTextItemResponse } from '@/types/notion';
+
+
 
 type Props = {
   text: Array<NotionRichTextItemResponse>;

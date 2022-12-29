@@ -1,10 +1,14 @@
 import type { PrismProps } from '@mantine/prism';
+import type { CodeBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { FC } from 'react';
 
 import { Prism } from '@mantine/prism';
 
 import { RichText } from '../../RichText';
-import { CodeBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+
+
+
+
 
 type Props = {
   block: CodeBlockObjectResponse;

@@ -1,8 +1,11 @@
+
+import type { NotionBlockObjectResponse } from '@/types/notion';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TableOfContents as Component } from './TableOfContents';
 import exampleBlocks from '@/mock/notion_blocks.json';
-import { NotionBlockObjectResponse } from '@/types/notion';
+
+import { TableOfContents as Component } from './TableOfContents';
+
 
 export default {
   component: Component,

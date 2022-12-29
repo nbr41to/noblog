@@ -1,6 +1,7 @@
+import type { NotionBlockObjectResponse } from '@/types/notion';
+import type { FC } from 'react';
+
 import { blockToJsx } from '@/components/notion/blockToJsx';
-import { NotionBlockObjectResponse } from '@/types/notion';
-import { FC } from 'react';
 
 type Props = {
   blocks: NotionBlockObjectResponse[];

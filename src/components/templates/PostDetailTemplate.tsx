@@ -1,7 +1,9 @@
-import { NotionPost } from '@/types/notion';
-import { FC } from 'react';
+import type { NotionPost } from '@/types/notion';
+import type { FC } from 'react';
+
 import { PostContent } from '@/components/features/post/PostContent';
 import { PostHeader } from '@/components/features/post/PostHeader';
+
 import { TableOfContents } from '../features/post/TableOfContent';
 
 type Props = {

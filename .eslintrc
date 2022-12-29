@@ -1,6 +1,58 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:storybook/recommended"
-  ]
+    "plugin:storybook/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["import", "unused-imports"],
+  "rules": {
+    "no-console": ["error"],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "type",
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ],
+        "newlines-between": "always", // import groups の間 1行あける
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }, // 大文字小文字関係なくアルファベット順にしたい
+        "pathGroups": [
+          {
+            "pattern": "src/components/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "src/repositories/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ]
+      }
+    ],
+    /* returnの前を1行あける */
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ]
+  }
 }

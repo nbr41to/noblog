@@ -1,15 +1,33 @@
-import { NotionBlockObjectResponse } from '@/types/notion';
+import type { NotionBlockObjectResponse } from '@/types/notion';
+import type { FC } from 'react';
+
 import { clsx } from '@mantine/core';
-import { FC, useMemo } from 'react';
+import { useMemo } from 'react';
 
 type Props = {
   blocks: NotionBlockObjectResponse[];
+  isAll?: boolean;
 };
 
-export const TableOfContents: FC<Props> = ({ blocks }) => {
+export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
   const headingList = useMemo(
     () =>
       blocks.flatMap((block) => {
+        if (isAll) {
+          const type = block.type;
+          const title =
+            // @ts-expect-error ignore
+            !!block[type]?.rich_text
+              ? // @ts-expect-error ignore
+                block[type]?.rich_text[0]?.plain_text
+              : 'empty: ' + type;
+
+          return {
+            id: block.id,
+            type,
+            title,
+          };
+        }
         if (block.type === 'heading_2') {
           return {
             id: block.id,

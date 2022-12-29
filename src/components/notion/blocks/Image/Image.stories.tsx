@@ -1,7 +1,9 @@
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 import exampleBlock from './example.json';
 import { Image as Component } from './Image';
+
 
 export default {
   component: Component,

@@ -5,6 +5,7 @@
 - Notion の Database を Blog の記事として表示
 - 記事ごとのいいね・コメント機能（連投防止も）
 - Zenn の記事一覧
+- Admin 画面
 
 ## Used
 
@@ -22,3 +23,11 @@
 - [Vercel](https://vercel.com/)
 
 - [Algolia](https://www.algolia.com/)
+
+## ESlint
+
+### plugins
+
+```sh
+yarn add -D prettier eslint-config-prettier eslint-plugin-import eslint-plugin-unused-imports @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```

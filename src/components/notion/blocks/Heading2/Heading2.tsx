@@ -1,7 +1,10 @@
 import type { FC } from 'react';
 
-import { RichText } from '../../RichText';
 import { AiOutlineBlock } from 'react-icons/ai';
+
+import { RichText } from '../../RichText';
+
+
 
 type Props = {
   block: any;

@@ -1,9 +1,12 @@
-import { NotionPageObjectResponse } from '@/types/notion';
+import type { NotionPageObjectResponse } from '@/types/notion';
+import type { FC } from 'react';
+
 import { SegmentedControl } from '@mantine/core';
-import { FC, useState } from 'react';
-import { PostList } from '@/components/features/post/PostList';
-import { PostGrid } from '@/components/features/post/PostGrid';
+import { useState } from 'react';
 import { BsListUl, BsGrid } from 'react-icons/bs';
+
+import { PostGrid } from '@/components/features/post/PostGrid';
+import { PostList } from '@/components/features/post/PostList';
 
 type Props = {
   posts: NotionPageObjectResponse[];

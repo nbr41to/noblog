@@ -54,10 +54,12 @@ body {
     @apply m-0;
   }
   .text-primary {
-    @apply color: rgb(249 115 22);
+    /* text-orange-400; */
+    color: rgb(249 115 22);
   }
   .text-secondary {
-    @apply text-slate-800;
+    /* text-slate-800; */
+    color: rgb(30 41 59);
   }
   .bg-primary {
     @apply text-orange-100;
@@ -73,5 +75,9 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+  }
+  .w-main {
+    @apply min-w-[375px];
+    @apply max-w-[800px];
   }
 }

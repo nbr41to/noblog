@@ -1,14 +1,18 @@
-import { NotionBlockObjectResponse } from '@/types/notion';
+import type { NotionBlockObjectResponse } from '@/types/notion';
+
+import { MdNotInterested } from 'react-icons/md';
+
+
 import { BulletedListItem } from './blocks/BulletedListItem';
 import { Callout } from './blocks/Callout';
 import { Code } from './blocks/Code';
 import { Heading1 } from './blocks/Heading1';
 import { Heading2 } from './blocks/Heading2';
 import { Heading3 } from './blocks/Heading3';
+import { Image } from './blocks/Image';
 import { NumberedListItem } from './blocks/NumberedListItem';
 import { Paragraph } from './blocks/Paragraph';
 import { ToDo } from './blocks/ToDo';
-import { MdNotInterested } from 'react-icons/md';
 
 export const blockToJsx = (block: NotionBlockObjectResponse) => {
   const blockType = block.type;
@@ -32,6 +36,8 @@ export const blockToJsx = (block: NotionBlockObjectResponse) => {
       return <ToDo block={block} />;
     case 'code':
       return <Code block={block} />;
+    case 'image':
+      return <Image block={block} />;
     default:
       return (
         <div className='my-6 flex items-center justify-center gap-4 rounded-lg bg-slate-200 py-4'>

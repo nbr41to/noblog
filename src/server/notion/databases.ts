@@ -14,7 +14,7 @@ export const getDatabase = (database_id: string) =>
  */
 export const getDatabaseContents = async (
   database_id: string,
-  page_size: number = 10,
+  page_size = 10,
   options?: any,
 ) => {
   const response = await notion.databases.query({

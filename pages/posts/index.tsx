@@ -1,11 +1,12 @@
+import type { NotionPageObjectResponse } from '@/types/notion';
+import type { InferGetStaticPropsType, NextPage } from 'next';
+
 import { PostsTemplate } from '@/components/templates/PostsTemplate';
 import { getDatabaseContents } from '@/server/notion/databases';
-import { NotionPageObjectResponse } from '@/types/notion';
-import { InferGetStaticPropsType, NextPage } from 'next';
 
 export const getStaticProps = async () => {
   const response = await getDatabaseContents(
-    process.env.NOTION_BLOG_DATABASE_ID!,
+    process.env.NOTION_BLOG_DATABASE_ID || '',
     12,
     {
       sorts: [

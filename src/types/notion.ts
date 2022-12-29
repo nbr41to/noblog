@@ -1,6 +1,5 @@
-import {
+import type {
   BlockObjectResponse,
-  GetPageResponse,
   PageObjectResponse,
   RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';

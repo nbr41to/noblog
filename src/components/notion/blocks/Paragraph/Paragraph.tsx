@@ -2,6 +2,8 @@ import type { FC } from 'react';
 
 import { RichText } from '../../RichText';
 
+
+
 type Props = {
   block: any;
 };

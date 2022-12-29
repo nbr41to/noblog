@@ -1,8 +1,11 @@
+
+import type { NotionBlockObjectResponse } from '@/types/notion';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PostContent as Component } from './PostContent';
 import exampleBlocks from '@/mock/notion_blocks.json';
-import { NotionBlockObjectResponse } from '@/types/notion';
+
+import { PostContent as Component } from './PostContent';
+
 
 export default {
   component: Component,
