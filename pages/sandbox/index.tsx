@@ -1,8 +1,8 @@
 import type { InferGetStaticPropsType, NextPage } from 'next';
 
-import { Button } from '@mantine/core';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
+import { PageTitle } from '@/components/@commons/PageTitle';
 import { getFileNames } from '@/server/utils/getFileNames';
 
 export const getStaticProps = async () => {
@@ -13,19 +13,23 @@ export const getStaticProps = async () => {
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-const Home: NextPage<Props> = ({ paths }) => {
-  const router = useRouter();
-
+const SandboxIndex: NextPage<Props> = ({ paths }) => {
   return (
     <div>
-      <h1>Sandbox</h1>
-      {paths.map((path) => (
-        <Button key={path} onClick={() => router.push('/sandbox/' + path)}>
-          {path}
-        </Button>
-      ))}
+      <PageTitle title='Sandbox' />
+      <div className='w-main mt-8 space-y-4 text-center'>
+        {paths.map((path) => (
+          <Link
+            key={path}
+            href={'/sandbox/' + path}
+            className='font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105'
+          >
+            {path}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default SandboxIndex;

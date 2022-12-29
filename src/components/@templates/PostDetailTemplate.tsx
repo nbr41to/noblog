@@ -17,7 +17,7 @@ export const PostDetailTemplate: FC<Props> = ({ post }) => {
         <PostHeader post={post} />
       </div>
       <div className='flex justify-between gap-6'>
-        <div className='min-w-[375px] max-w-[800px]'>
+        <div className='w-main'>
           <PostContent blocks={post.children} />
         </div>
         <div className='hidden md:block'>

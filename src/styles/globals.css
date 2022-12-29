@@ -79,5 +79,6 @@ body {
   .w-main {
     @apply min-w-[375px];
     @apply max-w-[800px];
+    @apply mx-auto;
   }
 }

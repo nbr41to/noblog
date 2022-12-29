@@ -27,9 +27,9 @@ export const Layout: FC<Props> = ({ children }) => {
         </div>
       </header>
 
-      <main className='mx-auto max-w-[1200px]'>{children}</main>
+      <main className='mx-auto max-w-[1200px] pb-16'>{children}</main>
 
-      <footer className='fixed bottom-0 w-full text-center'>
+      <footer className='fixed bottom-0 left-0 w-full bg-slate-800 py-1 text-center text-white'>
         <small>@2023</small>
       </footer>
       <ScrollTopButton />

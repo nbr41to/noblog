@@ -1,32 +1,30 @@
 import type { NotionPageObjectResponse } from '@/types/notion';
 import type { InferGetStaticPropsType, NextPage } from 'next';
 
-import { PostsTemplate } from '@/components/templates/PostsTemplate';
-import { getDatabaseContents } from '@/server/notion/databases';
+import { PostsTemplate } from '@/components/@templates/PostsTemplate';
+import { getDatabaseContentsAll } from '@/server/notion/databases';
 
 export const getStaticProps = async () => {
-  const response = await getDatabaseContents(
-    process.env.NOTION_BLOG_DATABASE_ID || '',
-    12,
-    {
-      sorts: [
-        {
-          property: 'Date',
-          direction: 'descending',
-        },
-      ],
-      filter: {
-        property: 'Status',
-        select: {
-          equals: 'PUBLISH',
-        },
+  const response = await getDatabaseContentsAll({
+    database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
+    page_size: 12,
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
+    filter: {
+      property: 'Status',
+      select: {
+        equals: 'PUBLISH',
       },
     },
-  );
+  });
 
   return {
     props: {
-      posts: response.results as NotionPageObjectResponse[],
+      postsArray: response as NotionPageObjectResponse[][],
     },
     revalidate: 60 * 60, // 1時間
   };
@@ -34,10 +32,10 @@ export const getStaticProps = async () => {
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-const PostIndex: NextPage<Props> = ({ posts }) => {
+const PostIndex: NextPage<Props> = ({ postsArray }) => {
   return (
     <div>
-      <PostsTemplate posts={posts} />
+      <PostsTemplate postsArray={postsArray} />
     </div>
   );
 };

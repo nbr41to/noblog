@@ -3,6 +3,8 @@ import type { FC } from 'react';
 
 import Image from 'next/image';
 
+import { PageTitle } from '@/components/@commons/PageTitle';
+
 type Props = {
   articles: ZennArticle[];
 };
@@ -10,9 +12,8 @@ type Props = {
 export const ZennListTemplate: FC<Props> = ({ articles }) => {
   return (
     <div>
-      <h2 className='text-center font-bold'>
-        - Zennに公開されている記事一覧 -
-      </h2>
+      <PageTitle title='My Zenn articles' />
+
       <p>最新20件</p>
 
       <div className='flex flex-wrap justify-center gap-4 rounded bg-white p-6'>

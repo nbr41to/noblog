@@ -5,7 +5,7 @@ import type {
 import type { GetStaticPaths, InferGetStaticPropsType, NextPage } from 'next';
 
 import { toPostMeta } from '@/client/notion/toPostMeta';
-import { PostDetailTemplate } from '@/components/templates/PostDetailTemplate';
+import { PostDetailTemplate } from '@/components/@templates/PostDetailTemplate';
 import { getChildrenInBlock } from '@/server/notion/blocks';
 import { getDatabaseContents } from '@/server/notion/databases';
 import { getPage } from '@/server/notion/pages';
@@ -32,24 +32,22 @@ export const getStaticProps = async (context: { params: Params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const response = await getDatabaseContents(
-    process.env.NOTION_BLOG_DATABASE_ID!,
-    12,
-    {
-      sorts: [
-        {
-          property: 'Date',
-          direction: 'descending',
-        },
-      ],
-      filter: {
-        property: 'Status',
-        select: {
-          equals: 'PUBLISH',
-        },
+  const response = await getDatabaseContents({
+    database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
+    page_size: 12,
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
+    filter: {
+      property: 'Status',
+      select: {
+        equals: 'PUBLISH',
       },
     },
-  );
+  });
   const posts = response.results as NotionPageObjectResponse[];
   const paths = posts.map(({ id }) => ({ params: { page_id: id } }));
 

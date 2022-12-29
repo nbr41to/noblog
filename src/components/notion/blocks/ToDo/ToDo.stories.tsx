@@ -1,9 +1,8 @@
-
+import type { ToDoBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import exampleBlock from './example.json';
 import { ToDo as Component } from './ToDo';
-
 
 export default {
   component: Component,
@@ -12,9 +11,9 @@ export default {
 export const Checked: StoryObj<typeof Component> = {
   args: {
     block: {
-      ...exampleBlock,
+      ...(exampleBlock as ToDoBlockObjectResponse),
       to_do: {
-        ...exampleBlock.to_do,
+        ...(exampleBlock as ToDoBlockObjectResponse).to_do,
         checked: true,
       },
     },
@@ -23,12 +22,6 @@ export const Checked: StoryObj<typeof Component> = {
 
 export const NotChecked: StoryObj<typeof Component> = {
   args: {
-    block: {
-      ...exampleBlock,
-      to_do: {
-        ...exampleBlock.to_do,
-        checked: false,
-      },
-    },
+    block: exampleBlock as ToDoBlockObjectResponse,
   },
 };

@@ -1,11 +1,10 @@
 import type { NotionPageObjectResponse } from '@/types/notion';
-import type { FC} from 'react';
+import type { FC } from 'react';
 
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 
 import { toPostMeta } from '@/client/notion/toPostMeta';
-
 
 type Props = {
   post: NotionPageObjectResponse;
