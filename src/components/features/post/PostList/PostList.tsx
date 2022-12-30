@@ -1,8 +1,7 @@
-import type { NotionPageObjectResponse } from '@/types/notion';
-import type { FC } from 'react';
+import type { FC } from "react";
+import type { NotionPageObjectResponse } from "~/types/notion";
 
-
-import { PostListItem } from '../PostListItem';
+import { PostListItem } from "../PostListItem";
 
 type Props = {
   posts: NotionPageObjectResponse[];
@@ -10,7 +9,7 @@ type Props = {
 
 export const PostList: FC<Props> = ({ posts }) => {
   return (
-    <div className='space-y-3'>
+    <div className="space-y-3">
       {posts.map((post) => (
         <PostListItem key={post.id} post={post} />
       ))}

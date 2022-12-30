@@ -1,7 +1,7 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import { Breadcrumbs } from '@mantine/core';
-import Link from 'next/link';
+import { Breadcrumbs } from "@mantine/core";
+import Link from "next/link";
 
 type Props = {
   items: {
@@ -18,7 +18,7 @@ export const BreadcrumbsLinks: FC<Props> = ({ items }) => {
       <Breadcrumbs>
         {items.map((item) => (
           <Link
-            className="transition hover:text-primary hover:underline"
+            className="hover:text-primary transition hover:underline"
             key={item.title}
             href={item.href}
           >

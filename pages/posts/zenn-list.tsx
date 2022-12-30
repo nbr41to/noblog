@@ -1,7 +1,7 @@
-import type { InferGetStaticPropsType, NextPage } from 'next';
+import type { InferGetStaticPropsType, NextPage } from "next";
 
-import { ZennListTemplate } from '@/components/@templates/ZennListTemplate';
-import { getZennArticles } from '@/server/zenn/getZennArticles';
+import { getZennArticles } from "~/server/zenn/getZennArticles";
+import { ZennListTemplate } from "~/templates/ZennListTemplate";
 
 export const getStaticProps = async () => {
   const articles = await getZennArticles();

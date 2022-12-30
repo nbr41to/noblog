@@ -1,14 +1,14 @@
+import type { GetStaticPaths, InferGetStaticPropsType, NextPage } from "next";
 import type {
   NotionBlockObjectResponse,
   NotionPageObjectResponse,
-} from '@/types/notion';
-import type { GetStaticPaths, InferGetStaticPropsType, NextPage } from 'next';
+} from "~/types/notion";
 
-import { toPostMeta } from '@/client/notion/toPostMeta';
-import { PostDetailTemplate } from '@/components/@templates/PostDetailTemplate';
-import { getChildrenInBlock } from '@/server/notion/blocks';
-import { getDatabaseContents } from '@/server/notion/databases';
-import { getPage } from '@/server/notion/pages';
+import { toPostMeta } from "~/client/notion/toPostMeta";
+import { getChildrenInBlock } from "~/server/notion/blocks";
+import { getDatabaseContents } from "~/server/notion/databases";
+import { getPage } from "~/server/notion/pages";
+import { PostDetailTemplate } from "~/templates/PostDetailTemplate";
 
 type Params = {
   page_id: string;
@@ -33,18 +33,18 @@ export const getStaticProps = async (context: { params: Params }) => {
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const response = await getDatabaseContents({
-    database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
+    database_id: process.env.NOTION_BLOG_DATABASE_ID || "",
     page_size: 12,
     sorts: [
       {
-        property: 'Date',
-        direction: 'descending',
+        property: "Date",
+        direction: "descending",
       },
     ],
     filter: {
-      property: 'Status',
+      property: "Status",
       select: {
-        equals: 'PUBLISH',
+        equals: "PUBLISH",
       },
     },
   });
@@ -53,7 +53,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 
   return {
     paths,
-    fallback: 'blocking', // HTMLを生成しない
+    fallback: "blocking", // HTMLを生成しない
   };
 };
 

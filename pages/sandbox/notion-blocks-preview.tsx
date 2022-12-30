@@ -1,13 +1,13 @@
-import type { NotionBlockObjectResponse } from '@/types/notion';
-import type { InferGetStaticPropsType, NextPage } from 'next';
+import type { InferGetStaticPropsType, NextPage } from "next";
+import type { NotionBlockObjectResponse } from "~/types/notion";
 
-import { TableOfContents } from '@/components/features/post/TableOfContent';
-import { NotionBlockPreview } from '@/components/features/sandbox/NotionBlockPreview';
-import { getChildrenInBlock } from '@/server/notion/blocks';
+import { TableOfContents } from "~/features/post/TableOfContent";
+import { NotionBlockPreview } from "~/features/sandbox/NotionBlockPreview";
+import { getChildrenInBlock } from "~/server/notion/blocks";
 
 export const getStaticProps = async () => {
   const response = await getChildrenInBlock(
-    process.env.NOTION_PREVIEW_PAGE_ID || '',
+    process.env.NOTION_PREVIEW_PAGE_ID || ""
   );
 
   return {
@@ -22,17 +22,17 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const NotionBlockPreviewPage: NextPage<Props> = ({ blocks }) => {
   return (
     <div>
-      <p className='py-4 text-center font-bold'>
+      <p className="py-4 text-center font-bold">
         Notion API で取得した BlockObject とそれを受けた Component の Preview
       </p>
-      <div className='flex justify-between'>
-        <div className=''>
+      <div className="flex justify-between">
+        <div className="">
           <TableOfContents
             blocks={blocks.filter((block) => {
               if (
-                block.type == 'paragraph' &&
+                block.type == "paragraph" &&
                 (block.paragraph.rich_text.length === 0 ||
-                  block.paragraph.rich_text[0].plain_text.slice(0, 2) === '//')
+                  block.paragraph.rich_text[0].plain_text.slice(0, 2) === "//")
               ) {
                 // 最初の2文字が "//" の場合は表示しない
                 return false;
@@ -43,7 +43,7 @@ const NotionBlockPreviewPage: NextPage<Props> = ({ blocks }) => {
             isAll
           />
         </div>
-        <div className='w-main'>
+        <div className="w-main">
           <NotionBlockPreview blocks={blocks} />
         </div>
       </div>
