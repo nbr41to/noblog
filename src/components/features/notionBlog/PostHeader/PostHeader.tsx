@@ -1,5 +1,5 @@
-import type { FC } from "react";
-import type { NotionPostMeta } from "~/types/notion";
+import type { FC } from 'react';
+import type { NotionPostMeta } from '~/types/notion';
 
 type Props = {
   post: NotionPostMeta;

@@ -1,10 +1,10 @@
-import type { FC } from "react";
-import type { NotionPageObjectResponse } from "~/types/notion";
+import type { FC } from 'react';
+import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { useRouter } from 'next/router';
+import { useMemo } from 'react';
 
-import { toPostMeta } from "~/utils/notion/toPostMeta";
+import { toPostMeta } from '~/utils/notion/toPostMeta';
 
 type Props = {
   post: NotionPageObjectResponse;

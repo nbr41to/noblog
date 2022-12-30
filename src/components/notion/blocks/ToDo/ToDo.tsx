@@ -1,9 +1,9 @@
-import type { ToDoBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { FC } from "react";
+import type { ToDoBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { FC } from 'react';
 
-import { ImCheckboxChecked, ImCheckboxUnchecked } from "react-icons/im";
+import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 
-import { RichText } from "../../RichText";
+import { RichText } from '../../RichText';
 
 type Props = {
   block: ToDoBlockObjectResponse;

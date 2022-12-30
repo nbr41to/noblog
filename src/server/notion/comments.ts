@@ -1,4 +1,4 @@
-import { notion } from "./client";
+import { notion } from './client';
 
 /**
  * BlockのCommentsを取得

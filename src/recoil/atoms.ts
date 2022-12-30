@@ -1,6 +1,6 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const inViewHeadingIdsAtom = atom<string[]>({
-  key: "inViewHeadingAtom",
+  key: 'inViewHeadingAtom',
   default: [],
 });

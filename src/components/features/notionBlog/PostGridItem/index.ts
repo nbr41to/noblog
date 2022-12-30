@@ -1,1 +1,1 @@
-export * from "./PostGridItem";
+export * from './PostGridItem';

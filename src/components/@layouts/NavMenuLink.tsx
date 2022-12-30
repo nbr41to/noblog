@@ -1,6 +1,6 @@
-import type { FC, ReactNode } from "react";
+import type { FC, ReactNode } from 'react';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 type Props = {
   href: string;

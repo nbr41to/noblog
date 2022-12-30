@@ -1,7 +1,7 @@
-import type { FC } from "react";
-import type { NotionPageObjectResponse } from "~/types/notion";
+import type { FC } from 'react';
+import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { PostListItem } from "../PostListItem";
+import { PostListItem } from '../PostListItem';
 
 type Props = {
   posts: NotionPageObjectResponse[];

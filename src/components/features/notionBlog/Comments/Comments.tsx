@@ -1,7 +1,7 @@
-import type { FC } from "react";
-import type { NotionCommentObjectResponse } from "~/types/notion";
+import type { FC } from 'react';
+import type { NotionCommentObjectResponse } from '~/types/notion';
 
-import { RichText } from "~/components/notion/RichText";
+import { RichText } from '~/components/notion/RichText';
 
 type Props = {
   comments: NotionCommentObjectResponse[];

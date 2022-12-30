@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import type { Ogp } from "~/types/ogp";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { Ogp } from '~/types/ogp';
 
-import { getOgp } from "~/server/utils/getOgp";
+import { getOgp } from '~/server/utils/getOgp';
 
 export default async function handler(
   req: NextApiRequest,

@@ -1,9 +1,9 @@
-import type { FC } from "react";
-import type { ZennArticle } from "~/types/zennArticle";
+import type { FC } from 'react';
+import type { ZennArticle } from '~/types/zennArticle';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import { PageTitle } from "~/commons/PageTitle";
+import { PageTitle } from '~/commons/PageTitle';
 
 type Props = {
   articles: ZennArticle[];

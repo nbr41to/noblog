@@ -1,9 +1,9 @@
 import type {
   CreatePageParameters,
   UpdatePageParameters,
-} from "@notionhq/client/build/src/api-endpoints";
+} from '@notionhq/client/build/src/api-endpoints';
 
-import { notion } from "./client";
+import { notion } from './client';
 
 /**
  * Pageの取得

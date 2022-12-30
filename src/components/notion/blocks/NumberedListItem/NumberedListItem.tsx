@@ -1,7 +1,7 @@
-import type { NumberedListItemBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { FC } from "react";
+import type { NumberedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { FC } from 'react';
 
-import { RichText } from "../../RichText";
+import { RichText } from '../../RichText';
 
 type Props = {
   block: NumberedListItemBlockObjectResponse;

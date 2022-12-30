@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const PageTitle: FC<Props> = ({ title }) => {
-  return <h2 className='text-center font-baloo'>- {title} -</h2>;
+  return <h2 className="text-center font-baloo">- {title} -</h2>;
 };

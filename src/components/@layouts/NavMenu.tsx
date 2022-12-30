@@ -1,17 +1,17 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import { clsx, Transition } from "@mantine/core";
-import { useHover } from "@mantine/hooks";
+import { clsx, Transition } from '@mantine/core';
+import { useHover } from '@mantine/hooks';
 /* icons */
-import { AiFillHome, AiTwotoneExperiment } from "react-icons/ai";
-import { BsTwitter, BsYoutube } from "react-icons/bs";
-import { FaBook } from "react-icons/fa";
-import { GiCow } from "react-icons/gi";
-import { SiZenn } from "react-icons/si";
-import { TfiGithub } from "react-icons/tfi";
+import { AiFillHome, AiTwotoneExperiment } from 'react-icons/ai';
+import { BsTwitter, BsYoutube } from 'react-icons/bs';
+import { FaBook } from 'react-icons/fa';
+import { GiCow } from 'react-icons/gi';
+import { SiZenn } from 'react-icons/si';
+import { TfiGithub } from 'react-icons/tfi';
 
-import { NavMenuExternalLink } from "./NavMenuExternalLink";
-import { NavMenuLink } from "./NavMenuLink";
+import { NavMenuExternalLink } from './NavMenuExternalLink';
+import { NavMenuLink } from './NavMenuLink';
 
 export const NavMenu: FC = () => {
   const { hovered, ref } = useHover();
@@ -20,8 +20,8 @@ export const NavMenu: FC = () => {
     <nav ref={ref} className="w-fit cursor-pointer p-3 sp:p-0 sp:pl-2">
       <div
         className={clsx(
-          "flex flex-col items-center justify-center transition-colors duration-300",
-          hovered && "text-white"
+          'flex flex-col items-center justify-center transition-colors duration-300',
+          hovered && 'text-white'
         )}
       >
         <GiCow size={36} />

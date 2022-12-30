@@ -1,13 +1,13 @@
-import type { Heading3BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { FC } from "react";
+import type { Heading3BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { FC } from 'react';
 
-import { useIntersection } from "@mantine/hooks";
-import { useEffect } from "react";
-import { useSetRecoilState } from "recoil";
+import { useIntersection } from '@mantine/hooks';
+import { useEffect } from 'react';
+import { useSetRecoilState } from 'recoil';
 
-import { inViewHeadingIdsAtom } from "~/recoil/atoms";
+import { inViewHeadingIdsAtom } from '~/recoil/atoms';
 
-import { RichText } from "../../RichText";
+import { RichText } from '../../RichText';
 
 type Props = {
   block: Heading3BlockObjectResponse;
@@ -17,7 +17,7 @@ export const Heading3: FC<Props> = ({ block }) => {
   const setInViewHeading = useSetRecoilState(inViewHeadingIdsAtom);
   const { ref, entry } = useIntersection({
     threshold: 1,
-    rootMargin: "0px",
+    rootMargin: '0px',
   });
 
   useEffect(() => {

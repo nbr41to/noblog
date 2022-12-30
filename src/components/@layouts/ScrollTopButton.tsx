@@ -1,8 +1,8 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import { Affix, Button, Transition } from "@mantine/core";
-import { useWindowScroll } from "@mantine/hooks";
-import { HiArrowCircleUp } from "react-icons/hi";
+import { Affix, Button, Transition } from '@mantine/core';
+import { useWindowScroll } from '@mantine/hooks';
+import { HiArrowCircleUp } from 'react-icons/hi';
 
 export const ScrollTopButton: FC = () => {
   const [scroll, scrollTo] = useWindowScroll();

@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import type { NotionPageObjectResponse } from "~/types/notion";
+import type { Meta, StoryObj } from '@storybook/react';
+import type { NotionPageObjectResponse } from '~/types/notion';
 
-import examplePost from "~/mock/notion_page.json";
+import examplePost from '~/mock/notion_page.json';
 
-import { PostGridItem as Component } from "./PostGridItem";
+import { PostGridItem as Component } from './PostGridItem';
 
 export default {
   component: Component,

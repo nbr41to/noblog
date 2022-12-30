@@ -1,7 +1,7 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import { Breadcrumbs as MantineBreadcrumbs } from "@mantine/core";
-import Link from "next/link";
+import { Breadcrumbs as MantineBreadcrumbs } from '@mantine/core';
+import Link from 'next/link';
 
 type Props = {
   items: {

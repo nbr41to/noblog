@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import type { BookmarkBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { FC } from "react";
-import type { Ogp } from "~/types/ogp";
+import type { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { FC } from 'react';
+import type { Ogp } from '~/types/ogp';
 
-import { Skeleton } from "@mantine/core";
+import { Skeleton } from '@mantine/core';
 
-import { useGetOgp } from "~/hooks/apiHooks/useGetOgp";
+import { useGetOgp } from '~/hooks/apiHooks/useGetOgp';
 
 type Props = {
   block: BookmarkBlockObjectResponse;

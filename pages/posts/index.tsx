@@ -1,23 +1,23 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
-import type { NotionPageObjectResponse } from "~/types/notion";
+import type { InferGetStaticPropsType, NextPage } from 'next';
+import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { getDatabaseContentsAll } from "~/server/notion/databases";
-import { PostsTemplate } from "~/templates/PostsTemplate";
+import { getDatabaseContentsAll } from '~/server/notion/databases';
+import { PostsTemplate } from '~/templates/PostsTemplate';
 
 export const getStaticProps = async () => {
   const response = await getDatabaseContentsAll({
-    database_id: process.env.NOTION_BLOG_DATABASE_ID || "",
+    database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
     page_size: 12,
     sorts: [
       {
-        property: "Date",
-        direction: "descending",
+        property: 'Date',
+        direction: 'descending',
       },
     ],
     filter: {
-      property: "Status",
+      property: 'Status',
       select: {
-        equals: "PUBLISH",
+        equals: 'PUBLISH',
       },
     },
   });

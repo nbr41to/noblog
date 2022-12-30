@@ -1,12 +1,12 @@
-import type { FC } from "react";
-import type { NotionBlockObjectResponse } from "~/types/notion";
+import type { FC } from 'react';
+import type { NotionBlockObjectResponse } from '~/types/notion';
 
-import { ActionIcon, Collapse } from "@mantine/core";
-import { Prism } from "@mantine/prism";
-import { useState } from "react";
-import { VscJson } from "react-icons/vsc";
+import { ActionIcon, Collapse } from '@mantine/core';
+import { Prism } from '@mantine/prism';
+import { useState } from 'react';
+import { VscJson } from 'react-icons/vsc';
 
-import { blockToJsx } from "~/components/notion/blockToJsx";
+import { blockToJsx } from '~/components/notion/blockToJsx';
 
 type Props = {
   blocks: NotionBlockObjectResponse[];
@@ -20,9 +20,9 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
       {blocks.map((block) => {
         // 最初の2文字が "//" の場合は表示しない
         if (
-          block.type == "paragraph" &&
+          block.type == 'paragraph' &&
           (block.paragraph.rich_text.length === 0 ||
-            block.paragraph.rich_text[0].plain_text.slice(0, 2) === "//")
+            block.paragraph.rich_text[0].plain_text.slice(0, 2) === '//')
         ) {
           return null;
         }
@@ -47,7 +47,7 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
                     }
                   }}
                 >
-                  {openedIds.includes(block.id) ? "×" : <VscJson size={20} />}
+                  {openedIds.includes(block.id) ? '×' : <VscJson size={20} />}
                 </ActionIcon>
               </div>
             </div>

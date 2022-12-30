@@ -1,1 +1,1 @@
-export * from "./PostGrid";
+export * from './PostGrid';

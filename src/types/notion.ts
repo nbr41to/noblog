@@ -4,20 +4,20 @@ import type {
   ListCommentsResponse,
   PageObjectResponse,
   RichTextItemResponse,
-} from "@notionhq/client/build/src/api-endpoints";
+} from '@notionhq/client/build/src/api-endpoints';
 
 /* Copy & Paste */
 export type NotionSelectColor =
-  | "default"
-  | "gray"
-  | "brown"
-  | "orange"
-  | "yellow"
-  | "green"
-  | "blue"
-  | "purple"
-  | "pink"
-  | "red";
+  | 'default'
+  | 'gray'
+  | 'brown'
+  | 'orange'
+  | 'yellow'
+  | 'green'
+  | 'blue'
+  | 'purple'
+  | 'pink'
+  | 'red';
 
 /* Replace */
 export type NotionPageObjectResponse = PageObjectResponse;

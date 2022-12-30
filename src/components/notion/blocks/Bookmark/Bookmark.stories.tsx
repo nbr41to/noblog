@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import type { Ogp } from "~/types/ogp";
+import type { Meta, StoryObj } from '@storybook/react';
+import type { Ogp } from '~/types/ogp';
 
-import { BaseBookmark as Component } from "./Bookmark";
-import exampleOgp from "./example2.json";
+import { BaseBookmark as Component } from './Bookmark';
+import exampleOgp from './example2.json';
 
 export default {
   component: Component,

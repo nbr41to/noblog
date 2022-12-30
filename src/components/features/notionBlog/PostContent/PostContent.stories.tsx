@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import type { NotionBlockObjectResponse } from "~/types/notion";
+import type { Meta, StoryObj } from '@storybook/react';
+import type { NotionBlockObjectResponse } from '~/types/notion';
 
-import exampleBlocks from "~/mock/notion_blocks.json";
+import exampleBlocks from '~/mock/notion_blocks.json';
 
-import { PostContent as Component } from "./PostContent";
+import { PostContent as Component } from './PostContent';
 
 export default {
   component: Component,

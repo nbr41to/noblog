@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import type { NotionListCommentsResponse } from "~/types/notion";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NotionListCommentsResponse } from '~/types/notion';
 
-import { getComments } from "~/server/notion/comments";
+import { getComments } from '~/server/notion/comments';
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,8 +10,8 @@ export default async function handler(
   const { page_id } = req.query as { page_id: string };
   const { method } = req;
 
-  if (method !== "GET") {
-    res.setHeader("Allow", ["GET"]);
+  if (method !== 'GET') {
+    res.setHeader('Allow', ['GET']);
     res.status(405).end(`Method ${method} Not Allowed`);
   }
 

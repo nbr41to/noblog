@@ -24,7 +24,7 @@ export const getDatabaseContents = (params: QueryDatabaseParameters) =>
  * @param params QueryDatabaseParameters
  */
 export const getDatabaseContentsAll = async (
-  params: QueryDatabaseParameters,
+  params: QueryDatabaseParameters
 ) => {
   const postArray = [];
   let nextCursor: string | undefined = undefined;

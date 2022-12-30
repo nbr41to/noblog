@@ -1,7 +1,7 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import Image from "next/image";
-import { BsGithub, BsTwitter } from "react-icons/bs";
+import Image from 'next/image';
+import { BsGithub, BsTwitter } from 'react-icons/bs';
 
 export const Bio: FC = () => {
   return (

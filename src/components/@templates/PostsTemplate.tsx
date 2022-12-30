@@ -1,16 +1,16 @@
-import type { FC } from "react";
-import type { NotionPageObjectResponse } from "~/types/notion";
+import type { FC } from 'react';
+import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { Pagination, SegmentedControl } from "@mantine/core";
-import { usePagination } from "@mantine/hooks";
-import { useMemo } from "react";
-import { useState } from "react";
-import { BsListUl, BsGrid } from "react-icons/bs";
+import { Pagination, SegmentedControl } from '@mantine/core';
+import { usePagination } from '@mantine/hooks';
+import { useMemo } from 'react';
+import { useState } from 'react';
+import { BsListUl, BsGrid } from 'react-icons/bs';
 
-import { PostGrid } from "~/components/features/notionBlog/PostGrid";
-import { PostList } from "~/components/features/notionBlog/PostList";
+import { PostGrid } from '~/components/features/notionBlog/PostGrid';
+import { PostList } from '~/components/features/notionBlog/PostList';
 
-import { PageTitle } from "../@commons/PageTitle";
+import { PageTitle } from '../@commons/PageTitle';
 
 type Props = {
   postsArray: NotionPageObjectResponse[][];
@@ -18,7 +18,7 @@ type Props = {
 
 export const PostsTemplate: FC<Props> = ({ postsArray }) => {
   const total = postsArray.length;
-  const [viewType, setViewType] = useState<"list" | "grid">("list");
+  const [viewType, setViewType] = useState<'list' | 'grid'>('list');
   const pagination = usePagination({ total, initialPage: 1 });
 
   const posts = useMemo(
@@ -34,12 +34,12 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
         <div className="py-4 text-right sp:py-0">
           <SegmentedControl
             className="bg-orange-50"
-            color={viewType === "list" ? "orange" : "blue"}
+            color={viewType === 'list' ? 'orange' : 'blue'}
             value={viewType}
-            onChange={(value) => setViewType(value as "list" | "grid")}
+            onChange={(value) => setViewType(value as 'list' | 'grid')}
             data={[
               {
-                value: "list",
+                value: 'list',
                 label: (
                   <div className="flex items-center gap-2">
                     <BsListUl size={16} />
@@ -47,7 +47,7 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
                 ),
               },
               {
-                value: "grid",
+                value: 'grid',
                 label: (
                   <div className="flex items-center gap-2">
                     <BsGrid size={16} />
@@ -66,8 +66,8 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
           />
         </div>
         <div className="">
-          {viewType === "grid" && <PostGrid posts={posts} />}
-          {viewType === "list" && <PostList posts={posts} />}
+          {viewType === 'grid' && <PostGrid posts={posts} />}
+          {viewType === 'list' && <PostList posts={posts} />}
         </div>
         <div className="mx-auto w-fit py-4">
           <Pagination

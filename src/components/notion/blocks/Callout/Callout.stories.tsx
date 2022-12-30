@@ -1,8 +1,8 @@
-import type { CalloutBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { CalloutBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Callout as Component } from "./Callout";
-import exampleBlock from "./example.json";
+import { Callout as Component } from './Callout';
+import exampleBlock from './example.json';
 
 export default {
   component: Component,

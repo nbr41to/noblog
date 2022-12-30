@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { CommentForm as Component } from "./CommentForm";
+import { CommentForm as Component } from './CommentForm';
 
 export default {
   component: Component,

@@ -1,11 +1,8 @@
 import type { CodeBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { Meta, StoryObj } from '@storybook/react';
 
-
-
 import { Code as Component } from './Code';
 import exampleBlock from './example.json';
-
 
 export default {
   component: Component,

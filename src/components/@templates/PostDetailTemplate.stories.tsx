@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import type { NotionPost } from "~/types/notion";
+import type { Meta, StoryObj } from '@storybook/react';
+import type { NotionPost } from '~/types/notion';
 
-import examplePost from "~/mock/notion_post.json";
+import examplePost from '~/mock/notion_post.json';
 
-import { PostDetailTemplate as Component } from "./PostDetailTemplate";
+import { PostDetailTemplate as Component } from './PostDetailTemplate';
 
 export default {
   component: Component,

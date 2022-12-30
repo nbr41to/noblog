@@ -1,6 +1,6 @@
-import type { FC, ReactNode } from "react";
+import type { FC, ReactNode } from 'react';
 
-import { TbExternalLink } from "react-icons/tb";
+import { TbExternalLink } from 'react-icons/tb';
 
 type Props = {
   href: string;

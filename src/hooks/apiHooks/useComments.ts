@@ -1,8 +1,8 @@
-import type { NotionListCommentsResponse } from "~/types/notion";
+import type { NotionListCommentsResponse } from '~/types/notion';
 
-import useSWR from "swr";
+import useSWR from 'swr';
 
-import { getFetcher } from "./fetcher";
+import { getFetcher } from './fetcher';
 
 export const useComments = (page_id: string) => {
   const { data, isLoading, error } = useSWR<NotionListCommentsResponse>(

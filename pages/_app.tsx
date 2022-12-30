@@ -1,11 +1,11 @@
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app';
 
-import { NotificationsProvider } from "@mantine/notifications";
-import { RecoilRoot } from "recoil";
+import { NotificationsProvider } from '@mantine/notifications';
+import { RecoilRoot } from 'recoil';
 
-import { Layout } from "~/layouts/Layout";
+import { Layout } from '~/layouts/Layout';
 
-import "~/styles/globals.css";
+import '~/styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

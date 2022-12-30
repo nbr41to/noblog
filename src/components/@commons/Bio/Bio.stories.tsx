@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Bio as Component } from "./Bio";
+import { Bio as Component } from './Bio';
 
 export default {
   component: Component,
@@ -8,6 +8,6 @@ export default {
 
 export const Default: StoryObj<typeof Component> = {
   args: {
-    title: "Page title",
+    title: 'Page title',
   },
 };

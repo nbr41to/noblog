@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Breadcrumbs as Component } from "./Breadcrumbs";
+import { Breadcrumbs as Component } from './Breadcrumbs';
 
 export default {
   component: Component,
   argTypes: {
     children: {
       control: {
-        type: "text",
+        type: 'text',
       },
     },
   },
@@ -17,16 +17,16 @@ export const Default: StoryObj<typeof Component> = {
   args: {
     items: [
       {
-        title: "Home",
-        href: "#",
+        title: 'Home',
+        href: '#',
       },
       {
-        title: "Blog",
-        href: "#",
+        title: 'Blog',
+        href: '#',
       },
       {
-        title: "Lets talk about React",
-        href: "#",
+        title: 'Lets talk about React',
+        href: '#',
       },
     ],
   },

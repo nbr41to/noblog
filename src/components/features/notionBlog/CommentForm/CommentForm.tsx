@@ -1,10 +1,10 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import { Button } from "@mantine/core";
-import { Link, RichTextEditor } from "@mantine/tiptap";
-import Underline from "@tiptap/extension-underline";
-import { useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
+import { Button } from '@mantine/core';
+import { Link, RichTextEditor } from '@mantine/tiptap';
+import Underline from '@tiptap/extension-underline';
+import { useEditor } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
 
 type Props = {
   onSubmit: (params: string) => void;
@@ -13,11 +13,11 @@ type Props = {
 export const CommentForm: FC<Props> = ({ onSubmit }) => {
   const editor = useEditor({
     extensions: [StarterKit, Underline, Link],
-    content: "<p>Hello world!</p>",
+    content: '<p>Hello world!</p>',
   });
 
   const handleSubmit = () => {
-    onSubmit(editor?.getText() ?? "");
+    onSubmit(editor?.getText() ?? '');
   };
 
   return (

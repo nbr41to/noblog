@@ -1,13 +1,13 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
-import type { NotionBlockObjectResponse } from "~/types/notion";
+import type { InferGetStaticPropsType, NextPage } from 'next';
+import type { NotionBlockObjectResponse } from '~/types/notion';
 
-import { TableOfContents } from "~/components/features/notionBlog/TableOfContents";
-import { NotionBlockPreview } from "~/features/sandbox/NotionBlockPreview";
-import { getChildrenInBlock } from "~/server/notion/blocks";
+import { TableOfContents } from '~/components/features/notionBlog/TableOfContents';
+import { NotionBlockPreview } from '~/features/sandbox/NotionBlockPreview';
+import { getChildrenInBlock } from '~/server/notion/blocks';
 
 export const getStaticProps = async () => {
   const response = await getChildrenInBlock(
-    process.env.NOTION_PREVIEW_PAGE_ID || ""
+    process.env.NOTION_PREVIEW_PAGE_ID || ''
   );
 
   return {
@@ -32,9 +32,9 @@ const NotionBlockPreviewPage: NextPage<Props> = ({ blocks }) => {
           <TableOfContents
             blocks={blocks.filter((block) => {
               if (
-                block.type == "paragraph" &&
+                block.type == 'paragraph' &&
                 (block.paragraph.rich_text.length === 0 ||
-                  block.paragraph.rich_text[0].plain_text.slice(0, 2) === "//")
+                  block.paragraph.rich_text[0].plain_text.slice(0, 2) === '//')
               ) {
                 // 最初の2文字が "//" の場合は表示しない
                 return false;
