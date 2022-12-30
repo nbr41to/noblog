@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 
-import { RichText } from '../../RichText';
+import { RichText } from '~/components/notion/RichText';
 
 type Props = {
   block: ToDoBlockObjectResponse;

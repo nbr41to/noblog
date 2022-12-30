@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import { useMemo } from 'react';
 
-import { RichText } from '../../RichText';
+import { RichText } from '~/components/notion/RichText';
 
 type Props = {
   block: CalloutBlockObjectResponse;

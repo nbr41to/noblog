@@ -5,9 +5,8 @@ import { useIntersection } from '@mantine/hooks';
 import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 
+import { RichText } from '~/components/notion/RichText';
 import { inViewHeadingIdsAtom } from '~/recoil/atoms';
-
-import { RichText } from '../../RichText';
 
 type Props = {
   block: Heading3BlockObjectResponse;

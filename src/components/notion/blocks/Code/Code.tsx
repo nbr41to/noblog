@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { Prism } from '@mantine/prism';
 
-import { RichText } from '../../RichText';
+import { RichText } from '~/components/notion/RichText';
 
 type Props = {
   block: CodeBlockObjectResponse;

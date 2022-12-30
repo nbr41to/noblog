@@ -1,7 +1,7 @@
 import type { BulletedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { FC } from 'react';
 
-import { RichText } from '../../RichText';
+import { RichText } from '~/components/notion/RichText';
 
 type Props = {
   block: BulletedListItemBlockObjectResponse;

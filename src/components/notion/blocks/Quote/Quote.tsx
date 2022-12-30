@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import { clsx } from '@mantine/core';
 
-import { RichText } from '../../RichText';
+import { RichText } from '~/components/notion/RichText';
 
 type Props = {
   block: QuoteBlockObjectResponse;

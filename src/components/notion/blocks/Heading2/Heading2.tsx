@@ -6,9 +6,8 @@ import { useEffect } from 'react';
 import { AiOutlineBlock } from 'react-icons/ai';
 import { useSetRecoilState } from 'recoil';
 
+import { RichText } from '~/components/notion/RichText';
 import { inViewHeadingIdsAtom } from '~/recoil/atoms';
-
-import { RichText } from '../../RichText';
 
 type Props = {
   block: Heading2BlockObjectResponse;
