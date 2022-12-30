@@ -7,10 +7,9 @@ import { useMemo } from 'react';
 import { useState } from 'react';
 import { BsListUl, BsGrid } from 'react-icons/bs';
 
-import { PostGrid } from '~/components/features/notionBlog/PostGrid';
-import { PostList } from '~/components/features/notionBlog/PostList';
-
-import { PageTitle } from '../@commons/PageTitle';
+import { PageTitle } from '~/commons/PageTitle';
+import { PostGrid } from '~/features/notionBlog/PostGrid';
+import { PostList } from '~/features/notionBlog/PostList';
 
 type Props = {
   postsArray: NotionPageObjectResponse[][];

@@ -2,13 +2,12 @@ import type { FC } from 'react';
 import type { NotionPost } from '~/types/notion';
 
 import { Bio } from '~/commons/Bio';
+import { CommentForm } from '~/features/notionBlog/CommentForm';
 import { Comments } from '~/features/notionBlog/Comments';
 import { PostContent } from '~/features/notionBlog/PostContent';
 import { PostHeader } from '~/features/notionBlog/PostHeader';
 import { TableOfContents } from '~/features/notionBlog/TableOfContents';
 import { useComments } from '~/hooks/apiHooks/useComments';
-
-import { CommentForm } from '../features/notionBlog/CommentForm';
 
 type Props = {
   post: NotionPost;

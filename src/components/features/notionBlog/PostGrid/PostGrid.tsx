@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { PostGridItem } from '../PostGridItem';
+import { PostGridItem } from '~/features/notionBlog/PostGridItem';
 
 type Props = {
   posts: NotionPageObjectResponse[];

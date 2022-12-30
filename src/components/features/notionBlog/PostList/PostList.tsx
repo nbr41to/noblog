@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { PostListItem } from '../PostListItem';
+import { PostListItem } from '~/features/notionBlog/PostListItem';
 
 type Props = {
   posts: NotionPageObjectResponse[];
