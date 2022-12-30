@@ -24,7 +24,7 @@
       "~/layouts/*": ["./src/components/@layouts/*"],
       "~/templates/*": ["./src/components/@templates/*"],
       "~/hooks/*": ["./src/hooks/*"],
-      "~/client/*": ["./src/client/*"],
+      "~/client/*": ["src/utils/*"],
       "~/server/*": ["./src/server/*"]
     }
   },

@@ -16,7 +16,7 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
   const [openedIds, setOpenedIds] = useState<string[]>([]);
 
   return (
-    <div className="space-y-4 rounded bg-white p-6">
+    <div className="space-y-4 rounded bg-white p-6 sp:rounded-none sp:px-3">
       {blocks.map((block) => {
         // 最初の2文字が "//" の場合は表示しない
         if (
@@ -35,7 +35,7 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
           >
             <div className="flex">
               <div className="flex-grow p-4">{blockToJsx(block)}</div>
-              <div className="flex items-center justify-center border-0 border-l border-solid border-slate-800 px-3">
+              <div className="flex items-center justify-center border-0 border-l border-solid border-slate-800 px-3 sp:hidden">
                 <ActionIcon
                   className="bg-slate-200 text-slate-800 hover:bg-slate-300"
                   size="lg"

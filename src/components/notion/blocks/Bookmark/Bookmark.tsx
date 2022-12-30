@@ -24,14 +24,16 @@ export const Bookmark: FC<Props> = ({ block }) => {
 export const BaseBookmark: FC<BaseProps> = ({ ogp, isLoading }) => {
   return ogp && !isLoading ? (
     <a
-      className="my-6 flex min-h-[120px] cursor-pointer justify-between rounded-lg border border-solid border-slate-400 bg-white hover:bg-slate-100"
+      className="my-6 flex min-h-[120px] cursor-pointer justify-between rounded-lg border border-solid border-slate-400 bg-white hover:bg-slate-100 sp:flex-col"
       href={ogp.url}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="flex max-w-[400px] flex-col justify-center gap-2 overflow-hidden px-6 py-3">
-        <div className="font-bold text-slate-800 line-clamp-2">{ogp.title}</div>
-        <div className="space-y-3 text-sm text-slate-600 line-clamp-2">
+      <div className="flex max-w-[400px] flex-col justify-center gap-2 overflow-hidden px-6 py-3 sp:py-2 sp:px-4">
+        <div className="font-bold text-slate-800 line-clamp-2 sp:text-sm">
+          {ogp.title}
+        </div>
+        <div className="space-y-3 text-sm text-slate-600 line-clamp-2 sp:text-xs">
           {ogp.description}
         </div>
         <div className="flex items-center gap-2">
@@ -43,15 +45,15 @@ export const BaseBookmark: FC<BaseProps> = ({ ogp, isLoading }) => {
           <div className="text-xs line-clamp-1">{ogp?.url}</div>
         </div>
       </div>
-      <div>
+      <div className="flex items-end">
         {ogp.imageUrl ? (
           <img
             src={ogp.imageUrl}
-            className="h-full max-w-[240px] rounded-r-lg object-cover"
+            className="h-full max-w-[240px] rounded-r-lg object-cover sp:max-w-full sp:rounded-b-lg sp:rounded-t-none"
             alt="bookmark ogp image"
           />
         ) : (
-          <Skeleton className="h-full w-[240px] rounded-l-none rounded-r-lg" />
+          <Skeleton className="h-full w-[240px] rounded-l-none rounded-r-lg sp:max-w-full sp:rounded-b-lg sp:rounded-t-none" />
         )}
       </div>
     </a>

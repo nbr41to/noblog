@@ -11,7 +11,7 @@ type Props = {
 export const NavMenuExternalLink: FC<Props> = ({ href, label, icon }) => {
   return (
     <a
-      className="flex items-center gap-2 font-baloo text-xl text-white transition-transform duration-300 hover:scale-110"
+      className="flex items-center gap-2 font-baloo text-xl text-white transition-transform duration-300 hover:scale-110 sp:text-2xl"
       href={href}
     >
       {icon}

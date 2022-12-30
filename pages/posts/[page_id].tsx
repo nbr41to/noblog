@@ -4,11 +4,11 @@ import type {
   NotionPageObjectResponse,
 } from "~/types/notion";
 
-import { toPostMeta } from "~/client/notion/toPostMeta";
 import { getChildrenInBlock } from "~/server/notion/blocks";
 import { getDatabaseContents } from "~/server/notion/databases";
 import { getPage } from "~/server/notion/pages";
 import { PostDetailTemplate } from "~/templates/PostDetailTemplate";
+import { toPostMeta } from "~/utils/notion/toPostMeta";
 
 type Params = {
   page_id: string;

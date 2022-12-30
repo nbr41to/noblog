@@ -1,3 +1,4 @@
+import { RecoilRoot } from 'recoil';
 import '../src/styles/globals.css';
 
 export const parameters = {
@@ -9,3 +10,13 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (Story) => {
+    return (
+      <RecoilRoot>
+        <Story />
+      </RecoilRoot>
+    );
+  },
+];

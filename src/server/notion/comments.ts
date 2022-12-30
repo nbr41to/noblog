@@ -1,12 +1,12 @@
-import { notion } from './client';
+import { notion } from "./client";
 
 /**
  * BlockのCommentsを取得
- * @param blockId BlockのID
+ * @param block_id BlockのID
  * リアクションの絵文字は取得できない
  */
-export const getComments = async (blockId: string) => {
-  const response = await notion.comments.list({ block_id: blockId });
+export const getComments = async (block_id: string) => {
+  const response = await notion.comments.list({ block_id });
 
   return response;
 };

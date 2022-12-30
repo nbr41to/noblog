@@ -47,13 +47,15 @@ export const blockToJsx = (block: NotionBlockObjectResponse) => {
     case "image":
       // eslint-disable-next-line jsx-a11y/alt-text
       return <Image block={block} />;
+    case "table_of_contents":
+      return null;
     default:
       return (
-        <div className="my-6 flex items-center justify-center gap-4 rounded-lg bg-slate-200 py-4">
+        <div className="my-6 flex items-center justify-center gap-4 rounded-lg bg-slate-200 p-4 sp:flex-col sp:text-center">
           <MdNotInterested size={40} />
-          <div>
+          <div className="sp:text-sm">
             <div>ここで、対応していない NotionのBlockが使用されています。</div>
-            <div className="font-firaCode">
+            <div className="mt-2 font-firaCode">
               Not supported:
               {blockType
                 ? ` '${blockType}' type is not supported.`

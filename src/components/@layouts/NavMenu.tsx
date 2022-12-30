@@ -17,7 +17,7 @@ export const NavMenu: FC = () => {
   const { hovered, ref } = useHover();
 
   return (
-    <nav ref={ref} className="w-fit cursor-pointer p-3">
+    <nav ref={ref} className="w-fit cursor-pointer p-3 sp:p-0 sp:pl-2">
       <div
         className={clsx(
           "flex flex-col items-center justify-center transition-colors duration-300",
@@ -25,7 +25,7 @@ export const NavMenu: FC = () => {
         )}
       >
         <GiCow size={36} />
-        <div className="font-bold">MENU</div>
+        <div className=" font-bold sp:text-sm">MENU</div>
       </div>
 
       <Transition

@@ -3,9 +3,15 @@
 ## Features
 
 - Notion の Database を Blog の記事として表示
+- Table of contents がだいぶいい感じ
 - 記事ごとのいいね・コメント機能（連投防止も）
 - Zenn の記事一覧
 - Admin 画面
+
+### Todo
+
+- Routing の Object を作る
+- Bio の上に日付といいねボタンとコメントの件数
 
 ## Used
 
@@ -21,6 +27,9 @@
 - [Notion API](https://developers.notion.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Vercel](https://vercel.com/)
+- [Recoil](https://recoiljs.org/)
+- [SWR](https://swr.vercel.app/)
+- [axios](https://axios-http.com/)
 
 - [Algolia](https://www.algolia.com/)
 

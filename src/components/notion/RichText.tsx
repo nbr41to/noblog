@@ -13,7 +13,7 @@ const codeAnnotationClasses =
 /* Notion の Block Object内のrich_textの配列をいい感じに変換する */
 export const RichText: FC<Props> = ({ text }) => {
   return (
-    <p className="inline leading-loose">
+    <p className="inline whitespace-pre-wrap break-words leading-loose">
       {text.length === 0 ? (
         /* textがない場合が空白の改行を入れる */
         <span className="block h-6" />
@@ -50,22 +50,26 @@ export const RichText: FC<Props> = ({ text }) => {
                 </a>
               );
 
-            return (
-              <span
-                key={key}
-                className={clsx(
-                  "",
-                  color !== "default" && `notion-${color}`,
-                  annotationClasses.includes("bold") && "font-bold",
-                  annotationClasses.includes("italic") && "font-italic",
-                  annotationClasses.includes("underline") && "underline",
-                  annotationClasses.includes("strikethrough") && "line-through",
-                  annotationClasses.includes("code") && codeAnnotationClasses
-                )}
-              >
-                {textItem.plain_text}
-              </span>
-            );
+            if (annotationClasses.length > 0)
+              return (
+                <span
+                  key={key}
+                  className={clsx(
+                    "",
+                    color !== "default" && `notion-${color}`,
+                    annotationClasses.includes("bold") && "font-bold",
+                    annotationClasses.includes("italic") && "font-italic",
+                    annotationClasses.includes("underline") && "underline",
+                    annotationClasses.includes("strikethrough") &&
+                      "line-through",
+                    annotationClasses.includes("code") && codeAnnotationClasses
+                  )}
+                >
+                  {textItem.plain_text}
+                </span>
+              );
+
+            return textItem.plain_text;
           })}
         </>
       )}

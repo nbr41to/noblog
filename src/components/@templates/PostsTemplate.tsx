@@ -7,8 +7,8 @@ import { useMemo } from "react";
 import { useState } from "react";
 import { BsListUl, BsGrid } from "react-icons/bs";
 
-import { PostGrid } from "~/features/post/PostGrid";
-import { PostList } from "~/features/post/PostList";
+import { PostGrid } from "~/components/features/notionBlog/PostGrid";
+import { PostList } from "~/components/features/notionBlog/PostList";
 
 import { PageTitle } from "../@commons/PageTitle";
 
@@ -31,7 +31,7 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
       <PageTitle title="Notion Blogs" />
 
       <div className="px-4">
-        <div className="py-4 text-right">
+        <div className="py-4 text-right sp:py-0">
           <SegmentedControl
             className="bg-orange-50"
             color={viewType === "list" ? "orange" : "blue"}
@@ -58,12 +58,23 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
           />
         </div>
 
+        <div className="mx-auto w-fit py-4">
+          <Pagination
+            page={pagination.active}
+            total={total}
+            onChange={pagination.setPage}
+          />
+        </div>
         <div className="">
           {viewType === "grid" && <PostGrid posts={posts} />}
           {viewType === "list" && <PostList posts={posts} />}
         </div>
         <div className="mx-auto w-fit py-4">
-          <Pagination total={total} onChange={pagination.setPage} />
+          <Pagination
+            page={pagination.active}
+            total={total}
+            onChange={pagination.setPage}
+          />
         </div>
       </div>
     </div>

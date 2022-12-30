@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType, NextPage } from "next";
 import type { NotionBlockObjectResponse } from "~/types/notion";
 
-import { TableOfContents } from "~/features/post/TableOfContent";
+import { TableOfContents } from "~/components/features/notionBlog/TableOfContents";
 import { NotionBlockPreview } from "~/features/sandbox/NotionBlockPreview";
 import { getChildrenInBlock } from "~/server/notion/blocks";
 
@@ -22,11 +22,13 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const NotionBlockPreviewPage: NextPage<Props> = ({ blocks }) => {
   return (
     <div>
-      <p className="py-4 text-center font-bold">
-        Notion API で取得した BlockObject とそれを受けた Component の Preview
+      <p className="py-4 text-center font-bold sp:p-2">
+        Notion API で取得した BlockObject とそれを受け取った Component の
+        Preview
       </p>
-      <div className="flex justify-between">
-        <div className="">
+
+      <div className="flex justify-between gap-6">
+        <div className="hidden w-72 md:block">
           <TableOfContents
             blocks={blocks.filter((block) => {
               if (
