@@ -1,4 +1,9 @@
-import { notion } from './client';
+import type {
+  AppendBlockChildrenParameters,
+  UpdateBlockParameters,
+} from "@notionhq/client/build/src/api-endpoints";
+
+import { notion } from "./client";
 
 /**
  * Blockの取得
@@ -14,11 +19,8 @@ export const getBlock = async (block_id: string) =>
  * @param block_id BlockのID
  * @param blockObject 編集するBlockObject
  */
-export const updateBlock = async (block_id: string, blockObject: any) =>
-  notion.blocks.update({
-    block_id,
-    ...blockObject,
-  });
+export const updateBlock = async (params: UpdateBlockParameters) =>
+  notion.blocks.update(params);
 
 /**
  * Blockの中のchildrenを取得
@@ -36,11 +38,8 @@ export const getChildrenInBlock = async (block_id: string, page_size = 100) =>
  * @param block_id BlockのID
  * @param children 追加するBlockObjectの配列
  */
-export const appendBlocks = async (block_id: string, children: any[]) =>
-  notion.blocks.children.append({
-    block_id,
-    children,
-  });
+export const appendBlocks = async (params: AppendBlockChildrenParameters) =>
+  notion.blocks.children.append(params);
 
 /**
  * Blockを削除

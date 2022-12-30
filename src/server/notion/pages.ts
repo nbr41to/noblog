@@ -1,4 +1,9 @@
-import { notion } from './client';
+import type {
+  CreatePageParameters,
+  UpdatePageParameters,
+} from "@notionhq/client/build/src/api-endpoints";
+
+import { notion } from "./client";
 
 /**
  * Pageの取得
@@ -11,7 +16,7 @@ export const getPage = async (page_id: string) =>
  * Pageの作成
  * @param params PageObject（Parent Database IDが必要）
  */
-export const createPage = async (params: any) =>
+export const createPage = async (params: CreatePageParameters) =>
   await notion.pages.create({
     ...params,
   });
@@ -21,11 +26,8 @@ export const createPage = async (params: any) =>
  * @param page_id PageまたはBlockのID
  * @param properties 編集するPageのPropertyObject
  */
-export const updatePage = async (page_id: string, properties: any) =>
-  notion.pages.update({
-    page_id,
-    properties,
-  });
+export const updatePage = async (params: UpdatePageParameters) =>
+  notion.pages.update(params);
 
 /* 削除はBlockのAPIを使用する */
 
