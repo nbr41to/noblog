@@ -1,9 +1,8 @@
-
+import type { BulletedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { BulletedListItem as Component } from './BulletedListItem';
 import exampleBlock from './example.json';
-
 
 export default {
   component: Component,
@@ -11,6 +10,6 @@ export default {
 
 export const Default: StoryObj<typeof Component> = {
   args: {
-    block: exampleBlock,
+    block: exampleBlock as BulletedListItemBlockObjectResponse,
   },
 };

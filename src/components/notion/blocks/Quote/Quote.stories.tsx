@@ -1,8 +1,8 @@
-import type { Heading3BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { QuoteBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import exampleBlock from './example.json';
-import { Heading3 as Component } from './Heading3';
+import { Quote as Component } from './Quote';
 
 export default {
   component: Component,
@@ -10,6 +10,6 @@ export default {
 
 export const Default: StoryObj<typeof Component> = {
   args: {
-    block: exampleBlock as Heading3BlockObjectResponse,
+    block: exampleBlock as QuoteBlockObjectResponse,
   },
 };

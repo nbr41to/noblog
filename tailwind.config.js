@@ -12,7 +12,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
   corePlugins: {
     preflight: false, // TailWindCSSのResetCSSとMantineの競合を防ぐために無効化
   },

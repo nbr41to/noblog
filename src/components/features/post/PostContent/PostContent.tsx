@@ -10,7 +10,9 @@ type Props = {
 export const PostContent: FC<Props> = ({ blocks }) => {
   return (
     <div className='rounded bg-white px-10 py-8'>
-      {blocks.map((block) => blockToJsx(block))}
+      {blocks.map((block) => (
+        <div key={block.id}>{blockToJsx(block)}</div>
+      ))}
     </div>
   );
 };

@@ -6,10 +6,6 @@ import { Prism } from '@mantine/prism';
 
 import { RichText } from '../../RichText';
 
-
-
-
-
 type Props = {
   block: CodeBlockObjectResponse;
 };

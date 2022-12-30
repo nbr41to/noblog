@@ -1,10 +1,7 @@
-
 import type { NotionRichTextItemResponse } from '@/types/notion';
 import type { FC } from 'react';
 
 import clsx from 'clsx';
-
-
 
 type Props = {
   text: Array<NotionRichTextItemResponse>;
@@ -22,12 +19,13 @@ export const RichText: FC<Props> = ({ text }) => {
         <span className='block h-6' />
       ) : (
         <>
-          {text.map((textItem: any, index: number) => {
+          {text.map((textItem, index: number) => {
             const { annotations } = textItem; // アノテーションを取得
             const { color } = textItem.annotations; // アノテーションの色を取得
             const { href } = textItem; // リンクを取得
             const annotationClasses = Object.keys(annotations).filter(
-              (param: string) => annotations[param] === true,
+              (param) =>
+                annotations[param as keyof typeof annotations] === true,
             );
             const key = `${index}`;
 

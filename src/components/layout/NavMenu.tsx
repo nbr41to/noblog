@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { clsx, Transition } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-import { AiFillHome } from 'react-icons/ai';
+/* icons */
+import { AiFillHome, AiTwotoneExperiment } from 'react-icons/ai';
 import { BsTwitter, BsYoutube } from 'react-icons/bs';
 import { FaBook } from 'react-icons/fa';
 import { GiCow } from 'react-icons/gi';
@@ -44,12 +45,16 @@ export const NavMenu: FC = () => {
               label='Home'
             />
             <NavMenuLink
-              icon={<FaBook size={18} />}
+              icon={<FaBook size={16} />}
               href='/posts'
               label='Blogs'
             />
-            <NavMenuLink href='/sandbox' label='Sandbox' />
-            <NavMenuLink href='/posts/zenn-list' label='Zenn' />
+            <NavMenuLink
+              icon={<AiTwotoneExperiment size={20} />}
+              href='/sandbox'
+              label='Sandbox'
+            />
+            <NavMenuLink href='/posts/zenn-list' label='Zenn(tmp)' />
             <NavMenuLink href='/' label='Comments' />
             <NavMenuLink href='/' label='Profile' />
             <NavMenuLink href='/' label='Contact' />

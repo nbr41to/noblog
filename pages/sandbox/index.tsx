@@ -22,7 +22,7 @@ const SandboxIndex: NextPage<Props> = ({ paths }) => {
           <Link
             key={path}
             href={'/sandbox/' + path}
-            className='font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105'
+            className='block font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105'
           >
             {path}
           </Link>

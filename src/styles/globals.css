@@ -50,9 +50,14 @@ body {
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  blockquote {
     @apply m-0;
   }
+  a {
+    text-decoration: none;
+  }
+
   .text-primary {
     /* text-orange-400; */
     color: rgb(249 115 22);
@@ -70,12 +75,6 @@ body {
   }
 }
 @layer utilities {
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
   .w-main {
     @apply min-w-[375px];
     @apply max-w-[800px];

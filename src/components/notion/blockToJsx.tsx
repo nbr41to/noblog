@@ -2,16 +2,18 @@ import type { NotionBlockObjectResponse } from '@/types/notion';
 
 import { MdNotInterested } from 'react-icons/md';
 
-
+import { Bookmark } from './blocks/Bookmark';
 import { BulletedListItem } from './blocks/BulletedListItem';
 import { Callout } from './blocks/Callout';
 import { Code } from './blocks/Code';
+import { Divider } from './blocks/Divider';
 import { Heading1 } from './blocks/Heading1';
 import { Heading2 } from './blocks/Heading2';
 import { Heading3 } from './blocks/Heading3';
 import { Image } from './blocks/Image';
 import { NumberedListItem } from './blocks/NumberedListItem';
 import { Paragraph } from './blocks/Paragraph';
+import { Quote } from './blocks/Quote';
 import { ToDo } from './blocks/ToDo';
 
 export const blockToJsx = (block: NotionBlockObjectResponse) => {
@@ -36,7 +38,14 @@ export const blockToJsx = (block: NotionBlockObjectResponse) => {
       return <ToDo block={block} />;
     case 'code':
       return <Code block={block} />;
+    case 'quote':
+      return <Quote block={block} />;
+    case 'bookmark':
+      return <Bookmark block={block} />;
+    case 'divider':
+      return <Divider />;
     case 'image':
+      // eslint-disable-next-line jsx-a11y/alt-text
       return <Image block={block} />;
     default:
       return (

@@ -1,13 +1,12 @@
+import type { Heading2BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { FC } from 'react';
 
 import { AiOutlineBlock } from 'react-icons/ai';
 
 import { RichText } from '../../RichText';
 
-
-
 type Props = {
-  block: any;
+  block: Heading2BlockObjectResponse;
 };
 
 export const Heading2: FC<Props> = ({ block }) => {
