@@ -72,7 +72,7 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
       <div
         className={clsx(
           'relative mt-4 flex max-h-[456px] flex-col gap-2 overflow-y-scroll pl-6 text-sm',
-          'before:absolute before:top-4 before:left-[3px] before:h-[calc(100%-24px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
+          'before:absolute before:top-3 before:left-[3px] before:h-[calc(100%-24px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
         )}
       >
         {headingList.map((item, index) => (
@@ -87,8 +87,8 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
               item.type === 'heading_3' && 'pl-2',
               'before:absolute before:rounded-full before:border-solid before:border-white before:content-[""]',
               item.type === 'heading_2'
-                ? 'before:top-[8px] before:-left-[26px] before:h-2 before:w-2 before:border-[2px]'
-                : 'before:top-[10px] before:-left-[23px] before:h-1 before:w-1 before:border-[1px]',
+                ? 'before:top-[4px] before:-left-[26px] before:h-2 before:w-2 before:border-[2px]'
+                : 'before:top-[8px] before:-left-[23px] before:h-1 before:w-1 before:border-[1px]',
               activeIndex < index
                 ? 'before:bg-orange-200'
                 : 'before:bg-orange-500'
