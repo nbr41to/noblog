@@ -12,7 +12,7 @@ import StarterKit from '@tiptap/starter-kit';
 import { useState } from 'react';
 import { IoSend } from 'react-icons/io5';
 
-import { toRichText } from '~/utils/notion/toRichText';
+import { toRichText } from '~/utils/toRichText';
 
 type Props = {
   onSubmit: (rich_text: NotionRichTextItemRequest[]) => Promise<void>;

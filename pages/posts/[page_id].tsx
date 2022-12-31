@@ -5,12 +5,14 @@ import type {
   NotionRichTextItemRequest,
 } from '~/types/notion';
 
+import { ArticleJsonLd, NextSeo } from 'next-seo';
+
 import { useComments } from '~/hooks/apiHooks/useComments';
 import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContents } from '~/server/notion/databases';
 import { getPage } from '~/server/notion/pages';
 import { PostDetailTemplate } from '~/templates/PostDetailTemplate';
-import { toPostMeta } from '~/utils/notion/toPostMeta';
+import { toMetaDescription, toPostMeta } from '~/utils/meta';
 
 type Params = {
   page_id: string;
@@ -22,6 +24,9 @@ export const getStaticProps = async (context: { params: Params }) => {
 
   const post = {
     ...toPostMeta(page as NotionPageObjectResponse),
+    description: toMetaDescription(
+      response.results as NotionBlockObjectResponse[]
+    ),
     children: response.results as NotionBlockObjectResponse[],
   };
 
@@ -76,13 +81,48 @@ const Post: NextPage<Props> = ({ post }) => {
   };
 
   return (
-    <div>
-      <PostDetailTemplate
-        post={post}
-        comments={comments}
-        onSubmit={handleCommentSubmit}
+    <>
+      <div>
+        <PostDetailTemplate
+          post={post}
+          comments={comments}
+          onSubmit={handleCommentSubmit}
+        />
+      </div>
+
+      {/* meta seo */}
+      <NextSeo
+        title={post.title + ' | noblog'}
+        description={post.description}
+        openGraph={{
+          url: 'https://www.nbr41.com/posts/' + post.id,
+          title: post.title + ' | noblog',
+          description: post.description,
+        }}
       />
-    </div>
+      <ArticleJsonLd
+        type="BlogPosting"
+        url={'https://www.nbr41.com/posts/' + post.id}
+        title={post.title + ' | noblog'}
+        images={['https://www.nbr41.com/site_image.jpg']}
+        datePublished="2015-02-05T08:00:00+08:00"
+        dateModified={post.updatedAt}
+        authorName={[
+          {
+            name: 'noblog',
+            url: 'https://www.nbr41.com',
+          },
+          {
+            name: 'Nobuyuki Kobayashi',
+            url: 'https://www.nbr41.com',
+          },
+        ]}
+        publisherName="Nobuyuki Kobayashi"
+        publisherLogo="nob_lego.jpg"
+        description={post.description}
+        isAccessibleForFree={true}
+      />
+    </>
   );
 };
 

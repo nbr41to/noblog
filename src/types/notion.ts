@@ -36,6 +36,7 @@ export type NotionPostMeta = {
   id: string;
   icon: string;
   title: string;
+  description?: string;
   category: string;
   date: string;
   updatedAt: string;

@@ -45,6 +45,9 @@ body {
 }
 
 @layer base {
+  * {
+    @apply box-border;
+  }
   p,
   h1,
   h2,

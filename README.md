@@ -10,7 +10,6 @@
 
 ### Todo
 
-- Routing の Object を作る
 - CommentForm の下の方触っても Focus するように
 - Comments 表示の Loading を表示してみる
 - IP アドレスに紐づく一意性のいいね機能
@@ -23,6 +22,8 @@
 - Tweets list の追加
 - ログインしないとコメントができないように
 - コメント送信時に最後の気あ行は削除するように
+- Routing の Object を作る
+- meta と json-ld を整理したい
 
 ## Used
 
@@ -42,6 +43,7 @@
 - [SWR](https://swr.vercel.app/)
 - [axios](https://axios-http.com/)
 - [tiptap](https://tiptap.dev/)
+- [next-seo](https://github.com/garmeeh/next-seo)
 
 - [Algolia](https://www.algolia.com/)
 

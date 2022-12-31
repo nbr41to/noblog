@@ -4,7 +4,7 @@ import type { NotionPageObjectResponse } from '~/types/notion';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 
-import { toPostMeta } from '~/utils/notion/toPostMeta';
+import { toPostMeta } from '~/utils/meta';
 
 type Props = {
   post: NotionPageObjectResponse;

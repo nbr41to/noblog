@@ -55,9 +55,8 @@ export const NavMenu: FC = () => {
               label="Sandbox"
             />
             <NavMenuLink href="/posts/zenn-list" label="Zenn(tmp)" />
-            <NavMenuLink href="/" label="Comments" />
-            <NavMenuLink href="/" label="Profile" />
-            <NavMenuLink href="/" label="Contact" />
+            <NavMenuLink href="/profile" label="Profile" />
+            {/* <NavMenuLink href="/" label="Contact" /> */}
 
             <div className="pt-10" />
 
