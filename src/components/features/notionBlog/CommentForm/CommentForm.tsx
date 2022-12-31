@@ -55,7 +55,7 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
   return (
     <div className="">
       {!commentable ? (
-        <div className="min-h-[320px]">
+        <div className="min-h-[320px] sp:px-4">
           <Button fullWidth onClick={() => setCommentable(true)}>
             ログインしてコメントをする
           </Button>
@@ -71,9 +71,14 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
       ) : (
         <div>
           <RichTextEditor
-            className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white"
+            className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white sp:rounded-none sp:border-none"
             editor={editor}
             onKeyDown={getHotkeyHandler([['mod+Enter', handleSubmit]])}
+            styles={{
+              content: {
+                minHeight: '220px',
+              },
+            }}
           >
             <RichTextEditor.Toolbar sticky stickyOffset={0}>
               <RichTextEditor.ControlsGroup>
@@ -101,7 +106,7 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
               </RichTextEditor.ControlsGroup>
             </RichTextEditor.Toolbar>
 
-            <RichTextEditor.Content />
+            <RichTextEditor.Content onClick={() => editor?.commands.focus()} />
           </RichTextEditor>
 
           <div className="mt-2 flex items-center justify-end gap-3">
