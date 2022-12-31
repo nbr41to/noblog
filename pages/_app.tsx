@@ -1,12 +1,14 @@
+import '~/styles/globals.css';
+
 import type { AppProps } from 'next/app';
 
 import { NotificationsProvider } from '@mantine/notifications';
 import { DefaultSeo } from 'next-seo';
 import { RecoilRoot } from 'recoil';
 
+import { GoogleTagManager } from '~/layouts/GoogleTagManager';
 import { Layout } from '~/layouts/Layout';
-
-import '~/styles/globals.css';
+import { googleTagManagerId } from '~/types/gtm';
 
 const meta = {
   title: 'noblog',
@@ -19,6 +21,7 @@ const meta = {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <GoogleTagManager gtmId={googleTagManagerId} />
       {/* meta seo */}
       <DefaultSeo
         defaultTitle={meta.title}
