@@ -10,7 +10,6 @@
 
 ### Todo
 
-- CommentForm の下の方触っても Focus するように
 - Comments 表示の Loading を表示してみる
 - IP アドレスに紐づく一意性のいいね機能
 - エラーハンドリング周りの実装

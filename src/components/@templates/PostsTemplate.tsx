@@ -11,13 +11,14 @@ import { PageTitle } from '~/commons/PageTitle';
 import { PostGrid } from '~/features/notionBlog/PostGrid';
 import { PostList } from '~/features/notionBlog/PostList';
 
+type ViewType = 'grid' | 'list';
 type Props = {
   postsArray: NotionPageObjectResponse[][];
 };
 
 export const PostsTemplate: FC<Props> = ({ postsArray }) => {
   const total = postsArray.length;
-  const [viewType, setViewType] = useState<'list' | 'grid'>('list');
+  const [viewType, setViewType] = useState<ViewType>('grid');
   const pagination = usePagination({ total, initialPage: 1 });
 
   const posts = useMemo(
@@ -33,23 +34,23 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
         <div className="py-4 text-right sp:py-0">
           <SegmentedControl
             className="bg-orange-50"
-            color={viewType === 'list' ? 'orange' : 'blue'}
+            color={viewType === 'grid' ? 'blue' : 'orange'}
             value={viewType}
-            onChange={(value) => setViewType(value as 'list' | 'grid')}
+            onChange={(value) => setViewType(value as ViewType)}
             data={[
-              {
-                value: 'list',
-                label: (
-                  <div className="flex items-center gap-2">
-                    <BsListUl size={16} />
-                  </div>
-                ),
-              },
               {
                 value: 'grid',
                 label: (
                   <div className="flex items-center gap-2">
                     <BsGrid size={16} />
+                  </div>
+                ),
+              },
+              {
+                value: 'list',
+                label: (
+                  <div className="flex items-center gap-2">
+                    <BsListUl size={16} />
                   </div>
                 ),
               },
@@ -65,8 +66,8 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
           />
         </div>
         <div className="">
-          {viewType === 'grid' && <PostGrid posts={posts} />}
           {viewType === 'list' && <PostList posts={posts} />}
+          {viewType === 'grid' && <PostGrid posts={posts} />}
         </div>
         <div className="mx-auto w-fit py-4">
           <Pagination

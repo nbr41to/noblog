@@ -16,7 +16,7 @@ export const PostGridItem: FC<Props> = ({ post }) => {
 
   return (
     <div
-      className="h-64 w-52 cursor-pointer rounded bg-orange-50 px-5 py-3 shadow transition-transform hover:scale-105"
+      className="h-64 w-52 cursor-pointer rounded bg-orange-50 px-5 py-3 shadow transition-transform hover:scale-105 sp:w-80"
       onClick={() => router.push(`/posts/${post.id}`)}
     >
       <div className="space-y-3">
@@ -40,7 +40,7 @@ export const PostGridItem: FC<Props> = ({ post }) => {
           {meta.tags.map((tag, index) => (
             <span
               key={index}
-              className="rounded-full bg-slate-200 px-3 py-1 text-xs font-bold text-gray-800"
+              className="rounded-full bg-slate-200 px-2 py-0.5 text-[10px] font-bold text-gray-800"
             >
               {tag.name}
             </span>
