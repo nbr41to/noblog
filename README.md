@@ -24,6 +24,9 @@
 - コメント送信時に最後の気あ行は削除するように
 - Routing の Object を作る
 - meta と json-ld を整理したい
+- bookmark に縦線入れる
+- コメントの empty UI
+- link_preview 対応 多分 GitHub リンク
 
 ## Used
 
