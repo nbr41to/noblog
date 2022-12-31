@@ -21,7 +21,9 @@ type Props = {
 export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
   return (
     <div className="px-8 sp:px-0">
-      <h1 className="my-8 text-3xl sp:px-4 sp:text-xl">{post.title}</h1>
+      <h1 className="my-8 text-3xl sp:my-0 sp:px-4 sp:pb-4 sp:text-xl">
+        {post.title}
+      </h1>
 
       <div className="flex justify-between gap-6">
         <div className="w-main space-y-6">

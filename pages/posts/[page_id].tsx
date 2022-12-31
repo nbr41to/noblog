@@ -6,8 +6,10 @@ import type {
 } from '~/types/notion';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 
 import { useComments } from '~/hooks/apiHooks/useComments';
+import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContents } from '~/server/notion/databases';
 import { getPage } from '~/server/notion/pages';
@@ -67,6 +69,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Post: NextPage<Props> = ({ post }) => {
+  const router = useRouter();
   const { data: comments, trigger } = useComments(post.id);
 
   const handleCommentSubmit = async (
@@ -83,6 +86,14 @@ const Post: NextPage<Props> = ({ post }) => {
   return (
     <>
       <div>
+        <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pr-0 sp:pl-4">
+          <Breadcrumbs
+            currentPath={router.pathname}
+            titleEnum={{
+              ['[page_id]']: post.title,
+            }}
+          />
+        </div>
         <PostDetailTemplate
           post={post}
           comments={comments}
