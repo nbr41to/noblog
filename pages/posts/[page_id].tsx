@@ -5,7 +5,7 @@ import type {
   NotionRichTextItemRequest,
 } from '~/types/notion';
 
-import { NextSeo } from 'next-seo';
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 
 import { useComments } from '~/hooks/apiHooks/useComments';
@@ -111,7 +111,7 @@ const Post: NextPage<Props> = ({ post }) => {
           description: post.description,
         }}
       />
-      {/* <ArticleJsonLd
+      <ArticleJsonLd
         type="BlogPosting"
         url={'https://www.nbr41.com/posts/' + post.id}
         title={post.title + ' | noblog'}
@@ -132,7 +132,7 @@ const Post: NextPage<Props> = ({ post }) => {
         publisherLogo="nob_lego.jpg"
         description={post.description}
         isAccessibleForFree={true}
-      /> */}
+      />
     </>
   );
 };

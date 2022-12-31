@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType, NextPage } from 'next';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { NextSeo } from 'next-seo';
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 import { getDatabaseContentsAll } from '~/server/notion/databases';
 import { PostsTemplate } from '~/templates/PostsTemplate';
@@ -45,7 +45,7 @@ const PostIndex: NextPage<Props> = ({ postsArray }) => {
           url: 'https://www.nbr41.com/posts/',
         }}
       />
-      {/* <ArticleJsonLd
+      <ArticleJsonLd
         type="BlogPosting"
         title="Blog | noblog"
         url="https://www.nbr41.com/posts/"
@@ -54,7 +54,7 @@ const PostIndex: NextPage<Props> = ({ postsArray }) => {
         dateModified={postsArray[0][0].last_edited_time}
         authorName="Nobuyuki Kobayashi"
         description="Notionに追加した記事一覧"
-      /> */}
+      />
     </>
   );
 };
