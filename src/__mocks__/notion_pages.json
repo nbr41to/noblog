@@ -1,0 +1,708 @@
+[
+  {
+    "object": "page",
+    "id": "755ec566-0fd5-473c-b776-bedee5d0e75f",
+    "created_time": "2022-12-27T02:45:00.000Z",
+    "last_edited_time": "2022-12-27T05:51:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "9079e0ca-fd06-43c5-8051-b83e04c16ca4"
+    },
+    "archived": false,
+    "properties": {
+      "Category": {
+        "id": "%3Ctvw",
+        "type": "select",
+        "select": {
+          "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+          "name": "programming",
+          "color": "green"
+        }
+      },
+      "Status": {
+        "id": "%40%7Dw%5B",
+        "type": "select",
+        "select": {
+          "id": "060dffd5-9113-452d-ba44-19ec3120049e",
+          "name": "PUBLISH",
+          "color": "orange"
+        }
+      },
+      "Series": {
+        "id": "NRP%5B",
+        "type": "select",
+        "select": null
+      },
+      "Date": {
+        "id": "Yp%3F%3B",
+        "type": "date",
+        "date": {
+          "start": "2022-12-27",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Tags": {
+        "id": "%5C%5EBo",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "4293ce36-df80-4b9a-bae8-a3af2dc25f74",
+            "name": "HTML",
+            "color": "green"
+          },
+          {
+            "id": "b700367e-19d5-4b69-8e39-3749d56339a1",
+            "name": "CSS",
+            "color": "blue"
+          }
+        ]
+      },
+      "Edited": {
+        "id": "g%60VO",
+        "type": "last_edited_time",
+        "last_edited_time": "2022-12-27T05:51:00.000Z"
+      },
+      "Created": {
+        "id": "h%5E%3Ey",
+        "type": "created_time",
+        "created_time": "2022-12-27T02:45:00.000Z"
+      },
+      "Zenn": {
+        "id": "vt%3E%5C",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Likes": {
+        "id": "whoR",
+        "type": "number",
+        "number": null
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "<wbr>を知っているか",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "<wbr>を知っているか",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/wbr-755ec5660fd5473cb776bedee5d0e75f"
+  },
+  {
+    "object": "page",
+    "id": "226a46f1-988a-44b9-8871-d6a10e5df238",
+    "created_time": "2022-12-20T16:03:00.000Z",
+    "last_edited_time": "2022-12-20T16:48:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "cover": null,
+    "icon": {
+      "type": "emoji",
+      "emoji": "📐"
+    },
+    "parent": {
+      "type": "database_id",
+      "database_id": "9079e0ca-fd06-43c5-8051-b83e04c16ca4"
+    },
+    "archived": false,
+    "properties": {
+      "Category": {
+        "id": "%3Ctvw",
+        "type": "select",
+        "select": {
+          "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+          "name": "programming",
+          "color": "green"
+        }
+      },
+      "Status": {
+        "id": "%40%7Dw%5B",
+        "type": "select",
+        "select": {
+          "id": "060dffd5-9113-452d-ba44-19ec3120049e",
+          "name": "PUBLISH",
+          "color": "orange"
+        }
+      },
+      "Series": {
+        "id": "NRP%5B",
+        "type": "select",
+        "select": null
+      },
+      "Date": {
+        "id": "Yp%3F%3B",
+        "type": "date",
+        "date": {
+          "start": "2022-12-21",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Tags": {
+        "id": "%5C%5EBo",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "81378eab-de17-4d78-9a8f-37189fdb0387",
+            "name": "React",
+            "color": "blue"
+          },
+          {
+            "id": "ba35a9c1-90c1-4efb-8498-91b7720e1cc2",
+            "name": "TypeScript",
+            "color": "green"
+          },
+          {
+            "id": "c7b0c78b-50aa-4278-82a1-02ea9aa5d55b",
+            "name": "dialog",
+            "color": "purple"
+          },
+          {
+            "id": "cc6a95b8-6a8f-4465-83ee-1c897b05c5bd",
+            "name": "modal",
+            "color": "purple"
+          },
+          {
+            "id": "1d7a53d8-5c9a-4df4-bdf5-61b7fcfe9858",
+            "name": "forwordRef",
+            "color": "orange"
+          }
+        ]
+      },
+      "Edited": {
+        "id": "g%60VO",
+        "type": "last_edited_time",
+        "last_edited_time": "2022-12-20T16:48:00.000Z"
+      },
+      "Created": {
+        "id": "h%5E%3Ey",
+        "type": "created_time",
+        "created_time": "2022-12-20T16:03:00.000Z"
+      },
+      "Zenn": {
+        "id": "vt%3E%5C",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Likes": {
+        "id": "whoR",
+        "type": "number",
+        "number": null
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "HTMLのdialog要素でDialogComponentを作る（React）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "HTMLのdialog要素でDialogComponentを作る（React）",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/HTML-dialog-DialogComponent-React-226a46f1988a44b98871d6a10e5df238"
+  },
+  {
+    "object": "page",
+    "id": "5203c3bc-fb06-498a-a87e-303c23581eb4",
+    "created_time": "2022-12-20T05:53:00.000Z",
+    "last_edited_time": "2022-12-20T09:13:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "cover": null,
+    "icon": {
+      "type": "emoji",
+      "emoji": "🧠"
+    },
+    "parent": {
+      "type": "database_id",
+      "database_id": "9079e0ca-fd06-43c5-8051-b83e04c16ca4"
+    },
+    "archived": false,
+    "properties": {
+      "Category": {
+        "id": "%3Ctvw",
+        "type": "select",
+        "select": {
+          "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+          "name": "programming",
+          "color": "green"
+        }
+      },
+      "Status": {
+        "id": "%40%7Dw%5B",
+        "type": "select",
+        "select": {
+          "id": "060dffd5-9113-452d-ba44-19ec3120049e",
+          "name": "PUBLISH",
+          "color": "orange"
+        }
+      },
+      "Series": {
+        "id": "NRP%5B",
+        "type": "select",
+        "select": null
+      },
+      "Date": {
+        "id": "Yp%3F%3B",
+        "type": "date",
+        "date": {
+          "start": "2022-12-20",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Tags": {
+        "id": "%5C%5EBo",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "b700367e-19d5-4b69-8e39-3749d56339a1",
+            "name": "CSS",
+            "color": "blue"
+          },
+          {
+            "id": "31a27ed2-c0c9-4e5e-bfa0-e30894aa9542",
+            "name": "TailWindCSS",
+            "color": "blue"
+          }
+        ]
+      },
+      "Edited": {
+        "id": "g%60VO",
+        "type": "last_edited_time",
+        "last_edited_time": "2022-12-20T09:13:00.000Z"
+      },
+      "Created": {
+        "id": "h%5E%3Ey",
+        "type": "created_time",
+        "created_time": "2022-12-20T05:53:00.000Z"
+      },
+      "Zenn": {
+        "id": "vt%3E%5C",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Likes": {
+        "id": "whoR",
+        "type": "number",
+        "number": null
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Inline StyleであるTailwind CSSの利点は脳のコスパ↑",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Inline StyleであるTailwind CSSの利点は脳のコスパ↑",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/Inline-Style-Tailwind-CSS-5203c3bcfb06498aa87e303c23581eb4"
+  },
+  {
+    "object": "page",
+    "id": "d55c6990-9e6b-47b0-b2eb-901799a3c8d4",
+    "created_time": "2022-12-17T04:33:00.000Z",
+    "last_edited_time": "2022-12-17T04:50:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "9079e0ca-fd06-43c5-8051-b83e04c16ca4"
+    },
+    "archived": false,
+    "properties": {
+      "Category": {
+        "id": "%3Ctvw",
+        "type": "select",
+        "select": {
+          "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+          "name": "programming",
+          "color": "green"
+        }
+      },
+      "Status": {
+        "id": "%40%7Dw%5B",
+        "type": "select",
+        "select": {
+          "id": "060dffd5-9113-452d-ba44-19ec3120049e",
+          "name": "PUBLISH",
+          "color": "orange"
+        }
+      },
+      "Series": {
+        "id": "NRP%5B",
+        "type": "select",
+        "select": null
+      },
+      "Date": {
+        "id": "Yp%3F%3B",
+        "type": "date",
+        "date": {
+          "start": "2022-12-17",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Tags": {
+        "id": "%5C%5EBo",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "ba35a9c1-90c1-4efb-8498-91b7720e1cc2",
+            "name": "TypeScript",
+            "color": "green"
+          },
+          {
+            "id": "9c28cc5d-875d-4046-9949-c44627b0bfff",
+            "name": "Array",
+            "color": "orange"
+          },
+          {
+            "id": "41fc5cee-2590-4fd6-8b2e-a786e737383f",
+            "name": "Tuple",
+            "color": "pink"
+          }
+        ]
+      },
+      "Edited": {
+        "id": "g%60VO",
+        "type": "last_edited_time",
+        "last_edited_time": "2022-12-17T04:50:00.000Z"
+      },
+      "Created": {
+        "id": "h%5E%3Ey",
+        "type": "created_time",
+        "created_time": "2022-12-17T04:33:00.000Z"
+      },
+      "Zenn": {
+        "id": "vt%3E%5C",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Likes": {
+        "id": "whoR",
+        "type": "number",
+        "number": null
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "配列だけど空は許さない型の作り方",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "配列だけど空は許さない型の作り方",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/d55c69909e6b47b0b2eb901799a3c8d4"
+  },
+  {
+    "object": "page",
+    "id": "a72bb205-997b-4b57-a2f3-1f9e2ff9d2d5",
+    "created_time": "2022-10-21T02:47:00.000Z",
+    "last_edited_time": "2022-10-21T05:52:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "9079e0ca-fd06-43c5-8051-b83e04c16ca4"
+    },
+    "archived": false,
+    "properties": {
+      "Category": {
+        "id": "%3Ctvw",
+        "type": "select",
+        "select": {
+          "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+          "name": "programming",
+          "color": "green"
+        }
+      },
+      "Status": {
+        "id": "%40%7Dw%5B",
+        "type": "select",
+        "select": {
+          "id": "060dffd5-9113-452d-ba44-19ec3120049e",
+          "name": "PUBLISH",
+          "color": "orange"
+        }
+      },
+      "Series": {
+        "id": "NRP%5B",
+        "type": "select",
+        "select": null
+      },
+      "Date": {
+        "id": "Yp%3F%3B",
+        "type": "date",
+        "date": {
+          "start": "2022-10-21",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Tags": {
+        "id": "%5C%5EBo",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "ba35a9c1-90c1-4efb-8498-91b7720e1cc2",
+            "name": "TypeScript",
+            "color": "green"
+          }
+        ]
+      },
+      "Edited": {
+        "id": "g%60VO",
+        "type": "last_edited_time",
+        "last_edited_time": "2022-10-21T05:52:00.000Z"
+      },
+      "Created": {
+        "id": "h%5E%3Ey",
+        "type": "created_time",
+        "created_time": "2022-10-21T02:47:00.000Z"
+      },
+      "Zenn": {
+        "id": "vt%3E%5C",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Likes": {
+        "id": "whoR",
+        "type": "number",
+        "number": null
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "TypeScriptのextendsってなんなん？",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "TypeScriptのextendsってなんなん？",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/TypeScript-extends-a72bb205997b4b57a2f31f9e2ff9d2d5"
+  },
+  {
+    "object": "page",
+    "id": "a72bb205-997b-4b57-a2f3-1f9e2ff9d2d5",
+    "created_time": "2022-10-21T02:47:00.000Z",
+    "last_edited_time": "2022-10-21T05:52:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "9079e0ca-fd06-43c5-8051-b83e04c16ca4"
+    },
+    "archived": false,
+    "properties": {
+      "Category": {
+        "id": "%3Ctvw",
+        "type": "select",
+        "select": {
+          "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+          "name": "programming",
+          "color": "green"
+        }
+      },
+      "Status": {
+        "id": "%40%7Dw%5B",
+        "type": "select",
+        "select": {
+          "id": "060dffd5-9113-452d-ba44-19ec3120049e",
+          "name": "PUBLISH",
+          "color": "orange"
+        }
+      },
+      "Series": {
+        "id": "NRP%5B",
+        "type": "select",
+        "select": null
+      },
+      "Date": {
+        "id": "Yp%3F%3B",
+        "type": "date",
+        "date": {
+          "start": "2022-10-21",
+          "end": null,
+          "time_zone": null
+        }
+      },
+      "Tags": {
+        "id": "%5C%5EBo",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "ba35a9c1-90c1-4efb-8498-91b7720e1cc2",
+            "name": "TypeScript",
+            "color": "green"
+          }
+        ]
+      },
+      "Edited": {
+        "id": "g%60VO",
+        "type": "last_edited_time",
+        "last_edited_time": "2022-10-21T05:52:00.000Z"
+      },
+      "Created": {
+        "id": "h%5E%3Ey",
+        "type": "created_time",
+        "created_time": "2022-10-21T02:47:00.000Z"
+      },
+      "Zenn": {
+        "id": "vt%3E%5C",
+        "type": "checkbox",
+        "checkbox": true
+      },
+      "Likes": {
+        "id": "whoR",
+        "type": "number",
+        "number": null
+      },
+      "Title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "TypeScriptのextendsってなんなん？",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "TypeScriptのextendsってなんなん？",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/TypeScript-extends-a72bb205997b4b57a2f31f9e2ff9d2d5"
+  }
+]

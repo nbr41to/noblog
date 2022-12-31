@@ -1,0 +1,4366 @@
+{
+  "id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb",
+  "icon": "🕐",
+  "title": "PlanetScaleをNext.jsとPrismaで始める",
+  "category": "programming",
+  "date": "2022-05-16",
+  "updatedAt": "2022-09-12",
+  "tags": [
+    {
+      "id": "441679bb-271b-437f-ac61-e0ce5ebaae72",
+      "name": "PlanetScale",
+      "color": "purple"
+    },
+    {
+      "id": "45eb372f-680f-4193-a61b-3b4d549b4a9b",
+      "name": "Prisma",
+      "color": "default"
+    },
+    {
+      "id": "f394f7ea-4422-4600-bf10-5ea5134366c7",
+      "name": "Next.js",
+      "color": "gray"
+    },
+    {
+      "id": "ba35a9c1-90c1-4efb-8498-91b7720e1cc2",
+      "name": "TypeScript",
+      "color": "green"
+    },
+    {
+      "id": "54a0a4e3-d2c4-4b0a-980f-2bfb7e2445eb",
+      "name": "SQL",
+      "color": "green"
+    }
+  ],
+  "likes": 3,
+  "children": [
+    {
+      "object": "block",
+      "id": "46649aef-e36a-4b38-9baa-48146966806a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T07:13:00.000Z",
+      "last_edited_time": "2022-03-20T07:13:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "table_of_contents",
+      "table_of_contents": {
+        "color": "gray"
+      }
+    },
+    {
+      "object": "block",
+      "id": "c3b559dd-688f-4e60-957b-c449994670f1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T02:29:00.000Z",
+      "last_edited_time": "2022-03-29T02:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "bcccbdea-a4fc-49d2-8315-4ec5a2804786",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T02:51:00.000Z",
+      "last_edited_time": "2022-05-07T06:10:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "なんだか話題になっているPlanetScaleですが,以前は,英語できない,DBわからない,Prisma未経験な状態で,モダンと聞いただけでPlanetScaleを始めようとしたけど,結局わからないことが多く,実用に踏み出せなかったのですが,レベルが18から24くらいに上がったことでちょっと理解できることが増えたので,改めて始め方と使い方をわかりやすくまとめて見ようと思います.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "なんだか話題になっているPlanetScaleですが,以前は,英語できない,DBわからない,Prisma未経験な状態で,モダンと聞いただけでPlanetScaleを始めようとしたけど,結局わからないことが多く,実用に踏み出せなかったのですが,レベルが18から24くらいに上がったことでちょっと理解できることが増えたので,改めて始め方と使い方をわかりやすくまとめて見ようと思います.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "c44dc4ce-58c7-40b7-888e-6ccdbb5a0366",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T02:31:00.000Z",
+      "last_edited_time": "2022-05-07T06:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "名目としては,フロントエンド,バックエンドでのAPI開発,データベースの操作一貫して開発することでゆとりフルスタックエンジニアになることです.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "名目としては,フロントエンド,バックエンドでのAPI開発,データベースの操作一貫して開発することでゆとりフルスタックエンジニアになることです.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "db99ba0f-dfdf-4b0d-9f61-d83f435db5e0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T02:57:00.000Z",
+      "last_edited_time": "2022-03-29T02:57:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "6a682f72-cd79-42ee-9b8f-e8e1d05d4806",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:13:00.000Z",
+      "last_edited_time": "2022-03-29T03:01:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PlanetScaleでデータベースを作成する",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "PlanetScaleでデータベースを作成する",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "29033f65-a6da-4bbd-bb1b-1c01bf4b601e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:12:00.000Z",
+      "last_edited_time": "2022-03-29T03:01:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PlanetScaleとは",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "PlanetScaleとは",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "3e140470-d3f1-49af-8dda-4cbe1b55362b",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:13:00.000Z",
+      "last_edited_time": "2022-03-29T02:30:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "公式サイトを見るからにすごそうなやつ（単純）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "公式サイトを見るからにすごそうなやつ（単純）",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "03f882b8-ff2d-4710-8d36-3c6601ba8cc2",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:15:00.000Z",
+      "last_edited_time": "2022-03-20T04:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "bookmark",
+      "bookmark": {
+        "caption": [],
+        "url": "https://planetscale.com/"
+      }
+    },
+    {
+      "object": "block",
+      "id": "6e9eba6c-69da-48aa-a7d9-6ff74cdd02ee",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:15:00.000Z",
+      "last_edited_time": "2022-03-29T02:55:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PlanetScaleは一言でいうと,本格的なSQLデータベースを簡単に使えるようにしてくれるいい奴.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "PlanetScaleは一言でいうと,本格的なSQLデータベースを簡単に使えるようにしてくれるいい奴.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "98d6294d-e99b-4027-9ea4-075a6078c7f1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T02:38:00.000Z",
+      "last_edited_time": "2022-03-29T02:53:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "これは私の勝手な解釈ですが,オープンソースであり,ビックネームの面子が揃っていることから察するに,「Webサービス作るときにみんなとりあえずAWSにSQLのDBをデプロイして使うよね！結構めんどくさいよね！みんなでこのめんどくさいの楽にできるやつ作ろうね！」ってノリで出来上がったすごいやつって感じです.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "これは私の勝手な解釈ですが,オープンソースであり,ビックネームの面子が揃っていることから察するに,「Webサービス作るときにみんなとりあえずAWSにSQLのDBをデプロイして使うよね！結構めんどくさいよね！みんなでこのめんどくさいの楽にできるやつ作ろうね！」ってノリで出来上がったすごいやつって感じです.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "84b5c6e7-2530-41d9-bc2a-8b695af04eca",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T02:38:00.000Z",
+      "last_edited_time": "2022-03-29T02:57:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "サーバレスデータベース（これはサーバを持たないわけでなく,従量制とかにしてくれる運用のコスパを考えたDBのこと）であり,ボタンポチポチでDBをサーバーにデプロイしてくれるので,フロントエンドの開発に注力できる点が利点.デプロイ先にはしっかり日本もあります.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "サーバレスデータベース（これはサーバを持たないわけでなく,従量制とかにしてくれる運用のコスパを考えたDBのこと）であり,ボタンポチポチでDBをサーバーにデプロイしてくれるので,フロントエンドの開発に注力できる点が利点.デプロイ先にはしっかり日本もあります.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "291e1073-d166-4731-8bd6-44012e621da7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T02:58:00.000Z",
+      "last_edited_time": "2022-03-29T02:59:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "また,DBごとにbranchという概念が存在し,branchごとにDBの中身を切り替えることができそう.（未検証）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "また,DBごとにbranchという概念が存在し,branchごとにDBの中身を切り替えることができそう.（未検証）",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "4b1f0fab-428c-42ac-a2a6-17014d0883dc",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:19:00.000Z",
+      "last_edited_time": "2022-03-20T04:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "83074888-893c-4c05-a3af-30bb9099f2eb",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:19:00.000Z",
+      "last_edited_time": "2022-03-29T03:01:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "登録する",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "登録する",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "81963b4a-c70f-461d-b0dc-cd8a913d521a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:19:00.000Z",
+      "last_edited_time": "2022-03-29T02:57:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "まずは,アカウント登録を済まそう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "まずは,アカウント登録を済まそう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "8f272ae5-260d-4d28-8083-9fdaf3d6eeb7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:19:00.000Z",
+      "last_edited_time": "2022-03-29T03:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "GitHubのアカウントで簡単に登録できる.（好きなものを使ってね★）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "GitHubのアカウントで簡単に登録できる.（好きなものを使ってね★）",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "6fa7ba3f-2c8e-4178-979f-7dbe8d6b0ef5",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:19:00.000Z",
+      "last_edited_time": "2022-04-03T12:59:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "ちなみに無料では,Organizationを3つ,OrganizationごとにDBを1つとDBのbranchを3つまで作成できる.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ちなみに無料では,Organizationを3つ,OrganizationごとにDBを1つとDBのbranchを3つまで作成できる.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1809d6a8-b920-43aa-9b89-039dfdbf232a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:21:00.000Z",
+      "last_edited_time": "2022-03-29T03:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "順次説明していきます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "順次説明していきます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "69dd2855-2fa8-4356-932a-f2e306af15e1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:20:00.000Z",
+      "last_edited_time": "2022-03-20T04:20:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "34915a43-20b1-46f2-9fc2-604247e0f3c0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:20:00.000Z",
+      "last_edited_time": "2022-04-03T12:59:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Organizationを作成する",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Organizationを作成する",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "e1b64c69-ad9b-41db-9218-c110a0b9d80e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:21:00.000Z",
+      "last_edited_time": "2022-04-03T12:59:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "まずはOrganizationを作成しましょう.無料プランでは3つまで作成可能.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "まずはOrganizationを作成しましょう.無料プランでは3つまで作成可能.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "fe8c5ac1-6e6d-431b-a866-a76a080d5f13",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:04:00.000Z",
+      "last_edited_time": "2022-04-03T12:59:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Organizationを作るとこんな感じのおしゃれすぎて宇宙って感じの画面になると思います.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Organizationを作るとこんな感じのおしゃれすぎて宇宙って感じの画面になると思います.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "60905a70-7dbc-4a35-9d53-f373af6eab5a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:04:00.000Z",
+      "last_edited_time": "2022-03-29T03:04:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c25f595a-57c2-4753-8d7d-6bf690059fe6/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.03.56.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=b66a1f467390aeb2438197453390c931b65bfa9d29c688c83a970bde95e54a47&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2022-12-30T17:16:42.019Z"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "bd8059ea-4309-4816-90f2-0bad6b3341f6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:04:00.000Z",
+      "last_edited_time": "2022-03-29T03:04:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "92eca124-7b9c-4610-ad5d-65fbc4124b2c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:22:00.000Z",
+      "last_edited_time": "2022-03-29T03:04:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "984198a4-88cf-420a-934b-80beadc2196d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:22:00.000Z",
+      "last_edited_time": "2022-03-20T04:22:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Databaseを作成する",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Databaseを作成する",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "e8bd75f8-0e26-4e8c-8442-8a9ed0fe9774",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:05:00.000Z",
+      "last_edited_time": "2022-03-29T03:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "理解をしてもしなくても,進むとこのようにDBを作るボタンが出てくるので,作りましょう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "理解をしてもしなくても,進むとこのようにDBを作るボタンが出てくるので,作りましょう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "6da3aed9-9f06-423a-8312-1f03da6bdf8e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:06:00.000Z",
+      "last_edited_time": "2022-03-29T03:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "出てこなくてもそれっぽいボタンを見つけてDBを作りましょう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "出てこなくてもそれっぽいボタンを見つけてDBを作りましょう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "2ad994e1-978e-4b0e-95e1-5b7f8b4812d8",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:05:00.000Z",
+      "last_edited_time": "2022-03-29T03:05:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c318525e-c503-4617-b0da-dea8dee36b79/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.05.04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=3640afba797fd40bc4316e06a3cc11e5ff9f964114b0758fe7ca6ecdb52af411&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2022-12-30T17:16:42.026Z"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "9b7ca500-07f6-4fa3-96ef-e97efd1d527d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:38:00.000Z",
+      "last_edited_time": "2022-03-29T03:08:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "名前とRegion（日本にいる方ならTokyoでいいかと）を決めて作ります.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "名前とRegion（日本にいる方ならTokyoでいいかと）を決めて作ります.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "71ea19f8-30a7-47d7-a440-8165bd759a6e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:07:00.000Z",
+      "last_edited_time": "2022-03-29T03:07:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b434cadb-738e-404e-9092-bc0b23ef12c2/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.07.08.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=626b6ed2e7ee8610347fc59ebe498adbd4efac30177ea2e71790fa5133e9c827&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2022-12-30T17:16:42.034Z"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "ba7b5530-f4ac-4b33-97b3-c39ad11da15b",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:08:00.000Z",
+      "last_edited_time": "2022-03-29T03:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "ちなみに",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ちなみに",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "pscale database create book-nob",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "pscale database create book-nob",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "という記述がありますが,PlanetScaleではちょくちょく,「CLIではこのコマンドだよ！」みたいな表示をしてくれます.とても親切ですが,「次の手順はCLIでやるってこと？」ってならないように気をつけましょう.基本操作はCLI OnlyかGUI Only（ボタンポチポチ）で可能です.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "という記述がありますが,PlanetScaleではちょくちょく,「CLIではこのコマンドだよ！」みたいな表示をしてくれます.とても親切ですが,「次の手順はCLIでやるってこと？」ってならないように気をつけましょう.基本操作はCLI OnlyかGUI Only（ボタンポチポチ）で可能です.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "fe297b2d-2f94-43b5-844c-7d9e0dd70628",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:11:00.000Z",
+      "last_edited_time": "2022-03-29T03:11:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "335c2440-ac7a-4374-9efc-fd92b2d26cad",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:38:00.000Z",
+      "last_edited_time": "2022-03-29T03:13:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "また,CLIを使う場合はpscaleというものをPCインストールすることで使えます.MacであればHomebrewでインストールできます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "また,CLIを使う場合はpscaleというものをPCインストールすることで使えます.MacであればHomebrewでインストールできます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "caff3772-c453-41ab-85ac-17bc25f665b1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:12:00.000Z",
+      "last_edited_time": "2022-03-29T03:12:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "詳しくは公式のこちらをご参考ください.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "詳しくは公式のこちらをご参考ください.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "9196a20d-66a8-413d-ad41-9c8d3399ba74",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:12:00.000Z",
+      "last_edited_time": "2022-03-29T03:12:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "bookmark",
+      "bookmark": {
+        "caption": [],
+        "url": "https://planetscale.com/cli"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1c5ca48d-4232-4402-94d3-d18354033b3b",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:13:00.000Z",
+      "last_edited_time": "2022-03-29T03:13:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1b1d5682-9383-4d59-91e3-6d08a613d5e8",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:32:00.000Z",
+      "last_edited_time": "2022-03-29T03:16:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Databaseに接続する準備をする",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Databaseに接続する準備をする",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "5420f204-b1be-493d-b602-b6b2eab48f02",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:32:00.000Z",
+      "last_edited_time": "2022-03-29T03:16:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "フロントエンドとDatabaseを接続するための準備をします.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "フロントエンドとDatabaseを接続するための準備をします.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "04fc5eac-a3fb-41b8-bd15-4ff5aa085e65",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:16:00.000Z",
+      "last_edited_time": "2022-03-29T03:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "作成したDBをクリックするとDBのメニュー画面みたいなものがでるので,",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "作成したDBをクリックするとDBのメニュー画面みたいなものがでるので,",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Overview",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Overview",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "から右の",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "から右の",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Connect",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Connect",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "を押しましょう.接続に必要な情報が記載してあります.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "を押しましょう.接続に必要な情報が記載してあります.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "c82ef7d1-3798-4e15-b813-f618b62363e0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:34:00.000Z",
+      "last_edited_time": "2022-03-29T03:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d1a81b94-4581-4926-a178-386f5ee0f925/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-20_13.34.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=fc2a146be6fad1dd0ad1b97ba780b555bae2cdf3611da6473b7b0fab44bcd2fb&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2022-12-30T17:16:42.034Z"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "cb8be972-b89d-49a6-ab12-e56de5f1fae9",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:19:00.000Z",
+      "last_edited_time": "2022-03-29T03:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "1abf660a-2b9e-4adf-bcc8-c4f01e4ef0a3",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:19:00.000Z",
+      "last_edited_time": "2022-03-29T03:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Connect with Prisma",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Connect with Prisma",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "を選択し,",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "を選択し,",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": ".env",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": ".env",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "と",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "と",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "schema.prisma",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "schema.prisma",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "の内容を確認し,後ほどSetupするNext.jsのアプリ内の各ファイルに反映させますので,必要な情報を控えておきましょう...（＊）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "の内容を確認し,後ほどSetupするNext.jsのアプリ内の各ファイルに反映させますので,必要な情報を控えておきましょう...（＊）",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "0391733a-f074-48a2-9ed8-7ab3cd1202e7",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:26:00.000Z",
+      "last_edited_time": "2022-03-29T03:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "0b87c67a-44d6-44e2-af25-06b51a0971ed",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:26:00.000Z",
+      "last_edited_time": "2022-03-20T04:26:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Next.jsのSetup",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Next.jsのSetup",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "f79c04b3-0435-4874-a7c1-d4e4ec3a79e6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:27:00.000Z",
+      "last_edited_time": "2022-03-29T03:20:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "今回はフロントエンドをNext.jsで構築します.（好きなものを使ってね★）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "今回はフロントエンドをNext.jsで構築します.（好きなものを使ってね★）",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "88e640da-ebf1-477e-b562-6f15ba64dc58",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:21:00.000Z",
+      "last_edited_time": "2022-03-29T03:21:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "このフロントエンドのアプリとDBを接続して,データを操作するための準備をしていきます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "このフロントエンドのアプリとDBを接続して,データを操作するための準備をしていきます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "2aa4e461-4f06-4418-9fbc-79f7ea06e34e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:21:00.000Z",
+      "last_edited_time": "2022-03-29T03:22:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Next.jsに関する説明は省きます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Next.jsに関する説明は省きます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "7be5b1f8-5ea5-4e73-a365-4d2dcef34c0d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:27:00.000Z",
+      "last_edited_time": "2022-03-20T04:27:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "アプリを作成する",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "アプリを作成する",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "8a0326bf-a39a-4be8-a01b-d52201f0822f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:26:00.000Z",
+      "last_edited_time": "2022-03-20T04:26:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "yarn create next-app --typescript",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "yarn create next-app --typescript",
+            "href": null
+          }
+        ],
+        "language": "bash"
+      }
+    },
+    {
+      "object": "block",
+      "id": "abd6925c-23af-4137-91cb-cb87c324047d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:26:00.000Z",
+      "last_edited_time": "2022-03-20T04:27:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "TypeScriptはお好みで",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "TypeScriptはお好みで",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "8ccb167e-4b56-4102-8016-64ff951ace10",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:36:00.000Z",
+      "last_edited_time": "2022-03-29T03:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "85a3d75b-7459-48ab-b9d4-8d29643383d9",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:27:00.000Z",
+      "last_edited_time": "2022-03-29T03:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PrismaのSetup",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "PrismaのSetup",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "19353979-1bf6-42e1-85a5-6429a8b33691",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:36:00.000Z",
+      "last_edited_time": "2022-03-29T03:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Prismaとは",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Prismaとは",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "10800233-dde0-4cc9-a403-d9934b749402",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-05-07T06:32:00.000Z",
+      "last_edited_time": "2022-05-07T06:33:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PrismaはTypeScriptに対応したORMです.\nORM(Object Relational Mapping)とはSQLを操作するの必要な言語に変換してくれるツールの総称で,JavaScriptを書くことでSQLの操作（本当はSQLを書かなければならない）を可能にしてくれるということです.\nさらに,それだけではなく,PrismaはDBのschema（どんなデータが入るか）定義や型の自動生成もしてくれます.（他にもいろんなことができるのですが割愛します.）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "PrismaはTypeScriptに対応したORMです.\nORM(Object Relational Mapping)とはSQLを操作するの必要な言語に変換してくれるツールの総称で,JavaScriptを書くことでSQLの操作（本当はSQLを書かなければならない）を可能にしてくれるということです.\nさらに,それだけではなく,PrismaはDBのschema（どんなデータが入るか）定義や型の自動生成もしてくれます.（他にもいろんなことができるのですが割愛します.）",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "10fd5d5b-533a-4d94-b332-973051781021",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-05-16T07:10:00.000Z",
+      "last_edited_time": "2022-05-16T07:10:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "ea9e0b73-88c1-421c-bc84-e30b770f36f6",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:36:00.000Z",
+      "last_edited_time": "2022-05-16T07:10:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "公式はこちら",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "公式はこちら",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "32c09683-7972-4424-a68d-8dbfba86bacf",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-05-16T07:10:00.000Z",
+      "last_edited_time": "2022-05-16T07:10:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "bookmark",
+      "bookmark": {
+        "caption": [],
+        "url": "https://www.prisma.io/"
+      }
+    },
+    {
+      "object": "block",
+      "id": "d1e93f93-0ed4-4b47-9b77-cb8a5e1f753a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-05-16T07:10:00.000Z",
+      "last_edited_time": "2022-05-16T07:10:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "fdfdd733-d8c5-4f80-b7d3-66f9ca81fb29",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:27:00.000Z",
+      "last_edited_time": "2022-03-29T03:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Prisma関連の依存関係をinstall",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Prisma関連の依存関係をinstall",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "c38e3cae-1365-4f33-b3ac-473e00b24544",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:31:00.000Z",
+      "last_edited_time": "2022-03-29T03:23:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "今回はprismaを使ってDBと接続するので,以下の2つを入れましょう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "今回はprismaを使ってDBと接続するので,以下の2つを入れましょう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "20f54868-36bc-4ed4-bbe1-076f6f6db9de",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:27:00.000Z",
+      "last_edited_time": "2022-03-20T04:30:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "yarn add -D prisma",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "yarn add -D prisma",
+            "href": null
+          }
+        ],
+        "language": "bash"
+      }
+    },
+    {
+      "object": "block",
+      "id": "4535ab07-47e9-4002-a81f-1db954b97ecd",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:30:00.000Z",
+      "last_edited_time": "2022-03-20T04:30:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "yarn add @prisma/client",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "yarn add @prisma/client",
+            "href": null
+          }
+        ],
+        "language": "bash"
+      }
+    },
+    {
+      "object": "block",
+      "id": "939c6f32-aa4a-40bd-b895-872681db5356",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:23:00.000Z",
+      "last_edited_time": "2022-03-29T03:23:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "f72f93ca-1e5a-41d2-8f84-22e153b2b1ee",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:27:00.000Z",
+      "last_edited_time": "2022-03-29T03:24:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "prismaに関するファイルを作成/編集",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "prismaに関するファイルを作成/編集",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "8c246725-1e7e-45aa-829e-32b949e83bd1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:24:00.000Z",
+      "last_edited_time": "2022-03-29T03:25:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "必要なファイルを作ってくれる魔法を唱えましょう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "必要なファイルを作ってくれる魔法を唱えましょう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "c22d29be-2402-4308-812c-b8e96af98e5f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:27:00.000Z",
+      "last_edited_time": "2022-03-20T04:27:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "npx prisma init",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "npx prisma init",
+            "href": null
+          }
+        ],
+        "language": "bash"
+      }
+    },
+    {
+      "object": "block",
+      "id": "b151c1fc-253b-458f-a987-1a6330584576",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:24:00.000Z",
+      "last_edited_time": "2022-03-29T03:25:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "11c2f700-7c35-4bf0-8f2a-f57b34325b6d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:31:00.000Z",
+      "last_edited_time": "2022-03-29T03:29:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "prisma/schema.prisma",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "prisma/schema.prisma",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "が作成されるので,そこを（＊）の内容に書き換えます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "が作成されるので,そこを（＊）の内容に書き換えます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "7b42320d-5975-4499-9416-d642d673425e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:31:00.000Z",
+      "last_edited_time": "2022-03-20T04:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "generator client {\n  provider = \"prisma-client-js\"\n  previewFeatures = [\"referentialIntegrity\"]\n}\ndatasource db {\n  provider = \"mysql\"\n  url = env(\"DATABASE_URL\")\n  referentialIntegrity = \"prisma\"\n}",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "generator client {\n  provider = \"prisma-client-js\"\n  previewFeatures = [\"referentialIntegrity\"]\n}\ndatasource db {\n  provider = \"mysql\"\n  url = env(\"DATABASE_URL\")\n  referentialIntegrity = \"prisma\"\n}",
+            "href": null
+          }
+        ],
+        "language": "plain text"
+      }
+    },
+    {
+      "object": "block",
+      "id": "32793736-38c8-40e8-b91f-8941dd9dc8a5",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:29:00.000Z",
+      "last_edited_time": "2022-03-29T03:29:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "f73407d5-3063-4520-ab51-95888231d3e8",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:40:00.000Z",
+      "last_edited_time": "2022-03-29T03:30:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "次の環境変数も（＊）の内容で準備しましょう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "次の環境変数も（＊）の内容で準備しましょう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "185a219f-d46d-4eb8-bf19-a9a824f50b2c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:40:00.000Z",
+      "last_edited_time": "2022-03-29T03:30:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": ".env",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": ".env",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "ファイルを作成し,（＊）の内容を貼り付けます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ファイルを作成し,（＊）の内容を貼り付けます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "a0fcb65d-c028-49b4-81ae-e0a370fc5ab1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:41:00.000Z",
+      "last_edited_time": "2022-03-20T04:42:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "DATABASE_URL='mysql://xxxxxxxx:pscale_pw_xxxxxxxxxxxxxxxxxx?sslaccept=strict'",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "DATABASE_URL='mysql://xxxxxxxx:pscale_pw_xxxxxxxxxxxxxxxxxx?sslaccept=strict'",
+            "href": null
+          }
+        ],
+        "language": "plain text"
+      }
+    },
+    {
+      "object": "block",
+      "id": "8e53c5dc-c60a-4d77-8892-6adef6e290e2",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:40:00.000Z",
+      "last_edited_time": "2022-03-29T03:34:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "また,この環境変数はGitに公開されないように",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "また,この環境変数はGitに公開されないように",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": ".gitignore",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": ".gitignore",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "ファイルに",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "ファイルに",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": ".env",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": ".env",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "を追加しておきましょう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "を追加しておきましょう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "7f03da1c-2ac3-4002-9667-d9139f762968",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:45:00.000Z",
+      "last_edited_time": "2022-03-20T04:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "ce0f1947-8d53-439f-a12e-f5ac1637abf1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:32:00.000Z",
+      "last_edited_time": "2022-03-29T03:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "prisma/schema.prisma",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "prisma/schema.prisma",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "にDBスキーマを定義する",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "にDBスキーマを定義する",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "9dabf10d-869d-4f11-b6d3-4a6b1226996c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:45:00.000Z",
+      "last_edited_time": "2022-03-29T03:37:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Prismaではこのファイルに指定したschema（スキーマ）でDBのテーブルを作ってくれ,型まで自動生成してくれます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Prismaではこのファイルに指定したschema（スキーマ）でDBのテーブルを作ってくれ,型まで自動生成してくれます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "59930dae-942a-4da9-823b-e83723fc72e8",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:39:00.000Z",
+      "last_edited_time": "2022-03-29T03:39:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "今回はこちらのコードを",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "今回はこちらのコードを",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "prisma/schema.prisma",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "prisma/schema.prisma",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "に追記してください.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "に追記してください.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "81657a2b-6047-4f46-8242-9128bc445143",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:39:00.000Z",
+      "last_edited_time": "2022-04-03T12:52:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "model Book {\n  id          Int    @id @default(autoincrement())\n  title       String\n  description String\n  price       Int\n  authorId    Int\n  author      Author @relation(fields: [authorId], references: [id])\n}\n\nmodel Author {\n  id    Int    @id @default(autoincrement())\n  name  String\n  books Book[]\n}",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "model Book {\n  id          Int    @id @default(autoincrement())\n  title       String\n  description String\n  price       Int\n  authorId    Int\n  author      Author @relation(fields: [authorId], references: [id])\n}\n\nmodel Author {\n  id    Int    @id @default(autoincrement())\n  name  String\n  books Book[]\n}",
+            "href": null
+          }
+        ],
+        "language": "plain text"
+      }
+    },
+    {
+      "object": "block",
+      "id": "70476271-c59d-4c62-b0d2-1180ee83295a",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:42:00.000Z",
+      "last_edited_time": "2022-03-29T03:42:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "これは本と著者をDBに保存するためのスキーマの例です.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "これは本と著者をDBに保存するためのスキーマの例です.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "f48ec4bc-590c-4260-a7ad-12eea943a073",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:40:00.000Z",
+      "last_edited_time": "2022-03-29T03:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Book",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "Book",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "というオブジェクトは",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "というオブジェクトは",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "id,title,description,authorId",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "id,title,description,authorId",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "というプロパティを持ち,",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "というプロパティを持ち,",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "authorId",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "authorId",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "を参考に",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "を参考に",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Author",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "Author",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "というオブジェクトと紐づいています.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "というオブジェクトと紐づいています.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "14592146-2edc-4b51-bf50-dd2ab739c752",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:44:00.000Z",
+      "last_edited_time": "2022-03-29T03:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "books Book[]",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "books Book[]",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "はAuthorオブジェクトが複数のBookと紐付かれることを示しています.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "はAuthorオブジェクトが複数のBookと紐付かれることを示しています.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "54e59d73-16ae-4018-b5f9-f0cf157f8c30",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:43:00.000Z",
+      "last_edited_time": "2022-03-29T03:45:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "それぞれのオブジェクトの",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "それぞれのオブジェクトの",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "id",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "id",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "は自動で連番で割り当てられます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "は自動で連番で割り当てられます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "77bd19ae-bd71-43a1-8f3f-697fc7616e27",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:40:00.000Z",
+      "last_edited_time": "2022-03-29T03:46:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "と言ったような意味を示すPrisma独自が開発したコードとなっています.VSCodeの拡張機能を入れると見やすくなり,エラーも教えてくれるので,入れておくといいでしょう.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "と言ったような意味を示すPrisma独自が開発したコードとなっています.VSCodeの拡張機能を入れると見やすくなり,エラーも教えてくれるので,入れておくといいでしょう.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "2d70345a-72fd-4220-8619-0219073dad3d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:39:00.000Z",
+      "last_edited_time": "2022-03-29T03:40:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "06b26155-34cd-4d61-8777-6d28a1907765",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:46:00.000Z",
+      "last_edited_time": "2022-03-29T03:46:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "今回はこちらでコードを用意しましたが,カスタマイズしたい場合の書き方のなどはこちらをご参考ください.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "今回はこちらでコードを用意しましたが,カスタマイズしたい場合の書き方のなどはこちらをご参考ください.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "da9da433-2d63-4aa4-a0ee-d5f0f2ecb078",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T04:48:00.000Z",
+      "last_edited_time": "2022-03-20T04:48:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "bookmark",
+      "bookmark": {
+        "caption": [],
+        "url": "https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference"
+      }
+    },
+    {
+      "object": "block",
+      "id": "b2caf052-559b-428c-ad0a-ac67bfba8e8e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:40:00.000Z",
+      "last_edited_time": "2022-03-29T03:40:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "952d1db7-ef82-43ba-934d-8a8287314dd8",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T07:08:00.000Z",
+      "last_edited_time": "2022-03-29T03:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "DBにテーブルを作成する",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "DBにテーブルを作成する",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "eb307501-7ee9-43e2-8045-d33526893e68",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T07:08:00.000Z",
+      "last_edited_time": "2022-03-29T03:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "スキーマの定義が終わったら,PlanetScale側のDBにテーブルを作成します.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "スキーマの定義が終わったら,PlanetScale側のDBにテーブルを作成します.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "74c58475-d8d4-491a-ad27-f6cf2e8958fd",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:47:00.000Z",
+      "last_edited_time": "2022-03-29T03:49:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "テーブルとは,保存されるデータの形のようなもので,DBに予め「ここにはこういうデータが入る予定だからよろしく！」と伝えるみたいな感じです.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "テーブルとは,保存されるデータの形のようなもので,DBに予め「ここにはこういうデータが入る予定だからよろしく！」と伝えるみたいな感じです.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "4ab2c70e-d983-4f21-8545-4968f94924af",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:49:00.000Z",
+      "last_edited_time": "2022-03-29T03:50:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "prisma/schema.prisma",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "prisma/schema.prisma",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "の記述を終えたら,",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "の記述を終えたら,",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "58f2db71-2518-4c4f-8f80-424a53fc90b0",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T07:08:00.000Z",
+      "last_edited_time": "2022-03-20T07:08:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "npx prisma db push",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "npx prisma db push",
+            "href": null
+          }
+        ],
+        "language": "plain text"
+      }
+    },
+    {
+      "object": "block",
+      "id": "35d00925-9609-4cb4-9784-e8f731a1cf1b",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T07:08:00.000Z",
+      "last_edited_time": "2022-03-29T03:50:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "とすることで,PlanetScaleのDBにPush（定義したスキーマをテーブルに反映）できます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "とすることで,PlanetScaleのDBにPush（定義したスキーマをテーブルに反映）できます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "d18ee8c5-74a5-494a-b2b7-11232b815058",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:51:00.000Z",
+      "last_edited_time": "2022-03-29T03:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "bcd2cd5f-338e-4c06-b613-2366fc15880e",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-29T03:50:00.000Z",
+      "last_edited_time": "2022-03-29T03:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PlanetScale側で確認してみます.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "PlanetScale側で確認してみます.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "d29e3056-4abc-44e3-9dda-8273f5bc344d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T07:09:00.000Z",
+      "last_edited_time": "2022-03-29T03:52:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "DBのSchemaを選択し,SQLで書かれたテーブルっぽいものが表示されれば成功です！（表示されない場合はRefreshを押してみたら表示されるかもです.）",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "DBのSchemaを選択し,SQLで書かれたテーブルっぽいものが表示されれば成功です！（表示されない場合はRefreshを押してみたら表示されるかもです.）",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "e84c5a26-544b-4321-b830-478329b25195",
+      "parent": {
+        "type": "page_id",
+        "page_id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb"
+      },
+      "created_time": "2022-03-20T07:09:00.000Z",
+      "last_edited_time": "2022-03-20T07:10:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "bd50db90-e833-4237-8605-7575e3a871fb"
+      },
+      "has_children": false,
+      "archived": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/84033505-875c-452a-86ec-84c94ff3a681/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-20_16.09.51.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=725ee76ff467c7ab0cc5421a07e2856a992682cfeb3d360fe95b3ef3bb64ca6d&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2022-12-30T17:16:42.039Z"
+        }
+      }
+    }
+  ]
+}

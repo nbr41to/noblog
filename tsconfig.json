@@ -1,17 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/type/*": ["src/type/*"],
-      "@/mocks/*": ["__mocks__/*"]
-    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -20,7 +13,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/pages/*": ["./pages/*"],
+      "~/*": ["./src/*"],
+      "~/components/*": ["./src/components/*"],
+      "~/features/*": ["./src/components/features/*"],
+      "~/commons/*": ["./src/components/@commons/*"],
+      "~/layouts/*": ["./src/components/@layouts/*"],
+      "~/templates/*": ["./src/components/@templates/*"],
+      "~/hooks/*": ["./src/hooks/*"],
+      "~/client/*": ["src/utils/*"],
+      "~/server/*": ["./src/server/*"],
+      "~/mocks/*": ["./src/__mocks__/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

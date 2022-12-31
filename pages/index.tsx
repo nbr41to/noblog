@@ -1,58 +1,67 @@
-import { NextPage } from 'next';
-import styled from 'styled-components';
+import type { InferGetStaticPropsType, NextPage } from 'next';
+import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { Profile } from '@/components/Home/Profile';
-import { TrendBoard } from '@/components/Widget/TrendBoard';
+import { Badge } from '@mantine/core';
 
-const HomePage: NextPage = () => {
+import { PostList } from '~/components/features/notionBlog/PostList';
+import { getDatabaseContents } from '~/server/notion/databases';
+
+export const getStaticProps = async () => {
+  const response = await getDatabaseContents({
+    database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
+    page_size: 5,
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
+    filter: {
+      property: 'Status',
+      select: {
+        equals: 'PUBLISH',
+      },
+    },
+  });
+
+  return {
+    props: {
+      posts: response.results as NotionPageObjectResponse[],
+    },
+    revalidate: 60 * 60, // 1時間
+  };
+};
+
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const Home: NextPage<Props> = ({ posts }) => {
   return (
-    <StyledHomePage>
-      <TrendBoard />
-      <Profile />
-    </StyledHomePage>
+    <div>
+      <div className="space-y-2">
+        <div className="text-center text-2xl font-bold">
+          Happy New Year!!
+          <br />
+          NotionでBlog作ったよ〜〜
+        </div>
+        <div className="text-center">
+          <Badge className="lowercase">nextjs</Badge>
+          <Badge className="lowercase">typescript</Badge>
+          <Badge className="lowercase">tailwindcss</Badge>
+          <Badge className="lowercase">vercel</Badge>
+        </div>
+        <div className="text-center font-bold">SourceはGitHubにあります</div>
+        <div className="text-center font-bold">このページが一番手抜き😇</div>
+        <div className="text-center font-bold">
+          今後はライブラリやツールを試すようのサイトにもする予定です
+        </div>
+      </div>
+
+      <div className="w-main mt-4 px-4">
+        <h2 className="mb-4 text-lg">最新の記事5件</h2>
+        <PostList posts={posts} />
+      </div>
+    </div>
   );
 };
 
-const StyledHomePage = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 20px 32px;
-  ${({ theme }) => theme.media.sp`
-    padding: 12px;
-  `}
-
-  > .content_wrapper {
-    /* display: grid; */
-    /* grid-template:
-      ' ..... ..... ..... ..... ..... ' 20px
-      ' ghg   ghg   ghg   ghg   ghg   ' auto
-      ' ..... ..... ..... ..... ..... ' 20px
-      ' trend trend trend ..... ttl   ' 800px
-      ' ..... ..... ..... ..... ..... ' 20px /
-      0 0 1fr 20px 300px; */
-
-    /* ${({ theme }) => theme.media.sp`
-      grid-template:
-        ' ..... ..... ..... ..... ..... ' 20px
-        ' ghg   ghg   ghg   ghg   ghg   ' auto
-        ' ..... ..... ..... ..... ..... ' 20px
-        ' trend trend trend trend trend ' 600px
-        ' ..... ..... ..... ..... ..... ' 20px
-        ' ttl   ttl   ttl   ttl   ttl   ' 600px
-        ' ..... ..... ..... ..... ..... ' 20px /
-        auto;
-  `}; */
-  }
-  .ghg {
-    grid-area: ghg;
-  }
-  .trend {
-    grid-area: trend;
-  }
-  .ttl {
-    grid-area: ttl;
-  }
-`;
-
-export default HomePage;
+export default Home;

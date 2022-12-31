@@ -1,0 +1,10 @@
+{
+  "src/**/*.{js,ts,jsx,tsx}": [
+    "npx eslint --fix",
+    "npx prettier --write --ignore-unknown"
+  ],
+  "pages/**/*.{js,ts,jsx,tsx}": [
+    "npx eslint --fix",
+    "npx prettier --write --ignore-unknown"
+  ]
+}
