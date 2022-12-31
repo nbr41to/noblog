@@ -1,40 +1,42 @@
 import type { FC } from 'react';
-import type { NotionPost } from '~/types/notion';
+import type {
+  NotionCommentObjectResponse,
+  NotionPost,
+  NotionRichTextItemRequest,
+} from '~/types/notion';
 
 import { Bio } from '~/commons/Bio';
 import { CommentForm } from '~/features/notionBlog/CommentForm';
 import { Comments } from '~/features/notionBlog/Comments';
 import { PostContent } from '~/features/notionBlog/PostContent';
-import { PostHeader } from '~/features/notionBlog/PostHeader';
+import { PostMeta } from '~/features/notionBlog/PostMeta/PostMeta';
 import { TableOfContents } from '~/features/notionBlog/TableOfContents';
-import { useComments } from '~/hooks/apiHooks/useComments';
 
 type Props = {
   post: NotionPost;
+  comments: NotionCommentObjectResponse[];
+  onSubmit: (rich_text: NotionRichTextItemRequest[]) => Promise<void>;
 };
 
-export const PostDetailTemplate: FC<Props> = ({ post }) => {
-  const { data: comments } = useComments(post.id);
-
+export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
   return (
     <div className="px-8 sp:px-0">
-      <div className="sp:px-2">
-        <PostHeader post={post} />
-      </div>
+      <h1 className="my-8 text-3xl sp:px-4 sp:text-xl">{post.title}</h1>
+
       <div className="flex justify-between gap-6">
-        <div className="w-main">
-          <PostContent blocks={post.children} />
-          <div className="p-4">
-            <Comments comments={comments} />
-            {/*  eslint-disable-next-line no-console */}
-            <CommentForm onSubmit={() => console.log('onSubmit')} />
+        <div className="w-main space-y-6">
+          <PostContent title={post.title} blocks={post.children} />
+          <Comments comments={comments} />
+          <div className="px-4">
+            <CommentForm onSubmit={onSubmit} />
           </div>
         </div>
 
         <div className="hidden min-w-[254px] md:block">
-          <div className="sticky top-8 space-y-6">
-            <Bio />
+          <Bio />
+          <div className="sticky top-4 mt-4 space-y-4">
             <TableOfContents blocks={post.children} />
+            <PostMeta meta={post} commentCount={comments.length} />
           </div>
         </div>
       </div>

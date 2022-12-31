@@ -2,8 +2,10 @@ import type { GetStaticPaths, InferGetStaticPropsType, NextPage } from 'next';
 import type {
   NotionBlockObjectResponse,
   NotionPageObjectResponse,
+  NotionRichTextItemRequest,
 } from '~/types/notion';
 
+import { useComments } from '~/hooks/apiHooks/useComments';
 import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContents } from '~/server/notion/databases';
 import { getPage } from '~/server/notion/pages';
@@ -60,9 +62,26 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Post: NextPage<Props> = ({ post }) => {
+  const { data: comments, trigger } = useComments(post.id);
+
+  const handleCommentSubmit = async (
+    rich_text: NotionRichTextItemRequest[]
+  ) => {
+    await trigger({
+      parent: {
+        page_id: post.id,
+      },
+      rich_text,
+    });
+  };
+
   return (
     <div>
-      <PostDetailTemplate post={post} />
+      <PostDetailTemplate
+        post={post}
+        comments={comments}
+        onSubmit={handleCommentSubmit}
+      />
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import type { NotionCreateCommentParameters } from '~/types/notion';
+
 import { notion } from './client';
 
 /**
@@ -13,23 +15,7 @@ export const getComments = async (block_id: string) => {
 
 /**
  * BlockにCommentsを追加
- * @param pageId PageまたはBlockのID
- * @param comment コメント
+ * @param params NotionCreateCommentParameters
  */
-export const createComment = async (page_id: string, comment: string) => {
-  const response = await notion.comments.create({
-    parent: {
-      page_id, // 親のpageまたはblockのid
-    },
-    // discussion_id: 'discussionId', // discussion_idを使用する場合こっち
-    rich_text: [
-      {
-        text: {
-          content: comment,
-        },
-      },
-    ],
-  });
-
-  return response;
-};
+export const createComment = async (params: NotionCreateCommentParameters) =>
+  await notion.comments.create(params);

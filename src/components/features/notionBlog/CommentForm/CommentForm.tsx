@@ -1,30 +1,52 @@
 import type { FC } from 'react';
+import type { NotionRichTextItemRequest } from '~/types/notion';
 
-import { Button } from '@mantine/core';
+import { Button, Kbd, Tooltip } from '@mantine/core';
+import { getHotkeyHandler, useOs } from '@mantine/hooks';
 import { Link, RichTextEditor } from '@mantine/tiptap';
+import Placeholder from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { useState } from 'react';
+import { IoSend } from 'react-icons/io5';
+
+import { toRichText } from '~/utils/notion/toRichText';
 
 type Props = {
-  onSubmit: (params: string) => void;
+  onSubmit: (rich_text: NotionRichTextItemRequest[]) => Promise<void>;
 };
 
 export const CommentForm: FC<Props> = ({ onSubmit }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const editor = useEditor({
-    extensions: [StarterKit, Underline, Link],
-    content: '<p>Hello world!</p>',
+    extensions: [
+      StarterKit,
+      Underline,
+      Link,
+      Placeholder.configure({ placeholder: 'コメントを入力してください。' }),
+    ],
+    content: '',
   });
+  const disabled = isLoading || !editor || !editor.getText();
 
-  const handleSubmit = () => {
-    onSubmit(editor?.getText() ?? '');
+  const os = useOs();
+
+  const handleSubmit = async () => {
+    if (disabled) return;
+    setIsLoading(true);
+    const rich_text = toRichText(editor.getJSON());
+    await onSubmit(rich_text);
+    editor.commands.setContent('');
+    setIsLoading(false);
   };
 
   return (
     <div className="">
       <RichTextEditor
-        editor={editor}
         className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white"
+        editor={editor}
+        onKeyDown={getHotkeyHandler([['mod+Enter', handleSubmit]])}
       >
         <RichTextEditor.Toolbar sticky stickyOffset={0}>
           <RichTextEditor.ControlsGroup>
@@ -54,7 +76,32 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
 
         <RichTextEditor.Content />
       </RichTextEditor>
-      <Button onClick={handleSubmit}>送信</Button>
+
+      <div className="mt-2 flex items-center justify-end gap-3">
+        <Tooltip
+          position="top-end"
+          arrowPosition="center"
+          transition="pop-top-right"
+          transitionDuration={300}
+          withArrow
+          color="orange"
+          label={
+            <div className="space-y-3 p-2 text-center text-sm">
+              <Kbd>{os === 'macos' ? 'Cmd' : 'Ctrl'}</Kbd> + <Kbd>Enter</Kbd>{' '}
+              でも送信できます。
+            </div>
+          }
+        >
+          <Button
+            onClick={handleSubmit}
+            loading={isLoading}
+            disabled={disabled}
+            rightIcon={<IoSend />}
+          >
+            送 信
+          </Button>
+        </Tooltip>
+      </div>
     </div>
   );
 };

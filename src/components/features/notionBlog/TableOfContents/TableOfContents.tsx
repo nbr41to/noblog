@@ -68,10 +68,10 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
       <div className="text-center font-baloo text-lg">
         - Table of contents -
       </div>
-      <div className="mx-auto mt-1 h-0.5 w-20 rounded-full bg-slate-800" />
+      <div className="mx-auto mt-0.5 h-0.5 w-20 rounded-full bg-slate-800" />
       <div
         className={clsx(
-          'relative mt-6 flex flex-col gap-2 pl-6',
+          'relative mt-4 flex max-h-[456px] flex-col gap-2 overflow-y-scroll pl-6 text-sm',
           'before:absolute before:top-4 before:left-[3px] before:h-[calc(100%-24px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
         )}
       >

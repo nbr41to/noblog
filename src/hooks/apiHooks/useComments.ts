@@ -1,14 +1,45 @@
-import type { NotionListCommentsResponse } from '~/types/notion';
+import type {
+  NotionCommentObjectResponse,
+  NotionCreateCommentParameters,
+  NotionListCommentsResponse,
+} from '~/types/notion';
 
+import { useCallback } from 'react';
 import useSWR from 'swr';
+import useSWRMutation from 'swr/mutation';
 
-import { getFetcher } from './fetcher';
+import { getFetcher, postFetcher } from './fetcher';
+
+const url = '/api/notion-blog/comments';
 
 export const useComments = (page_id: string) => {
-  const { data, isLoading, error } = useSWR<NotionListCommentsResponse>(
-    page_id ? `/api/notion-blog/comments?page_id=${page_id}` : null,
+  const { data, isLoading, error, mutate } = useSWR<NotionListCommentsResponse>(
+    page_id ? `${url}?page_id=${page_id}` : null,
     getFetcher
   );
+  const revalidate = useCallback(() => mutate(), [mutate]);
 
-  return { data: data?.results || [], isLoading, error };
+  const {
+    trigger,
+    isMutating,
+    error: mutateError,
+  } = useSWRMutation<
+    NotionCommentObjectResponse,
+    Error,
+    typeof url,
+    NotionCreateCommentParameters
+  >(url, postFetcher, {
+    onSuccess: revalidate,
+  });
+
+  return {
+    data: data?.results || [],
+    revalidate,
+    isLoading,
+    error,
+
+    trigger,
+    isMutating,
+    mutateError,
+  };
 };

@@ -1,6 +1,7 @@
 import type {
   BlockObjectResponse,
   CommentObjectResponse,
+  CreateCommentParameters,
   ListCommentsResponse,
   PageObjectResponse,
   RichTextItemResponse,
@@ -22,9 +23,13 @@ export type NotionSelectColor =
 /* Replace */
 export type NotionPageObjectResponse = PageObjectResponse;
 export type NotionBlockObjectResponse = BlockObjectResponse;
-export type NotionRichTextItemResponse = RichTextItemResponse;
 export type NotionListCommentsResponse = ListCommentsResponse;
 export type NotionCommentObjectResponse = CommentObjectResponse;
+export type NotionRichTextItemResponse = RichTextItemResponse;
+
+export type NotionCreateCommentParameters = CreateCommentParameters;
+export type NotionRichTextItemRequest =
+  CreateCommentParameters['rich_text'][number];
 
 /* Custom */
 export type NotionPostMeta = {

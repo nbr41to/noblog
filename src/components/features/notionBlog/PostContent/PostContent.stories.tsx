@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { NotionBlockObjectResponse } from '~/types/notion';
 
-import exampleBlocks from '~/mock/notion_blocks.json';
+import exampleBlocks from '~/mocks/notion_blocks.json';
 
 import { PostContent as Component } from './PostContent';
 

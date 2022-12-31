@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { NotionCommentObjectResponse } from '~/types/notion';
 
-import exampleCommentList from '~/mock/notion_comment_list.json';
+import exampleCommentList from '~/mocks/notion_comment_list.json';
 
 import { Comments as Component } from './Comments';
 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
-import examplePages from '~/mock/notion_pages.json';
+import examplePages from '~/mocks/notion_pages.json';
 
 import { PostsTemplate as Component } from './PostsTemplate';
 

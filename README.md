@@ -12,6 +12,10 @@
 
 - Routing の Object を作る
 - Bio の上に日付といいねボタンとコメントの件数
+- CommentForm の下の方触っても Focus するように
+- Meta の挿入
+- Comments の Loading を表示してみる
+- IP アドレスに紐づく一意性のいいね機能
 
 ## Used
 

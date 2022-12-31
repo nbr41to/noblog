@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { NotionPost } from '~/types/notion';
+import type { NotionPostMeta } from '~/types/notion';
 
 import examplePost from '~/mocks/notion_post.json';
 
-import { PostDetailTemplate as Component } from './PostDetailTemplate';
+import { PostMeta as Component } from './PostMeta';
 
 export default {
   component: Component,
@@ -11,6 +11,7 @@ export default {
 
 export const Default: StoryObj<typeof Component> = {
   args: {
-    post: examplePost as NotionPost,
+    meta: examplePost as NotionPostMeta,
+    commentCount: 4,
   },
 };

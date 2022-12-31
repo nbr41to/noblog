@@ -25,7 +25,8 @@
       "~/templates/*": ["./src/components/@templates/*"],
       "~/hooks/*": ["./src/hooks/*"],
       "~/client/*": ["src/utils/*"],
-      "~/server/*": ["./src/server/*"]
+      "~/server/*": ["./src/server/*"],
+      "~/mocks/*": ["./src/__mocks__/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
