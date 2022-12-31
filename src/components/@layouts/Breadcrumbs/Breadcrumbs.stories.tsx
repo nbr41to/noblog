@@ -14,20 +14,5 @@ export default {
 } as Meta<typeof Component>;
 
 export const Default: StoryObj<typeof Component> = {
-  args: {
-    items: [
-      {
-        title: 'Home',
-        href: '#',
-      },
-      {
-        title: 'Blog',
-        href: '#',
-      },
-      {
-        title: 'Lets talk about React',
-        href: '#',
-      },
-    ],
-  },
+  args: {},
 };
