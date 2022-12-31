@@ -7,7 +7,7 @@
 - 記事ごとのいいね・コメント機能（連投防止も）
 - Zenn の記事一覧
 - Admin 画面
-- GA やらなきゃ
+- Google Analytics の追加
 
 ### Todo
 
@@ -17,16 +17,18 @@
 - `__tests__`の追加
 - `__mocks__`の整理
 - Roma 試す
-- 謎解きギミックの追加
 - Category と Tag による絞り込み
-- Tweets list の追加
+- ログイン機能（tw,gh,ggl）
 - ログインしないとコメントができないように
-- コメント送信時に最後の気あ行は削除するように
-- Routing の Object を作る
+- コメント送信時に最後の改行は削除するように
+- Routing の Object を作る（titleEnum を作る）
 - meta と json-ld を整理したい
-- bookmark に縦線入れる
 - コメントの empty UI
+- bookmark に縦線入れる
 - link_preview 対応 多分 GitHub リンク
+- OGP 画像が表示されてない
+- Tweets list の追加
+- 謎解きギミックの追加
 
 ## Used
 
