@@ -27,9 +27,7 @@ export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
         <div className="w-main space-y-6">
           <PostContent title={post.title} blocks={post.children} />
           <Comments comments={comments} />
-          <div className="px-4">
-            <CommentForm onSubmit={onSubmit} />
-          </div>
+          <CommentForm onSubmit={onSubmit} />
         </div>
 
         <div className="hidden min-w-[254px] md:block">

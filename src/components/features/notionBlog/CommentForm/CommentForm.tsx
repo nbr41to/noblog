@@ -3,6 +3,7 @@ import type { NotionRichTextItemRequest } from '~/types/notion';
 
 import { Button, Kbd, Tooltip } from '@mantine/core';
 import { getHotkeyHandler, useOs } from '@mantine/hooks';
+import { showNotification } from '@mantine/notifications';
 import { Link, RichTextEditor } from '@mantine/tiptap';
 import Placeholder from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
@@ -18,6 +19,7 @@ type Props = {
 };
 
 export const CommentForm: FC<Props> = ({ onSubmit }) => {
+  const [commentable, setCommentable] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const editor = useEditor({
     extensions: [
@@ -34,74 +36,101 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
 
   const handleSubmit = async () => {
     if (disabled) return;
-    setIsLoading(true);
-    const rich_text = toRichText(editor.getJSON());
-    await onSubmit(rich_text);
-    editor.commands.setContent('');
-    setIsLoading(false);
+
+    const completed = false;
+    if (completed) {
+      setIsLoading(true);
+      const rich_text = toRichText(editor.getJSON());
+      await onSubmit(rich_text);
+      editor.commands.setContent('');
+      setIsLoading(false);
+    } else {
+      showNotification({
+        title: 'コメント機能は現在準備中です。',
+        message: 'コメント機能は現在準備中です。',
+      });
+    }
   };
 
   return (
     <div className="">
-      <RichTextEditor
-        className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white"
-        editor={editor}
-        onKeyDown={getHotkeyHandler([['mod+Enter', handleSubmit]])}
-      >
-        <RichTextEditor.Toolbar sticky stickyOffset={0}>
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Bold />
-            <RichTextEditor.Italic />
-            <RichTextEditor.Underline />
-            <RichTextEditor.Strikethrough />
-            <RichTextEditor.Code />
-            <RichTextEditor.ClearFormatting />
-          </RichTextEditor.ControlsGroup>
-
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.H1 />
-            <RichTextEditor.H2 />
-            <RichTextEditor.H3 />
-          </RichTextEditor.ControlsGroup>
-
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Blockquote />
-            <RichTextEditor.Hr />
-            <RichTextEditor.BulletList />
-            <RichTextEditor.OrderedList />
-            <RichTextEditor.Link />
-            <RichTextEditor.Unlink />
-          </RichTextEditor.ControlsGroup>
-        </RichTextEditor.Toolbar>
-
-        <RichTextEditor.Content />
-      </RichTextEditor>
-
-      <div className="mt-2 flex items-center justify-end gap-3">
-        <Tooltip
-          position="top-end"
-          arrowPosition="center"
-          transition="pop-top-right"
-          transitionDuration={300}
-          withArrow
-          color="orange"
-          label={
-            <div className="space-y-3 p-2 text-center text-sm">
-              <Kbd>{os === 'macos' ? 'Cmd' : 'Ctrl'}</Kbd> + <Kbd>Enter</Kbd>{' '}
-              でも送信できます。
-            </div>
-          }
-        >
-          <Button
-            onClick={handleSubmit}
-            loading={isLoading}
-            disabled={disabled}
-            rightIcon={<IoSend />}
-          >
-            送 信
+      {!commentable ? (
+        <div className="min-h-[320px]">
+          <Button fullWidth onClick={() => setCommentable(true)}>
+            ログインしてコメントをする
           </Button>
-        </Tooltip>
-      </div>
+          <div className="mt-4 rounded bg-white p-4">
+            <p>
+              現在コメント機能は開発中で,上のボタンを押すとすぐに入力フォームが表示されます.
+            </p>
+            <p>
+              実際に送信はできませんが,tiptapのリッチテキストエディタをご堪能ください.
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <RichTextEditor
+            className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white"
+            editor={editor}
+            onKeyDown={getHotkeyHandler([['mod+Enter', handleSubmit]])}
+          >
+            <RichTextEditor.Toolbar sticky stickyOffset={0}>
+              <RichTextEditor.ControlsGroup>
+                <RichTextEditor.Bold />
+                <RichTextEditor.Italic />
+                <RichTextEditor.Underline />
+                <RichTextEditor.Strikethrough />
+                <RichTextEditor.Code />
+                <RichTextEditor.ClearFormatting />
+              </RichTextEditor.ControlsGroup>
+
+              <RichTextEditor.ControlsGroup>
+                <RichTextEditor.H1 />
+                <RichTextEditor.H2 />
+                <RichTextEditor.H3 />
+              </RichTextEditor.ControlsGroup>
+
+              <RichTextEditor.ControlsGroup>
+                <RichTextEditor.Blockquote />
+                <RichTextEditor.Hr />
+                <RichTextEditor.BulletList />
+                <RichTextEditor.OrderedList />
+                <RichTextEditor.Link />
+                <RichTextEditor.Unlink />
+              </RichTextEditor.ControlsGroup>
+            </RichTextEditor.Toolbar>
+
+            <RichTextEditor.Content />
+          </RichTextEditor>
+
+          <div className="mt-2 flex items-center justify-end gap-3">
+            <Tooltip
+              position="top-end"
+              arrowPosition="center"
+              transition="pop-top-right"
+              transitionDuration={300}
+              withArrow
+              color="orange"
+              label={
+                <div className="space-y-3 p-2 text-center text-sm">
+                  <Kbd>{os === 'macos' ? 'Cmd' : 'Ctrl'}</Kbd> +{' '}
+                  <Kbd>Enter</Kbd> でも送信できます。
+                </div>
+              }
+            >
+              <Button
+                onClick={handleSubmit}
+                loading={isLoading}
+                disabled={disabled}
+                rightIcon={<IoSend />}
+              >
+                送 信
+              </Button>
+            </Tooltip>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
