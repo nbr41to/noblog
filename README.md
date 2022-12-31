@@ -11,10 +11,8 @@
 ### Todo
 
 - Routing の Object を作る
-- Bio の上に日付といいねボタンとコメントの件数
 - CommentForm の下の方触っても Focus するように
-- Meta の挿入
-- Comments の Loading を表示してみる
+- Comments 表示の Loading を表示してみる
 - IP アドレスに紐づく一意性のいいね機能
 
 ## Used
@@ -34,6 +32,7 @@
 - [Recoil](https://recoiljs.org/)
 - [SWR](https://swr.vercel.app/)
 - [axios](https://axios-http.com/)
+- [tiptap](https://tiptap.dev/)
 
 - [Algolia](https://www.algolia.com/)
 
