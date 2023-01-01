@@ -18,7 +18,6 @@
 - `__mocks__`の整理
 - Category と Tag による絞り込み
 - ログイン機能（tw,gh,ggl）
-- コメント送信時に最後の改行は削除するように
 - Routing の Object を作る（titleEnum を作る）
 - meta と json-ld を整理したい
 - OGP 画像をおしゃれにする
