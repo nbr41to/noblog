@@ -27,15 +27,6 @@ export const Default: StoryObj<typeof Component> = {
 };
 export const NoOgp: StoryObj<typeof Component> = {
   args: {
-    block: {
-      ...(exampleBlock as BookmarkBlockObjectResponse),
-      ogp: {
-        url: '',
-        title: '',
-        description: '',
-        imageUrl: '',
-        faviconUrl: '',
-      },
-    },
+    block: exampleBlock as BookmarkBlockObjectResponse,
   },
 };

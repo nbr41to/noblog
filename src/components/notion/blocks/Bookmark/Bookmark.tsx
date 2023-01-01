@@ -6,11 +6,19 @@ import type { Ogp } from '~/types/ogp';
 import { Skeleton } from '@mantine/core';
 
 type Props = {
-  block: BookmarkBlockObjectResponse & { ogp: Ogp };
+  block: BookmarkBlockObjectResponse & { ogp?: Ogp };
 };
 
 export const Bookmark: FC<Props> = ({ block }) => {
-  const { ogp } = block;
+  const ogp = block.ogp
+    ? block.ogp
+    : {
+        url: block.bookmark.url,
+        title: '',
+        description: '',
+        imageUrl: '',
+        faviconUrl: '',
+      };
   const noOgp = !ogp.title && !ogp.description && !ogp.imageUrl;
 
   return !noOgp ? (
