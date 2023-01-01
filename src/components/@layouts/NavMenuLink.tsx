@@ -11,7 +11,7 @@ type Props = {
 export const NavMenuLink: FC<Props> = ({ href, label, icon }) => {
   return (
     <Link
-      className="flex items-center gap-2 font-baloo text-xl text-white transition-transform duration-300 hover:scale-110 sp:text-2xl"
+      className="flex w-fit items-center gap-2 font-baloo text-xl text-white transition-transform duration-300 hover:scale-110 sp:text-2xl"
       href={href}
     >
       {icon}

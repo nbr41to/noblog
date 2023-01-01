@@ -13,7 +13,7 @@ import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContents } from '~/server/notion/databases';
 import { getPage } from '~/server/notion/pages';
-import { setOgp } from '~/server/utils/getOgp';
+import { setOgp } from '~/server/utils/ogp';
 import { PostDetailTemplate } from '~/templates/PostDetailTemplate';
 import { toMetaDescription, toPostMeta } from '~/utils/meta';
 

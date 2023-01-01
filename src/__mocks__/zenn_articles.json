@@ -1,0 +1,322 @@
+[
+  {
+    "creator": "Knob/のまど先生",
+    "title": "型パズルがたのしくなるための技法リスト",
+    "link": "https://zenn.dev/nbr41to/articles/8d87d3618c77d8",
+    "pubDate": "Sun, 01 Jan 2023 04:44:00 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--YHjtT_xs--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_80_bold:%25E5%259E%258B%25E3%2583%2591%25E3%2582%25BA%25E3%2583%25AB%25E3%2581%258C%25E3%2581%259F%25E3%2581%25AE%25E3%2581%2597%25E3%2581%258F%25E3%2581%25AA%25E3%2582%258B%25E3%2581%259F%25E3%2582%2581%25E3%2581%25AE%25E6%258A%2580%25E6%25B3%2595%25E3%2583%25AA%25E3%2582%25B9%25E3%2583%2588%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "TypeScript中級者になるために,習得した奥義を公開します.\n\n object→type\nJavaScriptのオブジェクトや配列から型エイリアスを作成する便利なテクニック一覧\n\n オブジェクトを型に\nみんな大好きtypof\nconst user = {\n  id: 1,\n  name: 'Steve Nobs',\n  isAuth: true,\n};\n\ntype User = typeof user; // 以下と同義\n\ntype User = {\n    id: number;\n    name: string;\n    isAuth: boolean;\n};\n\n オブジェクト...",
+    "contentSnippet": "TypeScript中級者になるために,習得した奥義を公開します.\n\n object→type\nJavaScriptのオブジェクトや配列から型エイリアスを作成する便利なテクニック一覧\n\n オブジェクトを型に\nみんな大好きtypof\nconst user = {\n  id: 1,\n  name: 'Steve Nobs',\n  isAuth: true,\n};\n\ntype User = typeof user; // 以下と同義\n\ntype User = {\n    id: number;\n    name: string;\n    isAuth: boolean;\n};\n\n オブジェクト...",
+    "guid": "https://zenn.dev/nbr41to/articles/8d87d3618c77d8",
+    "isoDate": "2023-01-01T04:44:00.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "<wbr>を知っているか",
+    "link": "https://zenn.dev/nbr41to/articles/55c08685c2d65f",
+    "pubDate": "Tue, 27 Dec 2022 03:09:56 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--ztUUk9ob--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_80_bold:%253Cwbr%253E%25E3%2582%2592%25E7%259F%25A5%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%2584%25E3%2582%258B%25E3%2581%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "HTMLで改行する場所を指定する方法を紹介します.\n\n エンジニアには今日も悪魔がささやく\nこんなデザインを見ると実装に困るのは私だけだろうか？\n\nもちろんHTMLは想像に容易くこんなところだろう.\n&lt;div&gt;\n  &lt;h2&gt;お願い&lt;/h2&gt;\n  &lt;p&gt;\n    こちらの都合で、急なお休みをいただく事がございます。ご了承ください。\n  &lt;/p&gt;\n  &lt;img src=\"https://picsum.photos/1000\" alt=\"\" /&gt;\n&lt;/div&gt;\nさて問題は&lt;p&gt;タグにあてるCSSだ....",
+    "contentSnippet": "HTMLで改行する場所を指定する方法を紹介します.\n\n エンジニアには今日も悪魔がささやく\nこんなデザインを見ると実装に困るのは私だけだろうか？\n\nもちろんHTMLは想像に容易くこんなところだろう.\n<div>\n  <h2>お願い</h2>\n  <p>\n    こちらの都合で、急なお休みをいただく事がございます。ご了承ください。\n  </p>\n  <img src=\"https://picsum.photos/1000\" alt=\"\" />\n</div>\nさて問題は<p>タグにあてるCSSだ....",
+    "guid": "https://zenn.dev/nbr41to/articles/55c08685c2d65f",
+    "isoDate": "2022-12-27T03:09:56.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "Storybook7.0のCSF3.0の書き方はこれだけ(TypeScript)",
+    "link": "https://zenn.dev/nbr41to/articles/c4e2c5ed592871",
+    "pubDate": "Fri, 23 Dec 2022 08:19:22 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--bGr8lNGT--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:Storybook7.0%25E3%2581%25AECSF3.0%25E3%2581%25AE%25E6%259B%25B8%25E3%2581%258D%25E6%2596%25B9%25E3%2581%25AF%25E3%2581%2593%25E3%2582%258C%25E3%2581%25A0%25E3%2581%2591%2528TypeScript%2529%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "超ざっくり書く.\nCSF3.0で書き方が変わるらしい.\nTypeScriptでは,こうなる.\nimport type { Meta, StoryObj } from '@storybook/react';\nimport { Heading1 as Component } from '.';\n\nexport default {\n  component: Component,\n  argTypes: {},\n  },\n} as Meta&lt;typeof Component&gt;;\n\nexport const Default: StoryObj&lt;typeof Component&g...",
+    "contentSnippet": "超ざっくり書く.\nCSF3.0で書き方が変わるらしい.\nTypeScriptでは,こうなる.\nimport type { Meta, StoryObj } from '@storybook/react';\nimport { Heading1 as Component } from '.';\n\nexport default {\n  component: Component,\n  argTypes: {},\n  },\n} as Meta<typeof Component>;\n\nexport const Default: StoryObj<typeof Component&g...",
+    "guid": "https://zenn.dev/nbr41to/articles/c4e2c5ed592871",
+    "isoDate": "2022-12-23T08:19:22.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "HTMLのdialog要素でDialogComponentを作る（React）",
+    "link": "https://zenn.dev/nbr41to/articles/970a8b464aac04",
+    "pubDate": "Wed, 21 Dec 2022 03:16:55 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--V-xs8tnb--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:HTML%25E3%2581%25AEdialog%25E8%25A6%2581%25E7%25B4%25A0%25E3%2581%25A7DialogComponent%25E3%2582%2592%25E4%25BD%259C%25E3%2582%258B%25EF%25BC%2588React%25EF%25BC%2589%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "2022年3月から主要ブラウザ(Chrome, Edge, Firefox, Safari)で dialog要素が利用できるようになったそうなのでそれを使ってDialogすなわりModalのコンポーネントを作ったらどんな感じになるかを試してみました.説明少なめですが記事にします.\nまた,今回はできるだけ最小限のコードで作成することを意識しています.\n\n dialog要素ってなに？\nhttps://developer.mozilla.org/ja/docs/Web/HTML/Element/dialog\n\neventで表示/非表示を切り替えることができる\nbackdropという疑似要素があ...",
+    "contentSnippet": "2022年3月から主要ブラウザ(Chrome, Edge, Firefox, Safari)で dialog要素が利用できるようになったそうなのでそれを使ってDialogすなわりModalのコンポーネントを作ったらどんな感じになるかを試してみました.説明少なめですが記事にします.\nまた,今回はできるだけ最小限のコードで作成することを意識しています.\n\n dialog要素ってなに？\nhttps://developer.mozilla.org/ja/docs/Web/HTML/Element/dialog\n\neventで表示/非表示を切り替えることができる\nbackdropという疑似要素があ...",
+    "guid": "https://zenn.dev/nbr41to/articles/970a8b464aac04",
+    "isoDate": "2022-12-21T03:16:55.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "Inline StyleであるTailwind CSSの利点は脳のコスパ↑",
+    "link": "https://zenn.dev/nbr41to/articles/1ee2bb2d673599",
+    "pubDate": "Tue, 20 Dec 2022 09:14:58 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--Y5jh7fse--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:Inline%2520Style%25E3%2581%25A7%25E3%2581%2582%25E3%2582%258BTailwind%2520CSS%25E3%2581%25AE%25E5%2588%25A9%25E7%2582%25B9%25E3%2581%25AF%25E8%2584%25B3%25E3%2581%25AE%25E3%2582%25B3%25E3%2582%25B9%25E3%2583%2591%25E2%2586%2591%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n はじめに\nTailwind CSSに関する技術の難しい話はしないです.できないです.\nしかし,ある程度は一般の人の思考のメカニズムや脳処理の工程は理解しているつもりです.\nなので今回は,単にclassをつけてCSSファイルを別に作成しスタイリングする方法はどうも凡人の脳の処理能力では困難なのではなかろうかという話です.\n決してTailwind CSSを推奨するためのものではございません.\n\n まずは実装例から\n以下の3つの例を参考にお話をします.\n\n ①）通常のHTML/CSSで\n.html\n&lt;div class=\"section__discription\"&gt;\n  &lt...",
+    "contentSnippet": "はじめに\nTailwind CSSに関する技術の難しい話はしないです.できないです.\nしかし,ある程度は一般の人の思考のメカニズムや脳処理の工程は理解しているつもりです.\nなので今回は,単にclassをつけてCSSファイルを別に作成しスタイリングする方法はどうも凡人の脳の処理能力では困難なのではなかろうかという話です.\n決してTailwind CSSを推奨するためのものではございません.\n\n まずは実装例から\n以下の3つの例を参考にお話をします.\n\n ①）通常のHTML/CSSで\n.html\n<div class=\"section__discription\">\n  <...",
+    "guid": "https://zenn.dev/nbr41to/articles/1ee2bb2d673599",
+    "isoDate": "2022-12-20T09:14:58.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "TypeScriptで空を許容しない配列型の書き方",
+    "link": "https://zenn.dev/nbr41to/articles/8577e5f60630e1",
+    "pubDate": "Sat, 17 Dec 2022 04:49:47 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--9NRiHsWe--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:TypeScript%25E3%2581%25A7%25E7%25A9%25BA%25E3%2582%2592%25E8%25A8%25B1%25E5%25AE%25B9%25E3%2581%2597%25E3%2581%25AA%25E3%2581%2584%25E9%2585%258D%25E5%2588%2597%25E5%259E%258B%25E3%2581%25AE%25E6%259B%25B8%25E3%2581%258D%25E6%2596%25B9%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "開発を進めていく中で,TypeScriptで空を許容しない配列型の書き方が必要になることがありました.\n知らなかったので共有がてら簡潔に書く.\n（最近流行りの自動コード生成で出てきてほえー😳ってなった）\nJavaScriptでは\nconst array: string[] = [];\nこんなふうに配列を使用するときの初期値は空の配列であることがほとんどなので,あんまり使わなかった.\nconst array: [string, ...string[]] = []; // Type Error\n\nconst array: [string, ...string[]] = ['string'];...",
+    "contentSnippet": "開発を進めていく中で,TypeScriptで空を許容しない配列型の書き方が必要になることがありました.\n知らなかったので共有がてら簡潔に書く.\n（最近流行りの自動コード生成で出てきてほえー😳ってなった）\nJavaScriptでは\nconst array: string[] = [];\nこんなふうに配列を使用するときの初期値は空の配列であることがほとんどなので,あんまり使わなかった.\nconst array: [string, ...string[]] = []; // Type Error\n\nconst array: [string, ...string[]] = ['string'];...",
+    "guid": "https://zenn.dev/nbr41to/articles/8577e5f60630e1",
+    "isoDate": "2022-12-17T04:49:47.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "TypeScriptのextendsってなんなん？",
+    "link": "https://zenn.dev/nbr41to/articles/7d2e7c4e31c54c",
+    "pubDate": "Fri, 21 Oct 2022 05:54:12 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--c1BzVwP1--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:TypeScript%25E3%2581%25AEextends%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25AA%25E3%2582%2593%25E3%2581%25AA%25E3%2582%2593%25EF%25BC%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "今日ではインターネットなしでは生活できないのと同様に、TypeScriptなしではフロントエンドの開発ができない世の中になっています。\nそんなTypeScriptに囲まれた生活をしていると度々extendsを見ることになるでしょう。\n今回はこのextendsの理解を深めるために記事を書きました。\n\n Genericsのおさらい\nまずはじめに本記事ではGenericsを用いたコードが出てきますので、おさらいします。\n以下は最もシンプルなGenericsを用いた記法です。\ntype A&lt;T&gt; = T\nconst moji:A&lt;string&gt; = 'moji';\ncon...",
+    "contentSnippet": "今日ではインターネットなしでは生活できないのと同様に、TypeScriptなしではフロントエンドの開発ができない世の中になっています。\nそんなTypeScriptに囲まれた生活をしていると度々extendsを見ることになるでしょう。\n今回はこのextendsの理解を深めるために記事を書きました。\n\n Genericsのおさらい\nまずはじめに本記事ではGenericsを用いたコードが出てきますので、おさらいします。\n以下は最もシンプルなGenericsを用いた記法です。\ntype A<T> = T\nconst moji:A<string> = 'moji';\ncon...",
+    "guid": "https://zenn.dev/nbr41to/articles/7d2e7c4e31c54c",
+    "isoDate": "2022-10-21T05:54:12.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "Axiosしているならエラーハンドリングはinterceptors一択",
+    "link": "https://zenn.dev/nbr41to/articles/c7fc2ff1f9946e",
+    "pubDate": "Fri, 07 Oct 2022 07:47:00 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--DMQGisRO--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:Axios%25E3%2581%2597%25E3%2581%25A6%25E3%2581%2584%25E3%2582%258B%25E3%2581%25AA%25E3%2582%2589%25E3%2582%25A8%25E3%2583%25A9%25E3%2583%25BC%25E3%2583%258F%25E3%2583%25B3%25E3%2583%2589%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25B0%25E3%2581%25AFinterceptors%25E4%25B8%2580%25E6%258A%259E%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n Axiosのinterceptorsを使うだけ\nフロントエンドのエラーハンドリングで悩んでいた時期もありましたが、APIのエラーハンドリングに関してはこの記事で紹介する内容が最も良さそうだと思いました。\n一応、フロントエンドがJavaScriptのプロジェクトでAPIの接続にAxiosを使っているという前提になります。\nAxiosがなんなのかはふれません🫠\nAxiosではRequestとResponseの前に処理を差し込めるinterceptorsというAPIが用意されています。\nhttps://axios-http.com/docs/interceptors\nこれをimportした...",
+    "contentSnippet": "Axiosのinterceptorsを使うだけ\nフロントエンドのエラーハンドリングで悩んでいた時期もありましたが、APIのエラーハンドリングに関してはこの記事で紹介する内容が最も良さそうだと思いました。\n一応、フロントエンドがJavaScriptのプロジェクトでAPIの接続にAxiosを使っているという前提になります。\nAxiosがなんなのかはふれません🫠\nAxiosではRequestとResponseの前に処理を差し込めるinterceptorsというAPIが用意されています。\nhttps://axios-http.com/docs/interceptors\nこれをimportした...",
+    "guid": "https://zenn.dev/nbr41to/articles/c7fc2ff1f9946e",
+    "isoDate": "2022-10-07T07:47:00.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "Notion APIのDatabase objectにpropertiesの中身が含まれなくなったので対応する",
+    "link": "https://zenn.dev/nbr41to/articles/10a7e7bb2739ec",
+    "pubDate": "Mon, 29 Aug 2022 08:00:20 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--55YohW8l--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_60_bold:Notion%2520API%25E3%2581%25AEDatabase%2520object%25E3%2581%25ABproperties%25E3%2581%25AE%25E4%25B8%25AD%25E8%25BA%25AB%25E3%2581%258C%25E5%2590%25AB%25E3%2581%25BE%25E3%2582%258C%25E3%2581%25AA%25E3%2581%258F%25E3%2581%25AA%25E3%2581%25A3%25E3%2581%259F%25E3%2581%25AE%25E3%2581%25A7%25E5%25AF%25BE%25E5%25BF%259C%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "!\nこちらNotionの方で再び含まれるようになりました 🎉\nLGTM！！\nhttps://developers.notion.com/changelog/changes-for-august-31-2022\n\nどうしてもタイトルが短くなりませんでしたこんにちは。\n以前まではNotionのSDKなどでQuery a databaseを叩くとそのデータベース内のPageのPropertiesの内容を全て含めて返していたのですが、2022/6/28のUpdateを受けてパフォーマンスの低下などの理由からこれが含まれなくなりました。\n\nWhile convenient, returning a...",
+    "contentSnippet": "!\nこちらNotionの方で再び含まれるようになりました 🎉\nLGTM！！\nhttps://developers.notion.com/changelog/changes-for-august-31-2022\n\nどうしてもタイトルが短くなりませんでしたこんにちは。\n以前まではNotionのSDKなどでQuery a databaseを叩くとそのデータベース内のPageのPropertiesの内容を全て含めて返していたのですが、2022/6/28のUpdateを受けてパフォーマンスの低下などの理由からこれが含まれなくなりました。\n\nWhile convenient, returning a...",
+    "guid": "https://zenn.dev/nbr41to/articles/10a7e7bb2739ec",
+    "isoDate": "2022-08-29T08:00:20.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "ドラッグアンドドロップ完全に理解した",
+    "link": "https://zenn.dev/nbr41to/articles/d5f16c9d75b9d0",
+    "pubDate": "Fri, 29 Jul 2022 13:19:12 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--YGzYE0oZ--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_80_bold:%25E3%2583%2589%25E3%2583%25A9%25E3%2583%2583%25E3%2582%25B0%25E3%2582%25A2%25E3%2583%25B3%25E3%2583%2589%25E3%2583%2589%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2597%25E5%25AE%258C%25E5%2585%25A8%25E3%2581%25AB%25E7%2590%2586%25E8%25A7%25A3%25E3%2581%2597%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n 背景\n\nWeb開発において,DnD（ドラッグアンドドロップ）を実装したいときってあるよね\nいろいろな理由があってライブラリを使わずに実装しなければならないときってあるよね\n「「onDragイベント使えばできる」けどめんどくさい」ということは知っている\n\n\n drag関連のイベント多すぎ問題😇\n\ndrag\ndragstart\ndragend\ndragenter\ndragleave\ndragover\ndrop\n\n😇😇😇😇😇😇😇😇😇\nはじめに,こいつらを平たく説明します.\nJavaScriptのeventの説明は割愛します.一言でいうと〇〇が起きたとき（発火時）に関数が実行されるやつ.\nま...",
+    "contentSnippet": "背景\n\nWeb開発において,DnD（ドラッグアンドドロップ）を実装したいときってあるよね\nいろいろな理由があってライブラリを使わずに実装しなければならないときってあるよね\n「「onDragイベント使えばできる」けどめんどくさい」ということは知っている\n\n\n drag関連のイベント多すぎ問題😇\n\ndrag\ndragstart\ndragend\ndragenter\ndragleave\ndragover\ndrop\n\n😇😇😇😇😇😇😇😇😇\nはじめに,こいつらを平たく説明します.\nJavaScriptのeventの説明は割愛します.一言でいうと〇〇が起きたとき（発火時）に関数が実行されるやつ.\nま...",
+    "guid": "https://zenn.dev/nbr41to/articles/d5f16c9d75b9d0",
+    "isoDate": "2022-07-29T13:19:12.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "配列の要素をリテラル型にする方法[TypeScript]",
+    "link": "https://zenn.dev/nbr41to/articles/6d339e11990f96",
+    "pubDate": "Thu, 28 Jul 2022 06:52:50 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--hp4Ii7GX--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:%25E9%2585%258D%25E5%2588%2597%25E3%2581%25AE%25E8%25A6%2581%25E7%25B4%25A0%25E3%2582%2592%25E3%2583%25AA%25E3%2583%2586%25E3%2583%25A9%25E3%2583%25AB%25E5%259E%258B%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%25E6%2596%25B9%25E6%25B3%2595%255BTypeScript%255D%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n やりたいこと\nconst fruits = [\"apple\", \"banana\", \"cherry\"]\nこの配列を参照して,\ntype Fruits = \"apple\" | \"banana\" | \"cherry\"\nという型をも作りたい.\n\n どうやるの？\n\n まず配列をreadonlyにする\nconst fruits = [\"apple\", \"banana\", \"cherry\"] as const\nas constをつけることで,配列の要素は全てreadonlyとなる.\n\n typeofを使って型を作成\nそこで,こうする.\ntype FruitsType = typeof fruit...",
+    "contentSnippet": "やりたいこと\nconst fruits = [\"apple\", \"banana\", \"cherry\"]\nこの配列を参照して,\ntype Fruits = \"apple\" | \"banana\" | \"cherry\"\nという型をも作りたい.\n\n どうやるの？\n\n まず配列をreadonlyにする\nconst fruits = [\"apple\", \"banana\", \"cherry\"] as const\nas constをつけることで,配列の要素は全てreadonlyとなる.\n\n typeofを使って型を作成\nそこで,こうする.\ntype FruitsType = typeof fruit...",
+    "guid": "https://zenn.dev/nbr41to/articles/6d339e11990f96",
+    "isoDate": "2022-07-28T06:52:50.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "一般人がweb3やBlockchainの開発に入門してみる",
+    "link": "https://zenn.dev/nbr41to/books/7d7a3a1525afba",
+    "pubDate": "Wed, 13 Jul 2022 04:56:07 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--sn5l5slx--/g_center%2Ch_280%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYm9va19jb3Zlci9kYTdiZTRhNDAxLmpwZWc=%2Cw_200/v1627283836/default/og-base-book_yz4z02.jpg",
+      "length": "0",
+      "type": "image/jpeg"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "普段React（JavaScript）を使って開発している駆け出しエンジニアがweb3の技術に入門したときのノートを引用して本にしたものです.「JavaScriptでweb3の技術に入門する」というハンズオン形式のお話になります.わからないことが盛りだくさんになりがちなweb3の勉強をふわふわしたままでもいいよねというスタンスでアウトプットしていきます.",
+    "contentSnippet": "普段React（JavaScript）を使って開発している駆け出しエンジニアがweb3の技術に入門したときのノートを引用して本にしたものです.「JavaScriptでweb3の技術に入門する」というハンズオン形式のお話になります.わからないことが盛りだくさんになりがちなweb3の勉強をふわふわしたままでもいいよねというスタンスでアウトプットしていきます.",
+    "guid": "https://zenn.dev/nbr41to/books/7d7a3a1525afba",
+    "isoDate": "2022-07-13T04:56:07.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "PlanetScaleをNext.jsとPrismaで始める",
+    "link": "https://zenn.dev/nbr41to/articles/adabca83b2e6ea",
+    "pubDate": "Mon, 16 May 2022 07:56:45 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--vwqvW6JM--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:PlanetScale%25E3%2582%2592Next.js%25E3%2581%25A8Prisma%25E3%2581%25A7%25E5%25A7%258B%25E3%2582%2581%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n PlanetScaleをNext.jsとPrismaで始める\nなんだか話題になっているPlanetScaleですが,以前は,英語できない,DBわからない,Prisma未経験な状態で,モダンと聞いただけでPlanetScaleを始めようとしたけど,結局わからないことが多く,実用に踏み出せなかったのですが,レベルが18から24くらいに上がったことでちょっと理解できることが増えたので,改めて始め方と使い方をわかりやすくまとめて見ようと思います.\n名目としては,フロントエンド,バックエンドでのAPI開発,データベースの操作一貫して開発することでゆとりフルスタックエンジニアになることです.\n\n...",
+    "contentSnippet": "PlanetScaleをNext.jsとPrismaで始める\nなんだか話題になっているPlanetScaleですが,以前は,英語できない,DBわからない,Prisma未経験な状態で,モダンと聞いただけでPlanetScaleを始めようとしたけど,結局わからないことが多く,実用に踏み出せなかったのですが,レベルが18から24くらいに上がったことでちょっと理解できることが増えたので,改めて始め方と使い方をわかりやすくまとめて見ようと思います.\n名目としては,フロントエンド,バックエンドでのAPI開発,データベースの操作一貫して開発することでゆとりフルスタックエンジニアになることです.\n\n...",
+    "guid": "https://zenn.dev/nbr41to/articles/adabca83b2e6ea",
+    "isoDate": "2022-05-16T07:56:45.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "TypeCcriptでcatchのerrorがunknownになる問題",
+    "link": "https://zenn.dev/nbr41to/articles/4caff28476debf",
+    "pubDate": "Sat, 07 May 2022 06:07:45 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--d6yzuPip--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:TypeCcript%25E3%2581%25A7catch%25E3%2581%25AEerror%25E3%2581%258Cunknown%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%25E5%2595%258F%25E9%25A1%258C%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "おそらく原因はTypeScript v4.4以降では,catchの引数がunknownになるオプション（useUnknownInCatchVariables）がデフォルトでtrueに変更になったためである.\nだから,落ち着いて,tsconfig.jsonのcompilerOptionsを以下のように編集するのだ.\n{\n  \"compilerOptions\": {\n    \"useUnknownInCatchVariables\": false,\n  }\n}\nこれでcatchの引数はanyになる😝\n",
+    "contentSnippet": "おそらく原因はTypeScript v4.4以降では,catchの引数がunknownになるオプション（useUnknownInCatchVariables）がデフォルトでtrueに変更になったためである.\nだから,落ち着いて,tsconfig.jsonのcompilerOptionsを以下のように編集するのだ.\n{\n  \"compilerOptions\": {\n    \"useUnknownInCatchVariables\": false,\n  }\n}\nこれでcatchの引数はanyになる😝",
+    "guid": "https://zenn.dev/nbr41to/articles/4caff28476debf",
+    "isoDate": "2022-05-07T06:07:45.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "2022年に Next.js × TypeScript でアプリを作りながらいろいろ学ぶよ",
+    "link": "https://zenn.dev/nbr41to/books/dccb2a75582bff",
+    "pubDate": "Sat, 07 May 2022 01:38:34 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--jO9D9kIM--/g_center%2Ch_280%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYm9va19jb3Zlci8wODc1YTE2M2JlLmpwZWc=%2Cw_200/v1627283836/default/og-base-book_yz4z02.jpg",
+      "length": "0",
+      "type": "image/jpeg"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "以下のモダンな技術を含むライブラリをフル活用しながらWebアプリを作ってく工程を記録していきます。\n\n暫定）Next.js / TypeScript / Stripe / Magic / PlanetScale / Prisma / Cookie / Slack API / TailwindCSS / Mantine\n\n学習の大きな目的としては\n- PlanetScaleによるサーバレスデータベースのお試し\n- Magicによるパスワードレス認証のお試し\n- Stripeによる決済機能の実装\n- Slack API による自動化\n- UI ライブラリ Mantine のお試し\nとなります。（これは多分ぶれない予定）\n\n私はエンジニア歴1年目の小童ですが、プログラミング学習歴1〜2年くらいの人には刺さるのかなと思いながら書いていきます。\n初学者の方は最小構成で学ぶことをおすすめしますので、間違ってもこの教材には手を出さないでください👯‍♀️\n\nまた、語り口調でダラダラ書いていきます点ご容赦ください。（指摘や意見は歓迎）\n\n完成するまで無料で公開（完成できなかったらずっと無料）ですが、バッジを贈って応援していただけると嬉しいです🦑",
+    "contentSnippet": "以下のモダンな技術を含むライブラリをフル活用しながらWebアプリを作ってく工程を記録していきます。\n\n暫定）Next.js / TypeScript / Stripe / Magic / PlanetScale / Prisma / Cookie / Slack API / TailwindCSS / Mantine\n\n学習の大きな目的としては\n- PlanetScaleによるサーバレスデータベースのお試し\n- Magicによるパスワードレス認証のお試し\n- Stripeによる決済機能の実装\n- Slack API による自動化\n- UI ライブラリ Mantine のお試し\nとなります。（これは多分ぶれない予定）\n\n私はエンジニア歴1年目の小童ですが、プログラミング学習歴1〜2年くらいの人には刺さるのかなと思いながら書いていきます。\n初学者の方は最小構成で学ぶことをおすすめしますので、間違ってもこの教材には手を出さないでください👯‍♀️\n\nまた、語り口調でダラダラ書いていきます点ご容赦ください。（指摘や意見は歓迎）\n\n完成するまで無料で公開（完成できなかったらずっと無料）ですが、バッジを贈って応援していただけると嬉しいです🦑",
+    "guid": "https://zenn.dev/nbr41to/books/dccb2a75582bff",
+    "isoDate": "2022-05-07T01:38:34.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "TypeScriptでリテラル型から型を抽出するExtract",
+    "link": "https://zenn.dev/nbr41to/articles/af482bbc6b9aac",
+    "pubDate": "Fri, 06 May 2022 08:03:43 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--aPNlUg-5--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:TypeScript%25E3%2581%25A7%25E3%2583%25AA%25E3%2583%2586%25E3%2583%25A9%25E3%2583%25AB%25E5%259E%258B%25E3%2581%258B%25E3%2582%2589%25E5%259E%258B%25E3%2582%2592%25E6%258A%25BD%25E5%2587%25BA%25E3%2581%2599%25E3%2582%258BExtract%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "TypeScriptのExtract（抽出）だけでも知っておくいいかもというお話.\nTypeScriptを使っていてこんな型を使うことも少なくないはず\ntype Action =\n  | {\n      type: 'text';\n      id: string;\n      content: string;\n    }\n  | {\n      type: 'amount';\n      id: string;\n      content: number;\n    }\n  | {\n      type: 'route';\n      id: string;\n      path: st...",
+    "contentSnippet": "TypeScriptのExtract（抽出）だけでも知っておくいいかもというお話.\nTypeScriptを使っていてこんな型を使うことも少なくないはず\ntype Action =\n  | {\n      type: 'text';\n      id: string;\n      content: string;\n    }\n  | {\n      type: 'amount';\n      id: string;\n      content: number;\n    }\n  | {\n      type: 'route';\n      id: string;\n      path: st...",
+    "guid": "https://zenn.dev/nbr41to/articles/af482bbc6b9aac",
+    "isoDate": "2022-05-06T08:03:43.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "TypeScriptでオブジェクトのリテラル型を扱う際の注意点を考察",
+    "link": "https://zenn.dev/nbr41to/articles/2e51631bc47f6d",
+    "pubDate": "Fri, 06 May 2022 07:52:34 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--i1x6CVLC--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:TypeScript%25E3%2581%25A7%25E3%2582%25AA%25E3%2583%2596%25E3%2582%25B8%25E3%2582%25A7%25E3%2582%25AF%25E3%2583%2588%25E3%2581%25AE%25E3%2583%25AA%25E3%2583%2586%25E3%2583%25A9%25E3%2583%25AB%25E5%259E%258B%25E3%2582%2592%25E6%2589%25B1%25E3%2581%2586%25E9%259A%259B%25E3%2581%25AE%25E6%25B3%25A8%25E6%2584%258F%25E7%2582%25B9%25E3%2582%2592%25E8%2580%2583%25E5%25AF%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n TypeScriptでオブジェクトのリテラル型を扱う際の注意点を考察\nオブジェクトのリテラル型の配列において各メソッドで型を絞れるか（Narrowing）を検証\nまずはこんな型\ntype Action =\n  | {\n      type: \"text\";\n      id: string;\n      content: string;\n    }\n  | {\n      type: \"amount\";\n      id: string;\n      content: number;\n    }\n  | {\n      type: \"route\";\n      id: string;...",
+    "contentSnippet": "TypeScriptでオブジェクトのリテラル型を扱う際の注意点を考察\nオブジェクトのリテラル型の配列において各メソッドで型を絞れるか（Narrowing）を検証\nまずはこんな型\ntype Action =\n  | {\n      type: \"text\";\n      id: string;\n      content: string;\n    }\n  | {\n      type: \"amount\";\n      id: string;\n      content: number;\n    }\n  | {\n      type: \"route\";\n      id: string;...",
+    "guid": "https://zenn.dev/nbr41to/articles/2e51631bc47f6d",
+    "isoDate": "2022-05-06T07:52:34.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "ZennでGitHubのコードが埋め込めるということで",
+    "link": "https://zenn.dev/nbr41to/articles/65ade1698477ca",
+    "pubDate": "Thu, 28 Apr 2022 01:55:27 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--BsitA0Tr--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:Zenn%25E3%2581%25A7GitHub%25E3%2581%25AE%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%258C%25E5%259F%258B%25E3%2582%2581%25E8%25BE%25BC%25E3%2582%2581%25E3%2582%258B%25E3%2581%25A8%25E3%2581%2584%25E3%2581%2586%25E3%2581%2593%25E3%2581%25A8%25E3%2581%25A7%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n 実際に埋め込む\nこんな感じにGitHubのソースコードのリンクを取得します.\n\nあとは貼るだけ↓\nhttps://github.com/nbr41to/lesson-micro-cms/blob/b772b367a3ef3eb84e35410314080a83da4e7156/src/dateFormatted.ts#L1-L26\n長いとscrollされるんですね.いい感じです.\nちなみにコードブロックはこちらです\ntype InputDateFormatProps = {\n  date?: Date | string;\n  format?: string;\n};\n\n/**\n * 引...",
+    "contentSnippet": "実際に埋め込む\nこんな感じにGitHubのソースコードのリンクを取得します.\n\nあとは貼るだけ↓\nhttps://github.com/nbr41to/lesson-micro-cms/blob/b772b367a3ef3eb84e35410314080a83da4e7156/src/dateFormatted.ts#L1-L26\n長いとscrollされるんですね.いい感じです.\nちなみにコードブロックはこちらです\ntype InputDateFormatProps = {\n  date?: Date | string;\n  format?: string;\n};\n\n/**\n * 引...",
+    "guid": "https://zenn.dev/nbr41to/articles/65ade1698477ca",
+    "isoDate": "2022-04-28T01:55:27.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "JavaScriptでscrollの可/不可を切り替える",
+    "link": "https://zenn.dev/nbr41to/articles/d112293df98d06",
+    "pubDate": "Thu, 31 Mar 2022 14:07:43 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--G8PkGsi---/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:JavaScript%25E3%2581%25A7scroll%25E3%2581%25AE%25E5%258F%25AF%252F%25E4%25B8%258D%25E5%258F%25AF%25E3%2582%2592%25E5%2588%2587%25E3%2582%258A%25E6%259B%25BF%25E3%2581%2588%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n JavaScriptでscrollの可/不可を切り替える\nModalなどを実装したときに,Modalが開いているときにscrollをすると,後ろの画面がscrollしてしまうことってあるかなと思うのですが,それを解決する方法を書いておきます.\n以下の関数を用意し,Modalを開くときにscrollDisableを,閉じるときにscrollableを実行すればOK\n/* Scroll不可 */\nexport const scrollDisable = () =&gt; {\n  document.addEventListener('mousewheel', callback, { pas...",
+    "contentSnippet": "JavaScriptでscrollの可/不可を切り替える\nModalなどを実装したときに,Modalが開いているときにscrollをすると,後ろの画面がscrollしてしまうことってあるかなと思うのですが,それを解決する方法を書いておきます.\n以下の関数を用意し,Modalを開くときにscrollDisableを,閉じるときにscrollableを実行すればOK\n/* Scroll不可 */\nexport const scrollDisable = () => {\n  document.addEventListener('mousewheel', callback, { pas...",
+    "guid": "https://zenn.dev/nbr41to/articles/d112293df98d06",
+    "isoDate": "2022-03-31T14:07:43.000Z"
+  },
+  {
+    "creator": "Knob/のまど先生",
+    "title": "ReactでComponentのPropsの型をどうするのがいいのか",
+    "link": "https://zenn.dev/nbr41to/articles/7424b7a42cc510",
+    "pubDate": "Sun, 27 Mar 2022 03:15:01 GMT",
+    "enclosure": {
+      "url": "https://res.cloudinary.com/zenn/image/upload/s--9UaEZnYc--/co_rgb:222%2Cg_south_west%2Cl_text:notosansjp-medium.otf_37_bold:Knob%252F%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25A9%25E5%2585%2588%25E7%2594%259F%2Cx_203%2Cy_98/c_fit%2Cco_rgb:222%2Cg_north_west%2Cl_text:notosansjp-medium.otf_70_bold:React%25E3%2581%25A7Component%25E3%2581%25AEProps%25E3%2581%25AE%25E5%259E%258B%25E3%2582%2592%25E3%2581%25A9%25E3%2581%2586%25E3%2581%2599%25E3%2582%258B%25E3%2581%25AE%25E3%2581%258C%25E3%2581%2584%25E3%2581%2584%25E3%2581%25AE%25E3%2581%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vemVubi9pbWFnZS9mZXRjaC9zLS1KNFhja1QzNS0tL2NfbGltaXQlMkNmX2F1dG8lMkNmbF9wcm9ncmVzc2l2ZSUyQ3FfYXV0byUyQ3dfNzAvaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY5ZmNkMjU5MzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_72/v1627274783/default/og-base_z4sxah.png",
+      "length": "0",
+      "type": "image/png"
+    },
+    "dc:creator": "Knob/のまど先生",
+    "content": "\n 初学者のReactのコンポーネント作成の課題\nReactを使うにあたってTypeScriptが普通になりつつある昨今ですが,ButtonやInputなどの粒度の大きいコンポーネントを作成するときにこんな感じにPropsが膨らんでしまっていることはありませんか？\nimport { ChangeEvent, VFC } from 'react';\n\ntype Props = {\n  className?: string;\n  id?: string;\n  name: string;\n  type?: string;\n  placeholder?: string;\n  defaultVal...",
+    "contentSnippet": "初学者のReactのコンポーネント作成の課題\nReactを使うにあたってTypeScriptが普通になりつつある昨今ですが,ButtonやInputなどの粒度の大きいコンポーネントを作成するときにこんな感じにPropsが膨らんでしまっていることはありませんか？\nimport { ChangeEvent, VFC } from 'react';\n\ntype Props = {\n  className?: string;\n  id?: string;\n  name: string;\n  type?: string;\n  placeholder?: string;\n  defaultVal...",
+    "guid": "https://zenn.dev/nbr41to/articles/7424b7a42cc510",
+    "isoDate": "2022-03-27T03:15:01.000Z"
+  }
+]

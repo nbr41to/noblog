@@ -80,7 +80,11 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
               },
             }}
           >
-            <RichTextEditor.Toolbar sticky stickyOffset={0}>
+            <RichTextEditor.Toolbar
+              sticky
+              stickyOffset={0}
+              className="sp:hidden"
+            >
               <RichTextEditor.ControlsGroup>
                 <RichTextEditor.Bold />
                 <RichTextEditor.Italic />
