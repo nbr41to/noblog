@@ -7,6 +7,9 @@ import type {
 
 import { createComment, getComments } from '~/server/notion/comments';
 
+/**
+ * Commentの取得と作成
+ */
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<NotionListCommentsResponse | CreateCommentResponse>

@@ -16,7 +16,6 @@
 - エラーハンドリング周りの実装
 - `__tests__`の追加
 - `__mocks__`の整理
-- Roma 試す
 - Category と Tag による絞り込み
 - ログイン機能（tw,gh,ggl）
 - ログインしないとコメントができないように
@@ -24,8 +23,9 @@
 - Routing の Object を作る（titleEnum を作る）
 - meta と json-ld を整理したい
 - コメントの empty UI
-- OGP 画像が表示されてない
-- OGP 画像を動的に作ってみる
+- OGP 画像をおしゃれにする
+  - https://zenn.dev/hiromu617/articles/c03fef6f4d6c6e
+  - https://www.newt.so/docs/tutorials/vercel-og-image-generation
 - Tweets list の追加
 - 謎解きギミックの追加
 - Algolia の導入
