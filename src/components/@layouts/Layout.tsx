@@ -29,8 +29,8 @@ export const Layout: FC<Props> = ({ children }) => {
         </div>
       </header>
 
-      <main className="relative z-10 mx-auto mb-40 min-h-[calc(100vh-102px)] max-w-[1200px] bg-orange-100 pb-20">
-        {children}
+      <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100 pb-20">
+        <div className=" mx-auto max-w-[1200px]">{children}</div>
       </main>
 
       <footer className="fixed bottom-0 flex h-40 w-full flex-col justify-between bg-slate-800 px-8 text-white">
