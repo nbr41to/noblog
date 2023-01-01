@@ -37,7 +37,7 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
   const handleSubmit = async () => {
     if (disabled) return;
 
-    const completed = true;
+    const completed = false;
     if (completed) {
       setIsLoading(true);
       const rich_text = toRichText(editor.getJSON());
