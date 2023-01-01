@@ -25,7 +25,6 @@
 - meta と json-ld を整理したい
 - コメントの empty UI
 - bookmark に縦線入れる
-- link_preview 対応 多分 GitHub リンク
 - OGP 画像が表示されてない
 - OGP 画像を動的に作ってみる
 - Tweets list の追加
