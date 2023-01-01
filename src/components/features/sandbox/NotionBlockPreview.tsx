@@ -20,7 +20,7 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
       {blocks.map((block) => {
         // 最初の2文字が "//" の場合は表示しない
         if (
-          block.type == 'paragraph' &&
+          block.type === 'paragraph' &&
           (block.paragraph.rich_text.length === 0 ||
             block.paragraph.rich_text[0].plain_text.slice(0, 2) === '//')
         ) {

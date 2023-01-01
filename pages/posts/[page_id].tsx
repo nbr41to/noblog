@@ -103,19 +103,30 @@ const Post: NextPage<Props> = ({ post }) => {
 
       {/* meta seo */}
       <NextSeo
-        title={post.title + ' | noblog'}
+        title={`${post.title} | noblog`}
         description={post.description}
         openGraph={{
-          url: 'https://www.nbr41.com/posts/' + post.id,
-          title: post.title + ' | noblog',
+          url: `https://www.nbr41.com/posts/${post.id}`,
+          title: `${post.title} | noblog`,
           description: post.description,
+          images: [
+            {
+              url: `https://www.nbr41.com/api/notion-blog/og?title=${post.title}`,
+              width: 1200,
+              height: 630,
+              alt: 'Site Image',
+              type: 'image/png',
+            },
+          ],
         }}
       />
       <ArticleJsonLd
         type="BlogPosting"
-        url={'https://www.nbr41.com/posts/' + post.id}
-        title={post.title + ' | noblog'}
-        images={['https://www.nbr41.com/site_image.jpg']}
+        url={`https://www.nbr41.com/posts/${post.id}`}
+        title={`${post.title} | noblog`}
+        images={[
+          `https://www.nbr41.com/api/notion-blog/og?title=${post.title}`,
+        ]}
         datePublished="2015-02-05T08:00:00+08:00"
         dateModified={post.updatedAt}
         authorName={[

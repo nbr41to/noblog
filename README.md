@@ -48,6 +48,7 @@
 - [Notion API](https://developers.notion.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Vercel](https://vercel.com/)
+- [@vercel/og](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation)
 - [Recoil](https://recoiljs.org/)
 - [SWR](https://swr.vercel.app/)
 - [axios](https://axios-http.com/)

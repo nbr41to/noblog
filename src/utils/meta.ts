@@ -66,5 +66,5 @@ export const toMetaDescription = (
     i++;
   } while (i < children.length && allText.length < 70);
 
-  return allText + '...';
+  return `${allText}...`;
 };

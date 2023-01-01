@@ -68,7 +68,7 @@ body {
   }
   .text-secondary {
     /* text-slate-800; */
-    color: rgb(30 41 59);
+    color: #1e293b;
   }
   .bg-primary {
     @apply text-orange-100;
