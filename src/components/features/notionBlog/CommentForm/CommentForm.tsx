@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { NotionRichTextItemRequest } from '~/types/notion';
 
-import { Button, Kbd, Tooltip } from '@mantine/core';
+import { ActionIcon, Button, Kbd, Tooltip } from '@mantine/core';
 import { getHotkeyHandler, useOs } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { Link, RichTextEditor } from '@mantine/tiptap';
@@ -9,17 +9,22 @@ import Placeholder from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { useSession, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { IoSend } from 'react-icons/io5';
+import { TbLogout } from 'react-icons/tb';
 
 import { toRichText } from '~/utils/toRichText';
+import { baseUrl } from '~/utils/url';
 
 type Props = {
   onSubmit: (rich_text: NotionRichTextItemRequest[]) => Promise<void>;
 };
 
 export const CommentForm: FC<Props> = ({ onSubmit }) => {
-  const [commentable, setCommentable] = useState(false);
+  const router = useRouter();
+  const { data: session } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const editor = useEditor({
     extensions: [
@@ -31,42 +36,50 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
     content: '',
   });
   const disabled = isLoading || !editor || !editor.getText();
-
   const os = useOs();
+
+  const toLoginPage = () => {
+    router.push({
+      pathname: '/login',
+      query: {
+        callback: router.asPath,
+      },
+    });
+  };
 
   const handleSubmit = async () => {
     if (disabled) return;
-
-    const completed = true;
-    if (completed) {
+    if (session?.user?.name && session?.user?.email) {
       setIsLoading(true);
       const rich_text = toRichText(editor.getJSON());
-      await onSubmit(rich_text);
+      await onSubmit([
+        ...rich_text,
+        // { text: { content: '\n' + session.user.name + '\n' } },
+        // {
+        //   text: {
+        //     content: session.user.email,
+        //     link: { url: session.user.email },
+        //   },
+        // },
+      ]);
       editor.commands.setContent('');
       setIsLoading(false);
     } else {
       showNotification({
-        title: 'コメント機能は現在準備中です。',
-        message: 'コメント機能は現在準備中です。',
+        title: 'Error',
+        message: 'アカウントに名前もしくはメールアドレスがありません。',
+        color: 'red',
       });
     }
   };
 
   return (
     <div className="">
-      {!commentable ? (
+      {!session ? (
         <div className="min-h-[320px] sp:px-4">
-          <Button fullWidth onClick={() => setCommentable(true)}>
+          <Button fullWidth onClick={toLoginPage}>
             ログインしてコメントをする
           </Button>
-          <div className="mt-4 rounded bg-white p-4">
-            <p>
-              現在コメント機能は開発中で,上のボタンを押すとすぐに入力フォームが表示されます.
-            </p>
-            <p>
-              実際に送信はできませんが,tiptapのリッチテキストエディタをご堪能ください.
-            </p>
-          </div>
         </div>
       ) : (
         <div>
@@ -114,6 +127,28 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
           </RichTextEditor>
 
           <div className="mt-2 flex items-center justify-end gap-3">
+            <div className="pl-2 text-sm font-bold text-slate-400">
+              {session.user?.name} | {session.user?.email} でログイン中
+            </div>
+            <Tooltip
+              position="bottom-end"
+              arrowPosition="center"
+              transitionDuration={300}
+              withArrow
+              label={<div className="text-xs">ログアウトする</div>}
+            >
+              <ActionIcon
+                color="dark"
+                className="text-slate-400"
+                onClick={() =>
+                  signOut({
+                    callbackUrl: baseUrl + router.asPath,
+                  })
+                }
+              >
+                <TbLogout size={18} />
+              </ActionIcon>
+            </Tooltip>
             <Tooltip
               position="top-end"
               arrowPosition="center"

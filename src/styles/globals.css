@@ -39,7 +39,7 @@
 
 body {
   @apply m-0;
-  @apply bg-orange-100;
+  @apply bg-slate-800;
   @apply text-slate-800;
   font-family: 'Noto Sans JP', sans-serif;
 }

@@ -2,9 +2,7 @@ import type { InferGetStaticPropsType, NextPage } from 'next';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 
-import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 import { getDatabaseContentsAll } from '~/server/notion/databases';
 import { PostsTemplate } from '~/templates/PostsTemplate';
 
@@ -37,11 +35,8 @@ export const getStaticProps = async () => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const PostIndex: NextPage<Props> = ({ postsArray }) => {
-  const router = useRouter();
-
   return (
     <>
-      <Breadcrumbs currentPath={router.pathname} />
       <PostsTemplate postsArray={postsArray} />
       {/* meta seo */}
       <NextSeo

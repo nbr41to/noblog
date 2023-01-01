@@ -29,6 +29,10 @@
 - Image の 取得失敗時の挙動
 - QR コード
 - RichTextEditor をコンポーネント化
+- Icon まとめる
+- BaseUrl の設定
+- 上下の色 Safari
+-
 
 ## Used
 
