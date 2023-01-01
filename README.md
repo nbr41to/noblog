@@ -31,6 +31,8 @@
 - Algolia の導入
 - bookmark の OGP を SSG にする
 - Image の 取得失敗時の挙動
+- bookmark に縦線入れる
+- コメントの empty UI
 
 ## Used
 
