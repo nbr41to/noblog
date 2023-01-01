@@ -3,6 +3,7 @@ import type { NotionPageObjectResponse } from '~/types/notion';
 
 import { Pagination, SegmentedControl } from '@mantine/core';
 import { usePagination } from '@mantine/hooks';
+import Link from 'next/link';
 import { useMemo } from 'react';
 import { useState } from 'react';
 import { BsListUl, BsGrid } from 'react-icons/bs';
@@ -75,6 +76,9 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
             total={total}
             onChange={pagination.setPage}
           />
+        </div>
+        <div className="text-center underline">
+          <Link href="/posts/zenn-list">Zennの記事一覧はこちら</Link>
         </div>
       </div>
     </div>
