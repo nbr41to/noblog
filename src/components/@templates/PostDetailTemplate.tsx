@@ -28,7 +28,7 @@ export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
       <div className="flex justify-between gap-6">
         <div className="w-main space-y-6">
           <PostContent title={post.title} blocks={post.children} />
-          <Comments comments={comments} />
+          {comments.length > 0 && <Comments comments={comments} />}
           <CommentForm onSubmit={onSubmit} />
         </div>
 
