@@ -21,7 +21,7 @@ const SandboxIndex: NextPage<Props> = ({ paths }) => {
         {paths.map((path) => (
           <Link
             key={path}
-            href={'/sandbox/' + path}
+            href={`/sandbox/${path}`}
             className="block font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105"
           >
             {path}

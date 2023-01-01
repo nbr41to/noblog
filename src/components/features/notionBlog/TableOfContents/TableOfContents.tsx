@@ -24,10 +24,10 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
           const type = block.type;
           const title =
             // @ts-expect-error ignore
-            !!block[type]?.rich_text
+            block[type]?.rich_text
               ? // @ts-expect-error ignore
                 block[type]?.rich_text[0]?.plain_text
-              : 'empty: ' + type;
+              : `empty: ${type}`;
 
           return {
             id: block.id,

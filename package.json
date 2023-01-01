@@ -10,6 +10,8 @@
     "lint": "next lint",
     "lint:fix": "eslint --fix './pages/**/*.{js,jsx,ts,tsx}' './src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write --ignore-path .gitignore './pages/**/*.{js,jsx,ts,tsx}' './src/**/*.{js,jsx,ts,tsx}'",
+    "check": "rome check ./pages/** ./src/**",
+    "roma:fix": "rome check --apply-suggested  ./pages/** ./pages/** ./src/**",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -48,6 +50,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "recoil": "^0.7.6",
+    "rome": "^11.0.0",
     "rss-parser": "^3.12.0",
     "swr": "^2.0.0",
     "typescript": "4.9.4"

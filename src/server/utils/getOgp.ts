@@ -14,6 +14,6 @@ export const getOgp = async (url: string): Promise<Ogp> => {
     description:
       ogp['og:description']?.length > 0 ? ogp['og:description'][0] : '',
     imageUrl: ogp['og:image']?.length > 0 ? ogp['og:image'][0] : '',
-    faviconUrl: 'https://www.google.com/s2/favicons?domain=' + encodeURL,
+    faviconUrl: `https://www.google.com/s2/favicons?domain=${encodeURL}`,
   };
 };

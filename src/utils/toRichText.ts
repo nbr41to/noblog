@@ -17,7 +17,7 @@ export const toRichText = (
 
   const paragraphContents = tiptapJson.content.flatMap((content) => {
     /* 文字がなく改行のみの場合 */
-    if (!('content' in content) || !content.content) {
+    if (!('content' in content && content.content)) {
       return { text: { content: '\n' } };
     }
 
@@ -28,7 +28,7 @@ export const toRichText = (
 
       const isLast = index === lineContentLength - 1;
 
-      if (!('marks' in nestedContent) || !nestedContent.marks) {
+      if (!('marks' in nestedContent && nestedContent.marks)) {
         return { text: { content: nestedContent.text + (isLast ? '\n' : '') } };
       }
 
