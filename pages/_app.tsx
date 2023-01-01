@@ -15,7 +15,7 @@ const meta = {
   description:
     'ライフハックとプログラミングのことをつぶやいてます。Notionで書いた内容が記事になっています。',
   url: 'https://www.nbr41.com/',
-  image: '/site_image.jpeg',
+  image: 'https://www.nbr41.com/ogp_test.png',
 };
 
 export default function App({ Component, pageProps }: AppProps) {
