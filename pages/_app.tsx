@@ -13,9 +13,9 @@ import { googleTagManagerId } from '~/types/gtm';
 const meta = {
   title: 'noblog',
   description:
-    '駆け出しエンジニアが本気で作った渾身の「Notion Blog 2023」。Notionで書いた内容が記事になっています。',
+    'ライフハックとプログラミングのことをつぶやいてます。Notionで書いた内容が記事になっています。',
   url: 'https://www.nbr41.com/',
-  image: 'https://www.nbr41.com/site_image.jpg',
+  image: '/site_image.jpg',
 };
 
 export default function App({ Component, pageProps }: AppProps) {

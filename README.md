@@ -24,7 +24,6 @@
 - Routing の Object を作る（titleEnum を作る）
 - meta と json-ld を整理したい
 - コメントの empty UI
-- bookmark に縦線入れる
 - OGP 画像が表示されてない
 - OGP 画像を動的に作ってみる
 - Tweets list の追加
