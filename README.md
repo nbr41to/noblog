@@ -27,8 +27,12 @@
 - bookmark に縦線入れる
 - link_preview 対応 多分 GitHub リンク
 - OGP 画像が表示されてない
+- OGP 画像を動的に作ってみる
 - Tweets list の追加
 - 謎解きギミックの追加
+- Algolia の導入
+- bookmark の OGP を SSG にする
+- Image の 取得失敗時の挙動
 
 ## Used
 

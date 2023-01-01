@@ -36,7 +36,7 @@ export const RichText: FC<Props> = ({ text }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={clsx(
-                    'underline',
+                    'transition-opacity hover:opacity-50',
                     color !== 'default' && `notion-${color}`,
                     annotationClasses.includes('bold') && 'font-bold',
                     annotationClasses.includes('italic') && 'font-italic',

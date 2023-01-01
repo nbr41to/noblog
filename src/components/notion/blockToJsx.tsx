@@ -2,6 +2,8 @@ import type { NotionBlockObjectResponse } from '~/types/notion';
 
 import { MdNotInterested } from 'react-icons/md';
 
+import { LinkPreview } from '~/components/notion/blocks/LinkPreview';
+
 import { Bookmark } from './blocks/Bookmark';
 import { BulletedListItem } from './blocks/BulletedListItem';
 import { Callout } from './blocks/Callout';
@@ -42,11 +44,13 @@ export const blockToJsx = (block: NotionBlockObjectResponse) => {
       return <Quote block={block} />;
     case 'bookmark':
       return <Bookmark block={block} />;
-    case 'divider':
-      return <Divider />;
+    case 'link_preview':
+      return <LinkPreview block={block} />;
     case 'image':
       // eslint-disable-next-line jsx-a11y/alt-text
       return <Image block={block} />;
+    case 'divider':
+      return <Divider />;
     case 'table_of_contents':
       return null;
     default:
