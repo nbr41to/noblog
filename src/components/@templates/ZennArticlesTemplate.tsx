@@ -9,7 +9,7 @@ type Props = {
   articles: ZennArticle[];
 };
 
-export const ZennListTemplate: FC<Props> = ({ articles }) => {
+export const ZennArticlesTemplate: FC<Props> = ({ articles }) => {
   return (
     <div>
       <PageTitle title="My Zenn articles" />
@@ -31,6 +31,7 @@ export const ZennListTemplate: FC<Props> = ({ articles }) => {
                   className="rounded-md"
                   src={article.enclosure?.url}
                   alt={article.title}
+                  sizes="320px"
                   fill
                 />
               </a>

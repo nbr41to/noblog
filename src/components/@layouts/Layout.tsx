@@ -33,7 +33,7 @@ export const Layout: FC<Props> = ({ children }) => {
         <div className=" mx-auto max-w-[1200px]">{children}</div>
       </main>
 
-      <footer className="fixed bottom-0 flex h-40 w-full flex-col justify-between bg-slate-800 px-8 text-white">
+      <footer className="fixed bottom-0 left-0 flex h-40 w-full flex-col justify-between bg-slate-800 px-8 text-white">
         <div className="mt-6">
           <div className="flex gap-2">
             <Image

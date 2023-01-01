@@ -13,7 +13,7 @@ import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContents } from '~/server/notion/databases';
 import { getPage } from '~/server/notion/pages';
-import { setOgp } from '~/server/utils/getOgp';
+import { setOgp } from '~/server/utils/ogp';
 import { PostDetailTemplate } from '~/templates/PostDetailTemplate';
 import { toMetaDescription, toPostMeta } from '~/utils/meta';
 
@@ -90,21 +90,17 @@ const Post: NextPage<Props> = ({ post }) => {
 
   return (
     <>
-      <div>
-        <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pr-0 sp:pl-4">
-          <Breadcrumbs
-            currentPath={router.pathname}
-            titleEnum={{
-              ['[page_id]']: post.title,
-            }}
-          />
-        </div>
-        <PostDetailTemplate
-          post={post}
-          comments={comments}
-          onSubmit={handleCommentSubmit}
-        />
-      </div>
+      <Breadcrumbs
+        currentPath={router.pathname}
+        titleEnum={{
+          ['[page_id]']: post.title,
+        }}
+      />
+      <PostDetailTemplate
+        post={post}
+        comments={comments}
+        onSubmit={handleCommentSubmit}
+      />
 
       {/* meta seo */}
       <NextSeo

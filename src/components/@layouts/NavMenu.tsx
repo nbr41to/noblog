@@ -4,9 +4,10 @@ import { clsx, Transition } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 /* icons */
 import { AiFillHome, AiTwotoneExperiment } from 'react-icons/ai';
-import { BsTwitter, BsYoutube } from 'react-icons/bs';
+import { BsFillPersonLinesFill, BsTwitter, BsYoutube } from 'react-icons/bs';
 import { FaBook } from 'react-icons/fa';
 import { GiCow } from 'react-icons/gi';
+import { HiMail } from 'react-icons/hi';
 import { SiZenn } from 'react-icons/si';
 import { TfiGithub } from 'react-icons/tfi';
 
@@ -54,9 +55,16 @@ export const NavMenu: FC = () => {
               href="/sandbox"
               label="Sandbox"
             />
-            <NavMenuLink href="/posts/zenn-list" label="Zenn(tmp)" />
-            <NavMenuLink href="/profile" label="Profile" />
-            {/* <NavMenuLink href="/" label="Contact" /> */}
+            <NavMenuLink
+              icon={<BsFillPersonLinesFill size={20} />}
+              href="/profile"
+              label="Profile"
+            />
+            <NavMenuLink
+              icon={<HiMail size={20} />}
+              href="/contact"
+              label="Contact"
+            />
 
             <div className="pt-10" />
 

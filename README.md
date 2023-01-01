@@ -27,6 +27,8 @@
 - 謎解きギミックの追加
 - Algolia の導入
 - Image の 取得失敗時の挙動
+- QR コード
+- RichTextEditor をコンポーネント化
 
 ## Used
 
