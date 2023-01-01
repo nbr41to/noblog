@@ -13,6 +13,7 @@ import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContents } from '~/server/notion/databases';
 import { getPage } from '~/server/notion/pages';
+import { setOgp } from '~/server/utils/getOgp';
 import { PostDetailTemplate } from '~/templates/PostDetailTemplate';
 import { toMetaDescription, toPostMeta } from '~/utils/meta';
 
@@ -24,12 +25,16 @@ export const getStaticProps = async (context: { params: Params }) => {
   const page = await getPage(page_id);
   const response = await getChildrenInBlock(page_id);
 
+  const childrenWithOgp = await setOgp(
+    response.results as NotionBlockObjectResponse[]
+  );
+
   const post = {
     ...toPostMeta(page as NotionPageObjectResponse),
     description: toMetaDescription(
       response.results as NotionBlockObjectResponse[]
     ),
-    children: response.results as NotionBlockObjectResponse[],
+    children: childrenWithOgp,
   };
 
   return {

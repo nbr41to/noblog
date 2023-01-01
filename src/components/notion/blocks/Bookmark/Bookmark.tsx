@@ -5,24 +5,15 @@ import type { Ogp } from '~/types/ogp';
 
 import { Skeleton } from '@mantine/core';
 
-import { useGetOgp } from '~/hooks/apiHooks/useGetOgp';
-
 type Props = {
-  block: BookmarkBlockObjectResponse;
-};
-type BaseProps = {
-  ogp: Ogp | undefined;
-  isLoading: boolean;
+  block: BookmarkBlockObjectResponse & { ogp: Ogp };
 };
 
 export const Bookmark: FC<Props> = ({ block }) => {
-  const { data, isLoading } = useGetOgp(block.bookmark.url);
+  const { ogp } = block;
+  const noOgp = !ogp.title && !ogp.description && !ogp.imageUrl;
 
-  return <BaseBookmark ogp={data} isLoading={isLoading} />;
-};
-
-export const BaseBookmark: FC<BaseProps> = ({ ogp, isLoading }) => {
-  return ogp && !isLoading ? (
+  return !noOgp ? (
     <a
       className="my-6 flex min-h-[120px] cursor-pointer justify-between rounded-lg border border-solid border-slate-400 bg-slate-50 hover:bg-slate-100 sp:flex-col"
       href={ogp.url}

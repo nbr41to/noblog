@@ -5,12 +5,7 @@ import { googleTagManagerId } from '~/types/gtm';
 export default function Document() {
   return (
     <Html lang="ja-JP" className="scroll-smooth">
-      <Head>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
+      <Head />
       <body>
         {/* Google Tag Manager (noscript) */}
         <noscript

@@ -1,8 +1,8 @@
+import type { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { Meta, StoryObj } from '@storybook/react';
-import type { Ogp } from '~/types/ogp';
 
-import { BaseBookmark as Component } from './Bookmark';
-import exampleOgp from './example2.json';
+import { Bookmark as Component } from './Bookmark';
+import exampleBlock from './example.json';
 
 export default {
   component: Component,
@@ -10,12 +10,32 @@ export default {
 
 export const Default: StoryObj<typeof Component> = {
   args: {
-    ogp: exampleOgp as Ogp,
-    isLoading: false,
+    block: {
+      ...(exampleBlock as BookmarkBlockObjectResponse),
+      ogp: {
+        url: 'https://www.hashicorp.com/products/terraform/pricing',
+        title: 'HashiCorp Terraform: Enterprise Pricing, Packages & Features',
+        description:
+          'HashiCorp offers three editions of Terraform: Open Source, Terraform Cloud, and Terraform Enterprise.',
+        imageUrl:
+          'https://www.datocms-assets.com/2885/1632350732-terraform-share.png',
+        faviconUrl:
+          'https://www.google.com/s2/favicons?domain=https://www.hashicorp.com/products/terraform/pricing',
+      },
+    },
   },
 };
-export const Loading: StoryObj<typeof Component> = {
+export const NoOgp: StoryObj<typeof Component> = {
   args: {
-    isLoading: true,
+    block: {
+      ...(exampleBlock as BookmarkBlockObjectResponse),
+      ogp: {
+        url: '',
+        title: '',
+        description: '',
+        imageUrl: '',
+        faviconUrl: '',
+      },
+    },
   },
 };
