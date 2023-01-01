@@ -15,7 +15,7 @@ const meta = {
   description:
     'ライフハックとプログラミングのことをつぶやいてます。Notionで書いた内容が記事になっています。',
   url: 'https://www.nbr41.com/',
-  image: 'https://www.nbr41.com/ogp_test.png',
+  image: 'https://www.nbr41.com/site_image.png',
 };
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
           url: meta.url,
           images: [
             {
-              url: meta.url,
+              url: meta.image,
               width: 800,
               height: 600,
               alt: 'Site Image',
