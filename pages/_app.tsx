@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 
 import { NotificationsProvider } from '@mantine/notifications';
 import { DefaultSeo } from 'next-seo';
+import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
 
 import { GoogleTagManager } from '~/layouts/GoogleTagManager';
@@ -49,6 +50,12 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       {/* meta seo */}
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
 
       <RecoilRoot>
         <NotificationsProvider>

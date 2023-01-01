@@ -2,7 +2,10 @@ import type { FC } from 'react';
 import type { NotionPostMeta } from '~/types/notion';
 
 import { Badge, Button } from '@mantine/core';
-import { BsHeart } from 'react-icons/bs';
+import { useState } from 'react';
+import { BsHeartFill } from 'react-icons/bs';
+
+import { useLikes } from '~/hooks/apiHooks/useLikes';
 
 type Props = {
   meta: NotionPostMeta;
@@ -10,6 +13,9 @@ type Props = {
 };
 
 export const PostMeta: FC<Props> = ({ meta, commentCount }) => {
+  const [liked, setLiked] = useState(false);
+  const { data: likes, trigger, isMutating } = useLikes(meta.id);
+
   return (
     <div className="space-y-2 bg-white py-4 px-6 text-sm">
       <div className="flex justify-between">
@@ -18,14 +24,38 @@ export const PostMeta: FC<Props> = ({ meta, commentCount }) => {
           <div>更新: {meta.updatedAt}</div>
         </div>
         <div className="space-y-1 text-right">
-          <div>いいね: {meta.likes} 件</div>
+          <div>いいね: {likes.count} 件</div>
           <div>コメント: {commentCount} 件</div>
         </div>
       </div>
 
       <div className="py-2">
-        <Button color="orange" leftIcon={<BsHeart size={18} />} fullWidth>
-          この記事にいいねする
+        <Button
+          color="orange"
+          fullWidth
+          disabled={liked}
+          loading={isMutating}
+          onClick={() =>
+            trigger(
+              {},
+              {
+                onSuccess: () => setLiked(true),
+              }
+            )
+          }
+        >
+          この記事に
+          {liked ? (
+            <>
+              <BsHeartFill size={16} className="mx-1 text-red-400" />
+              しました！
+            </>
+          ) : (
+            <>
+              <BsHeartFill size={16} className="mx-1" />
+              する
+            </>
+          )}
         </Button>
       </div>
 

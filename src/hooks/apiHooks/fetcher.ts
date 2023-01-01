@@ -18,3 +18,16 @@ export const postFetcher: PostFetcher = async (url, { arg }) => {
 
   return response.data;
 };
+
+type PatchFetcher = <T, U = any>(
+  url: string,
+  arg: {
+    arg: T;
+  }
+) => Promise<U>;
+
+export const patchFetcher: PatchFetcher = async (url, { arg }) => {
+  const response = await axios.patch(url, arg);
+
+  return response.data;
+};

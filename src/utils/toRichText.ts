@@ -68,5 +68,12 @@ export const toRichText = (
     });
   });
 
+  /* 最後の改行を削除 */
+  while (
+    paragraphContents[paragraphContents.length - 1].text.content === '\n'
+  ) {
+    paragraphContents.pop();
+  }
+
   return paragraphContents;
 };
