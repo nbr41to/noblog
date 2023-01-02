@@ -32,6 +32,7 @@
 - Icon まとめる
 - BaseUrl の設定
 - 上下の色 Safari
+- カルーセル作ってみる
 -
 
 ## Used

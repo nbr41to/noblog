@@ -52,16 +52,7 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
     if (session?.user?.name && session?.user?.email) {
       setIsLoading(true);
       const rich_text = toRichText(editor.getJSON());
-      await onSubmit([
-        ...rich_text,
-        // { text: { content: '\n' + session.user.name + '\n' } },
-        // {
-        //   text: {
-        //     content: session.user.email,
-        //     link: { url: session.user.email },
-        //   },
-        // },
-      ]);
+      await onSubmit(rich_text);
       editor.commands.setContent('');
       setIsLoading(false);
     } else {
@@ -76,7 +67,7 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
   return (
     <div className="">
       {!session ? (
-        <div className="min-h-[320px] sp:px-4">
+        <div className="sp:px-4">
           <Button fullWidth onClick={toLoginPage}>
             ログインしてコメントをする
           </Button>

@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 
+import { ScrollTopButton } from '~/components/@layouts/ScrollTopButton';
 import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 
 import { NavMenu } from './NavMenu';
-import { ScrollTopButton } from './ScrollTopButton';
 
 type Props = {
   children: ReactNode;
@@ -44,8 +44,11 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
           <Breadcrumbs currentPath={router.pathname} titleEnum={titleEnum} />
         </div>
       </header>
-      <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100 pb-20">
+      <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100">
         <div className=" mx-auto max-w-[1200px]">{children}</div>
+        <div className="sticky bottom-0 p-4 text-right sp:p-2">
+          <ScrollTopButton />
+        </div>
       </main>
       <footer className="fixed bottom-0 left-0 flex h-40 w-full flex-col justify-between bg-slate-800 px-8 text-white">
         <div className="mt-6">
@@ -69,7 +72,6 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
           Made with Notion by nobuyuki @2023
         </div>
       </footer>
-      <ScrollTopButton />
     </div>
   );
 };

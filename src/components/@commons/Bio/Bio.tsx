@@ -6,10 +6,11 @@ import { BsGithub, BsTwitter } from 'react-icons/bs';
 export const Bio: FC = () => {
   return (
     <div className="rounded bg-white p-6">
-      <div className="flex justify-between gap-4">
+      <div className="flex items-center justify-between">
         <div>
-          <div className="text-lg font-bold">nobuyuki.K</div>
-          <div className="mt-3 space-x-2 text-slate-800">
+          <div className="text-xs">Create by</div>
+          <div className="text-lg font-bold leading-tight">nobuyuki.K</div>
+          <div className="mt-2 space-x-2 text-slate-800">
             <a
               className="text-slate-800"
               href="https://twitter.com/Knob_nbr41to"
