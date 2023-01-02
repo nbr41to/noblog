@@ -29,6 +29,8 @@ export const Breadcrumbs: FC<Props> = ({ currentPath, titleEnum = {} }) => {
     return items;
   }, [currentPath, titleEnum]);
 
+  if (items.length === 0) return null;
+
   return (
     <div className="py-4 text-sm">
       <MantineBreadcrumbs>

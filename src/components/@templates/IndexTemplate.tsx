@@ -13,14 +13,14 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
     <div>
       <div className="w-full bg-slate-800 py-8 text-orange-100">
         <div className="mx-auto w-fit text-right">
-          <div className="font-sans text-4xl font-bold">
-            Obedient to Curiosity
+          <div className="font-sans text-4xl font-bold sp:text-3xl">
+            Obedience to Curiosity
           </div>
           <div className="mt-1 font-sans text-sm">好奇心に従順に生きる</div>
         </div>
       </div>
 
-      <div className="w-main mt-4 space-y-4 px-4">
+      <div className="w-main mt-4 space-y-4 px-4 pb-10">
         <div>
           <h2 className="text-lg font-bold">このblogについて</h2>
           <p className="px-4 py-2 leading-loose">
