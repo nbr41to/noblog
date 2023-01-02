@@ -51,7 +51,6 @@ body::before {
   height: 50vh;
   position: fixed;
   left: 0;
-  z-index: -1;
   background-color: #ffedd5;
 }
 

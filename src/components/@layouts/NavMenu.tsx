@@ -43,7 +43,7 @@ export const NavMenu: FC = () => {
       >
         {(styles) => (
           <div
-            className="fixed bottom-0 left-0 -z-10 h-[calc(150vh)] space-y-2 bg-slate-800 px-6 pt-[calc(50vh+100px)]"
+            className="fixed bottom-0 left-0 -z-10 h-screen space-y-2 bg-slate-800 px-6 pt-28"
             style={styles}
           >
             <NavMenuLink

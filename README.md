@@ -30,6 +30,7 @@
 - RichTextEditor をコンポーネント化
 - カルーセル作ってみる
 - Index のコンテンツを Notion にしてみる
+- NavMenu の上部だけを紺にしたい
 
 ## Used
 
