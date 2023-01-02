@@ -8,6 +8,7 @@ import { BsFillPersonLinesFill, BsTwitter, BsYoutube } from 'react-icons/bs';
 import { FaBook } from 'react-icons/fa';
 import { GiCow } from 'react-icons/gi';
 import { HiMail } from 'react-icons/hi';
+import { IoQrCode } from 'react-icons/io5';
 import { SiZenn } from 'react-icons/si';
 import { TfiGithub } from 'react-icons/tfi';
 
@@ -41,27 +42,27 @@ export const NavMenu: FC = () => {
             style={styles}
           >
             <NavMenuLink
-              icon={<AiFillHome size={18} />}
+              leftIcon={<AiFillHome size={18} />}
               href="/"
               label="Home"
             />
             <NavMenuLink
-              icon={<FaBook size={16} />}
+              leftIcon={<FaBook size={16} />}
               href="/posts"
               label="Blogs"
             />
             <NavMenuLink
-              icon={<AiTwotoneExperiment size={20} />}
+              leftIcon={<AiTwotoneExperiment size={20} />}
               href="/sandbox"
               label="Sandbox"
             />
             <NavMenuLink
-              icon={<BsFillPersonLinesFill size={20} />}
+              leftIcon={<BsFillPersonLinesFill size={20} />}
               href="/profile"
               label="Profile"
             />
             <NavMenuLink
-              icon={<HiMail size={20} />}
+              leftIcon={<HiMail size={20} />}
               href="/contact"
               label="Contact"
             />
@@ -88,6 +89,14 @@ export const NavMenu: FC = () => {
               icon={<BsYoutube size={18} />}
               href="https://www.youtube.com/channel/UCPcjWvYIfvqGPP4x30kEkMA"
               label="YouTube"
+            />
+
+            <div className="pt-8" />
+
+            <NavMenuLink
+              rightIcon={<IoQrCode size={18} />}
+              href="/qrcode.png"
+              label="QR Code"
             />
           </div>
         )}

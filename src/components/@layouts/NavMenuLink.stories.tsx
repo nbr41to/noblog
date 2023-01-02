@@ -20,10 +20,17 @@ export const Default: StoryObj<typeof Component> = {
     label: 'Documentation',
   },
 };
-export const WithIcon: StoryObj<typeof Component> = {
+export const WithLeftIcon: StoryObj<typeof Component> = {
   args: {
     href: '/',
     label: 'Home',
-    icon: <AiFillHome size={18} />,
+    leftIcon: <AiFillHome size={18} />,
+  },
+};
+export const WithRightIcon: StoryObj<typeof Component> = {
+  args: {
+    href: '/',
+    label: 'Home',
+    rightIcon: <AiFillHome size={18} />,
   },
 };
