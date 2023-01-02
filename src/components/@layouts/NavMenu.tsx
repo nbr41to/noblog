@@ -37,7 +37,7 @@ export const NavMenu: FC = () => {
       >
         {(styles) => (
           <div
-            className="fixed top-0 left-0 -z-10 h-screen space-y-2 bg-slate-800 px-6 pt-28"
+            className="fixed bottom-0 left-0 -z-10 h-[calc(150vh)] space-y-2 bg-slate-800 px-6 pt-[calc(50vh+100px)]"
             style={styles}
           >
             <NavMenuLink
@@ -66,12 +66,12 @@ export const NavMenu: FC = () => {
               label="Contact"
             />
 
-            <div className="pt-10" />
+            <div className="pt-8" />
 
             {/* External */}
             <NavMenuExternalLink
               icon={<BsTwitter size={18} />}
-              href="https://github.com/nbr41to"
+              href="https://twitter.com/Knob_nbr41to"
               label="Twitter"
             />
             <NavMenuExternalLink
@@ -86,7 +86,7 @@ export const NavMenu: FC = () => {
             />
             <NavMenuExternalLink
               icon={<BsYoutube size={18} />}
-              href="https://github.com/nbr41to"
+              href="https://www.youtube.com/channel/UCPcjWvYIfvqGPP4x30kEkMA"
               label="YouTube"
             />
           </div>

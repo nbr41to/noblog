@@ -33,7 +33,7 @@
 - BaseUrl の設定
 - 上下の色 Safari
 - カルーセル作ってみる
--
+- Index のコンテンツを Notion にしてみる
 
 ## Used
 
@@ -55,7 +55,6 @@
 - [axios](https://axios-http.com/)
 - [tiptap](https://tiptap.dev/)
 - [next-seo](https://github.com/garmeeh/next-seo)
-
 - [Algolia](https://www.algolia.com/)
 
 ## ESlint
