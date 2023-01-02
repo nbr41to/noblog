@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
 import Image from 'next/image';
-import { BsGithub, BsTwitter } from 'react-icons/bs';
+
+import { GitHubIcon, TwitterIcon } from '~/commons/icons';
 
 export const Bio: FC = () => {
   return (
@@ -17,7 +18,7 @@ export const Bio: FC = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <BsTwitter size={24} />
+              <TwitterIcon size={24} />
             </a>
             <a
               className="text-slate-800"
@@ -25,7 +26,7 @@ export const Bio: FC = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <BsGithub size={24} />
+              <GitHubIcon size={24} />
             </a>
           </div>
         </div>

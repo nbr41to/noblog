@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { Button, Transition } from '@mantine/core';
 import { useWindowScroll } from '@mantine/hooks';
-import { HiArrowCircleUp } from 'react-icons/hi';
+
+import { ArrowCircleUpIcon } from '~/commons/icons';
 
 export const ScrollTopButton: FC = () => {
   const [scroll, scrollTo] = useWindowScroll();
@@ -13,7 +14,7 @@ export const ScrollTopButton: FC = () => {
         <Button
           className="shadow"
           color="orange"
-          leftIcon={<HiArrowCircleUp size={24} />}
+          leftIcon={<ArrowCircleUpIcon size={24} />}
           style={transitionStyles}
           onClick={() => scrollTo({ y: 0 })}
         >

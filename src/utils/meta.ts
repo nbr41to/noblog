@@ -1,6 +1,5 @@
-import type { NotionBlockObjectResponse } from '../types/notion';
 import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import type { NotionPostMeta } from '~/types/notion';
+import type { NotionPostMeta, NotionBlockObjectResponse } from '~/types/notion';
 
 /**
  * NotionのPageObjectResponseをPostMetaに変換

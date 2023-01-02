@@ -3,10 +3,13 @@ import type { FC } from 'react';
 import { Button } from '@mantine/core';
 import { signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import { BsGithub, BsTwitter } from 'react-icons/bs';
-import { FcGoogle } from 'react-icons/fc';
-import { TbLogout } from 'react-icons/tb';
 
+import {
+  ColorGoogleIcon,
+  GitHubIcon,
+  LogoutIcon,
+  TwitterIcon,
+} from '~/commons/icons';
 import { PageTitle } from '~/commons/PageTitle';
 import { useAuth } from '~/hooks/useAuth';
 import { baseUrl } from '~/utils/url';
@@ -31,7 +34,7 @@ export const LoginTemplate: FC = () => {
               className="border-blue-700 bg-white text-blue-700 shadow"
               variant="outline"
               fullWidth
-              leftIcon={<FcGoogle size={20} />}
+              leftIcon={<ColorGoogleIcon size={20} />}
               onClick={() =>
                 signIn('google', {
                   callbackUrl:
@@ -42,7 +45,7 @@ export const LoginTemplate: FC = () => {
               Google
             </Button>
             <Button
-              leftIcon={<BsTwitter size={18} />}
+              leftIcon={<TwitterIcon size={18} />}
               fullWidth
               disabled
               onClick={() =>
@@ -52,7 +55,7 @@ export const LoginTemplate: FC = () => {
               Twitter
             </Button>
             <Button
-              leftIcon={<BsGithub size={18} />}
+              leftIcon={<GitHubIcon size={18} />}
               fullWidth
               disabled
               onClick={() =>
@@ -63,7 +66,7 @@ export const LoginTemplate: FC = () => {
             </Button>
             <Button
               color="dark"
-              rightIcon={<TbLogout size={18} />}
+              rightIcon={<LogoutIcon size={18} />}
               fullWidth
               onClick={() =>
                 signOut({ callbackUrl: 'http://localhost:3000/login' })

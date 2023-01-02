@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AiFillHome } from 'react-icons/ai';
+import { HomeIcon } from '~/commons/icons';
 
 import { NavMenuLink as Component } from './NavMenuLink';
 
@@ -24,13 +24,13 @@ export const WithLeftIcon: StoryObj<typeof Component> = {
   args: {
     href: '/',
     label: 'Home',
-    leftIcon: <AiFillHome size={18} />,
+    leftIcon: <HomeIcon size={18} />,
   },
 };
 export const WithRightIcon: StoryObj<typeof Component> = {
   args: {
     href: '/',
     label: 'Home',
-    rightIcon: <AiFillHome size={18} />,
+    rightIcon: <HomeIcon size={18} />,
   },
 };

@@ -1,7 +1,6 @@
 import type { NotionBlockObjectResponse } from '~/types/notion';
 
-import { MdNotInterested } from 'react-icons/md';
-
+import { StopIcon } from '~/commons/icons';
 import { LinkPreview } from '~/components/notion/blocks/LinkPreview';
 
 import { Bookmark } from './blocks/Bookmark';
@@ -56,7 +55,7 @@ export const blockToJsx = (block: NotionBlockObjectResponse) => {
     default:
       return (
         <div className="my-6 flex items-center justify-center gap-4 rounded-lg bg-slate-200 p-4 sp:flex-col sp:text-center">
-          <MdNotInterested size={40} />
+          <StopIcon size={40} />
           <div className="sp:text-sm">
             <div>ここで、対応していない NotionのBlockが使用されています。</div>
             <div className="mt-2 font-firaCode">

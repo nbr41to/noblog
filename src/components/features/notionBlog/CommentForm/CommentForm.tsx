@@ -12,9 +12,8 @@ import StarterKit from '@tiptap/starter-kit';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { IoSend } from 'react-icons/io5';
-import { TbLogout } from 'react-icons/tb';
 
+import { LogoutIcon, SendIcon } from '~/commons/icons';
 import { toRichText } from '~/utils/toRichText';
 import { baseUrl } from '~/utils/url';
 
@@ -137,7 +136,7 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
                   })
                 }
               >
-                <TbLogout size={18} />
+                <LogoutIcon size={18} />
               </ActionIcon>
             </Tooltip>
             <Tooltip
@@ -158,7 +157,7 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
                 onClick={handleSubmit}
                 loading={isLoading}
                 disabled={disabled}
-                rightIcon={<IoSend />}
+                rightIcon={<SendIcon />}
               >
                 送 信
               </Button>

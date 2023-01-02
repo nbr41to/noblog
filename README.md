@@ -28,7 +28,6 @@
 - Algolia の導入
 - Image の 取得失敗時の挙動
 - RichTextEditor をコンポーネント化
-- Icon まとめる
 - カルーセル作ってみる
 - Index のコンテンツを Notion にしてみる
 

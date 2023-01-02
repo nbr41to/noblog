@@ -6,8 +6,8 @@ import { usePagination } from '@mantine/hooks';
 import Link from 'next/link';
 import { useMemo } from 'react';
 import { useState } from 'react';
-import { BsListUl, BsGrid } from 'react-icons/bs';
 
+import { GridIcon, ListIcon } from '~/commons/icons';
 import { PageTitle } from '~/commons/PageTitle';
 import { PostGrid } from '~/features/notionBlog/PostGrid';
 import { PostList } from '~/features/notionBlog/PostList';
@@ -43,7 +43,7 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
                 value: 'grid',
                 label: (
                   <div className="flex items-center gap-2">
-                    <BsGrid size={16} />
+                    <GridIcon size={16} />
                   </div>
                 ),
               },
@@ -51,7 +51,7 @@ export const PostsTemplate: FC<Props> = ({ postsArray }) => {
                 value: 'list',
                 label: (
                   <div className="flex items-center gap-2">
-                    <BsListUl size={16} />
+                    <ListIcon size={16} />
                   </div>
                 ),
               },

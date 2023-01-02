@@ -1,7 +1,8 @@
 import type { FC, ReactNode } from 'react';
 
 import Link from 'next/link';
-import { TbExternalLink } from 'react-icons/tb';
+
+import { TbExternalLinkIcon } from '~/commons/icons';
 
 type Props = {
   href: string;
@@ -19,7 +20,7 @@ export const NavMenuExternalLink: FC<Props> = ({ href, label, icon }) => {
     >
       {icon}
       {label}
-      <TbExternalLink />
+      <TbExternalLinkIcon />
     </Link>
   );
 };

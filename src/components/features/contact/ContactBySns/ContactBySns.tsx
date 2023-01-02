@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
 import { clsx } from '@mantine/core';
-import { FaTheaterMasks } from 'react-icons/fa';
-import { SiLine, SiTwitter } from 'react-icons/si';
+
+import { DummyIcon, LineIcon, TwitterIcon } from '~/commons/icons';
 
 export const ContactBySns: FC = () => {
   return (
@@ -43,7 +43,7 @@ export const ContactBySns: FC = () => {
             'origin-[40px_6px] transition-transform hover:rotate-12 active:rotate-[120deg]'
           )}
         >
-          <SiLine size={40} />
+          <LineIcon size={40} />
         </div>
         {/* pin */}
         <div className="absolute top-1 right-1/2 h-1.5 w-1.5 translate-x-1/2 rounded-full bg-slate-300 shadow-sm" />
@@ -86,7 +86,7 @@ export const ContactBySns: FC = () => {
             'origin-[40px_6px] transition-transform hover:rotate-12 active:rotate-[120deg]'
           )}
         >
-          <SiTwitter size={40} />
+          <TwitterIcon size={40} />
         </div>
         {/* pin */}
         <div className="absolute top-1 right-1/2 h-1.5 w-1.5 translate-x-1/2 rounded-full bg-slate-300 shadow-sm" />
@@ -124,7 +124,7 @@ export const ContactBySns: FC = () => {
             'origin-[40px_6px] transition-transform duration-300 hover:rotate-12 active:rotate-[120deg]'
           )}
         >
-          <FaTheaterMasks size={40} />
+          <DummyIcon size={40} />
         </div>
         {/* pin */}
         <div className="absolute top-1 right-1/2 h-1.5 w-1.5 translate-x-1/2 rounded-full bg-slate-300 shadow-sm" />

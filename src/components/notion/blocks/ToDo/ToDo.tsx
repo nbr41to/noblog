@@ -1,8 +1,7 @@
 import type { ToDoBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { FC } from 'react';
 
-import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
-
+import { CheckedBoxIcon, UnCheckedBoxIcon } from '~/commons/icons';
 import { RichText } from '~/components/notion/RichText';
 
 type Props = {
@@ -19,7 +18,7 @@ export const ToDo: FC<Props> = ({ block }) => {
         disabled
       />
       <div className="pt-0.5">
-        {block.to_do.checked ? <ImCheckboxChecked /> : <ImCheckboxUnchecked />}
+        {block.to_do.checked ? <CheckedBoxIcon /> : <UnCheckedBoxIcon />}
       </div>
       <span className="ml-2 sp:text-sm">
         <RichText text={block.to_do.rich_text} />
