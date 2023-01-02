@@ -29,7 +29,7 @@ export {
 } from 'react-icons/md';
 export {
   SiLine as LineIcon,
-  SiMaildotru as AtIconm,
+  SiMaildotru as AtIcon,
   SiZenn as ZennIcon,
 } from 'react-icons/si';
 export {

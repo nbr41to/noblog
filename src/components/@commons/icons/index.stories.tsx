@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import {
   ArrowCircleUpIcon,
-  AtIconm,
+  AtIcon,
   BookIcon,
   CheckedBoxIcon,
   ColorGoogleIcon,
@@ -50,7 +50,7 @@ export const Default: StoryObj<{ size: number }> = {
   render: (args) => (
     <div className="flex w-80 flex-wrap gap-2">
       <ArrowCircleUpIcon size={args.size} />
-      <AtIconm size={args.size} />
+      <AtIcon size={args.size} />
       <BookIcon size={args.size} />
       <CheckedBoxIcon size={args.size} />
       <ColorGoogleIcon size={args.size} />

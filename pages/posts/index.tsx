@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
     props: {
       postsArray: response as NotionPageObjectResponse[][],
     },
-    revalidate: 60 * 60, // 1時間
+    revalidate: 60 * 60 * 24, // 1日
   };
 };
 
