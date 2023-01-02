@@ -18,11 +18,11 @@
     "paths": {
       "~/pages/*": ["./pages/*"],
       "~/*": ["./src/*"],
-      "~/components/*": ["./src/components/*"],
       "~/features/*": ["./src/components/features/*"],
       "~/commons/*": ["./src/components/@commons/*"],
       "~/layouts/*": ["./src/components/@layouts/*"],
       "~/templates/*": ["./src/components/@templates/*"],
+      "~/components/*": ["./src/components/*"],
       "~/hooks/*": ["./src/hooks/*"],
       "~/client/*": ["src/utils/*"],
       "~/server/*": ["./src/server/*"],

@@ -39,9 +39,23 @@
 
 body {
   @apply m-0;
-  @apply bg-orange-100;
   @apply text-slate-800;
+  @apply bg-slate-800;
   font-family: 'Noto Sans JP', sans-serif;
+  position: relative;
+  height: 100%;
+}
+body::before {
+  /* TODO: iosなどのバウンススクロール時の上部のbackground-colorを変更 */
+  content: '';
+  display: block;
+  width: 100%;
+  height: 50vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  background-color: #ffedd5;
 }
 
 @layer base {
@@ -71,11 +85,12 @@ body {
     color: #1e293b;
   }
   .bg-primary {
-    @apply text-orange-100;
+    /* text-orange-100; */
+    background-color: #ffedd5;
   }
   .bg-secondary {
     /* text-orange-50; */
-    background-color: rgb(255 247 237);
+    background-color: #fff7ed;
   }
 }
 @layer utilities {

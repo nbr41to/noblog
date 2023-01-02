@@ -1,6 +1,8 @@
 import type { FC, ReactNode } from 'react';
 
-import { TbExternalLink } from 'react-icons/tb';
+import Link from 'next/link';
+
+import { TbExternalLinkIcon } from '~/commons/icons';
 
 type Props = {
   href: string;
@@ -10,13 +12,15 @@ type Props = {
 
 export const NavMenuExternalLink: FC<Props> = ({ href, label, icon }) => {
   return (
-    <a
+    <Link
       className="flex w-fit items-center gap-2 font-baloo text-xl text-white transition-transform duration-300 hover:scale-110 sp:text-2xl"
       href={href}
+      target="_blank"
+      rel="noreferrer"
     >
       {icon}
       {label}
-      <TbExternalLink />
-    </a>
+      <TbExternalLinkIcon />
+    </Link>
   );
 };

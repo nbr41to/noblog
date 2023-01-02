@@ -6,10 +6,8 @@ import type {
 } from '~/types/notion';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 
 import { useComments } from '~/hooks/apiHooks/useComments';
-import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContents } from '~/server/notion/databases';
 import { getPage } from '~/server/notion/pages';
@@ -41,7 +39,7 @@ export const getStaticProps = async (context: { params: Params }) => {
     props: {
       post,
     },
-    revalidate: 60 * 60, // 1時間
+    revalidate: 60 * 60 * 24, // 1日
   };
 };
 
@@ -74,7 +72,6 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Post: NextPage<Props> = ({ post }) => {
-  const router = useRouter();
   const { data: comments, trigger } = useComments(post.id);
 
   const handleCommentSubmit = async (
@@ -90,12 +87,6 @@ const Post: NextPage<Props> = ({ post }) => {
 
   return (
     <>
-      <Breadcrumbs
-        currentPath={router.pathname}
-        titleEnum={{
-          ['[page_id]']: post.title,
-        }}
-      />
       <PostDetailTemplate
         post={post}
         comments={comments}

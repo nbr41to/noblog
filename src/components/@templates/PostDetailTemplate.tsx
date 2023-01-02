@@ -26,9 +26,15 @@ export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
       </h1>
 
       <div className="flex justify-between gap-6">
-        <div className="w-main space-y-6">
+        <div className="w-main flex flex-col gap-6 sp:gap-4">
+          <div className="hidden sp:block">
+            <PostMeta meta={post} commentCount={comments.length} />
+          </div>
           <PostContent title={post.title} blocks={post.children} />
           {comments.length > 0 && <Comments comments={comments} />}
+          <div className="hidden sp:block">
+            <Bio />
+          </div>
           <CommentForm onSubmit={onSubmit} />
         </div>
 

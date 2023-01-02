@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BsTwitter } from 'react-icons/bs';
+import { TwitterIcon } from '~/commons/icons';
 
 import { NavMenuExternalLink as Component } from './NavMenuExternalLink';
 
@@ -24,6 +24,6 @@ export const WithIcon: StoryObj<typeof Component> = {
   args: {
     href: '/',
     label: 'Twitter',
-    icon: <BsTwitter size={18} />,
+    icon: <TwitterIcon size={18} />,
   },
 };

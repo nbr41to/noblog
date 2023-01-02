@@ -3,6 +3,7 @@ import '~/styles/globals.css';
 import type { AppProps } from 'next/app';
 
 import { NotificationsProvider } from '@mantine/notifications';
+import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
@@ -57,13 +58,15 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <RecoilRoot>
-        <NotificationsProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </NotificationsProvider>
-      </RecoilRoot>
+      <SessionProvider session={pageProps.session}>
+        <RecoilRoot>
+          <NotificationsProvider>
+            <Layout {...pageProps}>
+              <Component {...pageProps} />
+            </Layout>
+          </NotificationsProvider>
+        </RecoilRoot>
+      </SessionProvider>
     </>
   );
 }

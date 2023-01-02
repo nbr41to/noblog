@@ -4,8 +4,8 @@ import type { NotionBlockObjectResponse } from '~/types/notion';
 import { ActionIcon, Collapse } from '@mantine/core';
 import { Prism } from '@mantine/prism';
 import { useState } from 'react';
-import { VscJson } from 'react-icons/vsc';
 
+import { JsonIcon } from '~/commons/icons';
 import { blockToJsx } from '~/components/notion/blockToJsx';
 
 type Props = {
@@ -47,7 +47,7 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
                     }
                   }}
                 >
-                  {openedIds.includes(block.id) ? '×' : <VscJson size={20} />}
+                  {openedIds.includes(block.id) ? '×' : <JsonIcon size={20} />}
                 </ActionIcon>
               </div>
             </div>
@@ -59,7 +59,7 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
               <hr />
               <p className="flex items-center justify-center gap-1 font-firaCode">
                 JSON
-                <VscJson />
+                <JsonIcon />
               </p>
               <Prism className="p-3" language="json" colorScheme="dark">
                 {JSON.stringify(block, null, 2)}

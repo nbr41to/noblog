@@ -29,21 +29,21 @@ export const Breadcrumbs: FC<Props> = ({ currentPath, titleEnum = {} }) => {
     return items;
   }, [currentPath, titleEnum]);
 
+  if (items.length === 0) return null;
+
   return (
-    <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pr-0 sp:pl-4">
-      <div className="py-4 text-sm">
-        <MantineBreadcrumbs>
-          {items.map((item) => (
-            <Link
-              className="font-bold text-slate-800 transition-colors hover:text-slate-500 hover:underline"
-              key={item.title}
-              href={item.href}
-            >
-              {item.title}
-            </Link>
-          ))}
-        </MantineBreadcrumbs>
-      </div>
+    <div className="py-4 text-sm">
+      <MantineBreadcrumbs>
+        {items.map((item) => (
+          <Link
+            className="font-bold text-slate-800 transition-colors hover:text-slate-500 hover:underline"
+            key={item.title}
+            href={item.href}
+          >
+            {item.title}
+          </Link>
+        ))}
+      </MantineBreadcrumbs>
     </div>
   );
 };

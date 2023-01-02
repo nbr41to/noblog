@@ -2,14 +2,20 @@ import type { FC } from 'react';
 
 import { clsx, Transition } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-/* icons */
-import { AiFillHome, AiTwotoneExperiment } from 'react-icons/ai';
-import { BsFillPersonLinesFill, BsTwitter, BsYoutube } from 'react-icons/bs';
-import { FaBook } from 'react-icons/fa';
-import { GiCow } from 'react-icons/gi';
-import { HiMail } from 'react-icons/hi';
-import { SiZenn } from 'react-icons/si';
-import { TfiGithub } from 'react-icons/tfi';
+
+import {
+  ExperimentIcon,
+  GitHubOctocatIcon,
+  HomeIcon,
+  ProfileIcon,
+  TwitterIcon,
+  ZennIcon,
+  YouTubeIcon,
+  QrCodeIcon,
+  MailIcon,
+  BookIcon,
+  CowIcon,
+} from '~/commons/icons';
 
 import { NavMenuExternalLink } from './NavMenuExternalLink';
 import { NavMenuLink } from './NavMenuLink';
@@ -25,7 +31,7 @@ export const NavMenu: FC = () => {
           hovered && 'text-white'
         )}
       >
-        <GiCow size={36} />
+        <CowIcon size={36} />
         <div className=" font-bold sp:text-sm">MENU</div>
       </div>
 
@@ -41,53 +47,61 @@ export const NavMenu: FC = () => {
             style={styles}
           >
             <NavMenuLink
-              icon={<AiFillHome size={18} />}
+              leftIcon={<HomeIcon size={18} />}
               href="/"
               label="Home"
             />
             <NavMenuLink
-              icon={<FaBook size={16} />}
+              leftIcon={<BookIcon size={16} />}
               href="/posts"
               label="Blogs"
             />
             <NavMenuLink
-              icon={<AiTwotoneExperiment size={20} />}
+              leftIcon={<ExperimentIcon size={20} />}
               href="/sandbox"
               label="Sandbox"
             />
             <NavMenuLink
-              icon={<BsFillPersonLinesFill size={20} />}
+              leftIcon={<ProfileIcon size={20} />}
               href="/profile"
               label="Profile"
             />
             <NavMenuLink
-              icon={<HiMail size={20} />}
+              leftIcon={<MailIcon size={20} />}
               href="/contact"
               label="Contact"
             />
 
-            <div className="pt-10" />
+            <div className="pt-8" />
 
             {/* External */}
             <NavMenuExternalLink
-              icon={<BsTwitter size={18} />}
-              href="https://github.com/nbr41to"
+              icon={<TwitterIcon size={18} />}
+              href="https://twitter.com/Knob_nbr41to"
               label="Twitter"
             />
             <NavMenuExternalLink
-              icon={<TfiGithub size={18} />}
+              icon={<GitHubOctocatIcon size={18} />}
               href="https://github.com/nbr41to"
               label="GitHub"
             />
             <NavMenuExternalLink
-              icon={<SiZenn size={18} />}
+              icon={<ZennIcon size={18} />}
               href="https://zenn.dev/nbr41to"
               label="Zenn"
             />
             <NavMenuExternalLink
-              icon={<BsYoutube size={18} />}
-              href="https://github.com/nbr41to"
+              icon={<YouTubeIcon size={18} />}
+              href="https://www.youtube.com/channel/UCPcjWvYIfvqGPP4x30kEkMA"
               label="YouTube"
+            />
+
+            <div className="pt-8" />
+
+            <NavMenuLink
+              rightIcon={<QrCodeIcon size={18} />}
+              href="/qrcode.png"
+              label="QR Code"
             />
           </div>
         )}

@@ -3,8 +3,8 @@ import type { NotionPostMeta } from '~/types/notion';
 
 import { Badge, Button } from '@mantine/core';
 import { useState } from 'react';
-import { BsHeartFill } from 'react-icons/bs';
 
+import { HeartIcon } from '~/commons/icons';
 import { useLikes } from '~/hooks/apiHooks/useLikes';
 
 type Props = {
@@ -47,12 +47,12 @@ export const PostMeta: FC<Props> = ({ meta, commentCount }) => {
           この記事に
           {liked ? (
             <>
-              <BsHeartFill size={16} className="mx-1 text-red-400" />
+              <HeartIcon size={16} className="mx-1 text-red-400" />
               しました！
             </>
           ) : (
             <>
-              <BsHeartFill size={16} className="mx-1" />
+              <HeartIcon size={16} className="mx-1" />
               する
             </>
           )}

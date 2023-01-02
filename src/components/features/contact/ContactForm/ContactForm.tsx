@@ -11,9 +11,8 @@ import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useReducer } from 'react';
 import { useState } from 'react';
-import { IoSend } from 'react-icons/io5';
-import { MdTouchApp } from 'react-icons/md';
-import { SiMaildotru } from 'react-icons/si';
+
+import { AtIcon, SendIcon, TouchIcon } from '~/commons/icons';
 
 type Props = {
   onSubmit: (rich_text: NotionRichTextItemRequest[]) => Promise<void>;
@@ -55,11 +54,7 @@ export const ContactForm: FC<Props> = ({ onSubmit }) => {
   return (
     <div className="relative">
       <div className="space-y-2 p-2">
-        <Input
-          type="email"
-          icon={<SiMaildotru />}
-          placeholder="メールアドレス"
-        />
+        <Input type="email" icon={<AtIcon />} placeholder="メールアドレス" />
         <RichTextEditor
           className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white sp:rounded-none sp:border-none"
           editor={editor}
@@ -104,7 +99,7 @@ export const ContactForm: FC<Props> = ({ onSubmit }) => {
             onClick={handleSubmit}
             loading={isLoading}
             disabled={disabled}
-            rightIcon={<IoSend />}
+            rightIcon={<SendIcon />}
           >
             送 信
           </Button>
@@ -131,7 +126,7 @@ export const ContactForm: FC<Props> = ({ onSubmit }) => {
               <br />
               （メールアドレス必須）
             </div>
-            <MdTouchApp size={44} />
+            <TouchIcon size={44} />
           </div>
         </div>
       )}

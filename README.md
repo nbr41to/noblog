@@ -27,8 +27,10 @@
 - 謎解きギミックの追加
 - Algolia の導入
 - Image の 取得失敗時の挙動
-- QR コード
 - RichTextEditor をコンポーネント化
+- カルーセル作ってみる
+- Index のコンテンツを Notion にしてみる
+- NavMenu の上部だけを紺にしたい
 
 ## Used
 
@@ -50,7 +52,6 @@
 - [axios](https://axios-http.com/)
 - [tiptap](https://tiptap.dev/)
 - [next-seo](https://github.com/garmeeh/next-seo)
-
 - [Algolia](https://www.algolia.com/)
 
 ## ESlint
