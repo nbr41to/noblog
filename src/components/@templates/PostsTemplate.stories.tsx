@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { NotionPageObjectResponse } from '~/types/notion';
+import type {
+  NotionDatabaseProperty,
+  NotionPageObjectResponse,
+} from '~/types/notion';
 
-import examplePages from '~/mocks/notion_pages.json';
+import exampleProperties from '~/mocks/notion_database_properties.json';
+import examplePostsArray from '~/mocks/notion_posts_array.json';
 
 import { PostsTemplate as Component } from './PostsTemplate';
 
@@ -11,6 +15,7 @@ export default {
 
 export const Default: StoryObj<typeof Component> = {
   args: {
-    postsArray: [examplePages, examplePages] as NotionPageObjectResponse[][],
+    postsArray: examplePostsArray as NotionPageObjectResponse[][],
+    properties: exampleProperties as NotionDatabaseProperty,
   },
 };

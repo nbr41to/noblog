@@ -17,7 +17,7 @@ const SandboxIndex: NextPage<Props> = ({ paths }) => {
   return (
     <div>
       <PageTitle title="Sandbox" />
-      <div className="w-main mt-8 space-y-4 text-center">
+      <div className="w-main mx-auto mt-8 space-y-4 text-center">
         {paths.map((path) => (
           <Link
             key={path}

@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
 import { ReadMoreButton } from '~/commons/ReadMoreButton';
+import { GitHubIcon } from '~/components/@commons/icons';
 import { PostList } from '~/features/notionBlog/PostList';
 
 type Props = {
@@ -31,8 +32,12 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
             は本当に便利です。 また、自分の趣味の開発が手軽にできる Sandbox
             としての役割も担えるようにカスタマイズしています。
           </p>
-          <div className="text-right">
-            <ReadMoreButton href="https://github.com/nbr41to/noblog" blank />
+          <div className="ml-auto w-fit">
+            <ReadMoreButton
+              href="https://github.com/nbr41to/noblog"
+              blank
+              rightIcon={<GitHubIcon size={20} />}
+            />
           </div>
         </div>
 
@@ -46,7 +51,7 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
           <div className="mt-3">
             <PostList posts={posts} />
           </div>
-          <div className="mt-2 text-right">
+          <div className="ml-auto mt-4 w-fit">
             <ReadMoreButton href="/posts" />
           </div>
         </div>

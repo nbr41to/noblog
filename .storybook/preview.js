@@ -1,5 +1,6 @@
-import { RecoilRoot } from 'recoil';
 import '../src/styles/globals.css';
+import { RecoilRoot } from 'recoil';
+import { SessionProvider } from 'next-auth/react';
 
 export const parameters = {
   backgrounds: {
@@ -23,9 +24,11 @@ export const parameters = {
 export const decorators = [
   (Story) => {
     return (
-      <RecoilRoot>
-        <Story />
-      </RecoilRoot>
+      <SessionProvider>
+        <RecoilRoot>
+          <Story />
+        </RecoilRoot>
+      </SessionProvider>
     );
   },
 ];
