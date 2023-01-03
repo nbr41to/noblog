@@ -71,7 +71,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
             </Link>
           </div>
           <div className="mt-2 text-xs">
-            Notion API と Next.js Tailwind CSS で本格ブログを作ってみました。
+            Notion API と Next.js / Tailwind CSS で本格ブログを作ってみました。
           </div>
         </div>
         <div className="py-2 text-center text-xs font-bold text-slate-200">

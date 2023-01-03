@@ -7,9 +7,11 @@ import { SpotlightProvider } from '@mantine/spotlight';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
+import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
 
 import { SearchIcon } from '~/commons/icons';
+import { useSpotlightActions } from '~/hooks/apiHooks/useSpotlightActions';
 import { GoogleTagManager } from '~/layouts/GoogleTagManager';
 import { Layout } from '~/layouts/Layout';
 import { googleTagManagerId } from '~/types/gtm';
@@ -17,12 +19,15 @@ import { googleTagManagerId } from '~/types/gtm';
 const meta = {
   title: 'noblog',
   description:
-    'Notion API と Next.js Tailwind CSS で本格ブログを作ってみました。',
+    'Notion API と Next.js / Tailwind CSS で本格ブログを作ってみました。',
   url: 'https://www.nbr41.com/',
   image: 'https://www.nbr41.com/site_image.jpg',
 };
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [query, setQuery] = useState('');
+  const actions = useSpotlightActions(query);
+
   return (
     <>
       <GoogleTagManager gtmId={googleTagManagerId} />
@@ -63,11 +68,15 @@ export default function App({ Component, pageProps }: AppProps) {
       <SessionProvider session={pageProps.session}>
         <RecoilRoot>
           <SpotlightProvider
-            actions={[]}
+            actions={actions}
+            filter={(_, actions) => actions}
             searchIcon={<SearchIcon size={18} />}
             searchPlaceholder="Search..."
             shortcut="mod + k"
             nothingFoundMessage="Nothing found..."
+            onQueryChange={(query) => setQuery(query)}
+            withinPortal
+            highlightQuery
           >
             <NotificationsProvider position="top-center">
               <Layout {...pageProps}>

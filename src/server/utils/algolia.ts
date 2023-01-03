@@ -1,3 +1,4 @@
+import type { AlgoliaSearchObjectRequest } from '~/types/algolia';
 import type { NotionPost } from '~/types/notion';
 
 import algoliasearch from 'algoliasearch';
@@ -20,7 +21,7 @@ export const saveToAlgolia = async (post: NotionPost) => {
       })
       .join('');
 
-    const records = {
+    const records: AlgoliaSearchObjectRequest = {
       objectID: post.id,
       title: post.title,
       category: post.category,
