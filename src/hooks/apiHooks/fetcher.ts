@@ -1,4 +1,31 @@
+import { showNotification } from '@mantine/notifications';
 import axios from 'axios';
+
+axios.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    showNotification({
+      title: 'Axios Response Error:',
+      message: JSON.stringify(error),
+      color: 'red',
+    });
+  }
+);
+
+axios.interceptors.request.use(
+  (config) => {
+    return config;
+  },
+  (error) => {
+    showNotification({
+      title: 'Axios Request Error:',
+      message: JSON.stringify(error),
+      color: 'pink',
+    });
+  }
+);
 
 export const getFetcher = async (url: string) => {
   const response = await axios.get(url);
