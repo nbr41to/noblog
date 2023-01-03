@@ -15,7 +15,6 @@ import { getChildrenInBlock } from '~/server/notion/blocks';
 import { getDatabaseContentsAll } from '~/server/notion/databases';
 import { blogDatabaseId } from '~/server/notion/ids';
 import { getPage } from '~/server/notion/pages';
-import { saveToAlgolia } from '~/server/utils/algolia';
 import { setOgp } from '~/server/utils/ogp';
 import { PostDetailTemplate } from '~/templates/PostDetailTemplate';
 import { toMetaDescription, toPostMeta } from '~/utils/meta';
@@ -48,7 +47,7 @@ export const getStaticProps = async (context: { params: Params }) => {
     children: childrenWithOgp,
   };
 
-  await saveToAlgolia(post);
+  // await saveToAlgolia(post);
 
   return {
     props: {

@@ -44,13 +44,22 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
             GitHubの草w
           </h2>
           <div className="relative mx-auto h-32 w-full sp:h-20">
+            {/* <Image
+              src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
+              alt="GitHub Contributions"
+              fill
+              sizes="800px"
+              priority
+              className="h-full w-full object-contain"
+            /> */}
             <Image
               src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
               alt="GitHub Contributions"
               fill
-              sizes="(max-width: 640px) 800px, 50%"
+              sizes="800px"
               priority
               className="h-full w-full object-contain"
+              unoptimized
             />
           </div>
         </div>
