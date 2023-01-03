@@ -12,10 +12,11 @@ export const ProfileTemplate: FC = () => {
       <div className="w-main mx-auto mt-4 space-y-3 break-words rounded bg-white p-6 leading-loose sp:mt-2">
         <div className="Story relative mx-auto h-40 w-40 overflow-hidden rounded-full border-2 border-solid border-slate-300">
           <Image
+            className="object-cover"
             src="/nob_lego.jpg"
             alt="my icon"
             fill
-            className="object-cover"
+            sizes="160px"
           />
         </div>
 

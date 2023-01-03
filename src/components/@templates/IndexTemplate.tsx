@@ -23,7 +23,22 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
 
       <div className="w-main mx-auto mt-4 space-y-4 px-4 pb-10">
         <div>
-          <h2 className="text-lg font-bold">このblogについて</h2>
+          <h2 className="text-lg font-bold">最新の記事5件</h2>
+          <div className="mt-3">
+            <PostList posts={posts} />
+          </div>
+          <div className="ml-auto mt-4 w-fit">
+            <ReadMoreButton href="/posts" />
+          </div>
+        </div>
+
+        {/* <div>
+          <h2 className="text-base font-bold">今年の抱負</h2>
+          <div></div>
+        </div> */}
+
+        <div>
+          <h2 className="text-lg font-bold">この Blog について</h2>
           <p className="px-4 py-2 leading-loose">
             Next.js, TypeScript, Tailwind CSS, Mantine UI, SWR, Next Auth
             などのモダンな技術をふんだんに使って構築した Webアプリに Notion API
@@ -38,21 +53,6 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
               blank
               rightIcon={<GitHubIcon size={20} />}
             />
-          </div>
-        </div>
-
-        {/* <div>
-          <h2 className="text-base font-bold">今年の抱負</h2>
-          <div></div>
-        </div> */}
-
-        <div>
-          <h2 className="text-lg font-bold">最新の記事5件</h2>
-          <div className="mt-3">
-            <PostList posts={posts} />
-          </div>
-          <div className="ml-auto mt-4 w-fit">
-            <ReadMoreButton href="/posts" />
           </div>
         </div>
       </div>
