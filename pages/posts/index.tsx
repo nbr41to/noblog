@@ -1,13 +1,27 @@
 import type { InferGetStaticPropsType, NextPage } from 'next';
-import type { NotionPageObjectResponse } from '~/types/notion';
+import type {
+  NotionDatabaseProperty,
+  NotionPageObjectResponse,
+} from '~/types/notion';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 
+import dummy_notion_database_properties from '~/mocks/notion_database_properties.json';
+import dummy_notion_pages_array from '~/mocks/notion_pages_array.json';
 import { getDatabase, getDatabaseContentsAll } from '~/server/notion/databases';
 import { blogDatabaseId } from '~/server/notion/ids';
 import { PostsTemplate } from '~/templates/PostsTemplate';
 
 export const getStaticProps = async () => {
+  if (process.env.ENVIRONMENT === 'local') {
+    return {
+      props: {
+        postsArray: dummy_notion_pages_array as NotionPageObjectResponse[][],
+        properties: dummy_notion_database_properties as NotionDatabaseProperty,
+      },
+    };
+  }
+
   const database = await getDatabase(blogDatabaseId);
   const postsArray = await getDatabaseContentsAll({
     database_id: blogDatabaseId,

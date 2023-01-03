@@ -2,14 +2,18 @@ import type { GetStaticPaths, InferGetStaticPropsType, NextPage } from 'next';
 import type {
   NotionBlockObjectResponse,
   NotionPageObjectResponse,
+  NotionPost,
   NotionRichTextItemRequest,
 } from '~/types/notion';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 import { useComments } from '~/hooks/apiHooks/useComments';
+import dummy_notion_pages_array from '~/mocks/notion_pages_array.json';
+import dummy_notion_post from '~/mocks/notion_post.json';
 import { getChildrenInBlock } from '~/server/notion/blocks';
-import { getDatabaseContents } from '~/server/notion/databases';
+import { getDatabaseContentsAll } from '~/server/notion/databases';
+import { blogDatabaseId } from '~/server/notion/ids';
 import { getPage } from '~/server/notion/pages';
 import { setOgp } from '~/server/utils/ogp';
 import { PostDetailTemplate } from '~/templates/PostDetailTemplate';
@@ -19,6 +23,14 @@ type Params = {
   page_id: string;
 };
 export const getStaticProps = async (context: { params: Params }) => {
+  if (process.env.ENVIRONMENT === 'local') {
+    return {
+      props: {
+        post: dummy_notion_post as NotionPost,
+      },
+    };
+  }
+
   const page_id = context.params?.page_id as string;
   const page = await getPage(page_id);
   const response = await getChildrenInBlock(page_id);
@@ -44,9 +56,18 @@ export const getStaticProps = async (context: { params: Params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const response = await getDatabaseContents({
-    database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
-    page_size: 12,
+  if (process.env.ENVIRONMENT === 'local') {
+    const posts = dummy_notion_pages_array.flat() as NotionPageObjectResponse[];
+    const paths = posts.map(({ id }) => ({ params: { page_id: id } }));
+
+    return {
+      paths,
+      fallback: 'blocking', // HTMLを生成しない
+    };
+  }
+
+  const postsArray = await getDatabaseContentsAll({
+    database_id: blogDatabaseId,
     sorts: [
       {
         property: 'Date',
@@ -60,7 +81,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
       },
     },
   });
-  const posts = response.results as NotionPageObjectResponse[];
+  const posts = postsArray.flat() as NotionPageObjectResponse[];
   const paths = posts.map(({ id }) => ({ params: { page_id: id } }));
 
   return {
@@ -133,7 +154,7 @@ const Post: NextPage<Props> = ({ post }) => {
         ]}
         publisherName="Nobuyuki Kobayashi"
         publisherLogo="nob_lego.jpg"
-        description={post.description}
+        description={post?.description || ''}
         isAccessibleForFree={true}
       />
     </>
