@@ -53,6 +53,7 @@
 - [tiptap](https://tiptap.dev/)
 - [next-seo](https://github.com/garmeeh/next-seo)
 - [Algolia](https://www.algolia.com/)
+- [github-contributions-api](https://github.com/kawarimidoll/deno-github-contributions-api)
 
 ## ESlint
 
