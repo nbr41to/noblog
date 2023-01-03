@@ -9,8 +9,7 @@ import type {
 import { Pagination } from '@mantine/core';
 import { usePagination } from '@mantine/hooks';
 import Link from 'next/link';
-import { useMemo } from 'react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { PageTitle } from '~/commons/PageTitle';
 import { PostsViewControl } from '~/components/features/notionBlog/PostsViewControl';

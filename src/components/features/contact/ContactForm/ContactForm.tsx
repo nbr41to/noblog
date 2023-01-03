@@ -9,8 +9,7 @@ import Placeholder from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { useReducer } from 'react';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 
 import { AtIcon, SendIcon, TouchIcon } from '~/commons/icons';
 

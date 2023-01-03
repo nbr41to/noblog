@@ -2,8 +2,7 @@ import type { FC } from 'react';
 import type { NotionBlockObjectResponse } from '~/types/notion';
 
 import { clsx } from '@mantine/core';
-import { useState, useEffect } from 'react';
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import { inViewHeadingIdsAtom } from '~/recoil/atoms';
