@@ -40,12 +40,14 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
         >
           <h1 className="font-baloo text-4xl">noblog</h1>
         </div>
-        <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pr-0 sp:pl-4">
-          <Breadcrumbs currentPath={router.pathname} titleEnum={titleEnum} />
-        </div>
       </header>
       <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100">
-        <div className=" mx-auto max-w-[1200px]">{children}</div>
+        <div className=" mx-auto max-w-[1280px]">
+          <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pr-0 sp:pl-4">
+            <Breadcrumbs currentPath={router.pathname} titleEnum={titleEnum} />
+          </div>
+          {children}
+        </div>
         <div className="sticky bottom-0 p-4 text-right sp:p-2">
           <ScrollTopButton />
         </div>
