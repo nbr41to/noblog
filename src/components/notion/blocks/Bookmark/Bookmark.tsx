@@ -58,7 +58,12 @@ export const Bookmark: FC<Props> = ({ block }) => {
     </a>
   ) : (
     /* Loading Skeleton */
-    <article className="my-6 flex h-[120px] w-full justify-between rounded-lg border border-solid border-slate-400 bg-white">
+    <a
+      className="my-6 flex min-h-[120px] w-full cursor-pointer justify-between rounded-lg border border-solid border-slate-400 bg-slate-50 hover:bg-slate-100"
+      href={ogp.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="flex w-3/5 flex-col justify-center px-6">
         <Skeleton height={20} width="60%" />
         <Skeleton height={10} mt={10} />
@@ -67,6 +72,6 @@ export const Bookmark: FC<Props> = ({ block }) => {
       </div>
 
       <Skeleton className="h-full w-2/5 rounded-r-lg rounded-l-none" />
-    </article>
+    </a>
   );
 };

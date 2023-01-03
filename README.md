@@ -15,8 +15,6 @@
 - IP アドレスに紐づく一意性のいいね機能
 - エラーハンドリング周りの実装
 - `__tests__`の追加
-- `__mocks__`の整理
-- Category と Tag による絞り込み
 - ログイン機能（tw,gh,ggl）
 - Routing の Object を作る（titleEnum を作る）
 - meta と json-ld を整理したい
@@ -30,6 +28,7 @@
 - RichTextEditor をコンポーネント化
 - カルーセル作ってみる
 - Index のコンテンツを Notion にしてみる
+- Profile のコンテンツを Notion にしてみる
 - NavMenu の上部だけを紺にしたい
 
 ## Used
@@ -53,6 +52,7 @@
 - [tiptap](https://tiptap.dev/)
 - [next-seo](https://github.com/garmeeh/next-seo)
 - [Algolia](https://www.algolia.com/)
+- [github-contributions-api](https://github.com/kawarimidoll/deno-github-contributions-api)
 
 ## ESlint
 

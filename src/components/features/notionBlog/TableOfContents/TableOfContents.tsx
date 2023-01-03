@@ -2,8 +2,7 @@ import type { FC } from 'react';
 import type { NotionBlockObjectResponse } from '~/types/notion';
 
 import { clsx } from '@mantine/core';
-import { useState, useEffect } from 'react';
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import { inViewHeadingIdsAtom } from '~/recoil/atoms';
@@ -69,34 +68,36 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
         - Table of contents -
       </div>
       <div className="mx-auto mt-0.5 h-0.5 w-20 rounded-full bg-slate-800" />
-      <div
-        className={clsx(
-          'relative mt-4 flex max-h-[456px] flex-col gap-2 overflow-y-scroll pl-6 text-sm',
-          'before:absolute before:top-3 before:left-[3px] before:h-[calc(100%-24px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
-        )}
-      >
-        {headingList.map((item, index) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            className={clsx(
-              'text relative transition-colors duration-150 hover:text-slate-400',
-              activeIndex === index
-                ? 'font-bold text-slate-800'
-                : 'text-slate-700',
-              item.type === 'heading_3' && 'pl-2',
-              'before:absolute before:rounded-full before:border-solid before:border-white before:content-[""]',
-              item.type === 'heading_2'
-                ? 'before:top-[4px] before:-left-[26px] before:h-2 before:w-2 before:border-[2px]'
-                : 'before:top-[8px] before:-left-[23px] before:h-1 before:w-1 before:border-[1px]',
-              activeIndex < index
-                ? 'before:bg-orange-200'
-                : 'before:bg-orange-500'
-            )}
-          >
-            {item.title}
-          </a>
-        ))}
+      <div className="max-h-[456px] overflow-y-scroll">
+        <div
+          className={clsx(
+            'relative mt-4 flex flex-col gap-2 pl-6 text-sm',
+            'before:absolute before:top-3 before:left-2 before:h-[calc(100%-24px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
+          )}
+        >
+          {headingList.map((item, index) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={clsx(
+                'text relative transition-colors duration-150 hover:text-slate-400',
+                activeIndex === index
+                  ? 'font-bold text-slate-800'
+                  : 'text-slate-700',
+                item.type === 'heading_3' && 'pl-2',
+                'before:absolute before:rounded-full before:border-solid before:border-white before:content-[""]',
+                item.type === 'heading_2'
+                  ? 'before:top-[3px] before:-left-[22px] before:h-[10px] before:w-[10px] before:border-[2px]'
+                  : 'before:top-[7px] before:-left-[19px] before:h-[6px] before:w-[6px] before:border-[1px]',
+                activeIndex < index
+                  ? 'before:bg-orange-200'
+                  : 'before:border-orange-100 before:bg-orange-500'
+              )}
+            >
+              {item.title}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import type {
 } from '~/types/notion';
 
 import exampleProperties from '~/mocks/notion_database_properties.json';
-import examplePostsArray from '~/mocks/notion_posts_array.json';
+import examplePostsArray from '~/mocks/notion_pages_array.json';
 
 import { PostsTemplate as Component } from './PostsTemplate';
 

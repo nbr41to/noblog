@@ -1,8 +1,11 @@
 import type { FC } from 'react';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
+import Image from 'next/image';
+import { BsChatText } from 'react-icons/bs';
+
 import { ReadMoreButton } from '~/commons/ReadMoreButton';
-import { GitHubIcon } from '~/components/@commons/icons';
+import { BookIcon, GitHubIcon } from '~/components/@commons/icons';
 import { PostList } from '~/features/notionBlog/PostList';
 
 type Props = {
@@ -23,12 +26,32 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
 
       <div className="w-main mx-auto mt-4 space-y-4 px-4 pb-10">
         <div>
-          <h2 className="text-lg font-bold">最新の記事5件</h2>
+          <h2 className="flex items-center gap-1 text-lg font-bold">
+            最新の記事5件
+            <BookIcon size={20} />
+          </h2>
           <div className="mt-3">
             <PostList posts={posts} />
           </div>
           <div className="ml-auto mt-4 w-fit">
             <ReadMoreButton href="/posts" />
+          </div>
+        </div>
+
+        <div>
+          <h2 className="flex items-center gap-1 text-lg font-bold">
+            <GitHubIcon size={20} />
+            GitHubの草w
+          </h2>
+          <div className="relative mx-auto h-32 w-full sp:h-20">
+            <Image
+              src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
+              alt="GitHub Contributions"
+              fill
+              sizes="(max-width: 640px) 800px, 50%"
+              priority
+              className="h-full w-full object-contain"
+            />
           </div>
         </div>
 
@@ -38,7 +61,10 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
         </div> */}
 
         <div>
-          <h2 className="text-lg font-bold">この Blog について</h2>
+          <h2 className="flex items-center gap-1 text-lg font-bold">
+            この Blog について
+            <BsChatText size={20} />
+          </h2>
           <p className="px-4 py-2 leading-loose">
             Next.js, TypeScript, Tailwind CSS, Mantine UI, SWR, Next Auth
             などのモダンな技術をふんだんに使って構築した Webアプリに Notion API

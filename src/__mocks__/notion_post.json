@@ -33,6 +33,7 @@
     }
   ],
   "likes": 3,
+  "description": "なんだか話題になっているPlanetScaleですが,以前は,英語できない,DBわからない,Prisma未経験な状態で,モダンと聞いただけでPlanetScaleを始めようとしたけど,結局わからないことが多く,実用に踏み出せなかったのですが,レベルが18から24くらいに上がったことでちょっと理解できることが増えたので,改めて始め方と使い方をわかりやすくまとめて見ようと思います....",
   "children": [
     {
       "object": "block",
@@ -348,6 +349,13 @@
       "bookmark": {
         "caption": [],
         "url": "https://planetscale.com/"
+      },
+      "ogp": {
+        "url": "https://planetscale.com/",
+        "title": "PlanetScale: The world’s most advanced database platform",
+        "description": "PlanetScale is the MySQL-compatible, serverless database platform.",
+        "imageUrl": "https://planetscale.com/images/2022-social-card.jpg",
+        "faviconUrl": "https://www.google.com/s2/favicons?domain=https://planetscale.com/"
       }
     },
     {
@@ -942,8 +950,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c25f595a-57c2-4753-8d7d-6bf690059fe6/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.03.56.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=b66a1f467390aeb2438197453390c931b65bfa9d29c688c83a970bde95e54a47&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2022-12-30T17:16:42.019Z"
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c25f595a-57c2-4753-8d7d-6bf690059fe6/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.03.56.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230103%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230103T132118Z&X-Amz-Expires=3600&X-Amz-Signature=20b8bd91a5baa99ae5574ef7dd33a05295657cf8586af1f5097ecf6fc63a8e3c&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-01-03T14:21:18.552Z"
         }
       }
     },
@@ -1151,8 +1159,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c318525e-c503-4617-b0da-dea8dee36b79/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.05.04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=3640afba797fd40bc4316e06a3cc11e5ff9f964114b0758fe7ca6ecdb52af411&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2022-12-30T17:16:42.026Z"
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c318525e-c503-4617-b0da-dea8dee36b79/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.05.04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230103%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230103T132118Z&X-Amz-Expires=3600&X-Amz-Signature=d0a8f40b03b5d5c8bd62ad723b83606cce7e5158e8dd4a6cbe371885dab612f5&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-01-03T14:21:18.527Z"
         }
       }
     },
@@ -1223,8 +1231,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b434cadb-738e-404e-9092-bc0b23ef12c2/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.07.08.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=626b6ed2e7ee8610347fc59ebe498adbd4efac30177ea2e71790fa5133e9c827&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2022-12-30T17:16:42.034Z"
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b434cadb-738e-404e-9092-bc0b23ef12c2/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-29_12.07.08.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230103%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230103T132118Z&X-Amz-Expires=3600&X-Amz-Signature=ad14ed8568976121497859094cbafe14882cb445befc92c55d342f5b70259b7e&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-01-03T14:21:18.562Z"
         }
       }
     },
@@ -1439,6 +1447,13 @@
       "bookmark": {
         "caption": [],
         "url": "https://planetscale.com/cli"
+      },
+      "ogp": {
+        "url": "https://planetscale.com/cli",
+        "title": "PlanetScale CLI",
+        "description": "The MySQL-compatible serverless database platform.",
+        "imageUrl": "https://planetscale.com/images/2022-social-card.jpg",
+        "faviconUrl": "https://www.google.com/s2/favicons?domain=https://planetscale.com/cli"
       }
     },
     {
@@ -1688,8 +1703,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d1a81b94-4581-4926-a178-386f5ee0f925/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-20_13.34.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=fc2a146be6fad1dd0ad1b97ba780b555bae2cdf3611da6473b7b0fab44bcd2fb&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2022-12-30T17:16:42.034Z"
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d1a81b94-4581-4926-a178-386f5ee0f925/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-20_13.34.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230103%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230103T132118Z&X-Amz-Expires=3600&X-Amz-Signature=0c51cd95ce031bf9315c4442b0a1d61a3e4505fa059332e741d486ba20c8ef70&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-01-03T14:21:18.562Z"
         }
       }
     },
@@ -2422,6 +2437,13 @@
       "bookmark": {
         "caption": [],
         "url": "https://www.prisma.io/"
+      },
+      "ogp": {
+        "url": "https://www.prisma.io/",
+        "title": "Prisma | Next-generation ORM for Node.js & TypeScript",
+        "description": "Prisma is a next-generation Node.js and TypeScript ORM for PostgreSQL, MySQL, SQL Server, SQLite, MongoDB, and CockroachDB. It provides type-safety, automated migrations, and an intuitive data model.",
+        "imageUrl": "https://website-v8.vercel.app/og-images/og-image-prisma-index.png",
+        "faviconUrl": "https://www.google.com/s2/favicons?domain=https://www.prisma.io/"
       }
     },
     {
@@ -3918,6 +3940,13 @@
       "bookmark": {
         "caption": [],
         "url": "https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference"
+      },
+      "ogp": {
+        "url": "https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference",
+        "title": "Prisma schema API (Reference)",
+        "description": "API reference documentation for the Prisma Schema Language (PSL).",
+        "imageUrl": "https://www.prisma.io/docs/social/docs-social.png",
+        "faviconUrl": "https://www.google.com/s2/favicons?domain=https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference"
       }
     },
     {
@@ -4357,8 +4386,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/84033505-875c-452a-86ec-84c94ff3a681/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-20_16.09.51.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221230%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221230T161642Z&X-Amz-Expires=3600&X-Amz-Signature=725ee76ff467c7ab0cc5421a07e2856a992682cfeb3d360fe95b3ef3bb64ca6d&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2022-12-30T17:16:42.039Z"
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/84033505-875c-452a-86ec-84c94ff3a681/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-03-20_16.09.51.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230103%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230103T132118Z&X-Amz-Expires=3600&X-Amz-Signature=19997afd24b8c422fe00b8914622a961f486df62d212b0b0fb929a7918ab0a40&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-01-03T14:21:18.557Z"
         }
       }
     }

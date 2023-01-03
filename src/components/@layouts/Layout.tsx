@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 
 import { ScrollTopButton } from '~/components/@layouts/ScrollTopButton';
+import { SearchButton } from '~/components/@layouts/SearchButton';
 import { Breadcrumbs } from '~/layouts/Breadcrumbs';
 
 import { NavMenu } from './NavMenu';
@@ -29,8 +30,11 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
 
   return (
     <div className="bg-orange-100">
-      <div className="fixed z-50">
+      <div className="fixed z-50 flex w-full items-start justify-between">
         <NavMenu />
+        <div className="hidden p-2 md:block">
+          <SearchButton />
+        </div>
       </div>
 
       <header className="">
@@ -67,7 +71,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
             </Link>
           </div>
           <div className="mt-2 text-xs">
-            Notion API と Next.js Tailwind CSS で本格ブログを作ってみました。
+            Notion API と Next.js / Tailwind CSS で本格ブログを作ってみました。
           </div>
         </div>
         <div className="py-2 text-center text-xs font-bold text-slate-200">
