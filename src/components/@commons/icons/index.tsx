@@ -14,6 +14,7 @@ import {
   BsYoutube as YouTubeIcon,
   BsChatText as ChatTextIcon,
 } from 'react-icons/bs';
+import { CgDanger as DangerIcon } from 'react-icons/cg';
 import {
   FaBook as BookIcon,
   FaTheaterMasks as DummyIcon,
@@ -38,6 +39,7 @@ import {
   MdNotInterested as StopIcon,
   MdTouchApp as TouchIcon,
 } from 'react-icons/md';
+import { RxUpdate as UpdateIcon } from 'react-icons/rx';
 import {
   SiLine as LineIcon,
   SiMaildotru as AtIcon,
@@ -58,6 +60,7 @@ export {
   CheckedBoxIcon,
   ColorGoogleIcon,
   CowIcon,
+  DangerIcon,
   DummyIcon,
   ExperimentIcon,
   FilterIcon,
@@ -82,6 +85,7 @@ export {
   TouchIcon,
   TwitterIcon,
   UnCheckedBoxIcon,
+  UpdateIcon,
   YouTubeIcon,
   ZennIcon,
 };

@@ -4,8 +4,8 @@ import type { NotionPageObjectResponse } from '~/types/notion';
 import Image from 'next/image';
 import { BsChatText } from 'react-icons/bs';
 
+import { BookIcon, GitHubIcon } from '~/commons/icons';
 import { ReadMoreButton } from '~/commons/ReadMoreButton';
-import { BookIcon, GitHubIcon } from '~/components/@commons/icons';
 import { PostList } from '~/features/notionBlog/PostList';
 
 type Props = {
