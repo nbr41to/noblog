@@ -1,5 +1,5 @@
-import type { ViewControl } from './PostsViewControl';
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ViewControl } from '~/types/form';
 import type { NotionBlogPropertiesWithCount } from '~/types/notion';
 
 import { useState } from 'react';
