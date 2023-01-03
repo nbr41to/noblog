@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <SessionProvider session={pageProps.session}>
         <RecoilRoot>
-          <NotificationsProvider>
+          <NotificationsProvider position="top-center">
             <Layout {...pageProps}>
               <Component {...pageProps} />
             </Layout>

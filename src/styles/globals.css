@@ -99,4 +99,12 @@ body::before {
     @apply max-w-[800px];
     @apply mx-auto;
   }
+  .border-box {
+    @apply border-solid;
+    @apply border;
+    @apply border-slate-800;
+    @apply px-4;
+    @apply py-3;
+    @apply rounded;
+  }
 }
