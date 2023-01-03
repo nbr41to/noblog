@@ -3,11 +3,13 @@ import '~/styles/globals.css';
 import type { AppProps } from 'next/app';
 
 import { NotificationsProvider } from '@mantine/notifications';
+import { SpotlightProvider } from '@mantine/spotlight';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
 
+import { SearchIcon } from '~/commons/icons';
 import { GoogleTagManager } from '~/layouts/GoogleTagManager';
 import { Layout } from '~/layouts/Layout';
 import { googleTagManagerId } from '~/types/gtm';
@@ -60,11 +62,19 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <SessionProvider session={pageProps.session}>
         <RecoilRoot>
-          <NotificationsProvider position="top-center">
-            <Layout {...pageProps}>
-              <Component {...pageProps} />
-            </Layout>
-          </NotificationsProvider>
+          <SpotlightProvider
+            actions={[]}
+            searchIcon={<SearchIcon size={18} />}
+            searchPlaceholder="Search..."
+            shortcut="mod + k"
+            nothingFoundMessage="Nothing found..."
+          >
+            <NotificationsProvider position="top-center">
+              <Layout {...pageProps}>
+                <Component {...pageProps} />
+              </Layout>
+            </NotificationsProvider>
+          </SpotlightProvider>
         </RecoilRoot>
       </SessionProvider>
     </>

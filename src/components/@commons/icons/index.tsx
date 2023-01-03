@@ -19,6 +19,7 @@ import {
   FaTheaterMasks as DummyIcon,
 } from 'react-icons/fa';
 import { FcGoogle as ColorGoogleIcon } from 'react-icons/fc';
+import { FiSearch as SearchIcon } from 'react-icons/fi';
 import { GiCow as CowIcon } from 'react-icons/gi';
 import {
   HiArrowCircleUp as ArrowCircleUpIcon,
@@ -74,6 +75,7 @@ export {
   OutlineBlockIcon,
   ProfileIcon,
   QrCodeIcon,
+  SearchIcon,
   SendIcon,
   StopIcon,
   TbExternalLinkIcon,

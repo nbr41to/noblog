@@ -148,8 +148,8 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
               color="orange"
               label={
                 <div className="space-y-3 p-2 text-center text-sm">
-                  <Kbd>{os === 'macos' ? 'Cmd' : 'Ctrl'}</Kbd> +{' '}
-                  <Kbd>Enter</Kbd> でも送信できます。
+                  <Kbd>{os === 'windows' ? 'Ctrl' : '⌘'} + Enter</Kbd>
+                  でも送信できます。
                 </div>
               }
             >

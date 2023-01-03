@@ -25,6 +25,7 @@ import {
   OutlineBlockIcon,
   ProfileIcon,
   QrCodeIcon,
+  SearchIcon,
   SendIcon,
   StopIcon,
   TbExternalLinkIcon,
@@ -76,6 +77,7 @@ export const Default: StoryObj<{ size: number }> = {
       <OutlineBlockIcon size={args.size} />
       <ProfileIcon size={args.size} />
       <QrCodeIcon size={args.size} />
+      <SearchIcon size={args.size} />
       <SendIcon size={args.size} />
       <StopIcon size={args.size} />
       <TbExternalLinkIcon size={args.size} />
