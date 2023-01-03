@@ -95,8 +95,21 @@ body::before {
 }
 @layer utilities {
   .w-main {
-    @apply min-w-[375px];
     @apply max-w-[800px];
-    @apply mx-auto;
+    @apply min-w-[375px];
+  }
+  .w-aside {
+    @apply w-[254px];
+    @apply min-w-[254px];
+    @apply hidden;
+    @apply md:block;
+  }
+  .border-box {
+    @apply border-solid;
+    @apply border;
+    @apply border-slate-800;
+    @apply px-4;
+    @apply py-3;
+    @apply rounded;
   }
 }

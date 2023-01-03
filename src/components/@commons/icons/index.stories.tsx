@@ -9,6 +9,7 @@ import {
   CowIcon,
   DummyIcon,
   ExperimentIcon,
+  FilterIcon,
   GitHubIcon,
   GitHubOctocatIcon,
   GridIcon,
@@ -57,6 +58,7 @@ export const Default: StoryObj<{ size: number }> = {
       <CowIcon size={args.size} />
       <DummyIcon size={args.size} />
       <ExperimentIcon size={args.size} />
+      <FilterIcon size={args.size} />
       <GitHubIcon size={args.size} />
       <GitHubOctocatIcon size={args.size} />
       <GridIcon size={args.size} />

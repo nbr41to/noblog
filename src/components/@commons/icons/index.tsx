@@ -5,6 +5,7 @@ export {
 } from 'react-icons/ai';
 export {
   BsFillPersonLinesFill as ProfileIcon,
+  BsFilterCircleFill as FilterIcon,
   BsGithub as GitHubIcon,
   BsGrid as GridIcon,
   BsHeartFill as HeartIcon,

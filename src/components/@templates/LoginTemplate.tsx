@@ -23,7 +23,7 @@ export const LoginTemplate: FC = () => {
   return (
     <div>
       <PageTitle title="login" />
-      <div className="w-main mt-4 flex items-center justify-center">
+      <div className="w-main mx-auto mt-4 flex items-center justify-center">
         <div className="w-min">
           <div className="h-5 text-xs">
             {session && `${provider}でログイン中 [${session?.user?.name}]`}

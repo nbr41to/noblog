@@ -1,0 +1,588 @@
+{
+  "categories": [
+    {
+      "id": "122b3c88-c8c7-4251-8390-fd2ce812a69e",
+      "name": "interested",
+      "color": "yellow",
+      "count": 2
+    },
+    {
+      "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+      "name": "programming",
+      "color": "green",
+      "count": 51
+    },
+    {
+      "id": "b78423e9-9bdd-4b2a-a781-a51174123fd4",
+      "name": "technology",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "c9324e00-72b3-4a13-8cc5-74cc287c8ebe",
+      "name": "Awareness",
+      "color": "orange",
+      "count": 7
+    },
+    {
+      "id": "eef9bf32-8179-4961-9141-aac53eae8b1f",
+      "name": "psychology",
+      "color": "blue",
+      "count": 3
+    }
+  ],
+  "tags": [
+    {
+      "id": "b700367e-19d5-4b69-8e39-3749d56339a1",
+      "name": "CSS",
+      "color": "blue",
+      "count": 6
+    },
+    {
+      "id": "0ae1fc7b-4c1b-4d09-be4b-335860ed33fa",
+      "name": "JavaScript",
+      "color": "yellow",
+      "count": 12
+    },
+    {
+      "id": "ba35a9c1-90c1-4efb-8498-91b7720e1cc2",
+      "name": "TypeScript",
+      "color": "green",
+      "count": 15
+    },
+    {
+      "id": "9c28cc5d-875d-4046-9949-c44627b0bfff",
+      "name": "Array",
+      "color": "orange",
+      "count": 2
+    },
+    {
+      "id": "5f2e7a5a-9fad-4dae-83ff-4b79907fa5e4",
+      "name": "Date",
+      "color": "blue",
+      "count": 1
+    },
+    {
+      "id": "f394f7ea-4422-4600-bf10-5ea5134366c7",
+      "name": "Next.js",
+      "color": "gray",
+      "count": 6
+    },
+    {
+      "id": "4cdad181-5ae3-4b9c-81d7-f7df160d0879",
+      "name": "Node.js",
+      "color": "green",
+      "count": 5
+    },
+    {
+      "id": "dbb69094-65bd-43f7-b949-8e65246a6f14",
+      "name": "git",
+      "color": "orange",
+      "count": 2
+    },
+    {
+      "id": "0aba24c9-5663-444b-b835-9b3693989f26",
+      "name": "GitHub",
+      "color": "default",
+      "count": 5
+    },
+    {
+      "id": "d7423c45-da1b-4bf4-bf64-e2e5bea0078d",
+      "name": "npm",
+      "color": "red",
+      "count": 2
+    },
+    {
+      "id": "61318e99-6666-417d-98f2-794add64841c",
+      "name": "viewport-extra",
+      "color": "brown",
+      "count": 0
+    },
+    {
+      "id": "958357ec-6806-4d93-a665-2a5f63ee7b44",
+      "name": "ogp-parser",
+      "color": "gray",
+      "count": 1
+    },
+    {
+      "id": "08d356f6-2544-4d68-b03b-8788874dfd08",
+      "name": "Firebase",
+      "color": "orange",
+      "count": 2
+    },
+    {
+      "id": "12f5a2df-6725-4ed0-b607-7ceca64547a9",
+      "name": "Firestore",
+      "color": "blue",
+      "count": 2
+    },
+    {
+      "id": "944f19a5-9724-401b-b342-31da0604ed2b",
+      "name": "heroku",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "6a6e0823-3ba3-4f8a-b9ad-113407df345b",
+      "name": "html2canvas",
+      "color": "pink",
+      "count": 1
+    },
+    {
+      "id": "409faf8d-8aa8-4dae-a9dc-6ee61441cdd7",
+      "name": "SSG",
+      "color": "default",
+      "count": 1
+    },
+    {
+      "id": "76f10717-ad92-46b5-a14b-c6b7e4b89075",
+      "name": "OGP",
+      "color": "yellow",
+      "count": 1
+    },
+    {
+      "id": "dd1b981c-3b23-4bfa-aaff-d50feb143511",
+      "name": "Zenn",
+      "color": "blue",
+      "count": 1
+    },
+    {
+      "id": "e25f84c4-46d5-418d-9ab1-8358e6b54a86",
+      "name": "Slack",
+      "color": "green",
+      "count": 1
+    },
+    {
+      "id": "428f3a02-40bd-4a83-b816-16c9d191b66c",
+      "name": "MENSA",
+      "color": "gray",
+      "count": 1
+    },
+    {
+      "id": "5e6270c1-6c94-412b-aa52-299c6a64df02",
+      "name": "筋トレ",
+      "color": "default",
+      "count": 1
+    },
+    {
+      "id": "bf0d9149-b117-4725-918b-318a12444968",
+      "name": "マインドフルネス",
+      "color": "green",
+      "count": 1
+    },
+    {
+      "id": "01c382a3-d49c-407a-8483-e59dcd9c9a25",
+      "name": "ACT",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "id": "cccdd7ab-2445-47c5-b8ee-aeb375899537",
+      "name": "習慣",
+      "color": "blue",
+      "count": 1
+    },
+    {
+      "id": "806b81e5-a85f-46ae-9602-5d9d351b4953",
+      "name": "Notion",
+      "color": "default",
+      "count": 2
+    },
+    {
+      "id": "1b3c8222-2beb-4880-a1e1-cadd9329fdc0",
+      "name": "Notion API",
+      "color": "red",
+      "count": 2
+    },
+    {
+      "id": "36b2c18b-b523-4a00-a6bd-dc0aef75932d",
+      "name": "Blog",
+      "color": "default",
+      "count": 1
+    },
+    {
+      "id": "d3c18b63-20b4-45b5-a9a0-91ca211519d0",
+      "name": "思考法",
+      "color": "green",
+      "count": 4
+    },
+    {
+      "id": "79579319-8174-4c09-9e29-e63aa359edf0",
+      "name": "Vercel",
+      "color": "default",
+      "count": 1
+    },
+    {
+      "id": "434760eb-3af7-4c28-b032-2ee8304db7f1",
+      "name": "Babel",
+      "color": "purple",
+      "count": 2
+    },
+    {
+      "id": "3d4f734f-2e91-4e09-96ad-2ab3892150ad",
+      "name": "GitHub Actions",
+      "color": "purple",
+      "count": 2
+    },
+    {
+      "id": "3f3dac51-0a5a-4da5-a14c-553059906cdc",
+      "name": "マシュマロ・テスト",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "id": "16942bc6-4fc1-407e-be1e-bf2766c9f35d",
+      "name": "行動原理",
+      "color": "red",
+      "count": 1
+    },
+    {
+      "id": "143d1251-7705-48c2-ade9-ee4809cb70cc",
+      "name": "JSON",
+      "color": "red",
+      "count": 1
+    },
+    {
+      "id": "7a2de02d-7f0e-4a6d-be61-a362e46a410e",
+      "name": "回復浴",
+      "color": "brown",
+      "count": 0
+    },
+    {
+      "id": "65b56c96-726d-4e09-9792-26a55d82001c",
+      "name": "Google Analytics",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "id": "04f15639-c934-4a34-89e2-91332a244894",
+      "name": "shortid",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "369a9aa8-8adc-4053-b762-9e30c879c757",
+      "name": "gitkeep",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "e49e1c0b-8b26-4d39-b627-1fb0339edb85",
+      "name": "普通",
+      "color": "brown",
+      "count": 1
+    },
+    {
+      "id": "fad8e024-e68b-4cf1-a508-8c8aa4d483a8",
+      "name": "文化",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "id": "f2802e12-0da3-4a8a-81d5-d9fa2dd6c279",
+      "name": "椅子",
+      "color": "yellow",
+      "count": 1
+    },
+    {
+      "id": "047a9daf-5a9f-432e-9ae1-9c93f6ecf147",
+      "name": "横スクロール",
+      "color": "red",
+      "count": 1
+    },
+    {
+      "id": "e7e83f5d-ec29-4a6a-a33c-3128e003811f",
+      "name": "型ガード",
+      "color": "brown",
+      "count": 1
+    },
+    {
+      "id": "c88c930c-0032-43e5-abb1-39c9118245c4",
+      "name": "俯瞰",
+      "color": "pink",
+      "count": 2
+    },
+    {
+      "id": "1f140bb8-5e5a-44bf-8e97-d2007694772c",
+      "name": "Diary",
+      "color": "red",
+      "count": 1
+    },
+    {
+      "id": "0af83441-7a07-4e2b-9221-d0d021de49d4",
+      "name": "deploy",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "81378eab-de17-4d78-9a8f-37189fdb0387",
+      "name": "React",
+      "color": "blue",
+      "count": 5
+    },
+    {
+      "id": "a24daf11-67ad-492f-8757-db47f8c9957f",
+      "name": "FC",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "eafe87f0-5670-4d3f-beec-49cdc2bb24f2",
+      "name": "VFC",
+      "color": "green",
+      "count": 1
+    },
+    {
+      "id": "3ad4be39-272b-4f8d-8a64-33e93899c870",
+      "name": "children",
+      "color": "red",
+      "count": 1
+    },
+    {
+      "id": "c8f87ba2-040d-42e2-853d-8a866a7dde59",
+      "name": "感想文",
+      "color": "green",
+      "count": 3
+    },
+    {
+      "id": "f86f2960-f186-4c4b-873a-598cc5b8c7c9",
+      "name": "nodemon",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "5710efc6-6b23-4eda-9aef-6abcac2f163d",
+      "name": "ES6",
+      "color": "pink",
+      "count": 1
+    },
+    {
+      "id": "555a3df1-e692-4944-bf85-52df04e63c30",
+      "name": "CLI",
+      "color": "brown",
+      "count": 1
+    },
+    {
+      "id": "1ff5fb88-bba4-4be2-9fa2-93fdca452c03",
+      "name": "ターミナル",
+      "color": "blue",
+      "count": 1
+    },
+    {
+      "id": "c6768107-44c7-46e4-be5a-53fc3508565b",
+      "name": "不安",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "60c99fad-cb9a-4b1e-a770-94647e6ec19f",
+      "name": "コミュニケーション",
+      "color": "green",
+      "count": 1
+    },
+    {
+      "id": "38a9c0fd-7784-4761-882d-f65564c89e84",
+      "name": "チームマネジメント",
+      "color": "yellow",
+      "count": 1
+    },
+    {
+      "id": "bb6ad70a-081b-4cc5-9790-30b1f7962f99",
+      "name": "useEffect",
+      "color": "green",
+      "count": 1
+    },
+    {
+      "id": "1007b75d-06a2-4184-b564-9518e183ef94",
+      "name": "useMemo",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "9252a4ad-9082-49c4-ac9a-6d52b778746a",
+      "name": "useState",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "id": "5c0ccf37-f018-4efc-a3ac-0ae79c4dcbcc",
+      "name": "Webサイト",
+      "color": "default",
+      "count": 0
+    },
+    {
+      "id": "493765a9-b072-49d9-9dd8-00b8292ac50a",
+      "name": "metaタグ",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "id": "4293ce36-df80-4b9a-bae8-a3af2dc25f74",
+      "name": "HTML",
+      "color": "green",
+      "count": 2
+    },
+    {
+      "id": "31a27ed2-c0c9-4e5e-bfa0-e30894aa9542",
+      "name": "TailWindCSS",
+      "color": "blue",
+      "count": 4
+    },
+    {
+      "id": "926d3851-02a8-4e84-ace0-a2961d5a1833",
+      "name": "Prettier",
+      "color": "pink",
+      "count": 1
+    },
+    {
+      "id": "8782ded4-0f0a-49b1-86d1-e7a4035152e3",
+      "name": "Twitter",
+      "color": "red",
+      "count": 2
+    },
+    {
+      "id": "eb35fab1-7aca-451a-b250-549cc4e8a1bb",
+      "name": "MDX",
+      "color": "purple",
+      "count": 0
+    },
+    {
+      "id": "21a7ff2a-5d45-4357-a4a0-a8f07df21eb3",
+      "name": "undefined",
+      "color": "default",
+      "count": 1
+    },
+    {
+      "id": "53e0efb2-0741-445d-9f9f-dd2c956a2b99",
+      "name": "image",
+      "color": "brown",
+      "count": 1
+    },
+    {
+      "id": "45eb372f-680f-4193-a61b-3b4d549b4a9b",
+      "name": "Prisma",
+      "color": "default",
+      "count": 2
+    },
+    {
+      "id": "02202173-0d09-4ae3-88e0-b923a68fe6ac",
+      "name": "tsconfig",
+      "color": "brown",
+      "count": 2
+    },
+    {
+      "id": "417f1259-1477-4cc6-8672-8132d084cb75",
+      "name": "scroll",
+      "color": "yellow",
+      "count": 1
+    },
+    {
+      "id": "1e731601-3304-4802-9d82-432c27e6751c",
+      "name": "HTMLElement",
+      "color": "gray",
+      "count": 1
+    },
+    {
+      "id": "5a6083d4-f90b-44b6-a92e-aec2bf22dea3",
+      "name": "IntrinsicElements",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "id": "cba09295-99aa-458c-b5cf-4d9ca303d9d6",
+      "name": "Raycast",
+      "color": "yellow",
+      "count": 0
+    },
+    {
+      "id": "7235ad2b-5fd3-432c-924a-8b8f17473177",
+      "name": "Utility Types",
+      "color": "purple",
+      "count": 2
+    },
+    {
+      "id": "76c5fdbf-aac9-4ea8-a6d4-5117193ddc70",
+      "name": "Extract",
+      "color": "yellow",
+      "count": 1
+    },
+    {
+      "id": "2b799179-22c8-4f16-a685-a9b87bbc65a1",
+      "name": "catch",
+      "color": "yellow",
+      "count": 1
+    },
+    {
+      "id": "4e8a6f85-21c8-43a4-a25a-234e1d2b13c3",
+      "name": "useUnknownInCatchVariables",
+      "color": "gray",
+      "count": 1
+    },
+    {
+      "id": "441679bb-271b-437f-ac61-e0ce5ebaae72",
+      "name": "PlanetScale",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "54a0a4e3-d2c4-4b0a-980f-2bfb7e2445eb",
+      "name": "SQL",
+      "color": "green",
+      "count": 1
+    },
+    {
+      "id": "82192079-2b43-45b9-a07e-57fb1aa654c0",
+      "name": "Flutter",
+      "color": "default",
+      "count": 1
+    },
+    {
+      "id": "0d97374e-4b97-4f4f-ba4d-20ed42344cd5",
+      "name": "Dart",
+      "color": "red",
+      "count": 1
+    },
+    {
+      "id": "308adc25-ed46-4e7a-9595-20bb83c16eb1",
+      "name": "DnD",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "fe9c7856-0644-466a-8018-4e95da7496d0",
+      "name": "python",
+      "color": "blue",
+      "count": 0
+    },
+    {
+      "id": "2328bf4f-0136-4957-8946-63b104a458e7",
+      "name": "Axios",
+      "color": "blue",
+      "count": 1
+    },
+    {
+      "id": "41fc5cee-2590-4fd6-8b2e-a786e737383f",
+      "name": "Tuple",
+      "color": "pink",
+      "count": 1
+    },
+    {
+      "id": "c7b0c78b-50aa-4278-82a1-02ea9aa5d55b",
+      "name": "dialog",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "cc6a95b8-6a8f-4465-83ee-1c897b05c5bd",
+      "name": "modal",
+      "color": "purple",
+      "count": 1
+    },
+    {
+      "id": "1d7a53d8-5c9a-4df4-bdf5-61b7fcfe9858",
+      "name": "forwordRef",
+      "color": "orange",
+      "count": 1
+    }
+  ]
+}

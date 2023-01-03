@@ -15,7 +15,7 @@ import { googleTagManagerId } from '~/types/gtm';
 const meta = {
   title: 'noblog',
   description:
-    'ライフハックとプログラミングのことをつぶやいてます。Notionで書いた内容が記事になっています。',
+    'Notion API と Next.js Tailwind CSS で本格ブログを作ってみました。',
   url: 'https://www.nbr41.com/',
   image: 'https://www.nbr41.com/site_image.jpg',
 };
@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <SessionProvider session={pageProps.session}>
         <RecoilRoot>
-          <NotificationsProvider>
+          <NotificationsProvider position="top-center">
             <Layout {...pageProps}>
               <Component {...pageProps} />
             </Layout>

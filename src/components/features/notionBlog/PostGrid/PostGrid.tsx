@@ -9,7 +9,7 @@ type Props = {
 
 export const PostGrid: FC<Props> = ({ posts }) => {
   return (
-    <div className="flex flex-wrap justify-center gap-3">
+    <div className="flex w-fit flex-wrap justify-center gap-3">
       {posts.map((post) => (
         <PostGridItem key={post.id} post={post} />
       ))}

@@ -20,12 +20,12 @@ type Props = {
 
 export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
   return (
-    <div className="px-8 sp:px-0">
-      <h1 className="my-8 text-3xl sp:my-0 sp:px-4 sp:pb-4 sp:text-xl">
+    <div className="px-6 sp:px-0">
+      <h1 className="py-8 text-center text-3xl sp:p-4 sp:text-xl">
         {post.title}
       </h1>
 
-      <div className="flex justify-between gap-6">
+      <div className="flex justify-center gap-6">
         <div className="w-main flex flex-col gap-6 sp:gap-4">
           <div className="hidden sp:block">
             <PostMeta meta={post} commentCount={comments.length} />
@@ -38,7 +38,7 @@ export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
           <CommentForm onSubmit={onSubmit} />
         </div>
 
-        <div className="hidden min-w-[254px] md:block">
+        <div className="w-aside">
           <Bio />
           <div className="sticky top-4 mt-4 space-y-4">
             <TableOfContents blocks={post.children} />

@@ -4,11 +4,10 @@ import type { NotionBlockObjectResponse } from '~/types/notion';
 import { TableOfContents } from '~/components/features/notionBlog/TableOfContents';
 import { NotionBlockPreview } from '~/features/sandbox/NotionBlockPreview';
 import { getChildrenInBlock } from '~/server/notion/blocks';
+import { previewPageId } from '~/server/notion/ids';
 
 export const getStaticProps = async () => {
-  const response = await getChildrenInBlock(
-    process.env.NOTION_PREVIEW_PAGE_ID || ''
-  );
+  const response = await getChildrenInBlock(previewPageId);
 
   return {
     props: {
@@ -27,8 +26,8 @@ const NotionBlockPreviewPage: NextPage<Props> = ({ blocks }) => {
         Preview
       </p>
 
-      <div className="flex justify-between gap-6">
-        <div className="hidden w-72 md:block">
+      <div className="flex justify-center gap-6">
+        <div className="w-aside">
           <TableOfContents
             blocks={blocks.filter((block) => {
               if (
@@ -45,6 +44,7 @@ const NotionBlockPreviewPage: NextPage<Props> = ({ blocks }) => {
             isAll
           />
         </div>
+
         <div className="w-main">
           <NotionBlockPreview blocks={blocks} />
         </div>

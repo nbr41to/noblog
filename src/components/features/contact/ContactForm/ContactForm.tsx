@@ -38,7 +38,7 @@ export const ContactForm: FC<Props> = ({ onSubmit }) => {
     if (disabled) return;
     setIsLoading(true);
 
-    const completed = true;
+    const completed = false;
     if (completed) {
       // eslint-disable-next-line no-console
       console.log(onSubmit);

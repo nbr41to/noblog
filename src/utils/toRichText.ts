@@ -10,6 +10,9 @@ const initAnnotations = {
   color: 'default',
 };
 
+/**
+ * TiptapのRichTextEditorから受け取ったJSONをNotionのRichTextの形式に変換する
+ */
 export const toRichText = (
   tiptapJson: TiptapJson
 ): NotionRichTextItemRequest[] => {
