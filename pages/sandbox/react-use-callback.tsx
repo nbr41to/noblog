@@ -29,7 +29,7 @@ const ReactUseCallback: NextPage = () => {
     <div>
       <PageTitle title="React.useCallback" />
 
-      <div className="w-main mt-8 space-y-3">
+      <div className="w-main mx-auto mt-8 space-y-3">
         <Prism language="javascript">
           {`const [parentState, setParentState] = useState(false);
 const [count, setCount] = useState(0);`}

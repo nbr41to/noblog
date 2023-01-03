@@ -23,7 +23,7 @@ const ReactUseMemo: NextPage = () => {
   return (
     <div>
       <PageTitle title="React.useMemo" />
-      <div className="w-main mt-8 space-y-3">
+      <div className="w-main mx-auto mt-8 space-y-3">
         <Button onClick={() => setCount(count + 1)}>count: {count}</Button>
 
         <Prism language="javascript">

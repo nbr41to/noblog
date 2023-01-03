@@ -20,7 +20,7 @@ type Props = {
 
 export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
   return (
-    <div className="px-8 sp:px-0">
+    <div className="px-6 sp:px-0">
       <h1 className="py-8 text-center text-3xl sp:p-4 sp:text-xl">
         {post.title}
       </h1>
@@ -38,7 +38,7 @@ export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
           <CommentForm onSubmit={onSubmit} />
         </div>
 
-        <div className="w-aside hidden md:block">
+        <div className="w-aside">
           <Bio />
           <div className="sticky top-4 mt-4 space-y-4">
             <TableOfContents blocks={post.children} />

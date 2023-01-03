@@ -21,7 +21,7 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
         </div>
       </div>
 
-      <div className="w-main mt-4 space-y-4 px-4 pb-10">
+      <div className="w-main mx-auto mt-4 space-y-4 px-4 pb-10">
         <div>
           <h2 className="text-lg font-bold">このblogについて</h2>
           <p className="px-4 py-2 leading-loose">

@@ -26,8 +26,8 @@ const NotionBlockPreviewPage: NextPage<Props> = ({ blocks }) => {
         Preview
       </p>
 
-      <div className="flex justify-between gap-6">
-        <div className="hidden w-72 md:block">
+      <div className="flex justify-center gap-6">
+        <div className="w-aside">
           <TableOfContents
             blocks={blocks.filter((block) => {
               if (

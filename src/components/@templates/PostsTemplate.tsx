@@ -71,7 +71,7 @@ export const PostsTemplate: FC<Props> = ({ postsArray, properties }) => {
   );
 
   return (
-    <div className="">
+    <div className="px-6 sp:px-0">
       <PageTitle title="Notion Blogs" />
 
       <div className="mx-auto w-fit py-4">

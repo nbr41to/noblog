@@ -12,7 +12,7 @@ export const ContactTemplate: FC<Props> = ({ onSubmit }) => {
   return (
     <div>
       <PageTitle title="Contact" />
-      <div className="w-main mt-6 space-y-8">
+      <div className="w-main mx-auto mt-6 space-y-8">
         <ContactBySns />
         <ContactForm onSubmit={onSubmit} />
       </div>
