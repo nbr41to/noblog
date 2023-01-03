@@ -14,7 +14,7 @@ const url = '/api/notion-blog/comments';
 
 export const useComments = (page_id: string) => {
   const { data, isLoading, error, mutate } = useSWR<NotionListCommentsResponse>(
-    page_id ? `${url}?page_id=${page_id}` : null,
+    page_id && page_id !== '[page_id]' ? `${url}?page_id=${page_id}` : null,
     getFetcher
   );
   const revalidate = useCallback(() => mutate(), [mutate]);
