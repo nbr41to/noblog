@@ -7,10 +7,17 @@ import { SpotlightProvider } from '@mantine/spotlight';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useMemo, useState } from 'react';
 import { RecoilRoot } from 'recoil';
 
-import { SearchIcon } from '~/commons/icons';
+import {
+  BookIcon,
+  ExperimentIcon,
+  HomeIcon,
+  MailIcon,
+  SearchIcon,
+} from '~/commons/icons';
 import { useSpotlightActions } from '~/hooks/apiHooks/useSpotlightActions';
 import { GoogleTagManager } from '~/layouts/GoogleTagManager';
 import { Layout } from '~/layouts/Layout';
@@ -25,6 +32,32 @@ const meta = {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const defaultActions = useMemo(
+    () => [
+      {
+        title: 'Home',
+        icon: <HomeIcon size={24} />,
+        onTrigger: () => router.push('/'),
+      },
+      {
+        title: 'Blog',
+        icon: <BookIcon size={20} className="mx-0.5" />,
+        onTrigger: () => router.push('/posts'),
+      },
+      {
+        title: 'Sandbox',
+        icon: <ExperimentIcon size={24} />,
+        onTrigger: () => router.push('/sandbox'),
+      },
+      {
+        title: 'Contact',
+        icon: <MailIcon size={24} />,
+        onTrigger: () => router.push('/contact'),
+      },
+    ],
+    [router]
+  );
   const [query, setQuery] = useState('');
   const actions = useSpotlightActions(query);
 
@@ -68,15 +101,29 @@ export default function App({ Component, pageProps }: AppProps) {
       <SessionProvider session={pageProps.session}>
         <RecoilRoot>
           <SpotlightProvider
+            shortcut="mod + k"
             actions={actions}
-            filter={(_, actions) => actions}
+            filter={(q, actions) => {
+              const filteredDefaultActions = defaultActions.filter(
+                (action) =>
+                  action.title.toLowerCase().indexOf(q.toLowerCase()) !== -1
+              );
+
+              return [...filteredDefaultActions, ...actions];
+            }}
+            limit={20}
             searchIcon={<SearchIcon size={18} />}
             searchPlaceholder="Search..."
-            shortcut="mod + k"
             nothingFoundMessage="Nothing found..."
-            onQueryChange={(query) => setQuery(query)}
             withinPortal
             highlightQuery
+            overlayOpacity={0.3}
+            onQueryChange={(query) => setQuery(query)}
+            styles={{
+              spotlight: {
+                maxHeight: '60vh',
+              },
+            }}
           >
             <NotificationsProvider position="top-center">
               <Layout {...pageProps}>

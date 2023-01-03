@@ -1,5 +1,4 @@
 import type { SpotlightAction } from '@mantine/spotlight';
-import type { AlgoliaSearchObjectResponse } from '~/types/algolia';
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -18,23 +17,20 @@ export const useSpotlightActions = (query: string) => {
 
     const getResult = setTimeout(() => {
       (async () => {
-        const response = await searchAlgolia(query);
-        const actions = (response.hits as AlgoliaSearchObjectResponse[]).map(
-          (hit) => ({
-            title: hit.title,
-            description: hit.category + ', ' + hit.tags.join(', '),
-
-            onTrigger: () =>
-              router.push({
-                pathname: '/posts/[page_id]',
-                query: { page_id: hit.objectID },
-              }),
-          })
-        );
+        const hits = await searchAlgolia(query);
+        const actions = hits.map((hit) => ({
+          title: hit.title,
+          description: hit.category + ', ' + hit.tags.join(', '),
+          onTrigger: () =>
+            router.push({
+              pathname: '/posts/[page_id]',
+              query: { page_id: hit.objectID },
+            }),
+        }));
 
         setActions(actions);
       })();
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(getResult);
   }, [query, router]);

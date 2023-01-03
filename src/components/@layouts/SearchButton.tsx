@@ -17,7 +17,10 @@ export const SearchButton: FC = () => {
     >
       <SearchIcon size={18} />
       Search
-      <Kbd className="py-0.5 text-[10px]" color="dark">
+      <Kbd
+        className="border-slate-400 bg-slate-800 py-0.5 text-xs text-white"
+        color="dark"
+      >
         {os === 'windows' ? 'Ctrl' : '⌘'} + K
       </Kbd>
     </button>
