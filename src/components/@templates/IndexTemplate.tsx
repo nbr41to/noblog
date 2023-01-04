@@ -4,8 +4,8 @@ import type { NotionPageObjectResponse } from '~/types/notion';
 import Image from 'next/image';
 import { BsChatText } from 'react-icons/bs';
 
+import { BookIcon, GitHubIcon } from '~/commons/icons';
 import { ReadMoreButton } from '~/commons/ReadMoreButton';
-import { BookIcon, GitHubIcon } from '~/components/@commons/icons';
 import { PostList } from '~/features/notionBlog/PostList';
 
 type Props = {
@@ -44,13 +44,22 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
             GitHubの草w
           </h2>
           <div className="relative mx-auto h-32 w-full sp:h-20">
+            {/* <Image
+              src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
+              alt="GitHub Contributions"
+              fill
+              sizes="800px"
+              priority
+              className="h-full w-full object-contain"
+            /> */}
             <Image
               src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
               alt="GitHub Contributions"
               fill
-              sizes="(max-width: 640px) 800px, 50%"
+              sizes="800px"
               priority
               className="h-full w-full object-contain"
+              unoptimized
             />
           </div>
         </div>

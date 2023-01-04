@@ -12,7 +12,6 @@
 ### Todo
 
 - Comments 表示の Loading を表示してみる
-- IP アドレスに紐づく一意性のいいね機能
 - エラーハンドリング周りの実装
 - `__tests__`の追加
 - ログイン機能（tw,gh,ggl）
@@ -24,7 +23,6 @@
 - Tweets list の追加
 - 謎解きギミックの追加
 - Algolia の導入
-- Image の 取得失敗時の挙動
 - RichTextEditor をコンポーネント化
 - カルーセル作ってみる
 - Index のコンテンツを Notion にしてみる

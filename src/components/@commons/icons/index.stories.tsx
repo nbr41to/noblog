@@ -8,6 +8,7 @@ import {
   CheckedBoxIcon,
   ColorGoogleIcon,
   CowIcon,
+  DangerIcon,
   DummyIcon,
   ExperimentIcon,
   FilterIcon,
@@ -32,6 +33,7 @@ import {
   TouchIcon,
   TwitterIcon,
   UnCheckedBoxIcon,
+  UpdateIcon,
   YouTubeIcon,
   ZennIcon,
 } from '.';
@@ -60,6 +62,7 @@ export const Default: StoryObj<{ size: number }> = {
       <CheckedBoxIcon size={args.size} />
       <ColorGoogleIcon size={args.size} />
       <CowIcon size={args.size} />
+      <DangerIcon size={args.size} />
       <DummyIcon size={args.size} />
       <ExperimentIcon size={args.size} />
       <FilterIcon size={args.size} />
@@ -84,6 +87,7 @@ export const Default: StoryObj<{ size: number }> = {
       <TouchIcon size={args.size} />
       <TwitterIcon size={args.size} />
       <UnCheckedBoxIcon size={args.size} />
+      <UpdateIcon size={args.size} />
       <YouTubeIcon size={args.size} />
       <ZennIcon size={args.size} />
     </div>
