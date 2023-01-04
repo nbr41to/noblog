@@ -40,7 +40,7 @@ export const PostDetailTemplate: FC<Props> = ({ post, comments, onSubmit }) => {
 
         <div className="w-aside">
           <Bio />
-          <div className="sticky top-16 mt-4 space-y-4">
+          <div className="sticky top-[52px] mt-4 space-y-4">
             <TableOfContents blocks={post.children} />
             <PostMeta meta={post} commentCount={comments.length} />
           </div>

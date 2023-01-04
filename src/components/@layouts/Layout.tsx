@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import type { NotionPost } from '~/types/notion';
 
+import { clsx } from '@mantine/core';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -30,19 +31,22 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
 
   return (
     <div className="bg-orange-100">
-      <div className="fixed z-50 flex w-full items-start justify-between">
+      <div className="fixed z-50 flex w-fit items-start justify-between">
         <NavMenu />
-        <div className="hidden p-2 md:block">
-          <SearchButton />
-        </div>
+      </div>
+      <div className="fixed right-2 top-2 z-50 hidden w-fit md:block">
+        <SearchButton />
       </div>
 
-      <header className="">
+      <header className="py-1">
         <div
-          className="mx-auto w-fit cursor-pointer py-4"
+          className={clsx(
+            'mx-auto w-fit cursor-pointer py-4',
+            'hover:title-drop-shadow transition duration-1000 ease-in hover:text-white'
+          )}
           onClick={() => router.push('/')}
         >
-          <h1 className="font-baloo text-4xl">noblog</h1>
+          <h1 className="font-baloo text-[42px] leading-none">noblog</h1>
         </div>
       </header>
       <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100">
@@ -64,6 +68,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
               alt="site logo"
               width={32}
               height={32}
+              sizes="265px"
               priority
             />
             <Link href="/" className="font-baloo text-3xl text-white">

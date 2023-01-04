@@ -28,6 +28,7 @@
 - Index のコンテンツを Notion にしてみる
 - Profile のコンテンツを Notion にしてみる
 - NavMenu の上部だけを紺にしたい
+- SSR やりたい
 
 ## Used
 
