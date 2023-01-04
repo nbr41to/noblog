@@ -13,7 +13,7 @@ export const ProfileTemplate: FC = () => {
         <div className="Story relative mx-auto h-40 w-40 overflow-hidden rounded-full border-2 border-solid border-slate-300">
           <Image
             className="object-cover"
-            src="/nob_lego.jpg"
+            src="/nob_lego_sm.png"
             alt="my icon"
             fill
             sizes="160px"

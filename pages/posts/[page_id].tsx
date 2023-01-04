@@ -146,16 +146,10 @@ const Post: NextPage<Props> = ({ post }) => {
         dateModified={post.updatedAt}
         authorName={[
           {
-            name: 'noblog',
-            url: 'https://www.nbr41.com',
-          },
-          {
             name: 'Nobuyuki Kobayashi',
             url: 'https://www.nbr41.com',
           },
         ]}
-        publisherName="Nobuyuki Kobayashi"
-        publisherLogo="nob_lego.jpg"
         description={post?.description || ''}
         isAccessibleForFree={true}
       />

@@ -28,7 +28,7 @@ const meta = {
   description:
     'Notion API と Next.js / Tailwind CSS で本格ブログを作ってみました。',
   url: 'https://www.nbr41.com/',
-  image: 'https://www.nbr41.com/site_image.jpg',
+  image: 'https://www.nbr41.com/noblog.png',
 };
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -80,7 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
               width: 800,
               height: 600,
               alt: 'Site Image',
-              type: 'image/jpeg',
+              type: 'image/png',
             },
           ],
         }}

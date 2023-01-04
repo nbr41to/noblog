@@ -66,7 +66,7 @@ const PostIndex: NextPage<Props> = ({ postsArray, properties }) => {
         type="BlogPosting"
         title="Blog | noblog"
         url="https://www.nbr41.com/posts/"
-        images={['https://www.nbr41.com/site_image.jpg']}
+        images={['https://www.nbr41.com/noblog.png']}
         datePublished="2015-02-05T08:00:00+08:00"
         dateModified={postsArray[0][0].last_edited_time}
         authorName="Nobuyuki Kobayashi"

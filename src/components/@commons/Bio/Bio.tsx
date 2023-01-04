@@ -33,7 +33,7 @@ export const Bio: FC = () => {
         <div className="relative h-14 w-14  rounded-full border border-solid border-slate-400">
           <Image
             className="rounded-full object-cover"
-            src="/nob_lego.jpg"
+            src="/nob_lego_sm.png"
             alt="my icon"
             fill
             sizes="100px"
