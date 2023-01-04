@@ -15,7 +15,7 @@ type Props = {
 export const IndexTemplate: FC<Props> = ({ posts }) => {
   return (
     <div>
-      <div className="w-full bg-slate-800 py-8 text-orange-100">
+      <div className="mt-2 w-full bg-slate-800 py-8 text-orange-100">
         <div className="mx-auto w-fit text-right">
           <div className="font-sans text-4xl font-bold sp:text-3xl">
             Obedience to Curiosity
@@ -44,21 +44,13 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
             GitHubの草w
           </h2>
           <div className="relative mx-auto h-32 w-full sp:h-20">
-            {/* <Image
-              src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
-              alt="GitHub Contributions"
-              fill
-              sizes="800px"
-              priority
-              className="h-full w-full object-contain"
-            /> */}
             <Image
+              className="h-full w-full object-contain"
               src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
               alt="GitHub Contributions"
               fill
               sizes="800px"
               priority
-              className="h-full w-full object-contain"
               unoptimized
             />
           </div>
