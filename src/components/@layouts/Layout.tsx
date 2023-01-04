@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import type { NotionPost } from '~/types/notion';
 
+import { clsx } from '@mantine/core';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -37,12 +38,15 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
         <SearchButton />
       </div>
 
-      <header className="">
+      <header className="py-1">
         <div
-          className="mx-auto w-fit cursor-pointer py-4"
+          className={clsx(
+            'mx-auto w-fit cursor-pointer py-4',
+            'hover:title-drop-shadow transition duration-1000 ease-in hover:text-white'
+          )}
           onClick={() => router.push('/')}
         >
-          <h1 className="font-baloo text-4xl">noblog</h1>
+          <h1 className="font-baloo text-[42px] leading-none">noblog</h1>
         </div>
       </header>
       <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100">
