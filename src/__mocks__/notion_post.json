@@ -2,7 +2,11 @@
   "id": "73b2db87-4404-4ba4-96ac-a1e04e727dbb",
   "icon": "🕐",
   "title": "PlanetScaleをNext.jsとPrismaで始める",
-  "category": "programming",
+  "category": {
+    "id": "e381f544-13d5-405e-bdfb-e7fc36146921",
+    "name": "programming",
+    "color": "blue"
+  },
   "date": "2022-05-16",
   "updatedAt": "2022-09-12",
   "tags": [

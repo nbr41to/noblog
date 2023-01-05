@@ -3,15 +3,15 @@ import type { NotionBlockObjectResponse } from '~/types/notion';
 
 import { TableOfContents } from '~/components/features/notionBlog/TableOfContents';
 import { NotionBlockPreview } from '~/features/sandbox/NotionBlockPreview';
-import { getChildrenInBlock } from '~/server/notion/blocks';
+import { getChildrenAllInBlock } from '~/server/notion/blocks';
 import { previewPageId } from '~/server/notion/ids';
 
 export const getStaticProps = async () => {
-  const response = await getChildrenInBlock(previewPageId);
+  const response = await getChildrenAllInBlock(previewPageId);
 
   return {
     props: {
-      blocks: response.results as NotionBlockObjectResponse[],
+      blocks: response as NotionBlockObjectResponse[],
     },
   };
 };

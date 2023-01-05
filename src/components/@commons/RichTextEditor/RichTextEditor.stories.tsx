@@ -1,4 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
+
+import { useEditor } from '@tiptap/react';
 
 import { RichTextEditor as Component } from './RichTextEditor';
 
@@ -6,9 +8,8 @@ export default {
   component: Component,
 } as Meta<typeof Component>;
 
-export const Default: StoryObj<typeof Component> = {
-  args: {
-    placeholder: 'ここに入力',
-    hotkey: 'mod+enter',
-  },
+export const Default: StoryFn<typeof Component> = (args) => {
+  const editor = useEditor();
+
+  return <Component {...args} editor={editor} />;
 };

@@ -23,7 +23,7 @@
       {
         "type": "text",
         "text": {
-          "content": "宇宙ペンギンの画像[caution]",
+          "content": "宇宙ペンギンの画像:[caution]",
           "link": null
         },
         "annotations": {
@@ -34,13 +34,13 @@
           "code": false,
           "color": "default"
         },
-        "plain_text": "宇宙ペンギンの画像[caution]",
+        "plain_text": "宇宙ペンギンの画像:[caution]",
         "href": null
       }
     ],
     "type": "file",
     "file": {
-      "url": "https://picsum.photos/1000/2000",
+      "url": "https://picsum.photos/2000/1000",
       "expiry_time": "2022-12-23T09:55:00.005Z"
     }
   }

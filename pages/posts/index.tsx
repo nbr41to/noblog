@@ -22,8 +22,8 @@ export const getStaticProps = async () => {
     };
   }
 
-  const database = await getDatabase(blogDatabaseId);
-  const postsArray = await getDatabaseContentsAll({
+  const { properties } = await getDatabase(blogDatabaseId);
+  const postsArray = (await getDatabaseContentsAll({
     database_id: blogDatabaseId,
     page_size: 12,
     sorts: [
@@ -33,17 +33,27 @@ export const getStaticProps = async () => {
       },
     ],
     filter: {
-      property: 'Status',
-      select: {
-        equals: 'PUBLISH',
-      },
+      and: [
+        {
+          property: 'Status',
+          select: {
+            equals: 'PUBLISH',
+          },
+        },
+        {
+          property: 'Date',
+          date: {
+            is_not_empty: true,
+          },
+        },
+      ],
     },
-  });
+  })) as NotionPageObjectResponse[][];
 
   return {
     props: {
-      postsArray: postsArray as NotionPageObjectResponse[][],
-      properties: database.properties,
+      postsArray,
+      properties,
     },
     revalidate: 60 * 60 * 24, // 1日
   };

@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
     };
   }
 
-  const response = await getDatabaseContents({
+  const { results } = await getDatabaseContents({
     database_id: process.env.NOTION_BLOG_DATABASE_ID || '',
     page_size: 5,
     sorts: [
@@ -24,16 +24,26 @@ export const getStaticProps = async () => {
       },
     ],
     filter: {
-      property: 'Status',
-      select: {
-        equals: 'PUBLISH',
-      },
+      and: [
+        {
+          property: 'Status',
+          select: {
+            equals: 'PUBLISH',
+          },
+        },
+        {
+          property: 'Date',
+          date: {
+            is_not_empty: true,
+          },
+        },
+      ],
     },
   });
 
   return {
     props: {
-      posts: response.results as NotionPageObjectResponse[],
+      posts: results as NotionPageObjectResponse[],
     },
     revalidate: 60 * 60 * 24, // 1日
   };

@@ -1,33 +1,16 @@
+import type { Editor } from '@tiptap/react';
 import type { FC } from 'react';
 
 import { getHotkeyHandler } from '@mantine/hooks';
-import { RichTextEditor as TiptapRichTextEditor, Link } from '@mantine/tiptap';
-import Placeholder from '@tiptap/extension-placeholder';
-import Underline from '@tiptap/extension-underline';
-import { useEditor } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
+import { RichTextEditor as TiptapRichTextEditor } from '@mantine/tiptap';
 
 type Props = {
-  placeholder?: string;
-  onSubmit: () => Promise<void>;
+  editor: Editor | null;
+  onSubmit?: () => Promise<void>;
   hotkey?: string;
 };
 
-export const RichTextEditor: FC<Props> = ({
-  placeholder,
-  onSubmit,
-  hotkey,
-}) => {
-  const editor = useEditor({
-    extensions: [
-      StarterKit,
-      Underline,
-      Link,
-      Placeholder.configure({ placeholder }),
-    ],
-    content: '',
-  });
-
+export const RichTextEditor: FC<Props> = ({ editor, onSubmit, hotkey }) => {
   return (
     <TiptapRichTextEditor
       className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white sp:rounded-none sp:border-none"

@@ -35,7 +35,12 @@ export const Image: FC<Props> = ({ block }) => {
       {isError && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <div className="mx-auto mt-1 w-60 text-sm line-clamp-1">{url}</div>
+            <div
+              className="mx-auto mt-1 w-60 text-ellipsis text-sm line-clamp-1"
+              title={url}
+            >
+              {url}
+            </div>
             <div className="item-center mt-2 flex gap-2 text-2xl font-bold">
               <DangerIcon size={36} />
               画像の取得に失敗しました 🥺

@@ -22,13 +22,13 @@
   - https://www.newt.so/docs/tutorials/vercel-og-image-generation
 - Tweets list の追加
 - 謎解きギミックの追加
-- Algolia の導入
 - RichTextEditor をコンポーネント化
 - カルーセル作ってみる
 - Index のコンテンツを Notion にしてみる
 - Profile のコンテンツを Notion にしてみる
 - NavMenu の上部だけを紺にしたい
 - SSR やりたい
+- 便利なメソッドを Utils UI としてを実装し, 謎解きのギミックに使う
 
 ## Used
 

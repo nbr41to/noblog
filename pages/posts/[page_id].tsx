@@ -11,10 +11,11 @@ import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { useComments } from '~/hooks/apiHooks/useComments';
 import dummy_notion_pages_array from '~/mocks/notion_pages_array.json';
 import dummy_notion_post from '~/mocks/notion_post.json';
-import { getChildrenInBlock } from '~/server/notion/blocks';
+import { getChildrenAllInBlock } from '~/server/notion/blocks';
 import { getDatabaseContentsAll } from '~/server/notion/databases';
 import { blogDatabaseId } from '~/server/notion/ids';
 import { getPage } from '~/server/notion/pages';
+import { saveToAlgolia } from '~/server/utils/algolia';
 import { setOgp } from '~/server/utils/ogp';
 import { PostDetailTemplate } from '~/templates/PostDetailTemplate';
 import { toMetaDescription, toPostMeta } from '~/utils/meta';
@@ -32,22 +33,20 @@ export const getStaticProps = async (context: { params: Params }) => {
   }
 
   const page_id = context.params?.page_id as string;
-  const page = await getPage(page_id);
-  const response = await getChildrenInBlock(page_id);
+  const page = (await getPage(page_id)) as NotionPageObjectResponse;
+  const children = (await getChildrenAllInBlock(
+    page_id
+  )) as NotionBlockObjectResponse[];
 
-  const childrenWithOgp = await setOgp(
-    response.results as NotionBlockObjectResponse[]
-  );
+  const childrenWithOgp = await setOgp(children);
 
   const post = {
-    ...toPostMeta(page as NotionPageObjectResponse),
-    description: toMetaDescription(
-      response.results as NotionBlockObjectResponse[]
-    ),
+    ...toPostMeta(page),
+    description: toMetaDescription(children),
     children: childrenWithOgp,
   };
 
-  // await saveToAlgolia(post);
+  await saveToAlgolia(post);
 
   return {
     props: {
