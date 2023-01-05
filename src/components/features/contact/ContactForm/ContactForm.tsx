@@ -2,9 +2,8 @@ import type { FC } from 'react';
 import type { NotionRichTextItemRequest } from '~/types/notion';
 
 import { Button, clsx, Input } from '@mantine/core';
-import { getHotkeyHandler } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { Link, RichTextEditor } from '@mantine/tiptap';
+import { Link } from '@mantine/tiptap';
 import Placeholder from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
 import { useEditor } from '@tiptap/react';
@@ -12,6 +11,7 @@ import StarterKit from '@tiptap/starter-kit';
 import { useReducer, useState } from 'react';
 
 import { AtIcon, SendIcon, TouchIcon } from '~/commons/icons';
+import { RichTextEditor } from '~/components/@commons/RichTextEditor';
 
 type Props = {
   onSubmit: (rich_text: NotionRichTextItemRequest[]) => Promise<void>;
@@ -44,7 +44,7 @@ export const ContactForm: FC<Props> = ({ onSubmit }) => {
     } else {
       showNotification({
         title: 'フォーム機能は現在準備中です。',
-        message: 'フォーム機能は現在準備中です。',
+        message: 'すんまそん🥹',
       });
     }
     setIsLoading(false);
@@ -55,44 +55,10 @@ export const ContactForm: FC<Props> = ({ onSubmit }) => {
       <div className="space-y-2 p-2">
         <Input type="email" icon={<AtIcon />} placeholder="メールアドレス" />
         <RichTextEditor
-          className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white sp:rounded-none sp:border-none"
           editor={editor}
-          onKeyDown={getHotkeyHandler([['mod+Enter', handleSubmit]])}
-          styles={{
-            content: {
-              minHeight: '220px',
-            },
-          }}
-        >
-          <RichTextEditor.Toolbar sticky stickyOffset={0} className="sp:hidden">
-            <RichTextEditor.ControlsGroup>
-              <RichTextEditor.Bold />
-              <RichTextEditor.Italic />
-              <RichTextEditor.Underline />
-              <RichTextEditor.Strikethrough />
-              <RichTextEditor.Code />
-              <RichTextEditor.ClearFormatting />
-            </RichTextEditor.ControlsGroup>
-
-            <RichTextEditor.ControlsGroup>
-              <RichTextEditor.H1 />
-              <RichTextEditor.H2 />
-              <RichTextEditor.H3 />
-            </RichTextEditor.ControlsGroup>
-
-            <RichTextEditor.ControlsGroup>
-              <RichTextEditor.Blockquote />
-              <RichTextEditor.Hr />
-              <RichTextEditor.BulletList />
-              <RichTextEditor.OrderedList />
-              <RichTextEditor.Link />
-              <RichTextEditor.Unlink />
-            </RichTextEditor.ControlsGroup>
-          </RichTextEditor.Toolbar>
-
-          <RichTextEditor.Content onClick={() => editor?.commands.focus()} />
-        </RichTextEditor>
-
+          hotkey="mod+Enter"
+          onSubmit={handleSubmit}
+        />
         <div className="mt-2 flex items-center justify-end gap-3">
           <Button
             onClick={handleSubmit}

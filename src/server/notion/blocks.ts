@@ -1,5 +1,7 @@
 import type {
   AppendBlockChildrenParameters,
+  ListBlockChildrenParameters,
+  ListBlockChildrenResponse,
   UpdateBlockParameters,
 } from '@notionhq/client/build/src/api-endpoints';
 
@@ -27,11 +29,32 @@ export const updateBlock = async (params: UpdateBlockParameters) =>
  * @param block_id BlockのID
  * @param page_size 取得するchildrenの上限
  */
-export const getChildrenInBlock = async (block_id: string, page_size = 100) =>
-  notion.blocks.children.list({
-    block_id,
-    page_size,
-  });
+export const getChildrenInBlock = async (params: ListBlockChildrenParameters) =>
+  notion.blocks.children.list(params);
+/**
+ * Blockの中のchildrenをすべて取得
+ * @param block_id BlockのID
+ * @param page_size 取得するchildrenの上限
+ */
+export const getChildrenAllInBlock = async (block_id: string) => {
+  const blocks = [];
+  let nextCursor: string | undefined = undefined;
+
+  do {
+    const response: ListBlockChildrenResponse = await getChildrenInBlock({
+      block_id,
+      start_cursor: nextCursor,
+    });
+    blocks.push(response.results);
+    if (response.has_more && response.next_cursor) {
+      nextCursor = response.next_cursor;
+    } else {
+      nextCursor = undefined;
+    }
+  } while (nextCursor);
+
+  return blocks.flat();
+};
 
 /**
  * childrenにBlockを追加

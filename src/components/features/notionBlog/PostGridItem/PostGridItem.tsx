@@ -26,7 +26,7 @@ export const PostGridItem: FC<Props> = ({ post }) => {
           </div>
           <div className="text-right text-sm">
             <div>{meta.date}</div>
-            <div className="font-bold">{meta.category}</div>
+            <div className="font-bold">{meta.category.name}</div>
           </div>
         </div>
 

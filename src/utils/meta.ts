@@ -19,7 +19,11 @@ export const toPostMeta = (page: PageObjectResponse): NotionPostMeta => {
     throw new Error('Likes is not number');
 
   const title = properties.Title.title[0].plain_text;
-  const category = properties.Category.select?.name || 'カテゴリなし';
+  const category = properties.Category.select || {
+    id: '',
+    name: 'カテゴリなし',
+    color: 'default',
+  };
   const date = properties.Date.date?.start || '日付なし';
   const updatedAt = last_edited_time.substring(0, 10);
   const tags = properties.Tags.multi_select;

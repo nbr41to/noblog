@@ -25,7 +25,7 @@ export const PostsViewControl: FC<Props> = ({
   value,
   onChange,
 }) => {
-  const [visibleAllTags, setVisibleAllTags] = useState(false);
+  const [visibleAllTags, setVisibleAllTags] = useState(true);
 
   return (
     <div className="space-y-3">

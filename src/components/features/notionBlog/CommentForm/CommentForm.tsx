@@ -1,10 +1,16 @@
 import type { FC } from 'react';
 import type { NotionRichTextItemRequest } from '~/types/notion';
 
-import { ActionIcon, Button, Kbd, Tooltip } from '@mantine/core';
-import { getHotkeyHandler, useOs } from '@mantine/hooks';
+import {
+  ActionIcon,
+  Button,
+  Kbd,
+  LoadingOverlay,
+  Tooltip,
+} from '@mantine/core';
+import { useOs } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { Link, RichTextEditor } from '@mantine/tiptap';
+import { Link } from '@mantine/tiptap';
 import Placeholder from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
 import { useEditor } from '@tiptap/react';
@@ -14,6 +20,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { LogoutIcon, SendIcon } from '~/commons/icons';
+import { RichTextEditor } from '~/components/@commons/RichTextEditor';
 import { toRichText } from '~/utils/toRichText';
 import { baseUrl } from '~/utils/url';
 
@@ -64,7 +71,11 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
   };
 
   return (
-    <div className="">
+    <div className="relative">
+      <LoadingOverlay
+        visible={typeof session === 'undefined'}
+        overlayBlur={2}
+      />
       {!session ? (
         <div className="sp:px-4">
           <Button fullWidth onClick={toLoginPage}>
@@ -74,47 +85,10 @@ export const CommentForm: FC<Props> = ({ onSubmit }) => {
       ) : (
         <div>
           <RichTextEditor
-            className="max-h-[600px] min-h-[280px] overflow-y-scroll bg-white sp:rounded-none sp:border-none"
             editor={editor}
-            onKeyDown={getHotkeyHandler([['mod+Enter', handleSubmit]])}
-            styles={{
-              content: {
-                minHeight: '220px',
-              },
-            }}
-          >
-            <RichTextEditor.Toolbar
-              sticky
-              stickyOffset={0}
-              className="sp:hidden"
-            >
-              <RichTextEditor.ControlsGroup>
-                <RichTextEditor.Bold />
-                <RichTextEditor.Italic />
-                <RichTextEditor.Underline />
-                <RichTextEditor.Strikethrough />
-                <RichTextEditor.Code />
-                <RichTextEditor.ClearFormatting />
-              </RichTextEditor.ControlsGroup>
-
-              <RichTextEditor.ControlsGroup>
-                <RichTextEditor.H1 />
-                <RichTextEditor.H2 />
-                <RichTextEditor.H3 />
-              </RichTextEditor.ControlsGroup>
-
-              <RichTextEditor.ControlsGroup>
-                <RichTextEditor.Blockquote />
-                <RichTextEditor.Hr />
-                <RichTextEditor.BulletList />
-                <RichTextEditor.OrderedList />
-                <RichTextEditor.Link />
-                <RichTextEditor.Unlink />
-              </RichTextEditor.ControlsGroup>
-            </RichTextEditor.Toolbar>
-
-            <RichTextEditor.Content onClick={() => editor?.commands.focus()} />
-          </RichTextEditor>
+            onSubmit={handleSubmit}
+            hotkey="mod+Enter"
+          />
 
           <div className="mt-2 flex items-center justify-end gap-3">
             <div className="pl-2 text-sm font-bold text-slate-400">

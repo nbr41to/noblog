@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import { HeartIcon } from '~/commons/icons';
 import { useLikes } from '~/hooks/apiHooks/useLikes';
+import { notionColorToMantineColor } from '~/utils/color';
 
 type Props = {
   meta: NotionPostMeta;
@@ -61,14 +62,23 @@ export const PostMeta: FC<Props> = ({ meta, commentCount }) => {
 
       <div className="font-bold">
         カテゴリ:{' '}
-        <Badge color="orange" className=" lowercase">
-          {meta.category}
+        <Badge
+          className="lowercase"
+          variant="filled"
+          color={notionColorToMantineColor(meta.category.color)}
+        >
+          {meta.category.name}
         </Badge>
       </div>
       <div className="space-x-1 space-y-1 font-bold">
         タグ:{' '}
         {meta.tags.map((tag) => (
-          <Badge key={tag.id} className=" lowercase">
+          <Badge
+            key={tag.id}
+            className="lowercase"
+            variant="outline"
+            color={notionColorToMantineColor(tag.color)}
+          >
             {tag.name}
           </Badge>
         ))}

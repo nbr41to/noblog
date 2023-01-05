@@ -24,7 +24,7 @@ export const saveToAlgolia = async (post: NotionPost) => {
     const records: AlgoliaSearchObjectRequest = {
       objectID: post.id,
       title: post.title,
-      category: post.category,
+      category: post.category.name,
       tags: post.tags.map((tag) => tag.name),
       body,
     };

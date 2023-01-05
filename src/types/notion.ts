@@ -35,7 +35,7 @@ export type NotionPostMeta = {
   icon: string;
   title: string;
   description?: string;
-  category: string;
+  category: NotionSelectPropertyResponse;
   date: string;
   updatedAt: string;
   tags: NotionSelectPropertyResponse[];
