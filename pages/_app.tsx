@@ -16,6 +16,7 @@ import {
   ExperimentIcon,
   HomeIcon,
   MailIcon,
+  ProfileIcon,
   SearchIcon,
 } from '~/commons/icons';
 import { useSpotlightActions } from '~/hooks/apiHooks/useSpotlightActions';
@@ -37,23 +38,34 @@ export default function App({ Component, pageProps }: AppProps) {
     () => [
       {
         title: 'Home',
-        icon: <HomeIcon size={24} />,
+        description:
+          'サイトのトップページに移動します。サイトロゴをクリックすることでも移動できます。',
+        icon: <HomeIcon size={28} />,
         onTrigger: () => router.push('/'),
       },
       {
-        title: 'Blog',
-        icon: <BookIcon size={20} className="mx-0.5" />,
+        title: 'Blogs',
+        description: 'ブログの記事一覧ページに移動します。',
+        icon: <BookIcon size={28} />,
         onTrigger: () => router.push('/posts'),
       },
       {
-        title: 'Sandbox',
-        icon: <ExperimentIcon size={24} />,
-        onTrigger: () => router.push('/sandbox'),
+        title: 'Profile',
+        description: 'サイト作成者のプロフィール詳細ページに移動します。',
+        icon: <ProfileIcon size={28} />,
+        onTrigger: () => router.push('/profile'),
       },
       {
         title: 'Contact',
-        icon: <MailIcon size={24} />,
+        description: 'サイト作成者と連絡を取りたい方はこちら',
+        icon: <MailIcon size={28} />,
         onTrigger: () => router.push('/contact'),
+      },
+      {
+        title: 'Sandbox',
+        description: 'サイト作成者が好き勝手遊んでいる実験用のページ',
+        icon: <ExperimentIcon size={28} />,
+        onTrigger: () => router.push('/sandbox'),
       },
     ],
     [router]
