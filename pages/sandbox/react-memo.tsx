@@ -5,6 +5,7 @@ import type { NextPage } from 'next';
 
 import { Button } from '@mantine/core';
 import { Prism } from '@mantine/prism';
+import Head from 'next/head';
 import { memo, useState } from 'react';
 
 import { PageTitle } from '~/commons/PageTitle';
@@ -18,6 +19,9 @@ const ReactMemo: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       <PageTitle title="React.memo" />
 
       <div className="w-main mx-auto mt-8 space-y-3">

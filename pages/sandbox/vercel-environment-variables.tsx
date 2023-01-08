@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 
+import Head from 'next/head';
+
 import { PageTitle } from '~/commons/PageTitle';
 
 const variableKeys = [
@@ -20,6 +22,9 @@ const variableKeys = [
 const ReactUseMemo: NextPage = () => {
   return (
     <div>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       <PageTitle title="Vercel Environment Variables" />
       <div className="w-main mx-auto mt-8 space-y-3">
         <a
