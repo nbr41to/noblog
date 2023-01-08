@@ -28,6 +28,7 @@
 - SSR やりたい
 - 便利なメソッドを Utils UI としてを実装し, 謎解きのギミックに使う
 - トグル Block の対応
+- Oura Ring API の追加
 
 ## Used
 

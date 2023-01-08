@@ -95,8 +95,8 @@ body::before {
 }
 @layer utilities {
   .title-drop-shadow {
-    filter: drop-shadow(-1px -1px 2px rgb(0 0 0 / 0.2))
-      drop-shadow(4px 4px #1e293b);
+    filter: drop-shadow(-1px -1px 2px rgb(0 0 0 / 0.1))
+      drop-shadow(3px 3px #1e293b);
   }
   .w-main {
     @apply max-w-[800px];
