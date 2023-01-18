@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 /* eslint-disable react/display-name */
 
-import type { NextPage } from 'next';
+'use client';
 
 import { Button } from '@mantine/core';
 import { Prism } from '@mantine/prism';
@@ -13,7 +13,7 @@ import { memo, useCallback, useState } from 'react';
 import { PageTitle } from '~/commons/PageTitle';
 import { useNoticeRendering } from '~/hooks/useReanderNotificate';
 
-const ReactUseCallback: NextPage = () => {
+const ReactUseCallback = () => {
   const [parentState, setParentState] = useState(false);
   const [count, setCount] = useState(0);
 

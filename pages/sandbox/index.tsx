@@ -1,37 +1,96 @@
 import type { InferGetStaticPropsType, NextPage } from 'next';
 
+import { Select } from '@mantine/core';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
 
 import { PageTitle } from '~/commons/PageTitle';
 import { getFileNames } from '~/server/utils/getFileNames';
 
 export const getStaticProps = async () => {
   const paths = getFileNames('./pages/sandbox', ['index']);
+  const appPaths = getFileNames('./app/sandbox', ['layout']);
 
-  return { props: { paths } };
+  return {
+    props: {
+      paths: {
+        pages: paths,
+        app: appPaths,
+      },
+    },
+  };
 };
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const SandboxIndex: NextPage<Props> = ({ paths }) => {
+  const router = useRouter();
+  const selectRef = useRef<HTMLInputElement>(null);
+  const onChange = (value: string) => {
+    router.push(`/sandbox/${value}`);
+  };
+
+  /* SelectをFocus */
+  useEffect(() => {
+    if (!selectRef.current) return;
+    selectRef.current.focus();
+  }, []);
+
   return (
     <>
       <Head>
         <meta name="robots" content="noindex" />
       </Head>
-      <div>
+
+      <div className="w-main mx-auto space-y-8 px-4">
         <PageTitle title="Sandbox" />
-        <div className="w-main mx-auto mt-8 space-y-4 text-center">
-          {paths.map((path) => (
-            <Link
-              key={path}
-              href={`/sandbox/${path}`}
-              className="block font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105"
-            >
-              {path}
-            </Link>
-          ))}
+        <Select
+          ref={selectRef}
+          tabIndex={0}
+          className="mx-auto w-80"
+          label="Select page"
+          placeholder="Pick one"
+          searchable
+          data={[
+            ...paths.pages.map((path) => ({ value: path, label: path })),
+            ...paths.app.map((path) => ({
+              value: path,
+              label: path + ' (app)',
+            })),
+          ]}
+          onChange={onChange}
+        />
+
+        <div>
+          <h3 className="font-baloo text-2xl">pages -</h3>
+          <div className="w-main mx-auto mt-8 space-y-2">
+            {paths.pages.map((path) => (
+              <Link
+                key={path}
+                href={`/sandbox/${path}`}
+                className="block w-fit rounded-full py-2 px-4 font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105 hover:bg-orange-200"
+              >
+                {path}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="font-baloo text-2xl">app -</h3>
+          <div className="w-main mx-auto mt-8 space-y-2">
+            {paths.app.map((path) => (
+              <Link
+                key={path}
+                href={`/sandbox/${path}`}
+                className="block w-fit rounded-full py-2 px-4 font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105 hover:bg-orange-200"
+              >
+                {path}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </>

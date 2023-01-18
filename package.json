@@ -17,6 +17,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
+    "@hookform/resolvers": "^2.9.10",
     "@mantine/core": "^5.9.5",
     "@mantine/hooks": "^5.9.5",
     "@mantine/next": "^5.9.5",
@@ -49,12 +50,14 @@
     "prosemirror-schema-list": "^1.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.42.1",
     "react-icons": "^4.7.1",
     "recoil": "^0.7.6",
     "rome": "^11.0.0",
     "rss-parser": "^3.12.0",
     "swr": "^2.0.0",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-beta.15",

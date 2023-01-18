@@ -8,6 +8,9 @@ const nextConfig = {
       'github-contributions-api.deno.dev',
     ],
   },
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = nextConfig;
