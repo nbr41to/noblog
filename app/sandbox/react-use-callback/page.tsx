@@ -3,6 +3,7 @@
 /* eslint-disable no-console */
 /* eslint-disable react/display-name */
 
+'use client';
 import type { NextPage } from 'next';
 
 import { Button } from '@mantine/core';
