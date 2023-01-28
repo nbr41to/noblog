@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { BsChatText } from 'react-icons/bs';
 
 import { BookIcon, GitHubIcon } from '~/commons/icons';
@@ -43,7 +44,12 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
             <GitHubIcon size={20} />
             GitHubの草w
           </h2>
-          <div className="relative mx-auto h-32 w-full sp:h-20">
+          <Link
+            href="https://github.com/nbr41to"
+            target="_blank"
+            rel="noreferrer"
+            className="relative mx-auto block h-32 w-full cursor-pointer transition-transform duration-300 hover:scale-105 sp:h-20"
+          >
             <Image
               className="h-full w-full object-contain"
               src="https://github-contributions-api.deno.dev/nbr41to.svg?no-legend=true&no-total=true&scheme=blue"
@@ -53,7 +59,7 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
               priority
               unoptimized
             />
-          </div>
+          </Link>
         </div>
 
         {/* <div>
