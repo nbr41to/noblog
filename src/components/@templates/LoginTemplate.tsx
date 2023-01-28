@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
 import { Button } from '@mantine/core';
-import { signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { signIn, signOut } from 'next-auth/react';
 
 import {
   ColorGoogleIcon,

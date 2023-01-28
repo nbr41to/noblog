@@ -4,10 +4,10 @@ import type { AppProps } from 'next/app';
 
 import { NotificationsProvider } from '@mantine/notifications';
 import { SpotlightProvider } from '@mantine/spotlight';
-import { SessionProvider } from 'next-auth/react';
-import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { SessionProvider } from 'next-auth/react';
+import { DefaultSeo } from 'next-seo';
 import { useMemo, useState } from 'react';
 import { RecoilRoot } from 'recoil';
 
