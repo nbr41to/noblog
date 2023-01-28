@@ -11,9 +11,11 @@ type Props = {
   };
 };
 
+const excludePaths = ['/', '/404'];
+
 export const Breadcrumbs: FC<Props> = ({ currentPath, titleEnum = {} }) => {
   const items = useMemo(() => {
-    if (currentPath === '/') return []; // home page
+    if (excludePaths.includes(currentPath)) return [];
 
     const paths = currentPath.split('#')[0].split('/');
     const items = paths.map((path, index) => {
