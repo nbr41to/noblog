@@ -15,8 +15,8 @@ import Placeholder from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { useSession, signOut } from 'next-auth/react';
 import { useState } from 'react';
 
 import { LogoutIcon, SendIcon } from '~/commons/icons';

@@ -68,11 +68,11 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
         - Table of contents -
       </div>
       <div className="mx-auto mt-0.5 h-0.5 w-20 rounded-full bg-slate-800" />
-      <div className="max-h-[456px] overflow-y-scroll">
+      <div className="mt-4 max-h-[456px] overflow-y-scroll">
         <div
           className={clsx(
-            'relative mt-4 flex flex-col gap-2 pl-6 text-sm',
-            'before:absolute before:top-3 before:left-2 before:h-[calc(100%-24px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
+            'relative flex flex-col gap-2 py-2 pl-6 text-sm',
+            'before:absolute before:top-4 before:left-2 before:h-[calc(100%-36px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
           )}
         >
           {headingList.map((item, index) => (
@@ -83,11 +83,12 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
                 'text relative transition-colors duration-150 hover:text-slate-400',
                 activeIndex === index
                   ? 'font-bold text-slate-800'
-                  : 'text-slate-700',
+                  : 'text-slate-500',
+                item.type === 'heading_2' && 'font-bold',
                 item.type === 'heading_3' && 'pl-2',
                 'before:absolute before:rounded-full before:border-solid before:border-white before:content-[""]',
                 item.type === 'heading_2'
-                  ? 'before:top-[3px] before:-left-[22px] before:h-[10px] before:w-[10px] before:border-[2px]'
+                  ? 'before:top-[5px] before:-left-[21px] before:h-[8px] before:w-[8px] before:border-[2px]'
                   : 'before:top-[7px] before:-left-[19px] before:h-[6px] before:w-[6px] before:border-[1px]',
                 activeIndex < index
                   ? 'before:bg-orange-200'
