@@ -26,7 +26,7 @@ const Rive: NextPage = () => {
   /* Slime */
   const { rive: slimeRive, RiveComponent: SlimeRiveComponent } = useRive({
     src: '/slime.riv',
-    stateMachines: 'State Machine 1',
+    stateMachines: 'State Machine',
     autoplay: true,
     animations: ['stay'],
   });
@@ -53,15 +53,16 @@ export const Simple = () => (
   <Rive src="https://cdn.rive.app/animations/vehicles.riv" />
 );`}</Prism>
 
-      <div className="h-60 w-60 hover:cursor-pointer">
+      <div className="h-60 w-60 drop-shadow-[2px_2px_3px_#0006] hover:cursor-pointer">
         <RiveComponent onClick={onPressed} />
       </div>
       <div>Click me!!</div>
 
-      <div className="h-60 w-60 hover:cursor-pointer">
+      <div className="h-60 w-60 drop-shadow-[8px_8px_2px_#000a] hover:cursor-pointer">
         <SlimeRiveComponent onClick={onToggle} />
       </div>
       <div>Click me!!</div>
+      <div>drop-shadowが効く</div>
     </div>
   );
 };
