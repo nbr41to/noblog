@@ -8,7 +8,7 @@ import Head from 'next/head';
 
 import { PageTitle } from '~/commons/PageTitle';
 
-const RivePage: NextPage = () => {
+const Rive: NextPage = () => {
   /* Masao */
   const { rive, RiveComponent } = useRive({
     src: '/lesson-masao.riv',
@@ -32,7 +32,7 @@ const RivePage: NextPage = () => {
   });
   const onClickInput = useStateMachineInput(
     slimeRive,
-    'State Machine 1',
+    'State Machine',
     'Shivering'
   );
   const onToggle = () => {
@@ -66,4 +66,4 @@ export const Simple = () => (
   );
 };
 
-export default RivePage;
+export default Rive;
