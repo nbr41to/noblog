@@ -20,6 +20,9 @@ const variableKeys = [
 ];
 
 const ReactUseMemo: NextPage = () => {
+  // eslint-disable-next-line no-console
+  console.log('NEXT_PUBLIC_VERCEL_URL', process.env.NEXT_PUBLIC_VERCEL_URL);
+
   return (
     <div>
       <Head>
