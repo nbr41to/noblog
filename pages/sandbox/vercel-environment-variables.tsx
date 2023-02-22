@@ -4,22 +4,7 @@ import Head from 'next/head';
 
 import { PageTitle } from '~/commons/PageTitle';
 
-const variableKeys = [
-  'NEXT_PUBLIC_VERCEL_ENV',
-  'NEXT_PUBLIC_VERCEL_URL',
-  'NEXT_PUBLIC_VERCEL_GIT_PROVIDER',
-  'NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG',
-  'NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER',
-  'NEXT_PUBLIC_VERCEL_GIT_REPO_ID',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME',
-  'NEXT_PUBLIC_VERCEL_GIT_PULL_REQUEST_ID',
-];
-
-const ReactUseMemo: NextPage = () => {
+const VercelEnvironmentVariables: NextPage = () => {
   return (
     <div>
       <Head>
@@ -37,15 +22,56 @@ const ReactUseMemo: NextPage = () => {
 
         <div>
           <div>client</div>
-          {variableKeys.map((key) => (
-            <div key={key}>
-              {key}: {process.env[key]}
-            </div>
-          ))}
+          <div>
+            NEXT_PUBLIC_VERCEL_ENV: {process.env.NEXT_PUBLIC_VERCEL_ENV}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_URL: {process.env.NEXT_PUBLIC_VERCEL_URL}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_PROVIDER:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_PROVIDER}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_REPO_ID:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_ID}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME}
+          </div>
+          <div>
+            NEXT_PUBLIC_VERCEL_GIT_PULL_REQUEST_ID:{' '}
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_PULL_REQUEST_ID}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default ReactUseMemo;
+export default VercelEnvironmentVariables;
