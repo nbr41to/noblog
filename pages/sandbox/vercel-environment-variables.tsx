@@ -4,26 +4,7 @@ import Head from 'next/head';
 
 import { PageTitle } from '~/commons/PageTitle';
 
-const variableKeys = [
-  'NEXT_PUBLIC_VERCEL_ENV',
-  'NEXT_PUBLIC_VERCEL_URL',
-  'NEXT_PUBLIC_VERCEL_GIT_PROVIDER',
-  'NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG',
-  'NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER',
-  'NEXT_PUBLIC_VERCEL_GIT_REPO_ID',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_LOGIN',
-  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_AUTHOR_NAME',
-  'NEXT_PUBLIC_VERCEL_GIT_PULL_REQUEST_ID',
-];
-const variables = variableKeys.map((key) => ({ key, value: process.env[key] }));
-
 const VercelEnvironmentVariables: NextPage = () => {
-  // eslint-disable-next-line no-console
-  console.log('NEXT_PUBLIC_VERCEL_URL', process.env['NEXT_PUBLIC_VERCEL_URL']);
-
   return (
     <div>
       <Head>
@@ -41,12 +22,7 @@ const VercelEnvironmentVariables: NextPage = () => {
 
         <div>
           <div>client</div>
-          {variables.map((variable) => (
-            <div key={variable.key}>
-              {variable.key}: {variable.value}
-            </div>
-          ))}
-          {/* <div>
+          <div>
             NEXT_PUBLIC_VERCEL_ENV: {process.env.NEXT_PUBLIC_VERCEL_ENV}
           </div>
           <div>
@@ -91,7 +67,7 @@ const VercelEnvironmentVariables: NextPage = () => {
           <div>
             NEXT_PUBLIC_VERCEL_GIT_PULL_REQUEST_ID:{' '}
             {process.env.NEXT_PUBLIC_VERCEL_GIT_PULL_REQUEST_ID}
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
