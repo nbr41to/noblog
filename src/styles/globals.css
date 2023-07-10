@@ -117,3 +117,36 @@ body::before {
     @apply rounded;
   }
 }
+
+/* Use Sandbox/ViewTransitionsAPI */
+@keyframes scale-in {
+  from {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes scale-out {
+  to {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+::view-transition-old(root) {
+  animation: 300ms linear both fade-out, 500ms linear both scale-out;
+}
+
+::view-transition-new(root) {
+  animation: 300ms linear both fade-in, 500ms linear both scale-in;
+}
