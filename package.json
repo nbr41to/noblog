@@ -38,6 +38,7 @@
     "@tiptap/react": "^2.0.4",
     "@tiptap/starter-kit": "^2.0.4",
     "@vercel/og": "^0.5.9",
+    "@worldcoin/idkit": "^0.5.1",
     "algoliasearch": "^4.19.1",
     "axios": "^1.4.0",
     "eslint": "8.46.0",
