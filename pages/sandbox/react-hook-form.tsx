@@ -35,7 +35,7 @@ const ReactHookForm: NextPage = () => {
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => setSubmittedValue(data);
-  // eslint-disable-next-line no-console
+  // eslint-disable-next-line no-console, @typescript-eslint/no-explicit-any
   const onError = (errors: any) => console.log(errors);
 
   return (

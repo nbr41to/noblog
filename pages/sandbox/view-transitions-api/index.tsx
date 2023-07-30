@@ -15,8 +15,9 @@ declare global {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useViewTransition = <T extends (...args: any[]) => void>(
-  callback: T
+  callback: T,
 ) => {
   const startViewTransition = (...args: Parameters<T>) => {
     if (typeof document === 'undefined') return;
@@ -40,7 +41,7 @@ export const useTransitionRouterPush = () => {
     async (to: string) => {
       await router.push(to);
     },
-    [router]
+    [router],
   );
   const { startViewTransition: routerPushWithTransition } =
     useViewTransition(routerPush);
@@ -67,7 +68,7 @@ export const TransitionLink: FC<Props> = ({ href, children, onClick }) => {
       const to = e.currentTarget.href;
       routerPushWithTransition(to);
     },
-    [routerPushWithTransition, onClick]
+    [routerPushWithTransition, onClick],
   );
 
   return (

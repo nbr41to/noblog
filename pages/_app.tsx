@@ -1,8 +1,9 @@
 import '~/styles/globals.css';
+import '~/styles/body-before.css';
 
 import type { AppProps } from 'next/app';
 
-import { NotificationsProvider } from '@mantine/notifications';
+import { Notifications } from '@mantine/notifications';
 import { SpotlightProvider } from '@mantine/spotlight';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -68,7 +69,7 @@ export default function App({ Component, pageProps }: AppProps) {
         onTrigger: () => router.push('/sandbox'),
       },
     ],
-    [router]
+    [router],
   );
   const [query, setQuery] = useState('');
   const actions = useSpotlightActions(query);
@@ -118,7 +119,7 @@ export default function App({ Component, pageProps }: AppProps) {
             filter={(q, actions) => {
               const filteredDefaultActions = defaultActions.filter(
                 (action) =>
-                  action.title.toLowerCase().indexOf(q.toLowerCase()) !== -1
+                  action.title.toLowerCase().indexOf(q.toLowerCase()) !== -1,
               );
 
               return [...filteredDefaultActions, ...actions];
@@ -129,19 +130,12 @@ export default function App({ Component, pageProps }: AppProps) {
             nothingFoundMessage="Nothing found..."
             withinPortal
             highlightQuery
-            overlayOpacity={0.3}
             onQueryChange={(query) => setQuery(query)}
-            styles={{
-              spotlight: {
-                maxHeight: '60vh',
-              },
-            }}
           >
-            <NotificationsProvider position="top-center">
-              <Layout {...pageProps}>
-                <Component {...pageProps} />
-              </Layout>
-            </NotificationsProvider>
+            <Layout {...pageProps}>
+              <Component {...pageProps} />
+            </Layout>
+            <Notifications position="top-center" />
           </SpotlightProvider>
         </RecoilRoot>
       </SessionProvider>

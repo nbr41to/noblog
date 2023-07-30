@@ -5,7 +5,7 @@ import algoliasearch from 'algoliasearch';
 
 const client = algoliasearch(
   `${process.env.ALGOLIA_APPLICATION_ID}`,
-  `${process.env.ALGOLIA_ADMIN_API_KEY}`
+  `${process.env.ALGOLIA_ADMIN_API_KEY}`,
 );
 const index = client.initIndex('noblog');
 
@@ -17,6 +17,7 @@ export const saveToAlgolia = async (post: NotionPost) => {
         const content = child[child.type];
         if (!('rich_text' in content && content.rich_text.length > 0)) return;
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return content.rich_text.map((text: any) => text.plain_text).join('');
       })
       .join('');

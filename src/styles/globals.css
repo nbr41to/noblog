@@ -45,18 +45,6 @@ body {
   position: relative;
   height: 100%;
 }
-body::before {
-  /* TODO: iosなどのバウンススクロール時の上部のbackground-colorを変更 */
-  content: '';
-  display: block;
-  width: 100%;
-  height: 50vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -10;
-  background-color: #ffedd5;
-}
 
 @layer base {
   * {
@@ -144,9 +132,13 @@ body::before {
 }
 
 ::view-transition-old(root) {
-  animation: 300ms linear both fade-out, 500ms linear both scale-out;
+  animation:
+    300ms linear both fade-out,
+    500ms linear both scale-out;
 }
 
 ::view-transition-new(root) {
-  animation: 300ms linear both fade-in, 500ms linear both scale-in;
+  animation:
+    300ms linear both fade-in,
+    500ms linear both scale-in;
 }

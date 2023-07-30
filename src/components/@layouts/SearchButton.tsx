@@ -2,18 +2,19 @@ import type { FC } from 'react';
 
 import { Kbd } from '@mantine/core';
 import { useOs } from '@mantine/hooks';
-import { useSpotlight } from '@mantine/spotlight';
 
 import { SearchIcon } from '~/commons/icons';
 
-export const SearchButton: FC = () => {
-  const spotlight = useSpotlight();
+type Props = {
+  onClick: () => void;
+};
+export const SearchButton: FC<Props> = ({ onClick }) => {
   const os = useOs();
 
   return (
     <button
       className="flex cursor-pointer items-center gap-2 rounded-full border-none bg-slate-800 px-4 py-1.5 font-baloo text-base text-white shadow hover:brightness-125"
-      onClick={() => spotlight.openSpotlight()}
+      onClick={onClick}
     >
       <SearchIcon size={18} />
       Search

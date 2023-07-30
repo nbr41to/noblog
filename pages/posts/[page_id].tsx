@@ -3,7 +3,6 @@ import type {
   NotionBlockObjectResponse,
   NotionPageObjectResponse,
   NotionPost,
-  NotionRichTextItemRequest,
 } from '~/types/notion';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
@@ -35,7 +34,7 @@ export const getStaticProps = async (context: { params: Params }) => {
   const page_id = context.params?.page_id as string;
   const page = (await getPage(page_id)) as NotionPageObjectResponse;
   const children = (await getChildrenAllInBlock(
-    page_id
+    page_id,
   )) as NotionBlockObjectResponse[];
 
   const childrenWithOgp = await setOgp(children);
@@ -94,26 +93,22 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Post: NextPage<Props> = ({ post }) => {
-  const { data: comments, trigger } = useComments(post.id);
+  const { data: comments } = useComments(post.id);
 
-  const handleCommentSubmit = async (
-    rich_text: NotionRichTextItemRequest[]
-  ) => {
-    await trigger({
-      parent: {
-        page_id: post.id,
-      },
-      rich_text,
-    });
-  };
+  // const handleCommentSubmit = async (
+  //   rich_text: NotionRichTextItemRequest[]
+  // ) => {
+  //   await trigger({
+  //     parent: {
+  //       page_id: post.id,
+  //     },
+  //     rich_text,
+  //   });
+  // };
 
   return (
     <>
-      <PostDetailTemplate
-        post={post}
-        comments={comments}
-        onSubmit={handleCommentSubmit}
-      />
+      <PostDetailTemplate post={post} comments={comments} />
 
       {/* meta seo */}
       <NextSeo
