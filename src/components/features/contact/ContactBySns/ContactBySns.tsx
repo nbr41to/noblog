@@ -17,7 +17,7 @@ export const ContactBySns: FC = () => {
         <div
           className={clsx(
             'absolute top-0.5 left-0.5',
-            'h-20 w-20 rounded-full bg-slate-600'
+            'h-20 w-20 rounded-full bg-slate-600',
           )}
         />
         {/* button */}
@@ -25,14 +25,14 @@ export const ContactBySns: FC = () => {
           className={clsx(
             'absolute top-[calc(50%+2px)] left-[calc(50%+2px)] -translate-x-1/2 -translate-y-1/2',
             'h-14 w-14 rounded-full bg-slate-400',
-            'shadow-[2px_2px_#222c]'
+            'shadow-[2px_2px_#222c]',
           )}
         />
         <div
           className={clsx(
             'absolute top-[calc(50%+2px)] left-[calc(50%+2px)] -translate-x-1/2 -translate-y-1/2',
             'h-10 w-10 rounded-full bg-green-300',
-            'shadow-[inset_2px_2px_3px_#222c,inset_-1px_-1px_2px_#222c]'
+            'shadow-[inset_2px_2px_3px_#222c,inset_-1px_-1px_2px_#222c]',
           )}
         />
         {/* label cover */}
@@ -40,7 +40,7 @@ export const ContactBySns: FC = () => {
           className={clsx(
             'relative h-20 w-20 cursor-pointer rounded-full bg-green-500 text-white',
             'flex items-center justify-center',
-            'origin-[40px_6px] transition-transform hover:rotate-12 active:rotate-[120deg]'
+            'origin-[40px_6px] transition-transform hover:rotate-12 active:rotate-[120deg]',
           )}
         >
           <LineIcon size={40} />
@@ -60,7 +60,7 @@ export const ContactBySns: FC = () => {
         <div
           className={clsx(
             'absolute top-0.5 left-0.5',
-            'h-20 w-20 rounded-full bg-slate-600'
+            'h-20 w-20 rounded-full bg-slate-600',
           )}
         />
         {/* button */}
@@ -68,14 +68,14 @@ export const ContactBySns: FC = () => {
           className={clsx(
             'absolute top-[calc(50%+2px)] left-[calc(50%+2px)] -translate-x-1/2 -translate-y-1/2',
             'h-14 w-14 rounded-full bg-slate-400',
-            'shadow-[2px_2px_#222c]'
+            'shadow-[2px_2px_#222c]',
           )}
         />
         <div
           className={clsx(
             'absolute top-[calc(50%+2px)] left-[calc(50%+2px)] -translate-x-1/2 -translate-y-1/2',
             'h-10 w-10 rounded-full bg-sky-300',
-            'shadow-[inset_2px_2px_3px_#222c,inset_-1px_-1px_2px_#222c]'
+            'shadow-[inset_2px_2px_3px_#222c,inset_-1px_-1px_2px_#222c]',
           )}
         />
         {/* label cover */}
@@ -83,7 +83,7 @@ export const ContactBySns: FC = () => {
           className={clsx(
             'relative h-20 w-20 cursor-pointer rounded-full bg-sky-500 text-white',
             'flex items-center justify-center',
-            'origin-[40px_6px] transition-transform hover:rotate-12 active:rotate-[120deg]'
+            'origin-[40px_6px] transition-transform hover:rotate-12 active:rotate-[120deg]',
           )}
         >
           <TwitterIcon size={40} />
@@ -98,7 +98,7 @@ export const ContactBySns: FC = () => {
         <div
           className={clsx(
             'absolute top-0.5 left-0.5',
-            'h-20 w-20 rounded-full bg-slate-600'
+            'h-20 w-20 rounded-full bg-slate-600',
           )}
         />
         {/* button */}
@@ -106,14 +106,14 @@ export const ContactBySns: FC = () => {
           className={clsx(
             'absolute top-[calc(50%+2px)] left-[calc(50%+2px)] -translate-x-1/2 -translate-y-1/2',
             'h-14 w-14 rounded-full bg-slate-400',
-            'shadow-[2px_2px_#222c]'
+            'shadow-[2px_2px_#222c]',
           )}
         />
         <div
           className={clsx(
             'absolute top-[calc(50%+2px)] left-[calc(50%+2px)] -translate-x-1/2 -translate-y-1/2',
             'h-10 w-10 rounded-full bg-orange-300',
-            'shadow-[inset_2px_2px_3px_#222c,inset_-1px_-1px_2px_#222c]'
+            'shadow-[inset_2px_2px_3px_#222c,inset_-1px_-1px_2px_#222c]',
           )}
         />
         {/* label cover */}
@@ -121,7 +121,7 @@ export const ContactBySns: FC = () => {
           className={clsx(
             'relative h-20 w-20 cursor-pointer rounded-full bg-orange-500 text-white',
             'flex items-center justify-center',
-            'origin-[40px_6px] transition-transform duration-300 hover:rotate-12 active:rotate-[120deg]'
+            'origin-[40px_6px] transition-transform duration-300 hover:rotate-12 active:rotate-[120deg]',
           )}
         >
           <DummyIcon size={40} />

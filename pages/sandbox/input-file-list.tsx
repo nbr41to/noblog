@@ -55,7 +55,7 @@ const MyInputMultiFileListControlComponent = () => {
       ...Array.from(e.target.files),
     ].filter(
       (file, index, self) =>
-        self.findIndex((f) => f.name === file.name) === index // 重複を削除
+        self.findIndex((f) => f.name === file.name) === index, // 重複を削除
     );
     const dt = new DataTransfer();
     newFileArray.forEach((file) => dt.items.add(file));

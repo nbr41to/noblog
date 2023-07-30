@@ -14,7 +14,7 @@ const initAnnotations = {
  * TiptapのRichTextEditorから受け取ったJSONをNotionのRichTextの形式に変換する
  */
 export const toRichText = (
-  tiptapJson: TiptapJson
+  tiptapJson: TiptapJson,
 ): NotionRichTextItemRequest[] => {
   if (!tiptapJson.content) throw new Error('tiptapJson.content is undefined');
 

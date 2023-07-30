@@ -25,9 +25,7 @@ export const ProfileTemplate: FC<Props> = ({ blocks }) => {
             sizes="160px"
           />
         </div>
-        {blocks?.map((block) => (
-          <div key={block.id}>{blockToJsx(block)}</div>
-        ))}
+        {blocks?.map((block) => <div key={block.id}>{blockToJsx(block)}</div>)}
       </div>
     </div>
   );

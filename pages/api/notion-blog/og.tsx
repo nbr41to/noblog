@@ -6,7 +6,7 @@ export const config = {
   runtime: 'edge',
 };
 const fontBallo = fetch(
-  new URL('../../../src/styles/Baloo-Regular.ttf', import.meta.url)
+  new URL('../../../src/styles/Baloo-Regular.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
@@ -45,6 +45,6 @@ export default async function handler(req: NextRequest) {
           style: 'normal',
         },
       ],
-    }
+    },
   );
 }

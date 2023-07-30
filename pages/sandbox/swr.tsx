@@ -35,7 +35,7 @@ const Swr: NextPage = () => {
     {
       fallbackData: 'initial', // 初期値
       refreshInterval: 5000,
-    }
+    },
   );
 
   useEffect(() => {

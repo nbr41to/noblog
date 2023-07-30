@@ -18,7 +18,7 @@ const ReactUseMemo: NextPage = () => {
 
   const testMemo = useMemo(
     () => 'testMemo が定義されたときのcount: ' + count,
-    []
+    [],
   );
 
   return (

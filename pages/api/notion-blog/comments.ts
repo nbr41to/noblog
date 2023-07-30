@@ -12,7 +12,7 @@ import { createComment, getComments } from '~/server/notion/comments';
  */
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<NotionListCommentsResponse | CreateCommentResponse>
+  res: NextApiResponse<NotionListCommentsResponse | CreateCommentResponse>,
 ) {
   const { method } = req;
 

@@ -23,7 +23,7 @@ export const ReadMoreButton: FC<Props> = ({
       className={clsx(
         'w-fit font-baloo leading-none text-slate-800',
         'flex items-end gap-1',
-        'transition-transform duration-300 hover:scale-110'
+        'transition-transform duration-300 hover:scale-110',
       )}
       href={href}
       {...blankProps}

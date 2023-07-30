@@ -19,7 +19,7 @@ const Rive: NextPage = () => {
   const onClickInputMasaoPressed = useStateMachineInput(
     rive,
     'State Machine 1',
-    'Pressed'
+    'Pressed',
   );
   const onPressed = () => onClickInputMasaoPressed?.fire();
 
@@ -33,7 +33,7 @@ const Rive: NextPage = () => {
   const onClickInput = useStateMachineInput(
     slimeRive,
     'State Machine',
-    'Shivering'
+    'Shivering',
   );
   const onToggle = () => {
     if (!onClickInput) return;
