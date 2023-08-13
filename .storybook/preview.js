@@ -1,6 +1,6 @@
-import '../src/styles/globals.css';
 import { RecoilRoot } from 'recoil';
 import { SessionProvider } from 'next-auth/react';
+import '../src/styles/globals.css';
 
 export const parameters = {
   backgrounds: {

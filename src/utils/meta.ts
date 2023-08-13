@@ -46,7 +46,7 @@ export const toPostMeta = (page: PageObjectResponse): NotionPostMeta => {
  */
 
 export const toMetaDescription = (
-  children: NotionBlockObjectResponse[]
+  children: NotionBlockObjectResponse[],
 ): string => {
   let allText = '';
   let i = 0;

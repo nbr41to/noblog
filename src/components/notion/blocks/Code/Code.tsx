@@ -12,7 +12,7 @@ type Props = {
 
 /* Notion の language を Prism の language に変換 */
 const languageCompiled = (
-  language: string
+  language: string,
 ): Extract<PrismProps['language'], string> => {
   if (language === 'javascript') return 'jsx';
   if (language === 'typescript') return 'tsx';

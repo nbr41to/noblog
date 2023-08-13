@@ -28,7 +28,7 @@ export const NavMenu: FC = () => {
       <div
         className={clsx(
           'flex flex-col items-center justify-center transition-colors duration-300',
-          hovered && 'text-white'
+          hovered && 'text-white',
         )}
       >
         <CowIcon size={36} />

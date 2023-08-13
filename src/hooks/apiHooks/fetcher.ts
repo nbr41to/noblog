@@ -11,7 +11,7 @@ axios.interceptors.response.use(
       message: JSON.stringify(error),
       color: 'red',
     });
-  }
+  },
 );
 
 axios.interceptors.request.use(
@@ -24,7 +24,7 @@ axios.interceptors.request.use(
       message: JSON.stringify(error),
       color: 'pink',
     });
-  }
+  },
 );
 
 export const getFetcher = async (url: string) => {
@@ -33,11 +33,11 @@ export const getFetcher = async (url: string) => {
   return response.data;
 };
 
-type PostFetcher = <T, U = any>(
+type PostFetcher = <T, U>(
   url: string,
   arg: {
     arg: T;
-  }
+  },
 ) => Promise<U>;
 
 export const postFetcher: PostFetcher = async (url, { arg }) => {
@@ -46,11 +46,11 @@ export const postFetcher: PostFetcher = async (url, { arg }) => {
   return response.data;
 };
 
-type PatchFetcher = <T, U = any>(
+type PatchFetcher = <T, U>(
   url: string,
   arg: {
     arg: T;
-  }
+  },
 ) => Promise<U>;
 
 export const patchFetcher: PatchFetcher = async (url, { arg }) => {

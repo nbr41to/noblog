@@ -41,7 +41,7 @@ export const PostMeta: FC<Props> = ({ meta, commentCount }) => {
               {},
               {
                 onSuccess: () => setLiked(true),
-              }
+              },
             )
           }
         >

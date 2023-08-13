@@ -5,7 +5,7 @@ import { getOgp } from '~/server/utils/ogp';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Ogp>
+  res: NextApiResponse<Ogp>,
 ) {
   const { url } = req.query as { url: string };
 

@@ -9,7 +9,6 @@ export default {
   parameters: {
     backgrounds: {
       default: 'slate',
-      values: [{ name: 'slate', value: '#1e293b' }],
     },
   },
 } as Meta<typeof Component>;

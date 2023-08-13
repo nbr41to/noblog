@@ -11,7 +11,7 @@ import { getPage, updatePage } from '~/server/notion/pages';
  */
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<{ count: number } | UpdatePageResponse>
+  res: NextApiResponse<{ count: number } | UpdatePageResponse>,
 ) {
   const { method } = req;
   const page_id = req.query.page_id as string;

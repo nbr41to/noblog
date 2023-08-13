@@ -10,7 +10,7 @@ import type {
  */
 export const getPropertiesWithCount = (
   properties: NotionDatabaseProperty,
-  posts: NotionPageObjectResponse[]
+  posts: NotionPageObjectResponse[],
 ): NotionBlogPropertiesWithCount => {
   if (!('Category' in properties && 'Tags' in properties))
     return {
@@ -26,7 +26,7 @@ export const getPropertiesWithCount = (
             count: posts.filter((post) =>
               post.properties.Category.type === 'select'
                 ? post.properties.Category.select?.id === option.id
-                : false
+                : false,
             ).length,
           }))
         : [],
@@ -37,9 +37,9 @@ export const getPropertiesWithCount = (
             count: posts.filter((post) =>
               post.properties.Tags.type === 'multi_select'
                 ? post.properties.Tags.multi_select.some(
-                    (tag) => tag.id === option.id
+                    (tag) => tag.id === option.id,
                   )
-                : false
+                : false,
             ).length,
           }))
         : [],
@@ -51,7 +51,7 @@ export const getPropertiesWithCount = (
  */
 export const getControlledPosts = (
   posts: NotionPageObjectResponse[],
-  viewControlValue: ViewControl
+  viewControlValue: ViewControl,
 ): NotionPageObjectResponse[] => {
   const filteredPostsArray = posts.filter((post) => {
     if (post.properties.Category.type !== 'select') return false;
@@ -66,7 +66,7 @@ export const getControlledPosts = (
             if (post.properties.Tags.type !== 'multi_select') return false;
 
             return post.properties.Tags.multi_select.some(
-              (tag) => tag.id === tagId
+              (tag) => tag.id === tagId,
             );
           });
 

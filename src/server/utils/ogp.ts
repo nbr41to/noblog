@@ -35,7 +35,7 @@ export const getOgp = async (url: string): Promise<Ogp> => {
 
 /* NotionBlockObjectのBookmarkにOPG情報を差し込む */
 export const setOgp = async (
-  children: NotionBlockObjectResponse[]
+  children: NotionBlockObjectResponse[],
 ): Promise<NotionBlockObjectResponse[]> => {
   const results = await Promise.all(
     children.map(async (child) => {
@@ -48,7 +48,7 @@ export const setOgp = async (
         ...child,
         ogp,
       } as BookmarkBlockObjectResponse & { ogp: Ogp };
-    })
+    }),
   );
 
   return results;

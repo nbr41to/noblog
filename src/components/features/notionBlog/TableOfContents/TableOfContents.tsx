@@ -51,12 +51,12 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
 
         return [];
       }),
-    [blocks, isAll]
+    [blocks, isAll],
   );
 
   useEffect(() => {
     const index = headingList.findIndex((item) =>
-      inViewHeadingIds.includes(item.id)
+      inViewHeadingIds.includes(item.id),
     );
     if (index < 0) return;
     setActiveIndex(index);
@@ -72,7 +72,7 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
         <div
           className={clsx(
             'relative flex flex-col gap-2 py-2 pl-6 text-sm',
-            'before:absolute before:top-4 before:left-2 before:h-[calc(100%-36px)] before:w-0.5 before:bg-orange-200 before:content-[""]'
+            'before:absolute before:top-4 before:left-2 before:h-[calc(100%-36px)] before:w-0.5 before:bg-orange-200 before:content-[""]',
           )}
         >
           {headingList.map((item, index) => (
@@ -92,7 +92,7 @@ export const TableOfContents: FC<Props> = ({ blocks, isAll = false }) => {
                   : 'before:top-[7px] before:-left-[19px] before:h-[6px] before:w-[6px] before:border-[1px]',
                 activeIndex < index
                   ? 'before:bg-orange-200'
-                  : 'before:border-orange-100 before:bg-orange-500'
+                  : 'before:border-orange-100 before:bg-orange-500',
               )}
             >
               {item.title}

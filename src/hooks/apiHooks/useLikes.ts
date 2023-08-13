@@ -10,7 +10,7 @@ const initialData = { count: 0 };
 export const useLikes = (page_id: string) => {
   const { data, isLoading, error, mutate } = useSWR<{ count: number }>(
     page_id ? `${url}/${page_id}` : null,
-    getFetcher
+    getFetcher,
   );
   const revalidate = useCallback(() => mutate(), [mutate]);
 
