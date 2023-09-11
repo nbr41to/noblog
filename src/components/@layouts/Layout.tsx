@@ -51,15 +51,16 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
       </div>
 
       <header className="py-1">
-        <div
+        <Link
+          href="/"
+          tabIndex={0}
           className={clsx(
-            'mx-auto w-fit cursor-pointer py-4',
+            'mx-auto w-fit cursor-pointer py-4 block',
             'hover:title-drop-shadow transition duration-1000 ease-in hover:text-white',
           )}
-          onClick={() => router.push('/')}
         >
           <h1 className="font-baloo text-[42px] leading-none">noblog</h1>
-        </div>
+        </Link>
       </header>
       <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100">
         <div className=" mx-auto max-w-[1280px]">

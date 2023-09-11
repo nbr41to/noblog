@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { NotionPageObjectResponse } from '~/types/notion';
 
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useMemo } from 'react';
 
 import { toPostMeta } from '~/utils/meta';
@@ -11,13 +11,13 @@ type Props = {
 };
 
 export const PostGridItem: FC<Props> = ({ post }) => {
-  const router = useRouter();
   const meta = useMemo(() => toPostMeta(post), [post]);
 
   return (
-    <div
+    <Link
       className="h-64 w-64 cursor-pointer rounded bg-orange-50 px-5 py-3 shadow transition-transform hover:scale-105 sp:w-80"
-      onClick={() => router.push(`/posts/${post.id}`)}
+      tabIndex={0}
+      href={`/posts/${post.id}`}
     >
       <div className="space-y-3">
         <div className="flex justify-between">
@@ -47,6 +47,6 @@ export const PostGridItem: FC<Props> = ({ post }) => {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
