@@ -11,6 +11,7 @@ import { useMemo } from 'react';
 import { ScrollTopButton } from '~/components/@layouts/ScrollTopButton';
 import { SearchButton } from '~/components/@layouts/SearchButton';
 import { Breadcrumbs } from '~/layouts/Breadcrumbs';
+import { baloo2, firaCode, notoSansJP } from '~/styles/fontFamilies';
 
 import { NavMenu } from './NavMenu';
 
@@ -34,7 +35,14 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
   const handleClickSearchButton = () => spotlight.openSpotlight();
 
   return (
-    <div className="bg-orange-100">
+    <div
+      className={clsx([
+        notoSansJP.variable,
+        firaCode.variable,
+        baloo2.variable,
+        'bg-orange-100',
+      ])}
+    >
       <div className="fixed z-50 flex w-fit items-start justify-between">
         <NavMenu />
       </div>
