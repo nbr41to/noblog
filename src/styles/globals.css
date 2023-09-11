@@ -2,41 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* local font */
-@font-face {
-  /* 全体に使用 */
-  font-family: 'Noto Sans JP';
-  font-weight: 400;
-  src: url(./NotoSansJP-Regular.otf);
-  /* https://fonts.google.com/noto/specimen/Noto+Sans+JP */
-}
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-weight: 500;
-  src: url(./NotoSansJP-Medium.otf);
-  /* https://fonts.google.com/noto/specimen/Noto+Sans+JP */
-}
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-weight: 700;
-  src: url(./NotoSansJP-Bold.otf);
-  /* https://fonts.google.com/noto/specimen/Noto+Sans+JP */
-}
-@font-face {
-  /* 英語の見出しなどに使用 */
-  font-family: 'Baloo';
-  font-weight: 400;
-  src: url(./Baloo-Regular.ttf);
-  /* https://fonts.google.com/specimen/Baloo+2 */
-}
-@font-face {
-  /* 等幅 Codeに使用 */
-  font-family: 'FiraCode VariableFont';
-  font-weight: 400;
-  src: url(./FiraCode-VariableFont_wght.ttf);
-  /* https://fonts.google.com/specimen/Fira+Code */
-}
-
 body {
   @apply m-0;
   @apply text-slate-800;
@@ -61,6 +26,7 @@ body {
     @apply m-0;
   }
   a {
+    color: inherit;
     text-decoration: none;
   }
 
