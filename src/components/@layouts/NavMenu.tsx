@@ -46,7 +46,6 @@ export const NavMenu: FC = () => {
       <div
         role="button"
         tabIndex={0}
-        autoFocus
         onFocus={() => setFocused(true)}
         // onBlur={() => setFocused(false)}
         className={clsx(
