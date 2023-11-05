@@ -1,5 +1,6 @@
-import { clsx, Transition } from '@mantine/core';
+import { Transition } from '@mantine/core';
 import { useHover, useMergedRef } from '@mantine/hooks';
+import { clsx } from 'clsx';
 import { useState, type FC, useEffect, useRef } from 'react';
 
 import {
@@ -65,7 +66,7 @@ export const NavMenu: FC = () => {
       >
         {(styles) => (
           <div
-            className="fixed top-0 left-0 -z-10 h-screen space-y-2 bg-slate-800 px-6 pt-28"
+            className="fixed left-0 top-0 -z-10 h-screen space-y-2 bg-slate-800 px-6 pt-28"
             role="navigation"
             style={styles}
           >

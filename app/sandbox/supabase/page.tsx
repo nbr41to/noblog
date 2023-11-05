@@ -1,6 +1,6 @@
 'use client';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import { createClient } from '@supabase/supabase-js';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -10,7 +10,7 @@ import { PageTitle } from '~/commons/PageTitle';
 // Create a single supabase client for interacting with your database
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
 );
 
 type Book = {
@@ -39,7 +39,7 @@ const Supabase = () => {
       <PageTitle title="Supabase" />
 
       <div>
-        <Prism language="bash">{`yarn add @supabase/supabase-js`}</Prism>
+        <CodeHighlight code={`yarn add @supabase/supabase-js`} />
       </div>
 
       <div>

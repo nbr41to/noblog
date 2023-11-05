@@ -62,11 +62,6 @@ export const IndexTemplate: FC<Props> = ({ posts }) => {
           </Link>
         </div>
 
-        {/* <div>
-          <h2 className="text-base font-bold">今年の抱負</h2>
-          <div></div>
-        </div> */}
-
         <div>
           <h2 className="flex items-center gap-1 text-lg font-bold">
             この Blog について

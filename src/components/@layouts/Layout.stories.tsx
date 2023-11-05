@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { SpotlightProvider } from '@mantine/spotlight';
+import { Spotlight } from '@mantine/spotlight';
 
 import { Layout as Component } from './Layout';
 
@@ -11,23 +11,24 @@ export default {
   },
   decorators: [
     (Story) => (
-      <SpotlightProvider actions={[]}>
+      <>
+        <Spotlight actions={[]} />
         <Story />
-      </SpotlightProvider>
+      </>
     ),
   ],
 } as Meta<typeof Component>;
 
 export const Default: StoryObj<typeof Component> = {
   args: {
-    children: <div className="py-20 px-8">Page Content</div>,
+    children: <div className="px-8 py-20">Page Content</div>,
   },
 };
 
 export const LongPageContent: StoryObj<typeof Component> = {
   args: {
     children: (
-      <div className="py-20 px-8">
+      <div className="px-8 py-20">
         <h2>title</h2>
         <div className="space-y-3">
           <div className="h-40 w-40 rounded bg-slate-400">Page Content</div>

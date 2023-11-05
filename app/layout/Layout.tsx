@@ -1,8 +1,8 @@
 import type { FC, ReactNode } from 'react';
 import type { NotionPost } from '~/types/notion';
 
-import { clsx } from '@mantine/core';
-import { useSpotlight } from '@mantine/spotlight';
+import { spotlight } from '@mantine/spotlight';
+import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
@@ -30,8 +30,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
     }
   }, [pageProps]);
 
-  const spotlight = useSpotlight();
-  const handleClickSearchButton = () => spotlight.openSpotlight();
+  const handleClickSearchButton = () => spotlight.open();
 
   return (
     <div className="bg-orange-100">
@@ -55,7 +54,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
       </header>
       <main className="relative z-10 mb-40 min-h-[calc(100vh-102px)] w-full bg-orange-100">
         <div className=" mx-auto max-w-[1280px]">
-          <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pr-0 sp:pl-4">
+          <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pl-4 sp:pr-0">
             <Breadcrumbs currentPath={pathname || '/'} titleEnum={titleEnum} />
           </div>
           {children}

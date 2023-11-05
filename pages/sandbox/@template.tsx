@@ -2,7 +2,7 @@
 
 import type { NextPage } from 'next';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import Head from 'next/head';
 
 import { PageTitle } from '~/commons/PageTitle';
@@ -15,7 +15,7 @@ const ReactSvgComponent: NextPage = () => {
       </Head>
       <PageTitle title="ReactSvgComponent" />
       <div className="w-main mx-auto mt-8 space-y-3">
-        <Prism language="javascript">{`your code`}</Prism>
+        <CodeHighlight code={`your code`} />
       </div>
     </div>
   );

@@ -5,8 +5,8 @@
 
 'use client';
 
+import { CodeHighlight } from '@mantine/code-highlight';
 import { Button } from '@mantine/core';
-import { Prism } from '@mantine/prism';
 import Head from 'next/head';
 import { memo, useCallback, useState } from 'react';
 
@@ -21,7 +21,7 @@ const ReactUseCallback = () => {
 
   const testCallback = useCallback(
     () => 'testCallback が定義されたときのcount: ' + count,
-    []
+    [],
   );
 
   useNoticeRendering('ReactUseCallbackPage');
@@ -34,10 +34,10 @@ const ReactUseCallback = () => {
       <PageTitle title="React.useCallback" />
 
       <div className="w-main mx-auto mt-8 space-y-3">
-        <Prism language="javascript">
-          {`const [parentState, setParentState] = useState(false);
+        <CodeHighlight
+          code={`const [parentState, setParentState] = useState(false);
 const [count, setCount] = useState(0);`}
-        </Prism>
+        />
 
         <div className="space-x-3">
           <Button onClick={() => setParentState(!parentState)}>
@@ -48,13 +48,13 @@ const [count, setCount] = useState(0);`}
 
         <hr />
 
-        <Prism language="javascript">
-          {`const testFn = () => 'testFn が定義されたときのcount: ' + count;`}
-        </Prism>
+        <CodeHighlight
+          code={`const testFn = () => 'testFn が定義されたときのcount: ' + count;`}
+        />
         <div>{testFn()}</div>
-        <Prism language="javascript">
-          {`const testCallbackFn = useCallback(() => 'testCallbackFn が定義されたときのcount: ' + count, []);`}
-        </Prism>
+        <CodeHighlight
+          code={`const testCallbackFn = useCallback(() => 'testCallbackFn が定義されたときのcount: ' + count, []);`}
+        />
         <div>{testCallback()}</div>
 
         <Child count={count} fn={testFn} callback={testCallback} />
@@ -72,9 +72,9 @@ const Child = (props: any) => {
 
   return (
     <div className="border-box">
-      <Prism language="javascript">
-        {`<Child count={count} fn={testFn} callback={testCallback} />`}
-      </Prism>
+      <CodeHighlight
+        code={`<Child count={count} fn={testFn} callback={testCallback} />`}
+      />
       <div>props.count: {props.count}</div>
       <div>props.count: {props.fn()}</div>
       <div>props.count: {props.callback()}</div>
@@ -87,9 +87,9 @@ const MemoChild1 = memo((props: any) => {
 
   return (
     <div className="border-box">
-      <Prism language="javascript">
-        {`<MemoChild1 count={count} fn={testFn} callback={testCallback} />`}
-      </Prism>
+      <CodeHighlight
+        code={`<MemoChild1 count={count} fn={testFn} callback={testCallback} />`}
+      />
       <div>props.count: {props.count}</div>
       <div>props.count: {props.fn()}</div>
       <div>props.count: {props.callback()}</div>
@@ -102,9 +102,9 @@ const MemoChild2 = memo((props: any) => {
 
   return (
     <div className="border-box">
-      <Prism language="javascript">
-        {`<MemoChild2 count={count} callback={testCallback} />`}
-      </Prism>
+      <CodeHighlight
+        code={`<MemoChild2 count={count} callback={testCallback} />`}
+      />
       <div>props.count: {props.count}</div>
       <div>props.count: {props.callback()}</div>
     </div>

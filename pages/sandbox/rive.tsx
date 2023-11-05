@@ -2,7 +2,7 @@
 
 import type { NextPage } from 'next';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import Head from 'next/head';
 
@@ -47,11 +47,13 @@ const Rive: NextPage = () => {
       </Head>
       <PageTitle title="Rive animations" />
       <p>RiveでSVGをアニメーション化した</p>
-      <Prism language="tsx">{`import Rive from '@rive-app/react-canvas';
+      <CodeHighlight
+        code={`import Rive from '@rive-app/react-canvas';
 
 export const Simple = () => (
   <Rive src="https://cdn.rive.app/animations/vehicles.riv" />
-);`}</Prism>
+);`}
+      />
 
       <div className="h-60 w-60 drop-shadow-[2px_2px_3px_#0006] hover:cursor-pointer">
         <RiveComponent onClick={onPressed} />

@@ -1,10 +1,11 @@
-import { Button, Input, clsx } from '@mantine/core';
+import { Button, Input } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { Link } from '@mantine/tiptap';
 import { Placeholder } from '@tiptap/extension-placeholder';
 import Underline from '@tiptap/extension-underline';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { clsx } from 'clsx';
 import { useReducer, type FC, useState } from 'react';
 
 import { AtIcon, SendIcon, TouchIcon } from '~/components/@commons/icons';
@@ -50,21 +51,25 @@ export const ContactForm: FC<Props> = () => {
   return (
     <div className="relative">
       <div className="space-y-2 p-2">
-        <Input type="email" icon={<AtIcon />} placeholder="メールアドレス" />
+        <Input
+          type="email"
+          leftSection={<AtIcon />}
+          placeholder="メールアドレス"
+        />
         <RichTextEditor
           editor={editor}
           hotkey="mod+Enter"
           onSubmit={handleSubmit}
         />
         <div className="mt-2 flex items-center justify-end gap-3">
-          <p className="font-bold text-sm">
+          <p className="text-sm font-bold">
             ※ こちらはDEMOです。実際に送信することはできません。
           </p>
           <Button
             onClick={handleSubmit}
             loading={isLoading}
             disabled={disabled}
-            rightIcon={<SendIcon />}
+            rightSection={<SendIcon />}
           >
             送 信
           </Button>

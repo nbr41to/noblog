@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { clsx } from '@mantine/core';
+import { clsx } from 'clsx';
 import Link from 'next/link';
 
 type Props = {

@@ -3,8 +3,9 @@
 import type { NextPage } from 'next';
 import type { FC } from 'react';
 
-import { Button, clsx } from '@mantine/core';
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
+import { Button } from '@mantine/core';
+import { clsx } from 'clsx';
 import Head from 'next/head';
 import { memo, useEffect, useRef, useState } from 'react';
 
@@ -81,7 +82,7 @@ const TouchEvent: NextPage = () => {
     return (
       <div
         className={clsx([
-          'w-[40px] h-[40px] p-0.5 cursor-move active:opacity-50',
+          'h-[40px] w-[40px] cursor-move p-0.5 active:opacity-50',
         ])}
         draggable
         onDragStart={() => {
@@ -96,7 +97,7 @@ const TouchEvent: NextPage = () => {
           active.current = null;
         }}
       >
-        <div className={clsx([colorClass, 'rounded-full w-full h-full'])}></div>
+        <div className={clsx([colorClass, 'h-full w-full rounded-full'])}></div>
       </div>
     );
   });
@@ -213,7 +214,7 @@ const TouchEvent: NextPage = () => {
         <div>position: {JSON.stringify(position)}</div>
 
         <div>これでなんか作る</div>
-        <div className="outline outline-1 outline-gray-800 rounded w-[240px] h-[200px]">
+        <div className="h-[200px] w-[240px] rounded outline outline-1 outline-gray-800">
           {boardState.map((row, i) => (
             <div key={`row-${i}`} className="flex">
               {row.map((col, j) => (
@@ -229,9 +230,11 @@ const TouchEvent: NextPage = () => {
         <Button onClick={() => setBoardState(generateBoard())}>refresh</Button>
         <Button onClick={() => replaceNumbers()}>decide</Button>
 
-        <Prism language="javascript">{`import SvgComponent from '../../public/makoto.svg';
+        <CodeHighlight
+          code={`import SvgComponent from '../../public/makoto.svg';
   ...
-  <SvgComponent />`}</Prism>
+  <SvgComponent />`}
+        />
       </div>
     </div>
   );

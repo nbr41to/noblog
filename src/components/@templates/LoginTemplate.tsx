@@ -34,7 +34,7 @@ export const LoginTemplate: FC = () => {
               className="border-blue-700 bg-white text-blue-700 shadow"
               variant="outline"
               fullWidth
-              leftIcon={<ColorGoogleIcon size={20} />}
+              leftSection={<ColorGoogleIcon size={20} />}
               onClick={() =>
                 signIn('google', {
                   callbackUrl:
@@ -45,7 +45,7 @@ export const LoginTemplate: FC = () => {
               Google
             </Button>
             <Button
-              leftIcon={<TwitterIcon size={18} />}
+              leftSection={<TwitterIcon size={18} />}
               fullWidth
               disabled
               onClick={() =>
@@ -55,7 +55,7 @@ export const LoginTemplate: FC = () => {
               Twitter
             </Button>
             <Button
-              leftIcon={<GitHubIcon size={18} />}
+              leftSection={<GitHubIcon size={18} />}
               fullWidth
               disabled
               onClick={() =>
@@ -66,7 +66,7 @@ export const LoginTemplate: FC = () => {
             </Button>
             <Button
               color="dark"
-              rightIcon={<LogoutIcon size={18} />}
+              rightSection={<LogoutIcon size={18} />}
               fullWidth
               onClick={() =>
                 signOut({ callbackUrl: 'http://localhost:3000/login' })

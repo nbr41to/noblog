@@ -1,10 +1,13 @@
 import '~/styles/globals.css';
 import '~/styles/body-before.css';
+import '@mantine/core/styles.css';
+import '@mantine/code-highlight/styles.css';
 
 import type { AppProps } from 'next/app';
 
+import { MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
-import { SpotlightProvider } from '@mantine/spotlight';
+import { Spotlight } from '@mantine/spotlight';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { SessionProvider } from 'next-auth/react';
@@ -38,31 +41,36 @@ export default function App({ Component, pageProps }: AppProps) {
   const defaultActions = useMemo(
     () => [
       {
+        id: 'home',
         title: 'Home',
         description:
           'サイトのトップページに移動します。サイトロゴをクリックすることでも移動できます。',
         icon: <HomeIcon size={28} />,
-        onTrigger: () => router.push('/'),
+        onClick: () => router.push('/'),
       },
       {
+        id: 'posts',
         title: 'Blogs',
         description: 'ブログの記事一覧ページに移動します。',
         icon: <BookIcon size={28} />,
         onTrigger: () => router.push('/posts'),
       },
       {
+        id: 'profile',
         title: 'Profile',
         description: 'サイト作成者のプロフィール詳細ページに移動します。',
         icon: <ProfileIcon size={28} />,
         onTrigger: () => router.push('/profile'),
       },
       {
+        id: 'contact',
         title: 'Contact',
         description: 'サイト作成者と連絡を取りたい方はこちら',
         icon: <MailIcon size={28} />,
         onTrigger: () => router.push('/contact'),
       },
       {
+        id: 'sandbox',
         title: 'Sandbox',
         description: 'サイト作成者が好き勝手遊んでいる実験用のページ',
         icon: <ExperimentIcon size={28} />,
@@ -112,32 +120,36 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <SessionProvider session={pageProps.session}>
-        <RecoilRoot>
-          <SpotlightProvider
-            shortcut="mod + k"
-            actions={actions}
-            filter={(q, actions) => {
-              const filteredDefaultActions = defaultActions.filter(
-                (action) =>
-                  action.title.toLowerCase().indexOf(q.toLowerCase()) !== -1,
-              );
+        <MantineProvider>
+          <RecoilRoot>
+            <Spotlight
+              shortcut="mod + k"
+              actions={actions}
+              filter={(q, actions) => {
+                const filteredDefaultActions = defaultActions.filter(
+                  (action) =>
+                    action.title.toLowerCase().indexOf(q.toLowerCase()) !== -1,
+                );
 
-              return [...filteredDefaultActions, ...actions];
-            }}
-            limit={20}
-            searchIcon={<SearchIcon size={18} />}
-            searchPlaceholder="Search..."
-            nothingFoundMessage="Nothing found..."
-            withinPortal
-            highlightQuery
-            onQueryChange={(query) => setQuery(query)}
-          >
+                return [...filteredDefaultActions, ...actions];
+              }}
+              limit={20}
+              searchProps={{
+                leftSection: <SearchIcon size={18} />,
+                placeholder: 'Search...',
+                autoFocus: true,
+              }}
+              nothingFound="Nothing found..."
+              withinPortal
+              highlightQuery
+              onQueryChange={(query) => setQuery(query)}
+            />
             <Layout {...pageProps}>
               <Component {...pageProps} />
             </Layout>
             <Notifications position="top-center" />
-          </SpotlightProvider>
-        </RecoilRoot>
+          </RecoilRoot>
+        </MantineProvider>
       </SessionProvider>
     </>
   );
