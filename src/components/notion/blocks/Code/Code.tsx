@@ -10,7 +10,9 @@ type Props = {
 };
 
 /* Notion の language を CodeHighlight の language に変換 */
+// https://highlightjs.readthedocs.io/en/latest/supported-languages.html
 const languageCompiled = (language: string) => {
+  if (language === 'plain text') return 'plaintext';
   if (language === 'javascript') return 'jsx';
   if (language === 'typescript') return 'tsx';
 

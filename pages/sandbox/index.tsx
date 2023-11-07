@@ -28,7 +28,8 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const SandboxIndex: NextPage<Props> = ({ paths }) => {
   const router = useRouter();
   const selectRef = useRef<HTMLInputElement>(null);
-  const onChange = (value: string) => {
+  const onChange = (value: string | null) => {
+    if (!value) return;
     router.push(`/sandbox/${value}`);
   };
 
@@ -70,7 +71,7 @@ const SandboxIndex: NextPage<Props> = ({ paths }) => {
               <Link
                 key={path}
                 href={`/sandbox/${path}`}
-                className="block w-fit rounded-full py-2 px-4 font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105 hover:bg-orange-200"
+                className="block w-fit rounded-full px-4 py-2 font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105 hover:bg-orange-200"
               >
                 {path}
               </Link>
@@ -85,7 +86,7 @@ const SandboxIndex: NextPage<Props> = ({ paths }) => {
               <Link
                 key={path}
                 href={`/sandbox/${path}`}
-                className="block w-fit rounded-full py-2 px-4 font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105 hover:bg-orange-200"
+                className="block w-fit rounded-full px-4 py-2 font-baloo text-xl text-slate-800 transition-transform duration-300 hover:scale-105 hover:bg-orange-200"
               >
                 {path}
               </Link>
