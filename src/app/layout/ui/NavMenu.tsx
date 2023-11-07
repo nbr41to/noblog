@@ -82,11 +82,6 @@ export const NavMenu: FC = () => {
               label="Blogs"
             />
             <NavMenuLink
-              leftIcon={<ExperimentIcon size={20} />}
-              href="/sandbox"
-              label="Sandbox"
-            />
-            <NavMenuLink
               leftIcon={<ProfileIcon size={20} />}
               href="/profile"
               label="Profile"
@@ -100,6 +95,11 @@ export const NavMenu: FC = () => {
             <div className="pt-8" />
 
             {/* External */}
+            <NavMenuExternalLink
+              icon={<ExperimentIcon size={18} />}
+              href="https://nobsand.vercel.app/"
+              label="Sandbox"
+            />
             <NavMenuExternalLink
               icon={<TwitterIcon size={18} />}
               href="https://twitter.com/Knob_nbr41to"
