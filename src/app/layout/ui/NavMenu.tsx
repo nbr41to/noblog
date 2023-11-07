@@ -17,7 +17,7 @@ import {
   MailIcon,
   BookIcon,
   CowIcon,
-} from '@/components/@commons/icons';
+} from '~/commons/icons';
 
 import { NavMenuExternalLink } from './NavMenuExternalLink';
 import { NavMenuLink } from './NavMenuLink';
