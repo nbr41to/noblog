@@ -15,7 +15,7 @@ import {
   SearchIcon,
 } from '~/components/@commons/icons';
 
-export const SpotlightProvider = () => {
+export const Spotlight = () => {
   const router = useRouter();
 
   const actions: SpotlightActionData[] = useMemo(

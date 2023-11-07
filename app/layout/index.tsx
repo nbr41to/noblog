@@ -1,7 +1,7 @@
 'use client';
 
 import { Layout } from './Layout';
-import { SpotlightProvider } from './SpotlightProvider';
+import { Spotlight } from './Spotlight';
 
 export default function RootLayout({
   children,
@@ -12,9 +12,8 @@ export default function RootLayout({
     <html lang="ja">
       <head />
       <body>
-        <SpotlightProvider>
-          <Layout>{children}</Layout>
-        </SpotlightProvider>
+        <Spotlight />
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
