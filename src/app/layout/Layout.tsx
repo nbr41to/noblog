@@ -1,7 +1,7 @@
 'use client';
 
+import type { NotionPost } from '@/types/notion';
 import type { FC, ReactNode } from 'react';
-import type { NotionPost } from '~/types/notion';
 
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -9,12 +9,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMemo } from 'react';
 
-import { NavMenu } from '~/components/@layouts/NavMenu';
-import { ScrollTopButton } from '~/components/@layouts/ScrollTopButton';
-
-import { Breadcrumbs } from './ui/Breadcrumbs';
-import { SearchButton } from './ui/SearchButton';
-import { ToggleTheme } from './ui/ToggleTheme';
+import {
+  Breadcrumbs,
+  NavMenu,
+  ScrollTopButton,
+  SearchButton,
+  ToggleTheme,
+} from './ui';
 
 type Props = {
   children: ReactNode;
@@ -33,7 +34,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
   }, [pageProps]);
 
   return (
-    <div className="bg-orange-100">
+    <div className="bg-main">
       <div className="fixed z-50 flex w-fit items-start justify-between">
         <NavMenu />
       </div>
@@ -54,7 +55,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
         </div>
       </header>
 
-      <main className="relative z-10 mb-40 min-h-[calc(100vh-112px)] w-full bg-orange-100">
+      <main className="bg-main relative z-10 mb-40 min-h-[calc(100vh-112px)] w-full">
         <div className=" mx-auto max-w-[1280px]">
           <div className="ml-auto w-fit max-w-full overflow-x-scroll pr-8 sp:ml-0 sp:pl-4 sp:pr-0">
             <Breadcrumbs titleEnum={titleEnum} />
@@ -66,7 +67,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
         </div>
       </main>
 
-      <footer className="fixed bottom-0 left-0 flex h-40 w-full flex-col justify-between bg-slate-800 px-8 text-white">
+      <footer className="fixed bottom-0 left-0 flex h-40 w-full flex-col justify-between bg-slate-800 px-8 text-slate-100 dark:bg-orange-100 dark:text-slate-800">
         <div className="mt-6">
           <div className="flex gap-2">
             <Image
@@ -77,7 +78,10 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
               sizes="265px"
               priority
             />
-            <Link href="/" className="font-baloo text-3xl text-white">
+            <Link
+              href="/"
+              className="font-baloo text-3xl text-slate-100 dark:text-slate-800"
+            >
               noblog
             </Link>
           </div>
@@ -85,7 +89,7 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
             Notion API と Next.js / Tailwind CSS で本格ブログを作ってみました。
           </div>
         </div>
-        <div className="py-2 text-center text-xs font-bold text-slate-200">
+        <div className="py-2 text-center text-xs font-bold text-slate-100 dark:text-slate-800">
           Made with Notion by nobuyuki @2023
         </div>
       </footer>

@@ -14,15 +14,26 @@ export default {
 } as Meta<typeof Component>;
 
 export const Default: StoryObj<typeof Component> = {
-  args: {
-    currentPath: '/posts/zenn',
+  args: {},
+  parameters: {
+    nextjs: {
+      router: {
+        pathname: '/posts/zenn',
+      },
+    },
   },
 };
 export const UseTitleEnum: StoryObj<typeof Component> = {
   args: {
-    currentPath: '/posts/[page_id]',
     titleEnum: {
       '[page_id]': '記事タイトル',
+    },
+  },
+  parameters: {
+    nextjs: {
+      router: {
+        pathname: '/posts/[page_id]',
+      },
     },
   },
 };

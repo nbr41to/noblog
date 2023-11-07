@@ -69,7 +69,6 @@
     "@storybook/react": "^7.5.2",
     "@storybook/testing-library": "^0.2.2",
     "@svgr/webpack": "^8.1.0",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "@types/eslint": "8.44.6",
     "@types/node": "20.8.10",
     "@types/prettier": "^2.7.3",

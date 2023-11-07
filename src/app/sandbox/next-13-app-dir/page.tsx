@@ -2,8 +2,8 @@
 import Head from 'next/head';
 import { Suspense } from 'react';
 
-import { ClientComponent } from 'app/sandbox/next-13-app-dir/ClientComponent';
-import { ServerComponent } from 'app/sandbox/next-13-app-dir/ServerComponent';
+import { ClientComponent } from '@/app/sandbox/next-13-app-dir/ClientComponent';
+import { ServerComponent } from '@/app/sandbox/next-13-app-dir/ServerComponent';
 import { PageTitle } from '~/commons/PageTitle';
 
 import Loading from './loading';

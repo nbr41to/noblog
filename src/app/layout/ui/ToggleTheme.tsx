@@ -27,13 +27,13 @@ export function ToggleTheme() {
         radius={9999}
         onClick={toggleTheme}
         variant="default"
-        size="lg"
-        aria-label="Toggle color scheme"
+        w={40}
+        h={40}
       >
         {computedColorScheme === 'light' ? (
           <BsMoonStarsFill className="text-yellow-400" size={18} />
         ) : (
-          <BsSun size={18} />
+          <BsSun className="text-orange-100" size={18} />
         )}
       </ActionIcon>
     </Group>

@@ -9,7 +9,7 @@ import { ReadMoreButton } from '~/components/@commons/ReadMoreButton';
 
 export const About: FC = () => {
   return (
-    <div className="rounded bg-orange-50 px-6 py-4 shadow">
+    <div className="bg-light rounded px-6 py-4 shadow">
       <h2 className="flex items-center gap-1 text-lg font-bold">
         この Blog について
         <BsChatText size={20} />

@@ -1,12 +1,12 @@
-import '~/styles/globals.css';
-import '~/styles/body-before.css';
+import '@/styles/globals.css';
+import '@/styles/body-before.css';
 import '@mantine/core/styles.css';
 import '@mantine/code-highlight/styles.css';
 
 import { ColorSchemeScript } from '@mantine/core';
 import { clsx } from 'clsx';
 
-import { baloo2, firaCode, notoSansJP } from '~/styles/fontFamilies';
+import { baloo2, firaCode, notoSansJP } from '@/styles/fontFamilies';
 
 import { AppLayout } from './layout/index';
 

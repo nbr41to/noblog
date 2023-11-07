@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: ['class', '[data-mantine-color-scheme="dark"]'],
@@ -28,7 +28,6 @@ module.exports = {
       // => @media (min-width: 1024px) { ... }
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
   corePlugins: {
     preflight: false, // TailWindCSSのResetCSSとMantineの競合を防ぐために無効化
   },

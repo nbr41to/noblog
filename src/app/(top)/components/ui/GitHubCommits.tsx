@@ -18,7 +18,7 @@ export const GitHubCommits: FC = () => {
         href="https://github.com/nbr41to"
         target="_blank"
         rel="noreferrer"
-        className="hover:scale-101 relative mx-auto block h-32 w-full cursor-pointer transition-transform duration-300 sp:h-20"
+        className="relative mx-auto block h-32 w-full cursor-pointer transition-transform duration-300 hover:scale-101 sp:h-20"
       >
         <Image
           className="h-full w-full object-contain"

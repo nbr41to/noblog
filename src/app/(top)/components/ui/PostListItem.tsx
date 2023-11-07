@@ -17,7 +17,7 @@ export const PostListItem: FC<Props> = ({ post }) => {
 
   return (
     <Link
-      className="flex h-24 cursor-pointer items-center gap-5 rounded bg-orange-50 px-5 py-3 shadow transition-transform hover:scale-[1.01] sp:relative"
+      className="bg-light flex h-24 cursor-pointer items-center gap-5 rounded px-5 py-3 shadow transition-transform hover:scale-[1.01] sp:relative"
       tabIndex={0}
       href={`/posts/${post.id}`}
     >

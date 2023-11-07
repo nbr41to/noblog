@@ -3,6 +3,11 @@ import { formatDate } from '~/libs/dayjs';
 const getZennLatestArticles = async () => {
   const data = await fetch(
     'https://zenn.dev/api/articles?username=nbr41to&order=latest',
+    {
+      next: {
+        revalidate: 60 * 60 * 24 * 7, // 1週間
+      },
+    },
   );
   const json = await data.json();
 
@@ -20,9 +25,9 @@ export const FetchZennArticles = async () => {
           href={`https://zenn.dev${article.path}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-end justify-between rounded bg-orange-50 px-4 py-3 shadow transition-transform hover:scale-[1.01]"
+          className="bg-light flex items-end justify-between rounded px-4 py-3 shadow transition-transform hover:scale-[1.01]"
         >
-          <div className="flex gap-2 text-xl">
+          <div className="flex gap-2 text-lg">
             <div>{article.emoji}</div>
             <div className="font-bold">{article.title}</div>
           </div>
