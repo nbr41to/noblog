@@ -28,6 +28,12 @@ const getLatestPosts = async () => {
             is_not_empty: true,
           },
         },
+        {
+          property: 'Zenn',
+          checkbox: {
+            equals: false,
+          },
+        },
       ],
     },
   });
