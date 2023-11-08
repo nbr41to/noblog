@@ -15,6 +15,7 @@ const languageCompiled = (language: string) => {
   if (language === 'plain text') return 'plaintext';
   if (language === 'javascript') return 'jsx';
   if (language === 'typescript') return 'tsx';
+  if (language === 'mermaid') return 'plaintext';
 
   return language;
 };
