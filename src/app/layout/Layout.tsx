@@ -1,12 +1,9 @@
-'use client';
-
 import type { NotionPost } from '@/types/notion';
 import type { FC, ReactNode } from 'react';
 
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useMemo } from 'react';
 
 import {
@@ -22,7 +19,6 @@ type Props = {
 };
 
 export const Layout: FC<Props> = ({ children, ...pageProps }) => {
-  const router = useRouter();
   const titleEnum = useMemo(() => {
     if ('post' in pageProps) {
       return {
@@ -44,15 +40,15 @@ export const Layout: FC<Props> = ({ children, ...pageProps }) => {
       </div>
 
       <header className="py-1">
-        <div
+        <Link
           className={clsx(
-            'mx-auto w-fit cursor-pointer py-4',
+            'mx-auto block w-fit cursor-pointer py-4',
             'hover:title-drop-shadow transition duration-1000 ease-in hover:text-white',
           )}
-          onClick={() => router.push('/')}
+          href="/"
         >
           <h1 className="font-baloo text-[42px] leading-none">noblog</h1>
-        </div>
+        </Link>
       </header>
 
       <main className="bg-main relative z-10 mb-40 min-h-[calc(100vh-112px)] w-full">

@@ -2,10 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      's3.us-west-2.amazonaws.com',
-      'res.cloudinary.com',
-      'github-contributions-api.deno.dev',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 's3.us-west-2.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github-contributions-api.deno.dev',
+      },
     ],
   },
   // experimental: {

@@ -12,7 +12,7 @@ export const LatestPosts = async () => {
         <FetchLatestPosts />
       </Suspense>
       <div className="ml-auto w-fit">
-        <ReadMoreButton href="/blogs" />
+        <ReadMoreButton href="/posts" />
       </div>
     </div>
   );
