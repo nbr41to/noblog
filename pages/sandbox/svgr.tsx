@@ -2,7 +2,7 @@
 
 import type { NextPage } from 'next';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import Head from 'next/head';
 
 import { PageTitle } from '~/commons/PageTitle';
@@ -24,7 +24,8 @@ const Svgr: NextPage = () => {
         >
           https://react-svgr.com/docs/next/
         </a>
-        <Prism language="javascript">{`// next.config.js
+        <CodeHighlight
+          code={`// next.config.js
 module.exports = {
   webpack(config) {
     config.module.rules.push({
@@ -35,10 +36,13 @@ module.exports = {
 
     return config
   },
-}`}</Prism>
-        <Prism language="javascript">{`import SvgComponent from '../../public/makoto.svg';
+}`}
+        />
+        <CodeHighlight
+          code={`import SvgComponent from '../../public/makoto.svg';
   ...
-  <SvgComponent />`}</Prism>
+  <SvgComponent />`}
+        />
         <SvgComponent />
       </div>
     </div>

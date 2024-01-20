@@ -57,7 +57,9 @@ export const CommentForm: FC<Props> = () => {
     <div className="relative">
       <LoadingOverlay
         visible={typeof session === 'undefined'}
-        overlayBlur={2}
+        overlayProps={{
+          blur: 2,
+        }}
       />
       {!session ? (
         <div className="sp:px-4">

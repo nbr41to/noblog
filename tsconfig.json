@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,39 +16,18 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "~/pages/*": [
-        "./pages/*"
-      ],
-      "~/*": [
-        "./src/*"
-      ],
-      "~/features/*": [
-        "./src/components/features/*"
-      ],
-      "~/commons/*": [
-        "./src/components/@commons/*"
-      ],
-      "~/layouts/*": [
-        "./src/components/@layouts/*"
-      ],
-      "~/templates/*": [
-        "./src/components/@templates/*"
-      ],
-      "~/components/*": [
-        "./src/components/*"
-      ],
-      "~/hooks/*": [
-        "./src/hooks/*"
-      ],
-      "~/client/*": [
-        "src/utils/*"
-      ],
-      "~/server/*": [
-        "./src/server/*"
-      ],
-      "~/mocks/*": [
-        "./src/__mocks__/*"
-      ]
+      "@/*": ["./src/*"],
+      "~/pages/*": ["./pages/*"],
+      "~/*": ["./src/*"],
+      "~/features/*": ["./src/components/features/*"],
+      "~/commons/*": ["./src/components/@commons/*"],
+      "~/layouts/*": ["./src/components/@layouts/*"],
+      "~/templates/*": ["./src/components/@templates/*"],
+      "~/components/*": ["./src/components/*"],
+      "~/hooks/*": ["./src/hooks/*"],
+      "~/client/*": ["src/utils/*"],
+      "~/server/*": ["./src/server/*"],
+      "~/mocks/*": ["./src/__mocks__/*"]
     },
     "plugins": [
       {
@@ -60,13 +35,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

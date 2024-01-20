@@ -32,7 +32,7 @@ export const PostsViewControl: FC<Props> = ({
       <SegmentedControl
         className="bg-orange-50"
         value={value.type}
-        onChange={(v: ViewType) => onChange((prev) => ({ ...prev, type: v }))}
+        onChange={(v) => onChange((prev) => ({ ...prev, type: v as ViewType }))}
         data={[
           {
             value: 'grid',
@@ -72,7 +72,7 @@ export const PostsViewControl: FC<Props> = ({
         placeholder="Pick all that you like"
         clearable
         searchable
-        nothingFound="Nothing found"
+        nothingFoundMessage="Nothing found"
         data={properties.tags.map((tag) => ({
           value: tag.id,
           label: `${tag.name} (${tag.count})`,

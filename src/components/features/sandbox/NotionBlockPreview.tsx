@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import type { NotionBlockObjectResponse } from '~/types/notion';
 
+import { CodeHighlight } from '@mantine/code-highlight';
 import { ActionIcon, Collapse } from '@mantine/core';
-import { Prism } from '@mantine/prism';
 import { useState } from 'react';
 
 import { JsonIcon } from '~/commons/icons';
@@ -61,9 +61,10 @@ export const NotionBlockPreview: FC<Props> = ({ blocks }) => {
                 JSON
                 <JsonIcon />
               </p>
-              <Prism className="p-3" language="json" colorScheme="dark">
-                {JSON.stringify(block, null, 2)}
-              </Prism>
+              <CodeHighlight
+                language="json"
+                code={JSON.stringify(block, null, 2)}
+              />
             </Collapse>
           </div>
         );

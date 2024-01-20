@@ -3,7 +3,7 @@
 import type { CredentialType, ISuccessResult } from '@worldcoin/idkit';
 import type { NextPage } from 'next';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import { IDKitWidget } from '@worldcoin/idkit';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -23,7 +23,8 @@ const Worldcoin: NextPage = () => {
         <a href="https://docs.worldcoin.org/" target="_blank" rel="noreferrer">
           Worldcoin Developer Docs
         </a>
-        <Prism language="javascript">{` <IDKitWidget
+        <CodeHighlight
+          code={` <IDKitWidget
       app_id="app_GBkZ1KlVUdFTjeMXKlVUdFT" // obtained from the Developer Portal
       action="vote_1" // this is your action name from the Developer Portal
       signal="user_value" // any arbitrary value the user is committing to, e.g. a vote
@@ -32,7 +33,8 @@ const Worldcoin: NextPage = () => {
       enableTelemetry
     >
       {({ open }) => <button onClick={open}>Verify with World ID</button>}
-    </IDKitWidget>`}</Prism>
+    </IDKitWidget>`}
+        />
         <IDKitWidget
           app_id="app_GBkZ1KlVUdFTjeMXKlVUdFT" // obtained from the Developer Portal
           action="vote_1" // this is your action name from the Developer Portal
@@ -48,7 +50,7 @@ const Worldcoin: NextPage = () => {
         {result && (
           <>
             <div>ISuccessResult</div>
-            <Prism language="json">{JSON.stringify(result, null, 2)}</Prism>
+            <CodeHighlight code={JSON.stringify(result, null, 2)} />
           </>
         )}
       </div>

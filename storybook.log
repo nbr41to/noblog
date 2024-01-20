@@ -1,0 +1,22 @@
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: noblog@0.1.0
+npm ERR! Found: next@14.0.0
+npm ERR! node_modules/next
+npm ERR!   next@"14.0.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer next@"^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0" from @storybook/nextjs@7.5.1
+npm ERR! node_modules/@storybook/nextjs
+npm ERR!   dev @storybook/nextjs@"^7.5.1" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! /Users/nob1mac/.npm/_logs/2023-10-29T14_06_43_084Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in: /Users/nob1mac/.npm/_logs/2023-10-29T14_06_43_084Z-debug-0.log

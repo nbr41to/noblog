@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import type { NextPage } from 'next';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import Head from 'next/head';
 import { useMemo, useRef, useState } from 'react';
 
@@ -100,16 +100,17 @@ const InputFileList: NextPage = () => {
       <div className="w-main mx-auto mt-8 space-y-3">
         <h3>MyInputFileListComponent</h3>
         <MyInputFileListComponent />
-        <Prism language="tsx">
-          {`const MyInputFileListComponent = () => {
+        <CodeHighlight
+          code={`const MyInputFileListComponent = () => {
   const [inputFiles, setInputFiles] = useState<FileList | null>(null);
   console.log('MyInputFileListComponent inputFiles', inputFiles);
 
   return <input type="file" onChange={(e) => setInputFiles(e.target.files)} />;
 };`}
-        </Prism>
+        />
         <h3>MyInputFileComponent</h3>
-        <Prism language="tsx">{`const MyInputFileComponent = () => {
+        <CodeHighlight
+          code={`const MyInputFileComponent = () => {
   const [inputFiles, setInputFiles] = useState<File[]>([]);
   console.log('MyInputFileComponent inputFiles', inputFiles);
 
@@ -121,11 +122,13 @@ const InputFileList: NextPage = () => {
       }
     />
   );
-};`}</Prism>
+};`}
+        />
         <MyInputFileComponent />
         <h3>MyInputMultiFileListComponent</h3>
         <MyInputMultiFileListComponent />
-        <Prism language="tsx">{`const MyInputMultiFileListComponent = () => {
+        <CodeHighlight
+          code={`const MyInputMultiFileListComponent = () => {
   const [inputFiles, setInputFiles] = useState<FileList | null>(null);
   console.log('MyInputMultiFileListComponent inputFiles', inputFiles);
 
@@ -136,10 +139,12 @@ const InputFileList: NextPage = () => {
       onChange={(e) => setInputFiles(e.target.files)}
     />
   );
-};`}</Prism>
+};`}
+        />
         <h3>MyInputMultiFileListControlComponent</h3>
         <MyInputMultiFileListControlComponent />
-        <Prism language="tsx">{`const MyInputMultiFileListControlComponent = () => {
+        <CodeHighlight
+          code={`const MyInputMultiFileListControlComponent = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputFiles, setInputFiles] = useState<FileList | null>(null);
   console.log('MyInputMultiFileListControlComponent inputFiles', inputFiles);
@@ -170,7 +175,8 @@ const InputFileList: NextPage = () => {
     selectedFileArray.forEach((file, i) => i !== index && dt.items.add(file));
     inputRef.current.files = dt.files; // input内のFileListを更新
     setInputFiles(dt.files); // Reactのstateを更新
-  };`}</Prism>
+  };`}
+        />
       </div>
     </div>
   );

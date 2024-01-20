@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import type { NotionBlockObjectResponse } from '~/types/notion';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import Head from 'next/head';
 
 import { PageTitle } from '~/commons/PageTitle';
@@ -32,7 +32,8 @@ const NextjsSsr: NextPage<{ blocks: NotionBlockObjectResponse[] }> = ({
       </Head>
       <PageTitle title="Next.js SSR" />
       <p>NotionのページのBlockをgetServerSidePropsで取得するコードを書いた</p>
-      <Prism language="tsx">{`export const getServerSideProps = async () => {
+      <CodeHighlight
+        code={`export const getServerSideProps = async () => {
   const response = await getChildrenInBlock({
     block_id: previewPageId,
     page_size: 5,
@@ -43,7 +44,8 @@ const NextjsSsr: NextPage<{ blocks: NotionBlockObjectResponse[] }> = ({
       blocks: response.results as NotionBlockObjectResponse[],
     },
   };
-};`}</Prism>
+};`}
+      />
       <p>これがリクエストの度に最新のNotionのデータを取得するかを確認したい</p>
 
       <div className="w-main mx-auto">

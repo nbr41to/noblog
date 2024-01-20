@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import type { FC } from 'react';
 
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -102,7 +102,8 @@ const ViewTransitionsAPI: NextPage = () => {
             }
           />
         </div>
-        <Prism language="javascript">{`declare global {
+        <CodeHighlight
+          code={`declare global {
   interface Document {
     startViewTransition: (callback: () => Promise<void>) => void;
   }
@@ -125,8 +126,10 @@ export const useViewTransition = <T extends (...args: any[]) => void>(
   };
 
   return { startViewTransition };
-};`}</Prism>
-        <Prism language="javascript">{`export const useTransitionRouterPush = () => {
+};`}
+        />
+        <CodeHighlight
+          code={`export const useTransitionRouterPush = () => {
   const router = useRouter();
   const routerPush = useCallback(
     async (to: string) => {
@@ -138,8 +141,8 @@ export const useViewTransition = <T extends (...args: any[]) => void>(
     useViewTransition(routerPush);
 
   return { routerPushWithTransition };
-};`}</Prism>
-        <Prism language="javascript">{`your code`}</Prism>
+};`}
+        />
       </div>
     </div>
   );

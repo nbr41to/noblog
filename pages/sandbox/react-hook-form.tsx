@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import type { SubmitHandler } from 'react-hook-form';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
 import Head from 'next/head';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -46,9 +46,9 @@ const ReactHookForm: NextPage = () => {
       <PageTitle title="react-hook-form" />
 
       <div className="w-main mx-auto">
-        <Prism language="bash">
-          {'yarn add react-hook-form zod @hookform/resolvers'}
-        </Prism>
+        <CodeHighlight
+          code={'yarn add react-hook-form zod @hookform/resolvers'}
+        />
 
         <a href="https://react-hook-form.com/" target="_blank" rel="noreferrer">
           React Hook Form

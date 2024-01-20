@@ -2,14 +2,19 @@
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: ['class', '[data-mantine-color-scheme="dark"]'],
   theme: {
     extend: {
       fontFamily: {
         baloo: ['var(--font-baloo-2)'],
         notoSansJp: ['var(--font-noto-sans-jp)'],
         firaCode: ['var(--font-fira-code)'],
+      },
+      scale: {
+        101: '1.01',
       },
     },
     screens: {
@@ -23,7 +28,6 @@ module.exports = {
       // => @media (min-width: 1024px) { ... }
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
   corePlugins: {
     preflight: false, // TailWindCSSのResetCSSとMantineの競合を防ぐために無効化
   },

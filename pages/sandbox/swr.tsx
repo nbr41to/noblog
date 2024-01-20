@@ -3,8 +3,8 @@
 
 import type { NextPage } from 'next';
 
+import { CodeHighlight } from '@mantine/code-highlight';
 import { Loader, Skeleton } from '@mantine/core';
-import { Prism } from '@mantine/prism';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
@@ -54,7 +54,7 @@ const Swr: NextPage = () => {
       </Head>
       <PageTitle title="SWR" />
       <div className="w-main mx-auto mt-8 space-y-3">
-        <Prism language="javascript">{`yarn add swr`}</Prism>
+        <CodeHighlight code={`yarn add swr`} />
 
         <div>現在のDBのデータ: {db}（3秒おきに変化させてみる）</div>
 

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { NotionRichTextItemResponse } from '~/types/notion';
 
-import { clsx } from '@mantine/core';
+import { clsx } from 'clsx';
 
 type Props = {
   text: Array<NotionRichTextItemResponse>;

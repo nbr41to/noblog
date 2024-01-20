@@ -1,7 +1,11 @@
+import '../src/styles/globals.css';
+import '@mantine/core/styles.css';
+import '@mantine/code-highlight/styles.css';
+
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { SessionProvider } from 'next-auth/react';
-import '../src/styles/globals.css';
+import { MantineProvider } from '@mantine/core';
 
 export const parameters = {
   backgrounds: {
@@ -25,11 +29,13 @@ export const parameters = {
 export const decorators = [
   (Story) => {
     return (
-      <SessionProvider>
-        <RecoilRoot>
-          <Story />
-        </RecoilRoot>
-      </SessionProvider>
+      <MantineProvider>
+        <SessionProvider>
+          <RecoilRoot>
+            <Story />
+          </RecoilRoot>
+        </SessionProvider>
+      </MantineProvider>
     );
   },
 ];

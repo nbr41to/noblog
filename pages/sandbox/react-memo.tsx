@@ -3,8 +3,8 @@
 
 import type { NextPage } from 'next';
 
+import { CodeHighlight } from '@mantine/code-highlight';
 import { Button } from '@mantine/core';
-import { Prism } from '@mantine/prism';
 import Head from 'next/head';
 import { memo, useState } from 'react';
 
@@ -25,10 +25,10 @@ const ReactMemo: NextPage = () => {
       <PageTitle title="React.memo" />
 
       <div className="w-main mx-auto mt-8 space-y-3">
-        <Prism language="javascript">
-          {`const [parentState, setParentState] = useState(false);
+        <CodeHighlight
+          code={`const [parentState, setParentState] = useState(false);
 const [count, setCount] = useState(0);`}
-        </Prism>
+        />
 
         <div className="space-x-3">
           <Button onClick={() => setParentState(!parentState)}>
@@ -51,7 +51,7 @@ const Child = (props: any) => {
 
   return (
     <div className="border-box">
-      <Prism language="javascript">{`<Child count={count} />`}</Prism>
+      <CodeHighlight code={`<Child count={count} />`} />
       <div>props.count: {props.count}</div>
     </div>
   );
@@ -62,7 +62,7 @@ const MemoChild = memo((props: any) => {
 
   return (
     <div className="border-box">
-      <Prism language="javascript">{`<MemoChild count={count} />`}</Prism>
+      <CodeHighlight code={`<MemoChild count={count} />`} />
       <div>props.count: {props.count}</div>
     </div>
   );

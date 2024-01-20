@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { clsx } from '@mantine/core';
+import { clsx } from 'clsx';
 import Link from 'next/link';
 
 type Props = {
@@ -21,7 +21,7 @@ export const ReadMoreButton: FC<Props> = ({
   return (
     <Link
       className={clsx(
-        'w-fit font-baloo leading-none text-slate-800',
+        'w-fit py-3 font-baloo leading-none',
         'flex items-end gap-1',
         'transition-transform duration-300 hover:scale-110',
       )}
