@@ -1,5 +1,6 @@
 import { NavMenu } from "../NavMenu";
 import { NavMenuDrawer } from "../NavMenuDrawer";
+import { SearchCommand } from "../SearchCommand";
 import { SwitchTheme } from "../SwitchTheme";
 
 export const Header = () => {
@@ -13,6 +14,7 @@ export const Header = () => {
 
         <div className="right-4 hidden gap-x-2 md:flex">
           <NavMenu />
+          <SearchCommand />
           <SwitchTheme />
         </div>
 
