@@ -18,7 +18,7 @@ const config = {
     },
     extend: {
       fontSize: {
-        "2xs": "0.625rem",
+        "2xs": ["0.625rem", { lineHeight: "0.8rem" }],
       },
       colors: {
         border: "hsl(var(--border))",
